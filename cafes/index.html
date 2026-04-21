@@ -117,7 +117,7 @@
         }
 
         .logo-inner img {
-            width: 100%; /* Ajustado para ocupar melhor o espaço do link webp */
+            width: 100%;
             height: auto;
             object-fit: contain;
         }
@@ -168,10 +168,12 @@
         }
 
         .cta-button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             width: 100%;
             max-width: 300px;
-            padding: 1.1rem 1.5rem;
+            padding: 1.1rem 1.8rem;
             background: var(--accent-pink);
             color: white;
             text-decoration: none;
@@ -180,21 +182,56 @@
             font-weight: 700;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 8px 20px rgba(233, 30, 99, 0.2);
             border: none;
             cursor: pointer;
+            gap: 12px;
         }
 
         .cta-button:hover {
             background: var(--accent-dark);
             transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(233, 30, 99, 0.3);
         }
 
         .cta-button:disabled {
             background: #ccc;
             cursor: not-allowed;
             transform: none;
+            box-shadow: none;
+        }
+
+        /* Seta em CSS Puro */
+        .arrow-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .css-arrow {
+            width: 18px;
+            height: 2px;
+            background-color: currentColor;
+            position: relative;
+            display: inline-block;
+        }
+
+        .css-arrow::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 8px;
+            height: 8px;
+            border-top: 2px solid currentColor;
+            border-right: 2px solid currentColor;
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .cta-button:hover .arrow-wrapper {
+            transform: translateX(5px);
         }
 
         .footer-info {
@@ -233,13 +270,18 @@
 
         <section class="text-section fade-in delay-1">
             <span class="promo-label">Oferta Exclusiva</span>
-            <h1 class="heading">As Melhores ofertas<br>Exclusivas</h1>
+            <h1 class="heading">Sabor Incomparável<br>com Desconto</h1>
             <div class="promo-value">40% OFF</div>
             <p class="promo-description">Em cápsulas e máquinas selecionadas. Garanta o seu café perfeito.</p>
         </section>
 
         <footer class="action-section fade-in delay-2">
-            <button id="cta-button" class="cta-button">Conferir Ofertas</button>
+            <button id="cta-button" class="cta-button">
+                <span id="button-text">Aproveitar Agora</span>
+                <div class="arrow-wrapper" id="button-arrow">
+                    <span class="css-arrow"></span>
+                </div>
+            </button>
             <div class="footer-info">
                 *Promoção válida enquanto durarem os estoques.
             </div>
@@ -249,32 +291,28 @@
     <script>
         const DESTINATION_URL = 'https://vitaldue.myshopify.com/products/comboseiscaixas';
         const ctaButton = document.getElementById('cta-button');
+        const buttonText = document.getElementById('button-text');
+        const buttonArrow = document.getElementById('button-arrow');
 
-        // Função para resetar o botão
         function resetButton() {
             ctaButton.disabled = false;
             ctaButton.style.opacity = '1';
-            ctaButton.textContent = 'Aproveitar Agora';
+            buttonText.textContent = 'Aproveitar Agora';
+            buttonArrow.style.display = 'flex';
         }
 
         ctaButton.addEventListener('click', function(e) {
             e.preventDefault();
             this.disabled = true;
             this.style.opacity = '0.7';
-            this.textContent = 'Carregando...';
+            buttonText.textContent = 'Redirecionando...';
+            buttonArrow.style.display = 'none';
             
             window.location.href = DESTINATION_URL;
         });
 
-        // Evento que detecta quando a página é mostrada (incluindo o "voltar" do navegador)
         window.addEventListener('pageshow', function(event) {
-            // Se a página for carregada do cache (o que acontece no botão voltar), resetamos o botão
-            if (event.persisted) {
-                resetButton();
-            } else {
-                // Garantia extra para navegadores que não usam bfcache de forma agressiva
-                resetButton();
-            }
+            resetButton();
         });
     </script>
 
