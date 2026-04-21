@@ -6,7 +6,7 @@
     <meta name="description" content="Promoção Exclusiva Dolce Gusto - 40% OFF em cápsulas e máquinas selecionadas. Aproveite por tempo limitado!">
     <title>Dolce Gusto - Promoção Exclusiva 40% OFF</title>
     
-    <!-- Preconnect para fontes externas para melhorar o LCP -->
+    <!-- Preconnect para fontes externas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
         html, body {
             height: 100%;
             width: 100%;
-            overflow: hidden; /* Mantém a página sem rolagem como solicitado */
+            overflow: hidden;
             font-family: 'Poppins', sans-serif;
             background: var(--bg-gradient);
             color: var(--text-dark);
@@ -117,7 +117,7 @@
         }
 
         .logo-inner img {
-            width: 80%;
+            width: 100%; /* Ajustado para ocupar melhor o espaço do link webp */
             height: auto;
             object-fit: contain;
         }
@@ -180,7 +180,7 @@
             font-weight: 700;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            transition: background 0.3s ease, transform 0.2s ease;
+            transition: all 0.3s ease;
             box-shadow: 0 8px 20px rgba(233, 30, 99, 0.2);
             border: none;
             cursor: pointer;
@@ -191,6 +191,12 @@
             transform: translateY(-2px);
         }
 
+        .cta-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
         .footer-info {
             margin-top: 1rem;
             font-size: 0.7rem;
@@ -198,7 +204,7 @@
             font-weight: 400;
         }
 
-        /* Otimização de animação para não afetar o CLS */
+        /* Animações */
         .fade-in {
             animation: fadeIn 0.6s ease-out forwards;
             opacity: 0;
@@ -221,8 +227,7 @@
     <main class="main-content">
         <header class="logo-container fade-in">
             <div class="logo-inner">
-                <!-- Certifique-se de que o arquivo logo.png esteja no mesmo diretório -->
-                <img src="logo.png" alt="Logo Dolce Gusto" width="120" height="120">
+                <img src="https://cdn.shopify.com/s/files/1/0697/8175/0016/files/dolce-gusto-logo-round_0_png.webp?v=1751370845" alt="Logo Dolce Gusto" width="150" height="150">
             </div>
         </header>
 
@@ -242,19 +247,34 @@
     </main>
 
     <script>
-        // URL de destino final (Landing Page)
         const DESTINATION_URL = 'https://vitaldue.myshopify.com/products/comboseiscaixas';
+        const ctaButton = document.getElementById('cta-button');
 
-        document.getElementById('cta-button').addEventListener('click', function(e) {
+        // Função para resetar o botão
+        function resetButton() {
+            ctaButton.disabled = false;
+            ctaButton.style.opacity = '1';
+            ctaButton.textContent = 'Aproveitar Agora';
+        }
+
+        ctaButton.addEventListener('click', function(e) {
             e.preventDefault();
-            const btn = this;
+            this.disabled = true;
+            this.style.opacity = '0.7';
+            this.textContent = 'Redirecionando...';
             
-            // Feedback visual imediato (importante para evitar múltiplos cliques)
-            btn.style.opacity = '0.7';
-            btn.textContent = 'Redirecionando...';
-            
-            // Redirecionamento direto para evitar bloqueios de pop-up
             window.location.href = DESTINATION_URL;
+        });
+
+        // Evento que detecta quando a página é mostrada (incluindo o "voltar" do navegador)
+        window.addEventListener('pageshow', function(event) {
+            // Se a página for carregada do cache (o que acontece no botão voltar), resetamos o botão
+            if (event.persisted) {
+                resetButton();
+            } else {
+                // Garantia extra para navegadores que não usam bfcache de forma agressiva
+                resetButton();
+            }
         });
     </script>
 
