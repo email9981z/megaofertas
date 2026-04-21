@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Dolce Gusto - Promoção Exclusiva 40% OFF</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <style>
@@ -15,113 +15,99 @@
             --text-light: #666666;
             --bg-light: #fafafa;
             --bg-white: #ffffff;
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
-            --shadow-md: 0 8px 24px rgba(0,0,0,0.12);
-            --shadow-lg: 0 16px 40px rgba(0,0,0,0.15);
+            --shadow-lg: 0 16px 40px rgba(0,0,0,0.1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #fafafa 0%, #f5f1e8 100%);
             color: var(--text-dark);
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
         }
 
-        .container {
-            background: var(--bg-white);
-            border-radius: 24px;
-            box-shadow: var(--shadow-lg);
-            max-width: 480px;
-            width: 100%;
-            padding: 4rem 2.5rem;
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             position: relative;
+        }
+
+        /* Elementos Decorativos de Fundo */
+        .bg-decoration {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
             overflow: hidden;
         }
 
-        /* Efeito de fundo decorativo */
-        .container::before {
+        .bg-decoration::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(233, 30, 99, 0.05) 0%, transparent 70%);
+            top: -15%;
+            right: -10%;
+            width: 70vw;
+            height: 70vw;
+            background: radial-gradient(circle, rgba(233, 30, 99, 0.06) 0%, transparent 70%);
             border-radius: 50%;
-            pointer-events: none;
         }
 
-        .container::after {
+        .bg-decoration::after {
             content: '';
             position: absolute;
-            bottom: -30%;
-            left: -30%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(93, 64, 55, 0.03) 0%, transparent 70%);
+            bottom: -15%;
+            left: -10%;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(93, 64, 55, 0.04) 0%, transparent 70%);
             border-radius: 50%;
-            pointer-events: none;
         }
 
-        .content {
+        /* Container Principal com limites de respiro */
+        .main-content {
             position: relative;
             z-index: 1;
+            width: 100%;
+            max-width: 500px; /* Largura máxima para manter harmonia em telas grandes */
+            height: 100%;
+            max-height: 850px; /* Limite de altura para não espalhar demais em telas ultra-altas */
+            padding: 2.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
+            justify-content: space-between; /* Distribuição equilibrada entre topo, meio e base */
         }
 
-        /* Logo Container */
+        /* Logo Section */
         .logo-wrapper {
-            margin-bottom: 3rem;
+            flex: 0 1 auto;
             display: flex;
             justify-content: center;
+            padding-top: 1vh;
         }
 
         .logo-container {
-            width: 160px;
-            height: 160px;
+            width: min(160px, 35vw);
+            height: min(160px, 35vw);
             border-radius: 50%;
             background: linear-gradient(135deg, #5d4037 0%, #3e2723 100%);
-            padding: 8px;
-            box-shadow: 0 12px 32px rgba(93, 64, 55, 0.2);
+            padding: 6px;
+            box-shadow: 0 12px 32px rgba(93, 64, 55, 0.15);
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            position: relative;
-        }
-
-        .logo-container::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 50%;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .logo-container:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 16px 40px rgba(93, 64, 55, 0.3);
-        }
-
-        .logo-container:hover::before {
-            opacity: 1;
+            transition: transform 0.4s ease;
         }
 
         .logo-inner {
@@ -136,286 +122,187 @@
         }
 
         .logo-inner img {
-            width: 90%;
+            width: 82%;
             height: auto;
             object-fit: contain;
         }
 
-        /* Heading */
-        .heading {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.5px;
+        /* Text Section */
+        .text-section {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            padding: 1rem 0;
         }
 
-        /* Promo Section */
-        .promo-section {
-            margin-bottom: 2.5rem;
+        .heading {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.6rem, 7vh, 2.2rem);
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
         }
 
         .promo-label {
-            font-size: 0.85rem;
+            font-size: clamp(0.75rem, 2vh, 0.9rem);
             font-weight: 600;
-            letter-spacing: 1.2px;
+            letter-spacing: 2.5px;
             color: var(--text-light);
             text-transform: uppercase;
-            margin-bottom: 0.8rem;
-            display: block;
+            margin-bottom: 0.5rem;
         }
 
         .promo-value {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
+            font-size: clamp(3.2rem, 14vh, 5rem);
             font-weight: 700;
             background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 0.5rem;
-            line-height: 1.1;
+            line-height: 0.9;
+            margin: 0.5rem 0;
         }
 
         .promo-description {
-            font-size: 0.95rem;
+            font-size: clamp(0.85rem, 2.5vh, 1rem);
             color: var(--text-light);
             font-weight: 400;
-            margin-top: 0.8rem;
+            max-width: 80%;
+            margin: 0 auto;
         }
 
-        /* CTA Button */
+        /* Action Section */
+        .action-section {
+            flex: 0 1 auto;
+            width: 100%;
+            padding-bottom: 2vh;
+        }
+
         .cta-button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             width: 100%;
+            max-width: 320px;
             padding: 1.1rem 2rem;
             background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
             color: white;
             border: none;
-            border-radius: 12px;
+            border-radius: 14px;
             font-size: 1rem;
             font-weight: 600;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            box-shadow: 0 8px 24px rgba(233, 30, 99, 0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(233, 30, 99, 0.25);
+            text-transform: uppercase;
             position: relative;
             overflow: hidden;
-            font-family: 'Poppins', sans-serif;
-            text-transform: uppercase;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(233, 30, 99, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(233, 30, 99, 0.35);
         }
 
-        .cta-button:active {
-            transform: translateY(-1px);
-            box-shadow: 0 6px 16px rgba(233, 30, 99, 0.3);
-        }
-
-        .cta-button:disabled {
-            opacity: 0.8;
-            cursor: not-allowed;
-        }
-
-        /* Footer Info */
         .footer-info {
-            margin-top: 2.5rem;
-            padding-top: 2rem;
-            border-top: 1px solid #f0f0f0;
-            font-size: 0.8rem;
-            color: #999;
-            letter-spacing: 0.3px;
+            margin-top: 1.2rem;
+            font-size: 0.75rem;
+            color: #aaa;
+            letter-spacing: 0.5px;
+            font-weight: 300;
         }
 
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            .container {
-                padding: 3rem 1.5rem;
-            }
-
-            .logo-container {
-                width: 140px;
-                height: 140px;
-            }
-
-            .heading {
-                font-size: 1.4rem;
-            }
-
-            .promo-value {
-                font-size: 3rem;
-            }
-
-            .cta-button {
-                padding: 1rem 1.5rem;
-                font-size: 0.95rem;
-            }
+        /* Ajustes para telas muito pequenas (iPhone SE, etc) */
+        @media (max-height: 600px) {
+            .main-content { padding: 1rem; }
+            .heading { margin-bottom: 0.2rem; }
+            .promo-value { margin: 0.2rem 0; }
+            .footer-info { margin-top: 0.5rem; }
         }
 
-        @media (max-width: 400px) {
-            .container {
-                padding: 2.5rem 1.25rem;
-            }
-
-            .logo-container {
-                width: 120px;
-                height: 120px;
-                margin-bottom: 2rem;
-            }
-
-            .heading {
-                font-size: 1.2rem;
-            }
-
-            .promo-value {
-                font-size: 2.5rem;
-            }
-
-            .promo-label {
-                font-size: 0.75rem;
-            }
+        /* Animations */
+        @keyframes reveal {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Animação de entrada */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        .logo-container { animation: reveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .text-section { animation: reveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s both; }
+        .action-section { animation: reveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s both; }
 
-        .container {
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        .logo-wrapper {
-            animation: fadeInUp 0.6s ease-out 0.1s both;
-        }
-
-        .heading {
-            animation: fadeInUp 0.6s ease-out 0.2s both;
-        }
-
-        .promo-section {
-            animation: fadeInUp 0.6s ease-out 0.3s both;
-        }
-
-        .cta-button {
-            animation: fadeInUp 0.6s ease-out 0.4s both;
-        }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="content">
-            <div class="logo-wrapper">
-                <div class="logo-container">
-                    <div class="logo-inner">
-                        <img src="logo.png" alt="Dolce Gusto - Nescafé">
-                    </div>
+    <div class="bg-decoration"></div>
+
+    <main class="main-content">
+        <header class="logo-wrapper">
+            <div class="logo-container">
+                <div class="logo-inner">
+                    <img src="logo.png" alt="Dolce Gusto - Nescafé">
                 </div>
             </div>
+        </header>
 
-            <h1 class="heading">Aproveite as Promoções</h1>
+        <section class="text-section">
+            <span class="promo-label">Desconto Especial</span>
+            <h1 class="heading">Aproveite as<br>Promoções</h1>
+            <div class="promo-value">40% OFF</div>
+            <p class="promo-description">Em cápsulas e máquinas selecionadas para você</p>
+        </section>
 
-            <div class="promo-section">
-                <span class="promo-label">Desconto Especial</span>
-                <div class="promo-value">40% OFF</div>
-                <p class="promo-description">Em cápsulas e máquinas selecionadas</p>
-            </div>
-
+        <footer class="action-section">
             <button id="cta-button" class="cta-button">Conferir Ofertas</button>
-
             <div class="footer-info">
                 Oferta válida por tempo limitado
             </div>
-        </div>
-    </div>
+        </footer>
+    </main>
 
     <script>
-        // Configuração do link de redirecionamento
         const OFFERS_URL = 'https://vitaldue.myshopify.com/products/comboseiscaixas';
 
-        // Event listener do botão
         document.getElementById('cta-button').addEventListener('click', function() {
             const button = this;
-            
-            // Feedback visual
             button.disabled = true;
-            const originalText = button.textContent;
             button.textContent = 'Carregando...';
             
-            // Simular pequeno delay para melhor UX
             setTimeout(() => {
                 window.location.href = OFFERS_URL;
             }, 300);
 
-            // Fallback em caso de erro
             setTimeout(() => {
                 button.disabled = false;
-                button.textContent = originalText;
+                button.textContent = 'Conferir Ofertas';
             }, 3000);
         });
 
-        // Efeito de ripple ao clicar (opcional)
+        // Efeito de ripple refinado
         document.getElementById('cta-button').addEventListener('mousedown', function(e) {
             const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
             const ripple = document.createElement('span');
-            ripple.style.position = 'absolute';
-            ripple.style.left = x + 'px';
-            ripple.style.top = y + 'px';
-            ripple.style.width = '0';
-            ripple.style.height = '0';
-            ripple.style.borderRadius = '50%';
-            ripple.style.background = 'rgba(255, 255, 255, 0.5)';
-            ripple.style.pointerEvents = 'none';
-            ripple.style.transform = 'translate(-50%, -50%)';
-
-            this.style.position = 'relative';
-            this.style.overflow = 'hidden';
+            ripple.style.cssText = `
+                position: absolute;
+                left: ${e.clientX - rect.left}px;
+                top: ${e.clientY - rect.top}px;
+                width: 0; height: 0;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.3);
+                pointer-events: none;
+                transform: translate(-50%, -50%);
+            `;
             this.appendChild(ripple);
-
-            const size = Math.max(rect.width, rect.height);
-            const duration = 600;
-
+            const size = Math.max(rect.width, rect.height) * 2;
             ripple.animate([
                 { width: '0px', height: '0px', opacity: 1 },
                 { width: size + 'px', height: size + 'px', opacity: 0 }
-            ], {
-                duration: duration,
-                easing: 'ease-out'
-            });
-
-            setTimeout(() => ripple.remove(), duration);
+            ], { duration: 500, easing: 'ease-out' }).onfinish = () => ripple.remove();
         });
     </script>
 
