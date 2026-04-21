@@ -2,20 +2,23 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Promoção Exclusiva Dolce Gusto - 40% OFF em cápsulas e máquinas selecionadas. Aproveite por tempo limitado!">
     <title>Dolce Gusto - Promoção Exclusiva 40% OFF</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Preconnect para fontes externas para melhorar o LCP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --primary-dark: #2c1810;
-            --primary-brown: #5d4037;
             --accent-pink: #e91e63;
-            --accent-light: #f06292;
+            --accent-dark: #c2185b;
             --text-dark: #1a1a1a;
             --text-light: #666666;
-            --bg-light: #fafafa;
-            --bg-white: #ffffff;
-            --shadow-lg: 0 16px 40px rgba(0,0,0,0.1);
+            --bg-gradient: linear-gradient(135deg, #fafafa 0%, #f5f1e8 100%);
         }
 
         * {
@@ -28,9 +31,9 @@
         html, body {
             height: 100%;
             width: 100%;
-            overflow: hidden;
+            overflow: hidden; /* Mantém a página sem rolagem como solicitado */
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #fafafa 0%, #f5f1e8 100%);
+            background: var(--bg-gradient);
             color: var(--text-dark);
         }
 
@@ -51,63 +54,55 @@
             overflow: hidden;
         }
 
-        .bg-decoration::before {
+        .bg-decoration::before, .bg-decoration::after {
             content: '';
             position: absolute;
+            border-radius: 50%;
+        }
+
+        .bg-decoration::before {
             top: -15%;
             right: -10%;
             width: 70vw;
             height: 70vw;
             background: radial-gradient(circle, rgba(233, 30, 99, 0.06) 0%, transparent 70%);
-            border-radius: 50%;
         }
 
         .bg-decoration::after {
-            content: '';
-            position: absolute;
             bottom: -15%;
             left: -10%;
             width: 60vw;
             height: 60vw;
             background: radial-gradient(circle, rgba(93, 64, 55, 0.04) 0%, transparent 70%);
-            border-radius: 50%;
         }
 
-        /* Container Principal com limites de respiro */
+        /* Layout Principal */
         .main-content {
             position: relative;
             z-index: 1;
             width: 100%;
-            max-width: 500px; /* Largura máxima para manter harmonia em telas grandes */
+            max-width: 500px;
             height: 100%;
-            max-height: 850px; /* Limite de altura para não espalhar demais em telas ultra-altas */
-            padding: 2.5rem 1.5rem;
+            max-height: 800px;
+            padding: 2rem 1.5rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            justify-content: space-between; /* Distribuição equilibrada entre topo, meio e base */
+            justify-content: space-around;
         }
 
-        /* Logo Section */
-        .logo-wrapper {
-            flex: 0 1 auto;
-            display: flex;
-            justify-content: center;
-            padding-top: 1vh;
-        }
-
+        /* Logo */
         .logo-container {
-            width: min(160px, 35vw);
-            height: min(160px, 35vw);
+            width: min(150px, 30vw);
+            height: min(150px, 30vw);
             border-radius: 50%;
             background: linear-gradient(135deg, #5d4037 0%, #3e2723 100%);
-            padding: 6px;
-            box-shadow: 0 12px 32px rgba(93, 64, 55, 0.15);
+            padding: 5px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: transform 0.4s ease;
         }
 
         .logo-inner {
@@ -122,118 +117,100 @@
         }
 
         .logo-inner img {
-            width: 82%;
+            width: 80%;
             height: auto;
             object-fit: contain;
         }
 
-        /* Text Section */
+        /* Textos */
         .text-section {
-            flex: 1 1 auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
             width: 100%;
-            padding: 1rem 0;
+        }
+
+        .promo-label {
+            font-size: clamp(0.75rem, 2vh, 0.85rem);
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            display: block;
         }
 
         .heading {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1.6rem, 7vh, 2.2rem);
+            font-size: clamp(1.6rem, 6vh, 2.2rem);
             font-weight: 700;
             color: var(--primary-dark);
-            margin-bottom: 0.5rem;
             line-height: 1.2;
-        }
-
-        .promo-label {
-            font-size: clamp(0.75rem, 2vh, 0.9rem);
-            font-weight: 600;
-            letter-spacing: 2.5px;
-            color: var(--text-light);
-            text-transform: uppercase;
             margin-bottom: 0.5rem;
         }
 
         .promo-value {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3.2rem, 14vh, 5rem);
+            font-size: clamp(3.5rem, 12vh, 5rem);
             font-weight: 700;
-            background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 0.9;
+            color: var(--accent-pink);
+            line-height: 1;
             margin: 0.5rem 0;
         }
 
         .promo-description {
-            font-size: clamp(0.85rem, 2.5vh, 1rem);
+            font-size: clamp(0.9rem, 2.2vh, 1rem);
             color: var(--text-light);
-            font-weight: 400;
-            max-width: 80%;
+            max-width: 85%;
             margin: 0 auto;
         }
 
-        /* Action Section */
+        /* Botão CTA */
         .action-section {
-            flex: 0 1 auto;
             width: 100%;
-            padding-bottom: 2vh;
         }
 
         .cta-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+            display: inline-block;
             width: 100%;
-            max-width: 320px;
-            padding: 1.1rem 2rem;
-            background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+            max-width: 300px;
+            padding: 1.1rem 1.5rem;
+            background: var(--accent-pink);
             color: white;
-            border: none;
-            border-radius: 14px;
+            text-decoration: none;
+            border-radius: 12px;
             font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(233, 30, 99, 0.25);
+            font-weight: 700;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 8px 20px rgba(233, 30, 99, 0.2);
+            border: none;
+            cursor: pointer;
         }
 
         .cta-button:hover {
+            background: var(--accent-dark);
             transform: translateY(-2px);
-            box-shadow: 0 12px 28px rgba(233, 30, 99, 0.35);
         }
 
         .footer-info {
-            margin-top: 1.2rem;
-            font-size: 0.75rem;
-            color: #aaa;
-            letter-spacing: 0.5px;
-            font-weight: 300;
+            margin-top: 1rem;
+            font-size: 0.7rem;
+            color: #999;
+            font-weight: 400;
         }
 
-        /* Ajustes para telas muito pequenas (iPhone SE, etc) */
-        @media (max-height: 600px) {
-            .main-content { padding: 1rem; }
-            .heading { margin-bottom: 0.2rem; }
-            .promo-value { margin: 0.2rem 0; }
-            .footer-info { margin-top: 0.5rem; }
+        /* Otimização de animação para não afetar o CLS */
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
         }
 
-        /* Animations */
-        @keyframes reveal {
-            from { opacity: 0; transform: translateY(15px); }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .logo-container { animation: reveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
-        .text-section { animation: reveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s both; }
-        .action-section { animation: reveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s both; }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
 
     </style>
 </head>
@@ -242,67 +219,42 @@
     <div class="bg-decoration"></div>
 
     <main class="main-content">
-        <header class="logo-wrapper">
-            <div class="logo-container">
-                <div class="logo-inner">
-                    <img src="logo.png" alt="Dolce Gusto - Nescafé">
-                </div>
+        <header class="logo-container fade-in">
+            <div class="logo-inner">
+                <!-- Certifique-se de que o arquivo logo.png esteja no mesmo diretório -->
+                <img src="logo.png" alt="Logo Dolce Gusto" width="120" height="120">
             </div>
         </header>
 
-        <section class="text-section">
-            <span class="promo-label">Desconto Especial</span>
-            <h1 class="heading">Aproveite as<br>Promoções</h1>
+        <section class="text-section fade-in delay-1">
+            <span class="promo-label">Oferta Exclusiva</span>
+            <h1 class="heading">Sabor Incomparável<br>com Desconto</h1>
             <div class="promo-value">40% OFF</div>
-            <p class="promo-description">Em cápsulas e máquinas selecionadas para você</p>
+            <p class="promo-description">Em cápsulas e máquinas selecionadas. Garanta o seu café perfeito.</p>
         </section>
 
-        <footer class="action-section">
-            <button id="cta-button" class="cta-button">Conferir Ofertas</button>
+        <footer class="action-section fade-in delay-2">
+            <button id="cta-button" class="cta-button">Aproveitar Agora</button>
             <div class="footer-info">
-                Oferta válida por tempo limitado
+                *Promoção válida enquanto durarem os estoques.
             </div>
         </footer>
     </main>
 
     <script>
-        const OFFERS_URL = 'https://vitaldue.myshopify.com/products/comboseiscaixas';
+        // URL de destino final (Landing Page)
+        const DESTINATION_URL = 'https://vitaldue.myshopify.com/products/comboseiscaixas';
 
-        document.getElementById('cta-button').addEventListener('click', function() {
-            const button = this;
-            button.disabled = true;
-            button.textContent = 'Carregando...';
+        document.getElementById('cta-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            const btn = this;
             
-            setTimeout(() => {
-                window.location.href = OFFERS_URL;
-            }, 300);
-
-            setTimeout(() => {
-                button.disabled = false;
-                button.textContent = 'Conferir Ofertas';
-            }, 3000);
-        });
-
-        // Efeito de ripple refinado
-        document.getElementById('cta-button').addEventListener('mousedown', function(e) {
-            const rect = this.getBoundingClientRect();
-            const ripple = document.createElement('span');
-            ripple.style.cssText = `
-                position: absolute;
-                left: ${e.clientX - rect.left}px;
-                top: ${e.clientY - rect.top}px;
-                width: 0; height: 0;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.3);
-                pointer-events: none;
-                transform: translate(-50%, -50%);
-            `;
-            this.appendChild(ripple);
-            const size = Math.max(rect.width, rect.height) * 2;
-            ripple.animate([
-                { width: '0px', height: '0px', opacity: 1 },
-                { width: size + 'px', height: size + 'px', opacity: 0 }
-            ], { duration: 500, easing: 'ease-out' }).onfinish = () => ripple.remove();
+            // Feedback visual imediato (importante para evitar múltiplos cliques)
+            btn.style.opacity = '0.7';
+            btn.textContent = 'Redirecionando...';
+            
+            // Redirecionamento direto para evitar bloqueios de pop-up
+            window.location.href = DESTINATION_URL;
         });
     </script>
 
