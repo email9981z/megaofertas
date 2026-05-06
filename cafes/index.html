@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Promoçãoe em produtos selecionados.">
-    <title>Confira</title>
+    <meta name="description" content="Oferta exclusiva em cápsulas e máquinas Dolce Gusto. Aproveite 40% OFF por tempo limitado.">
+    <title>Oferta Exclusiva | Dolce Gusto</title>
     
     <!-- Preconnect para fontes externas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary-dark: #2c1810;
+            --primary-coffee: #3d2b1f;
+            --accent-gold: #c5a059;
             --accent-pink: #e91e63;
-            --accent-dark: #c2185b;
-            --text-dark: #1a1a1a;
-            --text-light: #666666;
-            --bg-gradient: linear-gradient(135deg, #fafafa 0%, #f5f1e8 100%);
+            --accent-pink-hover: #d81b60;
+            --text-main: #2d2d2d;
+            --text-muted: #6b6b6b;
+            --bg-soft: #fdfbf7;
+            --white: #ffffff;
+            --shadow-soft: 0 20px 40px rgba(0,0,0,0.05);
+            --shadow-strong: 0 10px 30px rgba(233, 30, 99, 0.2);
         }
 
         * {
@@ -31,286 +35,301 @@
         html, body {
             height: 100%;
             width: 100%;
-            overflow: hidden;
-            font-family: 'Poppins', sans-serif;
-            background: var(--bg-gradient);
-            color: var(--text-dark);
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-soft);
+            color: var(--text-main);
+            overflow-x: hidden;
         }
 
         body {
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            position: relative;
+            min-height: 100vh;
+            background: radial-gradient(circle at top right, #fff5f8 0%, var(--bg-soft) 50%, #f2ece4 100%);
         }
 
         /* Elementos Decorativos de Fundo */
-        .bg-decoration {
-            position: absolute;
+        .bg-elements {
+            position: fixed;
             inset: 0;
-            z-index: 0;
-            pointer-events: none;
+            z-index: -1;
             overflow: hidden;
         }
 
-        .bg-decoration::before, .bg-decoration::after {
-            content: '';
+        .circle {
             position: absolute;
             border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
         }
 
-        .bg-decoration::before {
-            top: -15%;
-            right: -10%;
-            width: 70vw;
-            height: 70vw;
-            background: radial-gradient(circle, rgba(233, 30, 99, 0.06) 0%, transparent 70%);
+        .circle-1 {
+            top: -10%;
+            right: -5%;
+            width: 50vw;
+            height: 50vw;
+            background: var(--accent-pink);
         }
 
-        .bg-decoration::after {
-            bottom: -15%;
-            left: -10%;
-            width: 60vw;
-            height: 60vw;
-            background: radial-gradient(circle, rgba(93, 64, 55, 0.04) 0%, transparent 70%);
+        .circle-2 {
+            bottom: -10%;
+            left: -5%;
+            width: 40vw;
+            height: 40vw;
+            background: var(--accent-gold);
         }
 
-        /* Layout Principal */
-        .main-content {
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            max-width: 500px;
-            height: 100%;
-            max-height: 800px;
-            padding: 2rem 1.5rem;
+        /* Container Principal */
+        .card {
+            width: 90%;
+            max-width: 420px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 32px;
+            padding: 3rem 2rem;
+            box-shadow: var(--shadow-soft);
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            justify-content: space-around;
+            position: relative;
+            z-index: 1;
         }
 
         /* Logo */
-        .logo-container {
-            width: min(150px, 30vw);
-            height: min(150px, 30vw);
+        .logo-wrapper {
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .logo-circle {
+            width: 110px;
+            height: 110px;
+            background: var(--white);
             border-radius: 50%;
-            background: linear-gradient(135deg, #5d4037 0%, #3e2723 100%);
-            padding: 5px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+            border: 1px solid #f0f0f0;
         }
 
-        .logo-inner {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .logo-inner img {
+        .logo-circle img {
             width: 100%;
             height: auto;
             object-fit: contain;
         }
 
-        /* Textos */
-        .text-section {
-            width: 100%;
-        }
-
-        .promo-label {
-            font-size: clamp(0.75rem, 2vh, 0.85rem);
-            font-weight: 600;
-            letter-spacing: 2px;
-            color: var(--text-light);
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .heading {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.6rem, 6vh, 2.2rem);
-            font-weight: 700;
-            color: var(--primary-dark);
-            line-height: 1.2;
-            margin-bottom: 0.5rem;
-        }
-
-        .promo-value {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3.5rem, 12vh, 5rem);
-            font-weight: 700;
-            color: var(--accent-pink);
-            line-height: 1;
-            margin: 0.5rem 0;
-        }
-
-        .promo-description {
-            font-size: clamp(0.9rem, 2.2vh, 1rem);
-            color: var(--text-light);
-            max-width: 85%;
-            margin: 0 auto;
-        }
-
-        /* Botão CTA */
-        .action-section {
-            width: 100%;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            max-width: 300px;
-            padding: 1.1rem 1.8rem;
-            background: var(--accent-pink);
-            color: white;
-            text-decoration: none;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 8px 20px rgba(233, 30, 99, 0.2);
-            border: none;
-            cursor: pointer;
-            gap: 12px;
-        }
-
-        .cta-button:hover {
-            background: var(--accent-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(233, 30, 99, 0.3);
-        }
-
-        .cta-button:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-
-        /* Seta em CSS Puro */
-        .arrow-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.3s ease;
-        }
-
-        .css-arrow {
-            width: 18px;
-            height: 2px;
-            background-color: currentColor;
-            position: relative;
+        /* Conteúdo de Texto */
+        .badge {
             display: inline-block;
+            padding: 6px 16px;
+            background: rgba(233, 30, 99, 0.08);
+            color: var(--accent-pink);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
         }
 
-        .css-arrow::after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 50%;
-            width: 8px;
-            height: 8px;
-            border-top: 2px solid currentColor;
-            border-right: 2px solid currentColor;
-            transform: translateY(-50%) rotate(45deg);
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--primary-coffee);
+            line-height: 1.1;
+            margin-bottom: 1rem;
         }
 
-        .cta-button:hover .arrow-wrapper {
-            transform: translateX(5px);
-        }
-
-        .footer-info {
-            margin-top: 1rem;
-            font-size: 0.7rem;
-            color: #999;
+        .title span {
+            font-style: italic;
             font-weight: 400;
         }
 
-        /* Animações */
-        .fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
+        .offer-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: var(--accent-pink);
+            line-height: 1;
+            margin: 0.5rem 0 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .offer-value::after {
+            content: '';
+            width: 40px;
+            height: 3px;
+            background: var(--accent-gold);
+            margin-top: 10px;
+            border-radius: 2px;
+        }
+
+        .description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 280px;
+        }
+
+        /* Botão de Ação */
+        .cta-container {
+            width: 100%;
+        }
+
+        .btn-primary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--accent-pink);
+            color: var(--white);
+            text-decoration: none;
+            border: none;
+            border-radius: 16px;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: var(--shadow-strong);
+            gap: 12px;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-pink-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(233, 30, 99, 0.3);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-primary:disabled {
+            background: #e0e0e0;
+            color: #9e9e9e;
+            box-shadow: none;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .icon-arrow {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-primary:hover .icon-arrow {
+            transform: translateX(5px);
+        }
+
+        .footer-note {
+            margin-top: 1.5rem;
+            font-size: 0.7rem;
+            color: #b0b0b0;
+            letter-spacing: 0.2px;
+        }
+
+        /* Animações de Entrada */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
             opacity: 0;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+        /* Responsividade */
+        @media (max-height: 700px) {
+            .card {
+                padding: 2rem 1.5rem;
+            }
+            .logo-wrapper { margin-bottom: 1.5rem; }
+            .title { font-size: 1.8rem; }
+            .offer-value { font-size: 3.5rem; }
+            .description { margin-bottom: 1.5rem; }
         }
-
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-
     </style>
 </head>
 <body>
 
-    <div class="bg-decoration"></div>
+    <div class="bg-elements">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+    </div>
 
-    <main class="main-content">
-        <header class="logo-container fade-in">
-            <div class="logo-inner">
-                <img src="https://cdn.shopify.com/s/files/1/0697/8175/0016/files/dolce-gusto-logo-round_0_png.webp?v=1751370845" alt="Logo Loja" width="150" height="150">
+    <main class="card animate">
+        <header class="logo-wrapper">
+            <div class="logo-circle">
+                <img src="https://cdn.shopify.com/s/files/1/0697/8175/0016/files/dolce-gusto-logo-round_0_png.webp?v=1751370845" alt="Dolce Gusto Logo">
             </div>
         </header>
 
-        <section class="text-section fade-in delay-1">
-            <span class="promo-label">Oferta Exclusiva</span>
-            <h1 class="heading">Sabor Incomparável<br>com Desconto</h1>
-            <div class="promo-value">40% OFF</div>
-            <p class="promo-description">Em cápsulas e máquinas selecionadas. Garanta o seu café perfeito.</p>
+        <section class="content">
+            <span class="badge animate delay-1">Oferta Exclusiva</span>
+            <h1 class="title animate delay-1">Sabor <span>Incomparável</span></h1>
+            <div class="offer-value animate delay-2">40% OFF</div>
+            <p class="description animate delay-2">
+                Desconto especial em cápsulas e máquinas selecionadas. Eleve sua experiência com o café perfeito.
+            </p>
         </section>
 
-        <footer class="action-section fade-in delay-2">
-            <button id="cta-button" class="cta-button">
-                <span id="button-text">Aproveitar Agora</span>
-                <div class="arrow-wrapper" id="button-arrow">
-                    <span class="css-arrow"></span>
-                </div>
+        <footer class="cta-container animate delay-3">
+            <button id="cta-button" class="btn-primary">
+                <span id="btn-text">Aproveitar Agora</span>
+                <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
             </button>
-            <div class="footer-info">
-                *Promoção válida enquanto durarem os estoques.
-            </div>
+            <p class="footer-note">*Válido enquanto durarem os estoques.</p>
         </footer>
     </main>
 
     <script>
         const DESTINATION_URL = 'https://vitaldue.myshopify.com/products/comboseiscaixas';
         const ctaButton = document.getElementById('cta-button');
-        const buttonText = document.getElementById('button-text');
-        const buttonArrow = document.getElementById('button-arrow');
+        const btnText = document.getElementById('btn-text');
 
         function resetButton() {
             ctaButton.disabled = false;
-            ctaButton.style.opacity = '1';
-            buttonText.textContent = 'Aproveitar Agora';
-            buttonArrow.style.display = 'flex';
+            btnText.textContent = 'Aproveitar Agora';
         }
 
         ctaButton.addEventListener('click', function(e) {
             e.preventDefault();
             this.disabled = true;
-            this.style.opacity = '0.7';
-            buttonText.textContent = 'Carregando...';
-            buttonArrow.style.display = 'none';
+            btnText.textContent = 'Carregando...';
             
-            window.location.href = DESTINATION_URL;
+            // Pequeno delay para feedback visual antes do redirecionamento
+            setTimeout(() => {
+                window.location.href = DESTINATION_URL;
+            }, 300);
         });
 
+        // Garante que o botão volte ao normal se o usuário clicar em "voltar" no navegador
         window.addEventListener('pageshow', function(event) {
             resetButton();
         });
