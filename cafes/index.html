@@ -231,15 +231,18 @@
         .compliance-links {
             display: flex;
             justify-content: center;
-            gap: 12px;
-            margin-bottom: 6px;
+            flex-wrap: wrap; /* Permite que os links quebrem linha em telas pequenas */
+            gap: 8px 16px; /* Espaçamento vertical e horizontal entre links */
+            margin-bottom: 12px;
+            padding: 0 10px; /* Evita que encostem nas bordas */
         }
 
         .compliance-links a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.75rem; /* Aumentado para melhor legibilidade */
-            white-space: nowrap;
+            font-size: 0.75rem;
+            /* Removido white-space: nowrap para permitir quebra se necessário, 
+               embora o flex-wrap já resolva a maioria dos casos */
         }
 
         .copyright {
