@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="description" content="Oferta exclusiva em Minoxidil Kirkland. O tratamento nº 1 para crescimento capilar e barba com descontos imperdíveis.">
+    <title>Oferta Especial | Minoxidil Kirkland</title>
+    
+    <!-- Preconnect para fontes externas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-navy: #1a2b4c;
+            --accent-universal: #004a99; /* Azul Kirkland */
+            --accent-hover: #003366;
+            --accent-gold: #d4af37;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --bg-soft: #f0f4f8;
+            --white: #ffffff;
+            --shadow-soft: 0 20px 40px rgba(0,0,0,0.05);
+            --shadow-strong: 0 10px 30px rgba(0, 74, 153, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-soft);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100dvh; 
+            padding: 16px;
+            background: radial-gradient(circle at top right, #ffffff 0%, var(--bg-soft) 50%, #e1e8f0 100%);
+            position: relative;
+        }
+
+        .bg-elements {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.1;
+        }
+
+        .circle-1 {
+            top: -5%;
+            right: -10%;
+            width: 60vw;
+            height: 60vw;
+            background: var(--accent-universal);
+        }
+
+        .circle-2 {
+            bottom: -5%;
+            left: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: var(--accent-gold);
+        }
+
+        .card {
+            width: 100%;
+            max-width: 380px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 28px;
+            padding: clamp(2rem, 5vh, 3rem) 1.5rem;
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 20px;
+        }
+
+        .logo-wrapper {
+            margin-bottom: 1.5rem;
+        }
+
+        .logo-circle {
+            width: clamp(70px, 12vh, 90px);
+            height: clamp(70px, 12vh, 90px);
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .logo-circle img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(0, 74, 153, 0.08);
+            color: var(--accent-universal);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 100px;
+            margin-bottom: 1rem;
+        }
+
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 5vh, 2.2rem);
+            color: var(--primary-navy);
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        .title span {
+            display: block;
+            font-weight: 700;
+        }
+
+        .offer-value {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3.5rem, 10vh, 4.5rem);
+            font-weight: 700;
+            color: var(--accent-universal);
+            line-height: 1;
+            margin: 0.5rem 0 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .offer-value::after {
+            content: '';
+            width: 30px;
+            height: 3px;
+            background: var(--accent-gold);
+            margin-top: 5px;
+            border-radius: 2px;
+        }
+
+        .description {
+            font-size: clamp(0.9rem, 2.2vh, 1rem);
+            line-height: 1.5;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            max-width: 280px;
+        }
+
+        .cta-container {
+            width: 100%;
+        }
+
+        .btn-primary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--accent-universal);
+            color: var(--white);
+            text-decoration: none;
+            border: none;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            box-shadow: var(--shadow-strong);
+            gap: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+        }
+
+        .btn-primary:active {
+            transform: scale(0.98);
+        }
+
+        .icon-arrow {
+            width: 18px;
+            height: 18px;
+        }
+
+        .footer-note {
+            margin-top: 0.75rem;
+            font-size: 0.6rem;
+            color: #94a3b8;
+        }
+
+        .compliance-footer {
+            width: 100%;
+            max-width: 380px;
+            text-align: center;
+            padding: 12px 0;
+            margin-top: 8px;
+            color: var(--text-muted);
+            font-size: 0.7rem;
+        }
+
+        .compliance-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            margin-bottom: 12px;
+            padding: 0 10px;
+        }
+
+        .compliance-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.75rem;
+        }
+
+        .copyright {
+            font-size: 0.6rem;
+            color: #94a3b8;
+            margin-top: 5px;
+        }
+
+        .company-info {
+            margin-top: 10px;
+            font-size: 0.75rem;
+            line-height: 1.4;
+            color: var(--text-muted);
+        }
+
+        .company-info p {
+            margin: 0;
+        }
+
+        /* Seção de Benefícios */
+        .benefits-section {
+            width: 100%;
+            max-width: 380px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 28px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-soft);
+            margin-top: 20px;
+            text-align: left;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+            animation-delay: 0.4s;
+        }
+
+        .benefits-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--primary-navy);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .benefits-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        .benefits-list li svg {
+            margin-right: 10px;
+            color: var(--accent-universal);
+            min-width: 20px;
+            min-height: 20px;
+        }
+
+        /* Seção de Detalhes da Oferta */
+        .offer-details-section {
+            width: 100%;
+            max-width: 380px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 28px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-soft);
+            margin-top: 20px;
+            text-align: left;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        .offer-details-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--primary-navy);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .offer-details-section p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        .offer-details-section ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .offer-details-section ul li {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Animações */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+
+        /* Ajuste para telas extremamente pequenas */
+        @media (max-height: 670px) {
+            .card { padding: 1.5rem 1rem; }
+            .logo-wrapper { margin-bottom: 0.8rem; }
+            .title { font-size: 1.6rem; }
+            .offer-value { font-size: 3.2rem; }
+            .description { margin-bottom: 1rem; font-size: 0.8rem; }
+            .btn-primary { padding: 1rem; }
+            .benefits-section { padding: 1rem; margin-top: 15px; }
+            .benefits-section h2 { font-size: 1.2rem; margin-bottom: 0.8rem; }
+            .benefits-list li { font-size: 0.8rem; margin-bottom: 0.6rem; }
+            .offer-details-section { padding: 1rem; margin-top: 15px; }
+            .offer-details-section h2 { font-size: 1.2rem; margin-bottom: 0.8rem; }
+            .offer-details-section p, .offer-details-section ul li { font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-elements">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+    </div>
+
+    <main class="card">
+        <header class="logo-wrapper">
+            <div class="logo-circle">
+                <!-- Logo Kirkland -->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Kirkland_Signature_logo.svg/2560px-Kirkland_Signature_logo.svg.png" alt="Logo Kirkland Signature">
+            </div>
+        </header>
+
+        <section class="content">
+            <span class="badge animate delay-1">Oferta Exclusiva de Saúde Capilar</span>
+            <h1 class="title animate delay-1">Minoxidil <span>Kirkland</span></h1>
+            <div class="offer-value animate delay-2">50% OFF</div>
+            <p class="description animate delay-2">
+                Recupere sua confiança com o tratamento nº 1 do mundo para crescimento de cabelo e barba. Resultados comprovados!
+            </p>
+        </section>
+
+        <footer class="cta-container animate delay-3">
+            <button id="cta-button" class="btn-primary">
+                <span id="btn-text">Garantir Meu Desconto</span>
+                <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </button>
+            <p class="footer-note">*Oferta válida enquanto durarem os estoques. Imagens meramente ilustrativas.</p>
+        </footer>
+    </main>
+
+    <section class="benefits-section">
+        <h2>Por que escolher Minoxidil Kirkland?</h2>
+        <ul class="benefits-list">
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                Eficácia comprovada pela FDA para crescimento capilar.
+            </li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-truck"><path d="M1 3h15v16H1V3zM16 8h4l2 3v7h-6M3 18v2h10v-2M14 18v2h2v-2"></path></svg>
+                Entrega rápida e discreta para todo o Brasil.
+            </li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-award"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                Produto 100% original importado dos EUA.
+            </li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                Compra segura com garantia de satisfação.
+            </li>
+        </ul>
+    </section>
+
+    <section class="offer-details-section">
+        <h2>Sobre esta Promoção</h2>
+        <p>
+            O Minoxidil Kirkland 5% é a solução ideal para quem busca combater a calvície ou preencher falhas na barba. Aproveite nossa promoção exclusiva com 50% de desconto nos kits de tratamento.
+        </p>
+        <p>
+            Ao clicar no botão acima, você poderá escolher entre:
+        </p>
+        <ul>
+            <li>Kit para 3 meses (Tratamento Inicial).</li>
+            <li>Kit para 6 meses (Tratamento Completo).</li>
+            <li>Kit para 12 meses (Máximo Resultado).</li>
+            <li>Opções com aplicador incluso.</li>
+        </ul>
+        <p>
+            Garantimos a autenticidade de todos os nossos produtos. Resultados visíveis a partir de 2 a 4 meses de uso contínuo.
+        </p>
+    </section>
+
+    <footer class="compliance-footer animate delay-3">
+        <nav class="compliance-links">
+            <a href="/politica-de-privacidade">Política de Privacidade</a>
+            <a href="/termos-de-uso">Termos de Uso</a>
+            <a href="/politica-de-reembolso">Trocas e Devoluções</a>
+            <a href="mailto:suporte@minoxidilofertas.com.br">Fale Conosco</a>
+        </nav>
+        <div class="company-info">
+            <p><strong>Mega Ofertas Ltda.</strong></p>
+            <p>CNPJ: 48.019.199/0001-29</p>
+            <p>Endereço: Av. Washington Luiz, 1288 - Santo Amaro São Paulo/SP - CEP: 04626-000</p>
+            <p>Atendimento: (21) 9091-1499</p>
+        </div>
+        <p class="copyright">© 2024 Minoxidil Kirkland Ofertas. Todos os direitos reservados.</p>
+        <p style="font-size: 0.55rem; margin-top: 10px; opacity: 0.7;">*Kirkland Signature® é uma marca registrada da Costco Wholesale Corporation.</p>
+    </footer>
+
+    <script>
+        const DESTINATION_URL = 'https://seusite.com.br/minoxidil-kirkland'; 
+        const ctaButton = document.getElementById('cta-button');
+        const btnText = document.getElementById('btn-text');
+
+        function resetButton() {
+            ctaButton.disabled = false;
+            btnText.textContent = 'Garantir Meu Desconto';
+        }
+
+        ctaButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.disabled = true;
+            btnText.textContent = 'Redirecionando...';
+            
+            // Redirecionamento direto
+            window.location.href = DESTINATION_URL;
+        });
+
+        window.addEventListener('pageshow', function(event) {
+            resetButton();
+        });
+    </script>
+
+</body>
+</html>
