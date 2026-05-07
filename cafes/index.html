@@ -307,6 +307,51 @@
             min-height: 20px;
         }
 
+        /* Seção de Detalhes da Oferta - NOVO CONTEÚDO */
+        .offer-details-section {
+            width: 100%;
+            max-width: 380px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 28px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-soft);
+            margin-top: 20px;
+            text-align: left;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+            animation-delay: 0.6s; /* Atraso para aparecer depois dos benefícios */
+        }
+
+        .offer-details-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--primary-navy);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .offer-details-section p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        .offer-details-section ul {
+            list-style: disc inside;
+            padding-left: 15px;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .offer-details-section ul li {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
         /* Animações */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(15px); }
@@ -333,6 +378,9 @@
             .benefits-section { padding: 1rem; margin-top: 15px; }
             .benefits-section h2 { font-size: 1.2rem; margin-bottom: 0.8rem; }
             .benefits-list li { font-size: 0.8rem; margin-bottom: 0.6rem; }
+            .offer-details-section { padding: 1rem; margin-top: 15px; }
+            .offer-details-section h2 { font-size: 1.2rem; margin-bottom: 0.8rem; }
+            .offer-details-section p, .offer-details-section ul li { font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -343,7 +391,7 @@
         <div class="circle circle-2"></div>
     </div>
 
-    <main class="card animate">
+    <main class="card">
         <header class="logo-wrapper">
             <div class="logo-circle">
                 <!-- Substitua pelo seu próprio logo ou um ícone genérico -->
@@ -394,6 +442,26 @@
         </ul>
     </section>
 
+    <!-- NOVO CONTEÚDO: Seção de Detalhes da Oferta para aumentar o conteúdo original -->
+    <section class="offer-details-section">
+        <h2>Detalhes da Oferta Especial</h2>
+        <p>
+            Esta é uma oportunidade imperdível para adquirir produtos de alta qualidade com um desconto exclusivo de 40%. Nossa seleção inclui itens cuidadosamente escolhidos para garantir a sua satisfação e atender às suas necessidades. Não perca tempo, pois esta oferta é por tempo limitado e os estoques são limitados!
+        </p>
+        <p>
+            Ao clicar no botão abaixo, você será direcionado para a página de produtos onde poderá explorar todos os itens incluídos nesta promoção. Lá, você encontrará:
+        </p>
+        <ul>
+            <li>Descrições detalhadas de cada produto.</li>
+            <li>Imagens de alta resolução para uma visualização completa.</li>
+            <li>Informações sobre tamanhos, cores e disponibilidade.</li>
+            <li>Avaliações de outros clientes para ajudar na sua decisão.</li>
+        </ul>
+        <p>
+            Aproveite a chance de renovar seus itens favoritos ou descobrir novos produtos com preços incríveis. A qualidade que você já conhece, agora com um valor ainda mais acessível.
+        </p>
+    </section>
+
     <footer class="compliance-footer animate delay-3">
         <nav class="compliance-links">
             <a href="/policies/privacy-policy">Política de Privacidade</a>
@@ -411,7 +479,7 @@
 
     <script>
         // ATENÇÃO: Substitua esta URL pela URL REAL da sua página de produto/oferta no SEU DOMÍNIO.
-        // Não use um domínio diferente para evitar problemas com as políticas do Google Ads.
+        // É CRÍTICO que esta URL esteja no MESMO DOMÍNIO da landing page para evitar problemas com as políticas do Google Ads (Destino Não Correspondente).
         const DESTINATION_URL = 'https://seusite.com/pagina-do-produto-ou-oferta'; 
         const ctaButton = document.getElementById('cta-button');
         const btnText = document.getElementById('btn-text');
@@ -425,9 +493,8 @@
             e.preventDefault();
             this.disabled = true;
             btnText.textContent = 'Carregando...';
-            setTimeout(() => {
-                window.location.href = DESTINATION_URL;
-            }, 300);
+            // Removido o setTimeout para garantir redirecionamento imediato e evitar ser classificado como "página de ponte".
+            window.location.href = DESTINATION_URL;
         });
 
         window.addEventListener('pageshow', function(event) {
