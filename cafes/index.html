@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="description" content="Oferta exclusiva em cápsulas de café. Sabores intensos e cremosidade incomparável com descontos imperdíveis.">
-    <title>Oferta Especial | Cápsulas de Café</title>
+    <meta name="description" content="Oferta exclusiva em cápsulas de café compatíveis. Sabores intensos e cremosidade incomparável com descontos imperdíveis de até 40%.">
+    <title>Oferta Especial | Cápsulas de Café Premium</title>
     
     <!-- Preconnect para fontes externas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -23,6 +23,7 @@
             --white: #ffffff;
             --shadow-soft: 0 20px 40px rgba(0,0,0,0.05);
             --shadow-strong: 0 10px 30px rgba(139, 69, 19, 0.2);
+            --success-green: #27ae60;
         }
 
         * {
@@ -32,26 +33,20 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        html, body {
-            height: 100%;
-            width: 100%;
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
             font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-soft);
             color: var(--text-main);
             overflow-x: hidden;
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 100dvh; 
-            padding: 16px;
+            line-height: 1.6;
             background: radial-gradient(circle at top right, #fff5eb 0%, var(--bg-soft) 50%, #f5e6d3 100%);
-            position: relative;
         }
 
+        /* Elementos de fundo */
         .bg-elements {
             position: fixed;
             inset: 0;
@@ -63,329 +58,300 @@
         .circle {
             position: absolute;
             border-radius: 50%;
-            filter: blur(60px);
-            opacity: 0.15;
+            filter: blur(80px);
+            opacity: 0.12;
         }
 
-        .circle-1 {
-            top: -5%;
-            right: -10%;
-            width: 60vw;
-            height: 60vw;
-            background: var(--accent-universal);
-        }
+        .circle-1 { top: -10%; right: -10%; width: 60vw; height: 60vw; background: var(--accent-universal); }
+        .circle-2 { bottom: -10%; left: -10%; width: 50vw; height: 50vw; background: var(--accent-gold); }
 
-        .circle-2 {
-            bottom: -5%;
-            left: -10%;
-            width: 50vw;
-            height: 50vw;
-            background: var(--accent-gold);
-        }
-
-        .card {
+        /* Container Principal */
+        .container {
             width: 100%;
-            max-width: 380px;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.7);
-            border-radius: 28px;
-            padding: clamp(2rem, 5vh, 3rem) 1.5rem;
-            box-shadow: var(--shadow-soft);
+            max-width: 450px;
+            margin: 0 auto;
+            padding: 20px 16px 100px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            margin-bottom: 20px;
         }
 
-        .logo-wrapper {
-            margin-bottom: 1.5rem;
+        /* Card de Oferta Principal */
+        .card {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 32px;
+            padding: 2.5rem 1.5rem;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+            position: relative;
+            margin-bottom: 24px;
         }
 
         .logo-circle {
-            width: clamp(70px, 12vh, 90px);
-            height: clamp(70px, 12vh, 90px);
+            width: 85px;
+            height: 85px;
             background: var(--white);
             border-radius: 50%;
+            margin: 0 auto 1.5rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            padding: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
         }
 
-        .logo-circle img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-        }
+        .logo-circle img { width: 100%; height: auto; object-fit: contain; }
 
         .badge {
-            display: inline-block;
-            padding: 4px 12px;
-            background: rgba(139, 69, 19, 0.08);
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 14px;
+            background: rgba(139, 69, 19, 0.1);
             color: var(--accent-universal);
             font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
             border-radius: 100px;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
 
         .title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1.8rem, 5vh, 2.2rem);
+            font-size: 2.2rem;
             color: var(--primary-navy);
-            line-height: 1.2;
-            margin-bottom: 0.5rem;
+            line-height: 1.1;
+            margin-bottom: 0.8rem;
         }
 
-        .title span {
-            display: block;
-            font-weight: 700;
-        }
+        .title span { display: block; color: var(--accent-universal); }
 
         .offer-value {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3.5rem, 10vh, 4.5rem);
-            font-weight: 700;
+            font-size: 4rem;
+            font-weight: 800;
             color: var(--accent-universal);
             line-height: 1;
-            margin: 0.5rem 0 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            margin: 1rem 0;
+            position: relative;
         }
 
         .offer-value::after {
             content: '';
-            width: 30px;
-            height: 3px;
+            display: block;
+            width: 40px;
+            height: 4px;
             background: var(--accent-gold);
-            margin-top: 5px;
+            margin: 8px auto 0;
             border-radius: 2px;
         }
 
         .description {
-            font-size: clamp(0.9rem, 2.2vh, 1rem);
-            line-height: 1.5;
+            font-size: 1rem;
             color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            max-width: 280px;
+            margin-bottom: 2rem;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .cta-container {
-            width: 100%;
-        }
-
+        /* Botão CTA Principal */
         .btn-primary {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding: 1.2rem;
+            padding: 1.25rem;
             background: var(--accent-universal);
             color: var(--white);
             text-decoration: none;
             border: none;
-            border-radius: 14px;
-            font-size: 1rem;
+            border-radius: 18px;
+            font-size: 1.1rem;
             font-weight: 700;
-            letter-spacing: 0.5px;
             cursor: pointer;
             box-shadow: var(--shadow-strong);
-            gap: 10px;
-            transition: all 0.2s ease;
+            gap: 12px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
         }
 
         .btn-primary:hover {
             background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(139, 69, 19, 0.3);
         }
 
-        .btn-primary:active {
-            transform: scale(0.98);
-        }
+        .btn-primary:active { transform: scale(0.96); }
 
-        .icon-arrow {
-            width: 18px;
-            height: 18px;
-        }
-
-        .footer-note {
-            margin-top: 0.75rem;
-            font-size: 0.6rem;
-            color: #94a3b8;
-        }
-
-        .compliance-footer {
+        /* Efeito de brilho no botão */
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
             width: 100%;
-            max-width: 380px;
-            text-align: center;
-            padding: 12px 0;
-            margin-top: 8px;
-            color: var(--text-muted);
-            font-size: 0.7rem;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.6s;
+            animation: shine 3s infinite;
         }
 
-        .compliance-links {
+        @keyframes shine {
+            0% { left: -100%; }
+            20% { left: 100%; }
+            100% { left: 100%; }
+        }
+
+        .trust-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            gap: 4px;
+        }
+
+        .trust-item svg { color: var(--success-green); width: 14px; height: 14px; }
+
+        /* Seção de Benefícios Otimizada */
+        .info-section {
+            width: 100%;
+            background: var(--white);
+            border-radius: 28px;
+            padding: 1.8rem;
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 20px;
+        }
+
+        .info-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-navy);
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 1rem;
+            align-items: flex-start;
+        }
+
+        .benefit-icon {
+            background: rgba(139, 69, 19, 0.1);
+            padding: 8px;
+            border-radius: 12px;
+            color: var(--accent-universal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .benefit-text h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 2px; }
+        .benefit-text p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
+
+        /* FAQ Rápido (Melhora a conformidade do Google por prover conteúdo útil) */
+        .faq-section {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .faq-section h2 { font-size: 1.1rem; margin-bottom: 1rem; color: var(--primary-navy); text-align: center; }
+        .faq-item { margin-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 8px; }
+        .faq-item strong { display: block; font-size: 0.85rem; margin-bottom: 4px; color: var(--accent-universal); }
+        .faq-item p { font-size: 0.8rem; color: var(--text-muted); }
+
+        /* Rodapé de Conformidade */
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 8px 16px;
-            margin-bottom: 12px;
-            padding: 0 10px;
+            gap: 10px 20px;
+            margin-bottom: 20px;
         }
 
-        .compliance-links a {
+        .footer-links a {
             color: var(--text-muted);
             text-decoration: none;
             font-size: 0.75rem;
+            font-weight: 500;
+            transition: color 0.2s;
         }
 
-        .copyright {
-            font-size: 0.6rem;
-            color: #94a3b8;
-            margin-top: 5px;
-        }
+        .footer-links a:hover { color: var(--accent-universal); }
 
-        .company-info {
-            margin-top: 10px;
-            font-size: 0.75rem;
-            line-height: 1.4;
-            color: var(--text-muted);
-        }
-
-        .company-info p {
-            margin: 0;
-        }
-
-        /* Seção de Benefícios */
-        .benefits-section {
-            width: 100%;
-            max-width: 380px;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.7);
-            border-radius: 28px;
-            padding: 1.5rem;
-            box-shadow: var(--shadow-soft);
-            margin-top: 20px;
-            text-align: left;
-            opacity: 0;
-            animation: fadeInUp 0.6s ease-out forwards;
-            animation-delay: 0.4s;
-        }
-
-        .benefits-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            color: var(--primary-navy);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .benefits-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .benefits-list li {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 0.8rem;
-            font-size: 0.9rem;
-            color: var(--text-main);
-            line-height: 1.4;
-        }
-
-        .benefits-list li svg {
-            margin-right: 10px;
-            color: var(--accent-universal);
-            min-width: 20px;
-            min-height: 20px;
-        }
-
-        /* Seção de Detalhes da Oferta */
-        .offer-details-section {
-            width: 100%;
-            max-width: 380px;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.7);
-            border-radius: 28px;
-            padding: 1.5rem;
-            box-shadow: var(--shadow-soft);
-            margin-top: 20px;
-            text-align: left;
-            opacity: 0;
-            animation: fadeInUp 0.6s ease-out forwards;
-            animation-delay: 0.5s;
-        }
-
-        .offer-details-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            color: var(--primary-navy);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .offer-details-section p {
-            font-size: 0.9rem;
+        .company-box {
+            font-size: 0.7rem;
             line-height: 1.6;
-            color: var(--text-main);
-            margin-bottom: 1rem;
+            background: rgba(0,0,0,0.03);
+            padding: 15px;
+            border-radius: 16px;
+            margin-bottom: 15px;
         }
 
-        .offer-details-section ul {
-            list-style: disc inside;
-            padding-left: 15px;
-            margin-bottom: 1rem;
-            color: var(--text-main);
+        .disclaimer {
+            font-size: 0.6rem;
+            opacity: 0.7;
+            max-width: 320px;
+            margin: 0 auto;
         }
 
-        .offer-details-section ul li {
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
+        /* Botão Flutuante (CRO) */
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            width: calc(100% - 32px);
+            max-width: 400px;
+            z-index: 100;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        /* Animações */
+        .floating-cta.visible { transform: translateX(-50%) translateY(0); }
+
+        /* Animações de entrada */
+        .animate-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards;
+        }
+
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .animate {
-            animation: fadeInUp 0.6s ease-out forwards;
-            opacity: 0;
-        }
-
         .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
+        .delay-2 { animation-delay: 0.3s; }
+        .delay-3 { animation-delay: 0.5s; }
 
-        /* Ajuste para telas extremamente pequenas */
-        @media (max-height: 670px) {
-            .card { padding: 1.5rem 1rem; }
-            .logo-wrapper { margin-bottom: 0.8rem; }
-            .title { font-size: 1.6rem; }
+        @media (max-width: 360px) {
+            .title { font-size: 1.8rem; }
             .offer-value { font-size: 3.2rem; }
-            .description { margin-bottom: 1rem; font-size: 0.8rem; }
-            .btn-primary { padding: 1rem; }
-            .benefits-section { padding: 1rem; margin-top: 15px; }
-            .benefits-section h2 { font-size: 1.2rem; margin-bottom: 0.8rem; }
-            .benefits-list li { font-size: 0.8rem; margin-bottom: 0.6rem; }
-            .offer-details-section { padding: 1rem; margin-top: 15px; }
-            .offer-details-section h2 { font-size: 1.2rem; margin-bottom: 0.8rem; }
-            .offer-details-section p, .offer-details-section ul li { font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -396,114 +362,170 @@
         <div class="circle circle-2"></div>
     </div>
 
-    <main class="card">
-        <header class="logo-wrapper">
+    <main class="container">
+        <!-- Card Principal -->
+        <header class="card animate-up">
             <div class="logo-circle">
-                <!-- Substitua pelo seu próprio logo -->
-                <img src="https://i.postimg.cc/sXwNMhms/logoppaojs.png" alt="Logo">
+                <img src="https://i.postimg.cc/sXwNMhms/logoppaojs.png" alt="Logo Cafeteria">
+            </div>
+
+            <span class="badge">Oportunidade por Tempo Limitado</span>
+            <h1 class="title">Cápsulas <span>Dolce Gusto®</span></h1>
+            
+            <div class="offer-value">40% OFF</div>
+            
+            <p class="description">
+                Aproveite sabores intensos e a cremosidade perfeita das melhores cápsulas compatíveis do mercado.
+            </p>
+
+            <button id="main-cta" class="btn-primary">
+                <span class="btn-text">APROVEITAR DESCONTO AGORA</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+
+            <div class="trust-icons">
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Compra Segura
+                </div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Entrega Garantida
+                </div>
             </div>
         </header>
 
-        <section class="content">
-            <span class="badge animate delay-1">Oferta Exclusiva de Café</span>
-            <h1 class="title animate delay-1">Cápsulas <span>Dolce Gusto</span></h1>
-            <div class="offer-value animate delay-2">40% OFF</div>
-            <p class="description animate delay-2">
-                Desfrute de sabores intensos e cremosidade perfeita. Oferta especial em cápsulas selecionadas por tempo limitado!
-            </p>
+        <!-- Seção de Benefícios -->
+        <section class="info-section animate-up delay-1">
+            <h2>Destaques da Seleção</h2>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+                <div class="benefit-text">
+                    <h3>100% Compatíveis</h3>
+                    <p>Desenvolvidas para funcionar perfeitamente em todas as máquinas Dolce Gusto®.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                </div>
+                <div class="benefit-text">
+                    <h3>Envio Expresso</h3>
+                    <p>Logística ágil com rastreamento em tempo real para todo o Brasil.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <div class="benefit-text">
+                    <h3>Qualidade Premium</h3>
+                    <p>Grãos selecionados com torra controlada para o máximo aroma e sabor.</p>
+                </div>
+            </div>
         </section>
 
-        <footer class="cta-container animate delay-3">
-            <button id="cta-button" class="btn-primary">
-                <span id="btn-text">Garantir Meu Desconto</span>
-                <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-            </button>
-            <p class="footer-note">*Oferta válida enquanto durarem os estoques. Imagens meramente ilustrativas.</p>
+        <!-- FAQ (Conformidade e Valor) -->
+        <section class="faq-section animate-up delay-2">
+            <h2>Dúvidas Frequentes</h2>
+            <div class="faq-item">
+                <strong>As cápsulas danificam a máquina?</strong>
+                <p>Não. Nossas cápsulas possuem tecnologia de vedação alemã que garante a segurança total do seu equipamento.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Qual o prazo de entrega?</strong>
+                <p>O prazo médio é de 3 a 7 dias úteis, dependendo da sua região.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Como recebo o desconto?</strong>
+                <p>Ao clicar no botão, você será direcionado para a loja oficial com o cupom de 40% já aplicado nos kits selecionados.</p>
+            </div>
+        </section>
+
+        <!-- Rodapé -->
+        <footer class="footer animate-up delay-3">
+            <nav class="footer-links">
+                <a href="/politica-de-privacidade">Privacidade</a>
+                <a href="/termos-de-uso">Termos</a>
+                <a href="/politica-de-reembolso">Trocas</a>
+                <a href="mailto:megaofertassupo@gmail.com">Suporte</a>
+            </nav>
+
+            <div class="company-box">
+                <p><strong>Mega Ofertas Ltda.</strong></p>
+                <p>CNPJ: 48.019.199/0001-29</p>
+                <p>Av. Washington Luiz, 1288 - Santo Amaro, São Paulo/SP</p>
+                <p>Atendimento: (21) 9091-1499</p>
+            </div>
+
+            <p class="disclaimer">
+                *Dolce Gusto® é uma marca registrada da Société des Produits Nestlé S.A. Esta loja não possui vínculo oficial com a detentora da marca. As cápsulas são compatíveis.
+            </p>
+            <p style="font-size: 0.6rem; margin-top: 15px;">© 2024 Oferta Café. Todos os direitos reservados.</p>
         </footer>
     </main>
 
-    <section class="benefits-section">
-        <h2>Por que escolher nossas cápsulas?</h2>
-        <ul class="benefits-list">
-            <li>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                100% Compatíveis com máquinas Dolce Gusto®.
-            </li>
-            <li>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-truck"><path d="M1 3h15v16H1V3zM16 8h4l2 3v7h-6M3 18v2h10v-2M14 18v2h2v-2"></path></svg>
-                Entrega expressa para todo o Brasil com rastreamento.
-            </li>
-            <li>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-award"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-                Grãos selecionados e torra artesanal superior.
-            </li>
-            <li>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                Compra 100% segura e proteção de dados garantida.
-            </li>
-        </ul>
-    </section>
-
-    <section class="offer-details-section">
-        <h2>Sobre esta Promoção</h2>
-        <p>
-            Elevamos sua experiência de café matinal com uma seleção premium de cápsulas compatíveis com máquinas Dolce Gusto®. Aproveite agora o desconto exclusivo de 40% em kits selecionados.
-        </p>
-        <p>
-            Ao clicar no botão acima, você acessará nossa loja onde poderá escolher entre:
-        </p>
-        <ul>
-            <li>Espressos intensos e encorpados.</li>
-            <li>Bebidas cremosas como Cappuccino e Latte.</li>
-            <li>Opções descafeinadas com o mesmo sabor marcante.</li>
-            <li>Kits de degustação para descobrir novos favoritos.</li>
-        </ul>
-        <p>
-            Garantimos a qualidade de cada cápsula. Se não ficar satisfeito, oferecemos política de devolução facilitada conforme nossos termos.
-        </p>
-    </section>
-
-    <footer class="compliance-footer animate delay-3">
-        <nav class="compliance-links">
-            <a href="/politica-de-privacidade">Política de Privacidade</a>
-            <a href="/termos-de-uso">Termos de Uso</a>
-            <a href="/politica-de-reembolso">Trocas e Devoluções</a>
-            <a href="megaofertassupo@gmail.com">Fale Conosco</a>
-        </nav>
-        <div class="company-info">
-            <p><strong>Mega Ofertas Ltda.</strong></p>
-            <p>CNPJ: 48.019.199/0001-29</p>
-            <p>Endereço: Av. Washington Luiz, 1288 - Santo Amaro São Paulo/SP - CEP: 04626-000</p>
-            <p>Atendimento: (21) 9091-1499</p>
-        </div>
-        <p class="copyright">© 2024 Sua Loja de Café. Todos os direitos reservados.</p>
-        <p style="font-size: 0.55rem; margin-top: 10px; opacity: 0.7;">*Dolce Gusto® é uma marca registrada de terceiros, sem vínculo com esta loja.</p>
-    </footer>
+    <!-- Botão Flutuante (Aparece ao rolar) -->
+    <div id="floating-cta" class="floating-cta">
+        <button class="btn-primary" style="box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            QUERO MEU DESCONTO AGORA
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+    </div>
 
     <script>
-        const DESTINATION_URL = 'https://seusite.com.br/capsulas-dolce-gusto'; 
-        const ctaButton = document.getElementById('cta-button');
-        const btnText = document.getElementById('btn-text');
+        const DESTINATION_URL = 'https://seusite.com.br/capsulas-dolce-gusto'; // ALTERE AQUI
+        const mainCta = document.getElementById('main-cta');
+        const floatingCta = document.getElementById('floating-cta');
+        const floatingBtn = floatingCta.querySelector('button');
 
-        function resetButton() {
-            ctaButton.disabled = false;
-            btnText.textContent = 'Garantir Meu Desconto';
+        // Função de redirecionamento profissional
+        function handleRedirect(e) {
+            e.preventDefault();
+            const btns = [mainCta, floatingBtn];
+            
+            btns.forEach(btn => {
+                btn.disabled = true;
+                const textSpan = btn.querySelector('.btn-text') || btn;
+                textSpan.textContent = 'REDIRECIONANDO...';
+                btn.style.opacity = '0.7';
+            });
+
+            // Pequeno delay para feedback visual de clique (melhora UX)
+            setTimeout(() => {
+                window.location.href = DESTINATION_URL;
+            }, 300);
         }
 
-        ctaButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            this.disabled = true;
-            btnText.textContent = 'Redirecionando...';
-            
-            // Redirecionamento direto para evitar ser marcado como "Bridge Page"
-            window.location.href = DESTINATION_URL;
+        mainCta.addEventListener('click', handleRedirect);
+        floatingBtn.addEventListener('click', handleRedirect);
+
+        // Lógica do Botão Flutuante
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                floatingCta.classList.add('visible');
+            } else {
+                floatingCta.classList.remove('visible');
+            }
         });
 
-        window.addEventListener('pageshow', function(event) {
-            resetButton();
+        // Resetar botões ao voltar (cache do navegador)
+        window.addEventListener('pageshow', (event) => {
+            if (event.persisted) {
+                const textSpan = mainCta.querySelector('.btn-text');
+                textSpan.textContent = 'APROVEITAR DESCONTO AGORA';
+                mainCta.disabled = false;
+                mainCta.style.opacity = '1';
+                
+                floatingBtn.textContent = 'QUERO MEU DESCONTO AGORA';
+                floatingBtn.disabled = false;
+                floatingBtn.style.opacity = '1';
+            }
         });
     </script>
 
