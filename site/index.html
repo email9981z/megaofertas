@@ -98,7 +98,7 @@
             text-decoration: none;
         }
 
-        /* Hero Section Otimizada */
+        /* Hero Section */
         .hero {
             padding: 3rem 0;
             background: #fcfdfe;
@@ -152,11 +152,6 @@
         }
 
         /* Product Info */
-        .product-info h1 {
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
         .rating-summary {
             display: flex;
             align-items: center;
@@ -222,13 +217,6 @@
         }
 
         /* CTA Button */
-        .cta-button {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
         .btn-buy {
             background: var(--cta-gradient);
             color: white;
@@ -243,19 +231,12 @@
             border: none;
             cursor: pointer;
             width: 100%;
+            display: block;
         }
 
         .btn-buy:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 30px rgba(0, 168, 107, 0.3);
-        }
-
-        .payment-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            opacity: 0.6;
-            margin-top: 1rem;
         }
 
         /* Trust Badges */
@@ -298,7 +279,7 @@
             body { padding-bottom: 80px; }
         }
 
-        /* Benefits Section */
+        /* Sections */
         .section-padding { padding: 5rem 0; }
         .bg-light { background: #f8fafc; }
 
@@ -324,45 +305,14 @@
 
         .benefit-card:hover { transform: translateY(-10px); }
 
-        .icon-box {
-            width: 4rem;
-            height: 4rem;
-            background: var(--accent-light);
-            color: var(--accent);
-            border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
         /* Results Timeline */
-        .timeline-container {
-            position: relative;
-            padding: 2rem 0;
-        }
-
-        .timeline-line {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--primary-light);
-            z-index: 1;
-        }
-
         .timeline-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            position: relative;
-            z-index: 2;
         }
 
         @media (max-width: 768px) {
-            .timeline-line { display: none; }
             .timeline-grid { grid-template-columns: 1fr; }
         }
 
@@ -372,6 +322,7 @@
             border-radius: 1rem;
             border: 2px solid var(--primary-light);
             text-align: center;
+            position: relative;
         }
 
         .step-number {
@@ -388,7 +339,64 @@
             border: 4px solid white;
         }
 
-        /* FAQ Accordion */
+        /* How to Use */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .step-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .step-badge {
+            position: absolute;
+            top: -1rem;
+            left: 1.5rem;
+            background: var(--primary);
+            color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: #fff5f5;
+            border: 1px solid #feb2b2;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-top: 3rem;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .warning-icon { font-size: 2rem; }
+
+        /* Reviews */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+        }
+
+        /* FAQ */
         .faq-item {
             border: 1px solid var(--border);
             border-radius: 0.75rem;
@@ -407,7 +415,6 @@
             cursor: pointer;
             font-weight: 600;
             text-align: left;
-            font-size: 1.125rem;
         }
 
         .faq-content {
@@ -415,16 +422,11 @@
             max-height: 0;
             overflow: hidden;
             transition: all 0.3s ease-out;
-            background: #fcfdfe;
         }
 
         .faq-item.active .faq-content {
             padding: 0 1.5rem 1.5rem;
             max-height: 500px;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(180deg);
         }
 
         /* Footer */
@@ -438,25 +440,10 @@
             display: grid;
             grid-template-columns: 2fr 1fr 1fr;
             gap: 4rem;
-            margin-bottom: 3rem;
         }
 
         @media (max-width: 768px) {
             .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-        }
-
-        .footer-logo { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
-        .footer-links h4 { margin-bottom: 1.5rem; font-size: 1rem; }
-        .footer-links ul { list-style: none; }
-        .footer-links li { margin-bottom: 0.75rem; }
-        .footer-links a { color: #cbd5e1; text-decoration: none; font-size: 0.875rem; }
-
-        .copyright {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.75rem;
-            color: #94a3b8;
         }
     </style>
 </head>
@@ -470,10 +457,7 @@
         <div class="container">
             <div class="nav-content">
                 <a href="#" class="nav-logo">Minoxidil Kirkland</a>
-                <div style="display: flex; gap: 1.5rem; align-items: center;">
-                    <span style="font-size: 0.875rem; font-weight: 600; color: var(--accent); display: none; @media (min-width: 768px) { display: block; }">✓ Em estoque</span>
-                    <button class="btn-buy" style="padding: 0.6rem 1.2rem; font-size: 0.875rem; width: auto; margin: 0;">COMPRAR AGORA</button>
-                </div>
+                <button class="btn-buy" style="padding: 0.6rem 1.2rem; font-size: 0.875rem; width: auto; margin: 0;">COMPRAR AGORA</button>
             </div>
         </div>
     </nav>
@@ -487,21 +471,9 @@
                         <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663065352554/RH3Sg7Ne6X2RCeUojapoSo/minoxidil-hero-product-KkW6YvLmU9L3RUzfiJeKjb.webp" alt="Kit 3 Frascos Minoxidil Kirkland">
                     </div>
                     <div class="trust-grid">
-                        <div class="trust-item">
-                            <i>🛡️</i>
-                            <strong>Original</strong>
-                            <p>100% Autêntico</p>
-                        </div>
-                        <div class="trust-item">
-                            <i>🚚</i>
-                            <strong>Frete Grátis</strong>
-                            <p>Todo o Brasil</p>
-                        </div>
-                        <div class="trust-item">
-                            <i>✨</i>
-                            <strong>Garantia</strong>
-                            <p>30 Dias</p>
-                        </div>
+                        <div class="trust-item"><i>🛡️</i><strong>Original</strong><p>100% Autêntico</p></div>
+                        <div class="trust-item"><i>🚚</i><strong>Frete Grátis</strong><p>Todo o Brasil</p></div>
+                        <div class="trust-item"><i>✨</i><strong>Garantia</strong><p>30 Dias</p></div>
                     </div>
                 </div>
 
@@ -513,7 +485,7 @@
                     
                     <h1>Kit 3 Frascos Minoxidil Kirkland 5% - Tratamento para 3 Meses</h1>
                     <p style="font-size: 1.125rem; color: var(--muted); margin-bottom: 2rem;">
-                        Recupere sua densidade capilar com a fórmula nº 1 recomendada por dermatologistas no mundo todo. Resultados reais ou seu dinheiro de volta.
+                        Solução clínica comprovada para crescimento capilar e redução de queda. Fórmula de máxima concentração com resultados visíveis em 3-6 meses.
                     </p>
 
                     <div class="price-card">
@@ -527,116 +499,114 @@
                         </div>
                     </div>
 
-                    <div class="cta-button">
-                        <button class="btn-buy" onclick="document.getElementById('checkout').scrollIntoView()">
-                            ADICIONAR AO CARRINHO
-                            <span style="display: block; font-size: 0.75rem; font-weight: 400; margin-top: 0.25rem;">Compra 100% Segura e Criptografada</span>
-                        </button>
-                        <div class="payment-icons">
-                            <span>💳</span><span>📄</span><span>📱</span>
-                        </div>
-                    </div>
-
-                    <div style="background: var(--accent-light); padding: 1rem; border-radius: 0.5rem; border-left: 4px solid var(--accent);">
-                        <p style="font-size: 0.875rem; color: #065f46;">
-                            <strong>🔥 47 pessoas</strong> estão vendo este produto agora.
-                        </p>
+                    <button class="btn-buy" onclick="window.location.href='#checkout'">ADICIONAR AO CARRINHO</button>
+                    
+                    <div style="margin-top: 1.5rem; background: var(--accent-light); padding: 1rem; border-radius: 0.5rem; border-left: 4px solid var(--accent);">
+                        <p style="font-size: 0.875rem; color: #065f46;"><strong>🔥 47 pessoas</strong> estão vendo este produto agora.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Benefits -->
     <section class="section-padding bg-light">
         <div class="container">
             <div class="section-header">
-                <h2>Por que o Minoxidil Kirkland funciona?</h2>
-                <p>A ciência por trás do crescimento capilar acelerado</p>
+                <h2>Por que Escolher Minoxidil Kirkland?</h2>
+                <p>A solução mais confiável e comprovada cientificamente para o crescimento capilar</p>
             </div>
-            
             <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="icon-box">📈</div>
-                    <h4>Reativa os Folículos</h4>
-                    <p>Aumenta o fluxo sanguíneo no couro cabeludo, despertando folículos inativos para um novo ciclo de crescimento.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="icon-box">🛡️</div>
-                    <h4>Bloqueia a Queda</h4>
-                    <p>Fortalece a raiz do cabelo desde a primeira semana, reduzindo drasticamente a queda por quebra ou enfraquecimento.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="icon-box">⚡</div>
-                    <h4>Máxima Absorção</h4>
-                    <p>Fórmula líquida de 5% que penetra profundamente, garantindo que os nutrientes cheguem onde realmente importa.</p>
-                </div>
+                <div class="benefit-card"><h3>📈 Crescimento Comprovado</h3><p>Clinicamente comprovado para estimular o crescimento capilar e reduzir queda em até 3 meses.</p></div>
+                <div class="benefit-card"><h3>⚡ Ação Rápida</h3><p>Fórmula 5% de concentração máxima. Resultados visíveis entre 3 a 6 meses de uso contínuo.</p></div>
+                <div class="benefit-card"><h3>🛡️ Seguro e Testado</h3><p>Aprovado pela FDA. Fórmula sem perfume, hipoalergênica e dermatologicamente testada.</p></div>
             </div>
         </div>
     </section>
 
+    <!-- Results Timeline -->
     <section class="section-padding">
         <div class="container">
             <div class="section-header">
-                <h2>O que esperar do tratamento?</h2>
-                <p>Cronograma de resultados baseado em estudos clínicos</p>
+                <h2>Cronograma de Resultados</h2>
+                <p>O que esperar durante o seu tratamento</p>
             </div>
+            <div class="timeline-grid">
+                <div class="timeline-step"><div class="step-number">1</div><h4>Mês 1-3: Redução da Queda</h4><p>Diminuição notável da queda capilar e estabilização do ciclo de crescimento.</p></div>
+                <div class="timeline-step"><div class="step-number">2</div><h4>Mês 3-6: Crescimento Visível</h4><p>Aumento visível da densidade capilar e crescimento de novos fios.</p></div>
+                <div class="timeline-step"><div class="step-number">3</div><h4>Mês 6-12: Resultados Completos</h4><p>Cabelo mais cheio, volumoso e saudável. Manutenção contínua recomendada.</p></div>
+            </div>
+        </div>
+    </section>
 
-            <div class="timeline-container">
-                <div class="timeline-line"></div>
-                <div class="timeline-grid">
-                    <div class="timeline-step">
-                        <div class="step-number">1</div>
-                        <h4 style="margin-bottom: 1rem;">Mês 1: Estabilização</h4>
-                        <p style="font-size: 0.875rem; color: var(--muted);">Redução visível da queda diária. O couro cabeludo se prepara para o novo crescimento.</p>
-                    </div>
-                    <div class="timeline-step">
-                        <div class="step-number">2</div>
-                        <h4 style="margin-bottom: 1rem;">Mês 3: Novos Fios</h4>
-                        <p style="font-size: 0.875rem; color: var(--muted);">Surgimento de fios finos (velus) que evoluem para cabelos terminais mais grossos.</p>
-                    </div>
-                    <div class="timeline-step">
-                        <div class="step-number">3</div>
-                        <h4 style="margin-bottom: 1rem;">Mês 6: Densidade</h4>
-                        <p style="font-size: 0.875rem; color: var(--muted);">Preenchimento de falhas e aumento significativo do volume e cobertura capilar.</p>
-                    </div>
+    <!-- How to Use -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Como Usar Minoxidil Kirkland</h2>
+                <p>Siga estas instruções simples para obter os melhores resultados</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card"><div class="step-badge">1</div><h4>Limpe o Couro Cabeludo</h4><p>Comece com o cabelo seco. Lave e seque completamente antes de aplicar.</p></div>
+                <div class="step-card"><div class="step-badge">2</div><h4>Aplique o Produto</h4><p>Aplique 1ml (6 sprays) diretamente na área afetada 2x ao dia.</p></div>
+                <div class="step-card"><div class="step-badge">3</div><h4>Massageie Levemente</h4><p>Massageie suavemente por 1-2 minutos para garantir absorção uniforme.</p></div>
+                <div class="step-card"><div class="step-badge">4</div><h4>Deixe Secar</h4><p>Deixe secar completamente (4 horas) antes de lavar ou deitar.</p></div>
+            </div>
+            <div class="warning-box">
+                <div class="warning-icon">⚠️</div>
+                <div>
+                    <h4>Informações Importantes</h4>
+                    <ul style="margin-top: 0.5rem; font-size: 0.875rem; list-style: inside;">
+                        <li>Use 2x ao dia (manhã e noite) para melhores resultados</li>
+                        <li>Não exceda 2ml por dia (máximo recomendado)</li>
+                        <li>Mantenha o produto longe dos olhos e mucosas</li>
+                        <li>Consulte um dermatologista antes de usar se tiver condições de pele</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Reviews -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que Nossos Clientes Dizem</h2>
+                <p>Milhares de clientes satisfeitos já transformaram seu cabelo</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <h4 style="margin: 1rem 0 0.5rem;">Resultados incríveis em 4 meses!</h4>
+                    <p style="font-size: 0.875rem; color: var(--muted);">"Estava muito cético no início, mas os resultados foram reais. Meu cabelo começou a crescer novamente."</p>
+                    <p style="margin-top: 1rem; font-weight: 700; font-size: 0.875rem;">Carlos M. <span style="color: var(--accent); font-weight: 400;">✓ Compra Verificada</span></p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <h4 style="margin: 1rem 0 0.5rem;">Melhor investimento que fiz</h4>
+                    <p style="font-size: 0.875rem; color: var(--muted);">"Uso há 6 meses e vejo cabelo novo crescendo. O preço é ótimo comparado a outros produtos."</p>
+                    <p style="margin-top: 1rem; font-weight: 700; font-size: 0.875rem;">Roberto S. <span style="color: var(--accent); font-weight: 400;">✓ Compra Verificada</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
     <section class="section-padding bg-light" id="faq">
         <div class="container" style="max-width: 800px;">
-            <div class="section-header">
-                <h2>Dúvidas Frequentes</h2>
-            </div>
-
+            <div class="section-header"><h2>Perguntas Frequentes</h2></div>
             <div class="faq-list">
                 <div class="faq-item">
-                    <button class="faq-trigger">
-                        <span>É original? Como posso ter certeza?</span>
-                        <span class="faq-icon">▼</span>
-                    </button>
-                    <div class="faq-content">
-                        <p>Sim! Trabalhamos apenas com lotes originais importados diretamente dos EUA. Cada frasco possui lacre de segurança e número de lote para verificação.</p>
-                    </div>
+                    <button class="faq-trigger"><span>Quanto tempo leva para ver resultados?</span><span>▼</span></button>
+                    <div class="faq-content"><p style="padding-bottom: 1.5rem;">A maioria dos usuários começa a ver redução na queda entre 3-4 semanas. Crescimento visível ocorre entre 3-6 meses.</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-trigger">
-                        <span>Quanto tempo dura o kit de 3 frascos?</span>
-                        <span class="faq-icon">▼</span>
-                    </button>
-                    <div class="faq-content">
-                        <p>Cada frasco contém 60ml, o suficiente para 30 dias de uso (1ml 2x ao dia). O kit completo garante 90 dias (3 meses) de tratamento ininterrupto.</p>
-                    </div>
+                    <button class="faq-trigger"><span>Funciona para mulheres também?</span><span>▼</span></button>
+                    <div class="faq-content"><p style="padding-bottom: 1.5rem;">Sim, o Minoxidil 5% é eficaz para mulheres, mas esta versão Kirkland é especificamente formulada para homens.</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-trigger">
-                        <span>E se eu não tiver resultados?</span>
-                        <span class="faq-icon">▼</span>
-                    </button>
-                    <div class="faq-content">
-                        <p>Oferecemos uma garantia de satisfação de 30 dias. Se você não estiver satisfeito com a qualidade do produto, devolvemos seu dinheiro.</p>
-                    </div>
+                    <button class="faq-trigger"><span>Preciso usar para sempre?</span><span>▼</span></button>
+                    <div class="faq-content"><p style="padding-bottom: 1.5rem;">Sim, o Minoxidil funciona enquanto você o usa. Se parar, a queda capilar pode retornar dentro de 3-6 meses.</p></div>
                 </div>
             </div>
         </div>
@@ -645,50 +615,27 @@
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <div>
-                    <div class="footer-logo">Minoxidil Kirkland</div>
-                    <p style="color: #94a3b8; font-size: 0.875rem;">A maior autoridade em crescimento capilar do Brasil. Entregando confiança e resultados desde 2018.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Links Úteis</h4>
-                    <ul>
-                        <li><a href="#">Rastrear Pedido</a></li>
-                        <li><a href="#">Políticas de Envio</a></li>
-                        <li><a href="#">Termos de Uso</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Atendimento</h4>
-                    <ul>
-                        <li><a href="#">WhatsApp: (11) 99999-9999</a></li>
-                        <li><a href="#">Email: suporte@loja.com</a></li>
-                        <li><a href="#">Seg a Sex: 09h às 18h</a></li>
-                    </ul>
-                </div>
+                <div><div class="footer-logo">Minoxidil Kirkland</div><p style="color: #94a3b8; font-size: 0.875rem;">A maior autoridade em crescimento capilar do Brasil.</p></div>
+                <div class="footer-links"><h4>Links Úteis</h4><ul><li><a href="#">Rastrear Pedido</a></li><li><a href="#">Políticas de Envio</a></li></ul></div>
+                <div class="footer-links"><h4>Atendimento</h4><ul><li><a href="#">WhatsApp: (11) 99999-9999</a></li><li><a href="#">Email: suporte@loja.com</a></li></ul></div>
             </div>
-            <div class="copyright">
-                &copy; 2026 Minoxidil Kirkland Brasil. Todos os direitos reservados. CNPJ: 00.000.000/0001-00
+            <div class="copyright" style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; font-size: 0.75rem; color: #94a3b8;">
+                &copy; 2026 Minoxidil Kirkland Brasil. Todos os direitos reservados.
             </div>
         </div>
     </footer>
 
     <div class="sticky-cta">
-        <button class="btn-buy" onclick="document.getElementById('checkout').scrollIntoView()">COMPRAR AGORA - R$ 105,00</button>
+        <button class="btn-buy" onclick="window.location.href='#checkout'">COMPRAR AGORA - R$ 105,00</button>
     </div>
 
     <script>
-        // FAQ Accordion Logic
         document.querySelectorAll('.faq-trigger').forEach(trigger => {
             trigger.addEventListener('click', () => {
                 const item = trigger.parentElement;
                 const isActive = item.classList.contains('active');
-                
-                // Close all other items
                 document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-                
-                if (!isActive) {
-                    item.classList.add('active');
-                }
+                if (!isActive) item.classList.add('active');
             });
         });
     </script>
