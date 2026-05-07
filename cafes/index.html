@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="description" content="Oferta exclusiva em produtos selecionados. Aproveite descontos imperdíveis por tempo limitado.">
-    <title>Oferta Especial | Sua Loja</title>
+    <meta name="description" content="Oferta exclusiva em cápsulas compatíveis Dolce Gusto. Sabores intensos e cremosidade incomparável com descontos imperdíveis.">
+    <title>Oferta Especial | Cápsulas Dolce Gusto</title>
     
     <!-- Preconnect para fontes externas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,15 +14,15 @@
     <style>
         :root {
             --primary-navy: #1a2b4c;
-            --accent-universal: #2563eb;
-            --accent-hover: #1d4ed8;
-            --accent-gold: #b59461;
+            --accent-universal: #8b4513; /* Marrom café */
+            --accent-hover: #5d2e0a;
+            --accent-gold: #d4af37;
             --text-main: #1f2937;
             --text-muted: #6b7280;
-            --bg-soft: #f8fafc;
+            --bg-soft: #fdfaf7;
             --white: #ffffff;
             --shadow-soft: 0 20px 40px rgba(0,0,0,0.05);
-            --shadow-strong: 0 10px 30px rgba(37, 99, 235, 0.2);
+            --shadow-strong: 0 10px 30px rgba(139, 69, 19, 0.2);
         }
 
         * {
@@ -38,17 +38,17 @@
             font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-soft);
             color: var(--text-main);
-            overflow-x: hidden; /* Evita scroll horizontal */
+            overflow-x: hidden;
         }
 
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; /* Ajustado para permitir mais conteúdo */
+            justify-content: flex-start;
             min-height: 100dvh; 
             padding: 16px;
-            background: radial-gradient(circle at top right, #eff6ff 0%, var(--bg-soft) 50%, #f1f5f9 100%);
+            background: radial-gradient(circle at top right, #fff5eb 0%, var(--bg-soft) 50%, #f5e6d3 100%);
             position: relative;
         }
 
@@ -64,7 +64,7 @@
             position: absolute;
             border-radius: 50%;
             filter: blur(60px);
-            opacity: 0.25;
+            opacity: 0.15;
         }
 
         .circle-1 {
@@ -91,7 +91,7 @@
             -webkit-backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.7);
             border-radius: 28px;
-            padding: clamp(2rem, 5vh, 3rem) 1.5rem; /* Aumentado para mais respiro */
+            padding: clamp(2rem, 5vh, 3rem) 1.5rem;
             box-shadow: var(--shadow-soft);
             display: flex;
             flex-direction: column;
@@ -99,7 +99,7 @@
             text-align: center;
             position: relative;
             z-index: 1;
-            margin-bottom: 20px; /* Espaço para o novo conteúdo */
+            margin-bottom: 20px;
         }
 
         .logo-wrapper {
@@ -127,9 +127,9 @@
         .badge {
             display: inline-block;
             padding: 4px 12px;
-            background: rgba(37, 99, 235, 0.08);
+            background: rgba(139, 69, 19, 0.08);
             color: var(--accent-universal);
-            font-size: 0.75rem; /* Aumentado para melhor legibilidade */
+            font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -139,7 +139,7 @@
 
         .title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1.8rem, 5vh, 2.2rem); /* Aumentado para mais destaque */
+            font-size: clamp(1.8rem, 5vh, 2.2rem);
             color: var(--primary-navy);
             line-height: 1.2;
             margin-bottom: 0.5rem;
@@ -152,11 +152,11 @@
 
         .offer-value {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(3.5rem, 10vh, 4.5rem); /* Aumentado para maior impacto */
+            font-size: clamp(3.5rem, 10vh, 4.5rem);
             font-weight: 700;
-            color: var(--primary-navy);
+            color: var(--accent-universal);
             line-height: 1;
-            margin: 0.5rem 0 1rem; /* Aumentado para mais respiro */
+            margin: 0.5rem 0 1rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -172,7 +172,7 @@
         }
 
         .description {
-            font-size: clamp(0.9rem, 2.2vh, 1rem); /* Aumentado para melhor legibilidade */
+            font-size: clamp(0.9rem, 2.2vh, 1rem);
             line-height: 1.5;
             color: var(--text-muted);
             margin-bottom: 1.5rem;
@@ -188,19 +188,23 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding: 1.2rem; /* Aumentado para botão mais visível */
+            padding: 1.2rem;
             background: var(--accent-universal);
             color: var(--white);
             text-decoration: none;
             border: none;
             border-radius: 14px;
-            font-size: 1rem; /* Aumentado para melhor legibilidade */
+            font-size: 1rem;
             font-weight: 700;
             letter-spacing: 0.5px;
             cursor: pointer;
             box-shadow: var(--shadow-strong);
             gap: 10px;
-            transition: transform 0.2s ease;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
         }
 
         .btn-primary:active {
@@ -220,7 +224,7 @@
 
         .compliance-footer {
             width: 100%;
-            max-width: 380px; /* Alinhado com a largura do card */
+            max-width: 380px;
             text-align: center;
             padding: 12px 0;
             margin-top: 8px;
@@ -231,18 +235,16 @@
         .compliance-links {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap; /* Permite que os links quebrem linha em telas pequenas */
-            gap: 8px 16px; /* Espaçamento vertical e horizontal entre links */
+            flex-wrap: wrap;
+            gap: 8px 16px;
             margin-bottom: 12px;
-            padding: 0 10px; /* Evita que encostem nas bordas */
+            padding: 0 10px;
         }
 
         .compliance-links a {
             color: var(--text-muted);
             text-decoration: none;
             font-size: 0.75rem;
-            /* Removido white-space: nowrap para permitir quebra se necessário, 
-               embora o flex-wrap já resolva a maioria dos casos */
         }
 
         .copyright {
@@ -253,7 +255,7 @@
 
         .company-info {
             margin-top: 10px;
-            font-size: 0.75rem; /* Aumentado para melhor legibilidade */
+            font-size: 0.75rem;
             line-height: 1.4;
             color: var(--text-muted);
         }
@@ -262,7 +264,7 @@
             margin: 0;
         }
 
-        /* Novo Conteúdo - Seção de Benefícios */
+        /* Seção de Benefícios */
         .benefits-section {
             width: 100%;
             max-width: 380px;
@@ -310,7 +312,7 @@
             min-height: 20px;
         }
 
-        /* Seção de Detalhes da Oferta - NOVO CONTEÚDO */
+        /* Seção de Detalhes da Oferta */
         .offer-details-section {
             width: 100%;
             max-width: 380px;
@@ -325,7 +327,7 @@
             text-align: left;
             opacity: 0;
             animation: fadeInUp 0.6s ease-out forwards;
-            animation-delay: 0.6s; /* Atraso para aparecer depois dos benefícios */
+            animation-delay: 0.5s;
         }
 
         .offer-details-section h2 {
@@ -370,7 +372,7 @@
         .delay-2 { animation-delay: 0.2s; }
         .delay-3 { animation-delay: 0.3s; }
 
-        /* Ajuste para telas extremamente pequenas (iPhone SE, etc) */
+        /* Ajuste para telas extremamente pequenas */
         @media (max-height: 670px) {
             .card { padding: 1.5rem 1rem; }
             .logo-wrapper { margin-bottom: 0.8rem; }
@@ -397,106 +399,109 @@
     <main class="card">
         <header class="logo-wrapper">
             <div class="logo-circle">
-                <!-- Substitua pelo seu próprio logo ou um ícone genérico -->
-                <img src="https://via.placeholder.com/90x90.png?text=Seu+Logo" alt="Seu Logo">
+                <!-- Substitua pelo seu próprio logo -->
+                <img src="https://via.placeholder.com/90x90.png?text=Café+Logo" alt="Logo da Loja de Café">
             </div>
         </header>
 
         <section class="content">
-            <span class="badge animate delay-1">Oferta Exclusiva</span>
-            <h1 class="title animate delay-1">Aproveite <span>Agora!</span></h1>
+            <span class="badge animate delay-1">Oferta Exclusiva de Café</span>
+            <h1 class="title animate delay-1">Cápsulas <span>Dolce Gusto</span></h1>
             <div class="offer-value animate delay-2">40% OFF</div>
             <p class="description animate delay-2">
-                Desconto especial em produtos selecionados. Não perca esta oportunidade única!
+                Desfrute de sabores intensos e cremosidade perfeita. Oferta especial em cápsulas selecionadas por tempo limitado!
             </p>
         </section>
 
         <footer class="cta-container animate delay-3">
             <button id="cta-button" class="btn-primary">
-                <span id="btn-text">Ver Detalhes da Oferta</span>
+                <span id="btn-text">Garantir Meu Desconto</span>
                 <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
             </button>
-            <p class="footer-note">*Oferta válida enquanto durarem os estoques. Consulte condições.</p>
+            <p class="footer-note">*Oferta válida enquanto durarem os estoques. Imagens meramente ilustrativas.</p>
         </footer>
     </main>
 
     <section class="benefits-section">
-        <h2>Por que comprar conosco?</h2>
+        <h2>Por que escolher nossas cápsulas?</h2>
         <ul class="benefits-list">
             <li>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                Produtos de alta qualidade e durabilidade.
+                100% Compatíveis com máquinas Dolce Gusto®.
             </li>
             <li>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-truck"><path d="M1 3h15v16H1V3zM16 8h4l2 3v7h-6M3 18v2h10v-2M14 18v2h2v-2"></path></svg>
-                Entrega rápida e segura para todo o Brasil.
+                Entrega expressa para todo o Brasil com rastreamento.
             </li>
             <li>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-award"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-                Garantia de satisfação ou seu dinheiro de volta.
+                Grãos selecionados e torra artesanal superior.
             </li>
             <li>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                Pagamento seguro e protegido.
+                Compra 100% segura e proteção de dados garantida.
             </li>
         </ul>
     </section>
 
-    <!-- NOVO CONTEÚDO: Seção de Detalhes da Oferta para aumentar o conteúdo original -->
     <section class="offer-details-section">
-        <h2>Detalhes da Oferta Especial</h2>
+        <h2>Sobre esta Promoção</h2>
         <p>
-            Esta é uma oportunidade imperdível para adquirir produtos de alta qualidade com um desconto exclusivo de 40%. Nossa seleção inclui itens cuidadosamente escolhidos para garantir a sua satisfação e atender às suas necessidades. Não perca tempo, pois esta oferta é por tempo limitado e os estoques são limitados!
+            Elevamos sua experiência de café matinal com uma seleção premium de cápsulas compatíveis com o sistema Dolce Gusto®. Aproveite agora o desconto exclusivo de 40% em kits selecionados.
         </p>
         <p>
-            Ao clicar no botão abaixo, você será direcionado para a página de produtos onde poderá explorar todos os itens incluídos nesta promoção. Lá, você encontrará:
+            Ao clicar no botão acima, você acessará nossa loja oficial onde poderá escolher entre:
         </p>
         <ul>
-            <li>Descrições detalhadas de cada produto.</li>
-            <li>Imagens de alta resolução para uma visualização completa.</li>
-            <li>Informações sobre tamanhos, cores e disponibilidade.</li>
-            <li>Avaliações de outros clientes para ajudar na sua decisão.</li>
+            <li>Espressos intensos e encorpados.</li>
+            <li>Bebidas cremosas como Cappuccino e Latte.</li>
+            <li>Opções descafeinadas com o mesmo sabor marcante.</li>
+            <li>Kits de degustação para descobrir novos favoritos.</li>
         </ul>
         <p>
-            Aproveite a chance de renovar seus itens favoritos ou descobrir novos produtos com preços incríveis. A qualidade que você já conhece, agora com um valor ainda mais acessível.
+            Garantimos a qualidade de cada cápsula. Se não ficar satisfeito, oferecemos política de devolução facilitada conforme nossos termos.
         </p>
     </section>
 
     <footer class="compliance-footer animate delay-3">
         <nav class="compliance-links">
-            <a href="/policies/privacy-policy">Política de Privacidade</a>
-            <a href="/policies/terms-of-service">Termos de Serviço</a>
-            <a href="/policies/refund-policy">Política de Reembolso</a>
-            <a href="mailto:contato@suaempresa.com">Contato</a>
+            <a href="/politica-de-privacidade">Política de Privacidade</a>
+            <a href="/termos-de-uso">Termos de Uso</a>
+            <a href="/politica-de-reembolso">Trocas e Devoluções</a>
+            <a href="mailto:contato@seusite.com.br">Fale Conosco</a>
         </nav>
         <div class="company-info">
-            <p>Sua Empresa Ltda. | CNPJ: XX.XXX.XXX/XXXX-XX</p>
-            <p>Endereço: Rua Exemplo, 123, Cidade, Estado, CEP: 12345-678</p>
-            <p>Telefone: (XX) XXXX-XXXX</p>
+            <p><strong>Nome da Sua Empresa Ltda.</strong></p>
+            <p>CNPJ: 00.000.000/0000-00</p>
+            <p>Endereço: Rua do Café, 123 - Bairro - Cidade/UF - CEP: 00000-000</p>
+            <p>Atendimento: (00) 0000-0000</p>
         </div>
-        <p class="copyright">© 2024 Sua Loja. Todos os direitos reservados.</p>
+        <p class="copyright">© 2024 Sua Loja de Café. Todos os direitos reservados.</p>
+        <p style="font-size: 0.55rem; margin-top: 10px; opacity: 0.7;">*Dolce Gusto® é uma marca registrada de terceiros, sem vínculo com esta loja.</p>
     </footer>
 
     <script>
-        // ATENÇÃO: Substitua esta URL pela URL REAL da sua página de produto/oferta no SEU DOMÍNIO.
-        // É CRÍTICO que esta URL esteja no MESMO DOMÍNIO da landing page para evitar problemas com as políticas do Google Ads (Destino Não Correspondente).
-        const DESTINATION_URL = 'https://seusite.com/pagina-do-produto-ou-oferta'; 
+        // IMPORTANTE PARA GOOGLE ADS:
+        // A URL de destino deve ser EXATAMENTE a mesma que o usuário espera encontrar.
+        // Substitua pela URL real do seu produto.
+        const DESTINATION_URL = 'https://seusite.com.br/capsulas-dolce-gusto'; 
         const ctaButton = document.getElementById('cta-button');
         const btnText = document.getElementById('btn-text');
 
         function resetButton() {
             ctaButton.disabled = false;
-            btnText.textContent = 'Ver Detalhes da Oferta';
+            btnText.textContent = 'Garantir Meu Desconto';
         }
 
         ctaButton.addEventListener('click', function(e) {
             e.preventDefault();
             this.disabled = true;
-            btnText.textContent = 'Carregando...';
-            // Removido o setTimeout para garantir redirecionamento imediato e evitar ser classificado como "página de ponte".
+            btnText.textContent = 'Redirecionando...';
+            
+            // Redirecionamento direto para evitar ser marcado como "Bridge Page"
             window.location.href = DESTINATION_URL;
         });
 
