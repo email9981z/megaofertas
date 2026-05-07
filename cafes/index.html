@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="description" content="Oferta exclusiva em produtos selecionados. Aproveite descontos imperdíveis por tempo limitado.">
-    <title>Oferta Exclusiva | Loja Oficial</title>
+    <title>Oferta Especial | Sua Loja</title>
     
     <!-- Preconnect para fontes externas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,22 +38,20 @@
             font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-soft);
             color: var(--text-main);
-            overflow: hidden; /* Evita scroll desnecessário no mobile */
+            overflow-x: hidden; /* Evita scroll horizontal */
         }
 
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            /* Uso de dvh para considerar a barra de navegação do browser mobile */
+            justify-content: flex-start; /* Ajustado para permitir mais conteúdo */
             min-height: 100dvh; 
             padding: 16px;
             background: radial-gradient(circle at top right, #eff6ff 0%, var(--bg-soft) 50%, #f1f5f9 100%);
             position: relative;
         }
 
-        /* Elementos Decorativos de Fundo */
         .bg-elements {
             position: fixed;
             inset: 0;
@@ -85,12 +83,9 @@
             background: var(--accent-gold);
         }
 
-        /* Card Principal Otimizado para Mobile */
         .card {
             width: 100%;
             max-width: 380px;
-            /* Altura máxima para caber em telas pequenas sem scroll */
-            max-height: 90dvh;
             background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
@@ -102,12 +97,11 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            justify-content: space-between; /* Distribui o conteúdo verticalmente */
             position: relative;
             z-index: 1;
+            margin-bottom: 20px; /* Espaço para o novo conteúdo */
         }
 
-        /* Logo */
         .logo-wrapper {
             margin-bottom: 1rem;
         }
@@ -130,7 +124,6 @@
             object-fit: contain;
         }
 
-        /* Conteúdo */
         .badge {
             display: inline-block;
             padding: 4px 12px;
@@ -186,7 +179,6 @@
             max-width: 280px;
         }
 
-        /* Botão CTA */
         .cta-container {
             width: 100%;
         }
@@ -226,12 +218,14 @@
             color: #94a3b8;
         }
 
-        /* Rodapé de Conformidade */
         .compliance-footer {
             width: 100%;
+            max-width: 380px; /* Alinhado com a largura do card */
             text-align: center;
             padding: 12px 0;
             margin-top: 8px;
+            color: var(--text-muted);
+            font-size: 0.7rem;
         }
 
         .compliance-links {
@@ -251,6 +245,66 @@
         .copyright {
             font-size: 0.6rem;
             color: #94a3b8;
+            margin-top: 5px;
+        }
+
+        .company-info {
+            margin-top: 10px;
+            font-size: 0.65rem;
+            line-height: 1.4;
+            color: var(--text-muted);
+        }
+
+        .company-info p {
+            margin: 0;
+        }
+
+        /* Novo Conteúdo - Seção de Benefícios */
+        .benefits-section {
+            width: 100%;
+            max-width: 380px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 28px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-soft);
+            margin-top: 20px;
+            text-align: left;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+            animation-delay: 0.4s;
+        }
+
+        .benefits-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--primary-navy);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .benefits-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        .benefits-list li svg {
+            margin-right: 10px;
+            color: var(--accent-universal);
+            min-width: 20px;
+            min-height: 20px;
         }
 
         /* Animações */
@@ -276,6 +330,9 @@
             .offer-value { font-size: 3rem; }
             .description { margin-bottom: 0.75rem; font-size: 0.75rem; }
             .btn-primary { padding: 0.9rem; }
+            .benefits-section { padding: 1rem; margin-top: 15px; }
+            .benefits-section h2 { font-size: 1.2rem; margin-bottom: 0.8rem; }
+            .benefits-list li { font-size: 0.8rem; margin-bottom: 0.6rem; }
         }
     </style>
 </head>
@@ -289,48 +346,79 @@
     <main class="card animate">
         <header class="logo-wrapper">
             <div class="logo-circle">
-                <img src="https://cdn.shopify.com/s/files/1/0697/8175/0016/files/dolce-gusto-logo-round_0_png.webp?v=1751370845" alt="Logo">
+                <!-- Substitua pelo seu próprio logo ou um ícone genérico -->
+                <img src="https://via.placeholder.com/90x90.png?text=Seu+Logo" alt="Seu Logo">
             </div>
         </header>
 
         <section class="content">
             <span class="badge animate delay-1">Oferta Exclusiva</span>
-            <h1 class="title animate delay-1">Sabor <span>Incomparável</span></h1>
+            <h1 class="title animate delay-1">Aproveite <span>Agora!</span></h1>
             <div class="offer-value animate delay-2">40% OFF</div>
             <p class="description animate delay-2">
-                Desconto especial em produtos selecionados. Aproveite agora com condições imperdíveis.
+                Desconto especial em produtos selecionados. Não perca esta oportunidade única!
             </p>
         </section>
 
         <footer class="cta-container animate delay-3">
             <button id="cta-button" class="btn-primary">
-                <span id="btn-text">Aproveitar Agora</span>
+                <span id="btn-text">Ver Detalhes da Oferta</span>
                 <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
             </button>
-            <p class="footer-note">*Válido enquanto durarem os estoques.</p>
+            <p class="footer-note">*Oferta válida enquanto durarem os estoques. Consulte condições.</p>
         </footer>
     </main>
 
+    <section class="benefits-section">
+        <h2>Por que comprar conosco?</h2>
+        <ul class="benefits-list">
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                Produtos de alta qualidade e durabilidade.
+            </li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-truck"><path d="M1 3h15v16H1V3zM16 8h4l2 3v7h-6M3 18v2h10v-2M14 18v2h2v-2"></path></svg>
+                Entrega rápida e segura para todo o Brasil.
+            </li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-award"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                Garantia de satisfação ou seu dinheiro de volta.
+            </li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                Pagamento seguro e protegido.
+            </li>
+        </ul>
+    </section>
+
     <footer class="compliance-footer animate delay-3">
         <nav class="compliance-links">
-            <a href="/policies/privacy-policy">Privacidade</a>
-            <a href="/policies/terms-of-service">Termos</a>
-            <a href="/policies/refund-policy">Reembolso</a>
+            <a href="/policies/privacy-policy">Política de Privacidade</a>
+            <a href="/policies/terms-of-service">Termos de Serviço</a>
+            <a href="/policies/refund-policy">Política de Reembolso</a>
+            <a href="mailto:contato@suaempresa.com">Contato</a>
         </nav>
-        <p class="copyright">© 2024 Loja Oficial.</p>
+        <div class="company-info">
+            <p>Sua Empresa Ltda. | CNPJ: XX.XXX.XXX/XXXX-XX</p>
+            <p>Endereço: Rua Exemplo, 123, Cidade, Estado, CEP: 12345-678</p>
+            <p>Telefone: (XX) XXXX-XXXX</p>
+        </div>
+        <p class="copyright">© 2024 Sua Loja. Todos os direitos reservados.</p>
     </footer>
 
     <script>
-        const DESTINATION_URL = 'https://vitaldue.myshopify.com/products/comboseiscaixas';
+        // ATENÇÃO: Substitua esta URL pela URL REAL da sua página de produto/oferta no SEU DOMÍNIO.
+        // Não use um domínio diferente para evitar problemas com as políticas do Google Ads.
+        const DESTINATION_URL = 'https://seusite.com/pagina-do-produto-ou-oferta'; 
         const ctaButton = document.getElementById('cta-button');
         const btnText = document.getElementById('btn-text');
 
         function resetButton() {
             ctaButton.disabled = false;
-            btnText.textContent = 'Aproveitar Agora';
+            btnText.textContent = 'Ver Detalhes da Oferta';
         }
 
         ctaButton.addEventListener('click', function(e) {
