@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kit 3 frascos Minoxidil Kirkland 5% - Solução clínica comprovada para crescimento capilar. De R$ 265 por apenas R$ 105. Resultados visíveis em 3-6 meses.">
-    <meta name="keywords" content="minoxidil, kirkland, crescimento capilar, alopecia, queda de cabelo">
-    <meta name="theme-color" content="#1a3a52">
-    <title>Minoxidil Kirkland - Kit 3 Frascos | Crescimento Capilar Comprovado</title>
+    <meta name="description" content="Kit 3 frascos Minoxidil Kirkland 5% - Solução clínica comprovada para crescimento capilar. De R$ 265 por apenas R$ 105. Resultados visíveis em 3-6 meses. Frete grátis acima de R$ 100.">
+    <meta name="keywords" content="minoxidil, kirkland, crescimento capilar, alopecia, queda de cabelo, tratamento capilar">
+    <meta name="theme-color" content="#0f172a">
+    <title>Minoxidil Kirkland 5% - Kit 3 Frascos | Loja Oficial Brasil</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -19,17 +19,22 @@
         }
 
         :root {
-            --primary: #1a3a52;
-            --primary-light: #e8f1f7;
-            --accent: #00a86b;
-            --accent-light: #e8f5f0;
-            --destructive: #d32f2f;
-            --foreground: #1a1a1a;
-            --muted: #666666;
-            --border: #e5e5e5;
-            --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
-            --cta-gradient: linear-gradient(135deg, #00a86b 0%, #008f5b 100%);
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --primary-lighter: #f1f5f9;
+            --accent: #059669;
+            --accent-light: #d1fae5;
+            --accent-dark: #047857;
+            --destructive: #dc2626;
+            --warning: #f59e0b;
+            --foreground: #0f172a;
+            --muted: #64748b;
+            --muted-light: #cbd5e1;
+            --border: #e2e8f0;
+            --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
         }
 
         html {
@@ -46,14 +51,16 @@
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
+            color: var(--foreground);
         }
 
         h1 { font-size: 2.5rem; line-height: 1.2; }
-        h2 { font-size: 2rem; }
+        h2 { font-size: 2rem; line-height: 1.3; }
         h3 { font-size: 1.5rem; }
+        h4 { font-size: 1.125rem; }
 
         @media (max-width: 768px) {
-            h1 { font-size: 1.85rem; }
+            h1 { font-size: 1.875rem; }
             h2 { font-size: 1.5rem; }
             h3 { font-size: 1.25rem; }
         }
@@ -64,50 +71,138 @@
             padding: 0 1.5rem;
         }
 
-        /* Top Bar - Urgency */
+        /* ============ TOP BAR ============ */
         .top-bar {
             background: var(--primary);
             color: white;
             text-align: center;
-            padding: 0.5rem;
+            padding: 0.75rem 1.5rem;
             font-size: 0.875rem;
             font-weight: 500;
         }
 
-        /* Navigation */
-        nav {
+        .top-bar-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* ============ HEADER / NAVIGATION ============ */
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
             z-index: 100;
-            background: white;
-            border-bottom: 1px solid var(--border);
             box-shadow: var(--shadow);
         }
 
-        .nav-content {
+        .header-content {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            height: 4.5rem;
+            align-items: center;
+            height: 4rem;
+            padding: 0 1.5rem;
         }
 
-        .nav-logo {
-            font-weight: 700;
-            font-size: 1.25rem;
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
             color: var(--primary);
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        /* Hero Section */
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .search-bar {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .search-bar {
+                display: flex;
+                align-items: center;
+                background: var(--primary-lighter);
+                border: 1px solid var(--border);
+                border-radius: 0.5rem;
+                padding: 0.5rem 1rem;
+                width: 300px;
+            }
+
+            .search-bar input {
+                background: transparent;
+                border: none;
+                outline: none;
+                width: 100%;
+                font-size: 0.875rem;
+                color: var(--foreground);
+            }
+
+            .search-bar input::placeholder {
+                color: var(--muted);
+            }
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--destructive);
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        /* ============ HERO SECTION ============ */
         .hero {
             padding: 3rem 0;
-            background: #fcfdfe;
+            background: linear-gradient(135deg, var(--primary-lighter) 0%, #ffffff 100%);
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 4rem;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem;
             align-items: start;
         }
 
@@ -118,6 +213,7 @@
             }
         }
 
+        /* Product Gallery */
         .product-gallery {
             position: relative;
         }
@@ -125,23 +221,28 @@
         @media (min-width: 992px) {
             .product-gallery {
                 position: sticky;
-                top: 6rem;
+                top: 5rem;
             }
         }
 
         .main-image {
-            background: #f8fafc;
+            background: white;
             border-radius: 1rem;
             overflow: hidden;
             aspect-ratio: 1;
             border: 1px solid var(--border);
             position: relative;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .main-image img {
             width: 100%;
             height: 100%;
             object-fit: contain;
+            padding: 2rem;
         }
 
         .badge-discount {
@@ -150,30 +251,134 @@
             left: 1.5rem;
             background: var(--destructive);
             color: white;
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1.25rem;
             border-radius: 0.5rem;
             font-weight: 700;
-            font-size: 1.125rem;
-            box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
+            font-size: 1rem;
+            box-shadow: var(--shadow-lg);
+            z-index: 10;
+        }
+
+        .badge-new {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            z-index: 10;
+        }
+
+        .thumbnail-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .thumbnail {
+            aspect-ratio: 1;
+            border: 2px solid var(--border);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            overflow: hidden;
+            background: white;
+            transition: all 0.3s;
+        }
+
+        .thumbnail:hover {
+            border-color: var(--accent);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 0.5rem;
         }
 
         /* Product Info */
-        .rating-summary {
+        .product-info {
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            flex-direction: column;
+        }
+
+        .breadcrumb {
+            font-size: 0.875rem;
+            color: var(--muted);
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .product-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .product-subtitle {
+            color: var(--muted);
+            font-size: 1rem;
             margin-bottom: 1.5rem;
         }
 
-        .stars { color: #fbbf24; font-size: 1.125rem; }
-        .rating-count { color: var(--muted); font-size: 0.875rem; text-decoration: underline; }
+        .rating-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
 
-        .price-card {
-            background: #f8fafc;
-            border: 2px solid var(--primary-light);
+        .stars {
+            color: #fbbf24;
+            font-size: 1.125rem;
+            letter-spacing: 0.1rem;
+        }
+
+        .rating-text {
+            color: var(--muted);
+            font-size: 0.875rem;
+        }
+
+        .rating-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .rating-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Price Section */
+        .price-section {
+            background: var(--primary-lighter);
+            border: 2px solid var(--border);
             border-radius: 1rem;
             padding: 2rem;
             margin-bottom: 2rem;
+        }
+
+        .price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .price-old {
@@ -183,121 +388,210 @@
         }
 
         .price-current {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 800;
-            color: var(--primary);
-            display: block;
+            color: var(--destructive);
             line-height: 1;
-            margin: 0.5rem 0;
         }
 
-        .price-installments {
+        .price-savings {
+            background: var(--accent-light);
+            color: var(--accent-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .price-info {
+            color: var(--muted);
+            font-size: 0.875rem;
+            margin-top: 1rem;
+        }
+
+        .installments {
             color: var(--accent);
             font-weight: 600;
-            font-size: 1.125rem;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Stock Indicator */
+        .stock-section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #fef3c7;
+            border-left: 4px solid var(--warning);
+            border-radius: 0.5rem;
         }
 
         .stock-indicator {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
+            gap: 0.75rem;
             font-size: 0.875rem;
-            color: var(--destructive);
             font-weight: 600;
+            color: #92400e;
+            margin-bottom: 0.75rem;
         }
 
         .stock-bar {
-            height: 6px;
-            background: #e2e8f0;
-            border-radius: 3px;
-            flex-grow: 1;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
             overflow: hidden;
         }
 
         .stock-bar-fill {
             height: 100%;
             background: var(--destructive);
-            width: 15%;
-            border-radius: 3px;
+            width: 20%;
+            border-radius: 4px;
         }
 
-        /* CTA Button */
-        .btn-buy {
-            background: var(--cta-gradient);
-            color: white;
-            padding: 1.25rem;
+        /* Quantity Selector */
+        .quantity-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .quantity-label {
+            font-weight: 600;
+            color: var(--foreground);
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: var(--primary-lighter);
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--foreground);
+            transition: all 0.3s;
+        }
+
+        .quantity-btn:hover {
+            background: var(--border);
+        }
+
+        .quantity-input {
+            width: 60px;
+            height: 40px;
+            border: none;
+            text-align: center;
+            font-weight: 600;
+            background: white;
+        }
+
+        /* CTA Buttons */
+        .cta-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
             border-radius: 0.75rem;
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             font-weight: 700;
             text-align: center;
             text-decoration: none;
-            box-shadow: 0 10px 20px rgba(0, 168, 107, 0.2);
-            transition: all 0.3s;
             border: none;
             cursor: pointer;
-            width: 100%;
-            display: block;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
-        .btn-buy:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(0, 168, 107, 0.3);
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: white;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--foreground);
+            border: 2px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-lighter);
+            border-color: var(--primary);
         }
 
         /* Trust Badges */
-        .trust-grid {
+        .trust-badges {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
-            margin-top: 2rem;
             padding-top: 2rem;
             border-top: 1px solid var(--border);
         }
 
-        .trust-item {
+        .badge {
             text-align: center;
-            font-size: 0.75rem;
+            font-size: 0.875rem;
         }
 
-        .trust-item i {
-            font-size: 1.5rem;
-            color: var(--accent);
+        .badge-icon {
+            font-size: 1.75rem;
             margin-bottom: 0.5rem;
             display: block;
         }
 
-        /* Sticky Mobile CTA */
-        .sticky-cta {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: white;
-            padding: 1rem;
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
-            display: none;
-            z-index: 1000;
+        .badge-text {
+            color: var(--muted);
+            line-height: 1.4;
         }
 
-        @media (max-width: 768px) {
-            .sticky-cta { display: block; }
-            body { padding-bottom: 80px; }
+        /* ============ BENEFITS SECTION ============ */
+        .section {
+            padding: 5rem 0;
         }
 
-        /* Sections */
-        .section-padding { padding: 5rem 0; }
-        .bg-light { background: #f8fafc; }
+        .section.bg-light {
+            background: var(--primary-lighter);
+        }
 
         .section-header {
             text-align: center;
             max-width: 700px;
-            margin: 0 auto 4rem;
+            margin: 0 auto 3rem;
+        }
+
+        .section-header h2 {
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--muted);
+            font-size: 1.125rem;
         }
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
@@ -305,13 +599,34 @@
             background: white;
             padding: 2.5rem;
             border-radius: 1rem;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s;
+            border: 1px solid var(--border);
         }
 
-        .benefit-card:hover { transform: translateY(-10px); }
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
 
-        /* Results Timeline */
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .benefit-card h3 {
+            margin-bottom: 1rem;
+            color: var(--foreground);
+        }
+
+        .benefit-card p {
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        /* ============ TIMELINE SECTION ============ */
         .timeline-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -319,33 +634,53 @@
         }
 
         @media (max-width: 768px) {
-            .timeline-grid { grid-template-columns: 1fr; }
+            .timeline-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .timeline-step {
+        .timeline-card {
             background: white;
             padding: 2rem;
             border-radius: 1rem;
-            border: 2px solid var(--primary-light);
+            border: 2px solid var(--border);
             text-align: center;
             position: relative;
+            transition: all 0.3s;
         }
 
-        .step-number {
-            width: 3rem;
-            height: 3rem;
-            background: var(--primary);
+        .timeline-card:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .timeline-number {
+            width: 3.5rem;
+            height: 3.5rem;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: -3.5rem auto 1.5rem;
-            font-weight: 700;
+            margin: -4rem auto 1.5rem;
+            font-weight: 800;
+            font-size: 1.5rem;
             border: 4px solid white;
+            box-shadow: var(--shadow-md);
         }
 
-        /* How to Use */
+        .timeline-card h4 {
+            margin-bottom: 1rem;
+            color: var(--foreground);
+        }
+
+        .timeline-card p {
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* ============ HOW TO USE SECTION ============ */
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -356,39 +691,73 @@
             background: white;
             padding: 2rem;
             border-radius: 1rem;
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-md);
             position: relative;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .step-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-3px);
         }
 
         .step-badge {
-            position: absolute;
-            top: -1rem;
-            left: 1.5rem;
-            background: var(--primary);
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
             color: white;
-            width: 2.5rem;
-            height: 2.5rem;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .step-card h4 {
+            margin-bottom: 0.75rem;
+            color: var(--foreground);
+        }
+
+        .step-card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         /* Warning Box */
         .warning-box {
-            background: #fff5f5;
-            border: 1px solid #feb2b2;
-            border-radius: 1rem;
+            background: #fef3c7;
+            border-left: 4px solid var(--warning);
             padding: 2rem;
-            margin-top: 3rem;
+            border-radius: 0.75rem;
+            margin-top: 2rem;
             display: flex;
             gap: 1.5rem;
         }
 
-        .warning-icon { font-size: 2rem; }
+        .warning-icon {
+            font-size: 1.75rem;
+            flex-shrink: 0;
+        }
 
-        /* Reviews */
+        .warning-box h4 {
+            margin-bottom: 0.75rem;
+            color: #92400e;
+        }
+
+        .warning-box ul {
+            color: #92400e;
+            margin-left: 1.5rem;
+        }
+
+        .warning-box li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* ============ REVIEWS SECTION ============ */
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -399,182 +768,473 @@
             background: white;
             padding: 2rem;
             border-radius: 1rem;
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
         }
 
-        /* FAQ */
+        .review-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-3px);
+        }
+
+        .review-stars {
+            color: #fbbf24;
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.1rem;
+        }
+
+        .review-title {
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--foreground);
+        }
+
+        .review-text {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .review-author {
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--foreground);
+        }
+
+        .review-verified {
+            color: var(--accent);
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        /* ============ FAQ SECTION ============ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
         .faq-item {
             border: 1px solid var(--border);
             border-radius: 0.75rem;
             margin-bottom: 1rem;
             overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow-md);
         }
 
         .faq-trigger {
             width: 100%;
-            padding: 1.25rem 1.5rem;
+            background: white;
+            border: none;
+            padding: 1.5rem;
+            text-align: left;
+            cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: white;
-            border: none;
-            cursor: pointer;
             font-weight: 600;
-            text-align: left;
+            color: var(--foreground);
+            transition: all 0.3s;
+        }
+
+        .faq-trigger:hover {
+            background: var(--primary-lighter);
+        }
+
+        .faq-trigger.active {
+            background: var(--accent-light);
+            color: var(--accent-dark);
+        }
+
+        .faq-icon {
+            font-size: 1.25rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-trigger.active .faq-icon {
+            transform: rotate(180deg);
         }
 
         .faq-content {
-            padding: 0 1.5rem;
             max-height: 0;
             overflow: hidden;
-            transition: all 0.3s ease-out;
+            transition: max-height 0.3s ease-out;
+            background: var(--primary-lighter);
         }
 
         .faq-item.active .faq-content {
-            padding: 0 1.5rem 1.5rem;
             max-height: 500px;
+            transition: max-height 0.3s ease-in;
         }
 
-        /* Footer */
+        .faq-text {
+            padding: 1.5rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        /* ============ FOOTER ============ */
         footer {
             background: var(--primary);
             color: white;
             padding: 4rem 0 2rem;
+            margin-top: 5rem;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .footer-section p {
+            color: #cbd5e1;
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #94a3b8;
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .payment-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
+            color: #cbd5e1;
+        }
+
+        /* ============ STICKY MOBILE CTA ============ */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.15);
+            display: none;
+            z-index: 1000;
+            border-top: 1px solid var(--border);
         }
 
         @media (max-width: 768px) {
-            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .sticky-cta {
+                display: block;
+            }
+            body {
+                padding-bottom: 80px;
+            }
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .header-actions {
+                gap: 1rem;
+            }
+
+            .trust-badges {
+                grid-template-columns: 1fr;
+            }
+
+            .product-title {
+                font-size: 1.5rem;
+            }
+
+            .price-current {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
 <body>
-
+    <!-- Top Bar -->
     <div class="top-bar">
-        🔥 OFERTA POR TEMPO LIMITADO: 60% DE DESCONTO + FRETE GRÁTIS HOJE!
-    </div>
-
-    <nav>
         <div class="container">
-            <div class="nav-content">
-                <a href="#" class="nav-logo">Minoxidil Kirkland</a>
-                <button class="btn-buy" style="padding: 0.6rem 1.2rem; font-size: 0.875rem; width: auto; margin: 0;">COMPRAR AGORA</button>
+            <div class="top-bar-content">
+                <div class="top-bar-item">
+                    <span>🚚 Frete grátis acima de R$ 100</span>
+                </div>
+                <div class="top-bar-item">
+                    <span>✓ 100% Seguro e Certificado</span>
+                </div>
+                <div class="top-bar-item">
+                    <span>📞 Suporte 24/7</span>
+                </div>
             </div>
         </div>
-    </nav>
+    </div>
 
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">K</div>
+                    <span>Minoxidil</span>
+                </a>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar produtos...">
+                </div>
+
+                <div class="header-actions">
+                    <div class="cart-icon">
+                        🛒
+                        <span class="cart-badge">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-grid">
+                <!-- Product Gallery -->
                 <div class="product-gallery">
                     <div class="main-image">
-                        <span class="badge-discount">-60% OFF</span>
-                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663065352554/RH3Sg7Ne6X2RCeUojapoSo/minoxidil-hero-product-KkW6YvLmU9L3RUzfiJeKjb.webp" alt="Kit 3 Frascos Minoxidil Kirkland">
+                        <div class="badge-discount">-60%</div>
+                        <div class="badge-new">PROMOÇÃO</div>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23f1f5f9' width='200' height='200'/%3E%3Ctext x='50%' y='50%' font-size='16' fill='%2364748b' text-anchor='middle' dominant-baseline='middle'%3EMinoxidil Kirkland%3C/text%3E%3Ctext x='50%' y='60%' font-size='12' fill='%2394a3b8' text-anchor='middle' dominant-baseline='middle'%3E5% - Kit 3 Frascos%3C/text%3E%3C/svg%3E" alt="Minoxidil Kirkland 5% - Kit 3 Frascos">
                     </div>
-                    <div class="trust-grid">
-                        <div class="trust-item"><i>🛡️</i><strong>Original</strong><p>100% Autêntico</p></div>
-                        <div class="trust-item"><i>🚚</i><strong>Frete Grátis</strong><p>Todo o Brasil</p></div>
-                        <div class="trust-item"><i>✨</i><strong>Garantia</strong><p>30 Dias</p></div>
+                    <div class="thumbnail-gallery">
+                        <div class="thumbnail">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23f1f5f9' width='100' height='100'/%3E%3Ctext x='50%' y='50%' font-size='10' fill='%2364748b' text-anchor='middle' dominant-baseline='middle'%3EFrasco 1%3C/text%3E%3C/svg%3E" alt="Frasco 1">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23f1f5f9' width='100' height='100'/%3E%3Ctext x='50%' y='50%' font-size='10' fill='%2364748b' text-anchor='middle' dominant-baseline='middle'%3EFrasco 2%3C/text%3E%3C/svg%3E" alt="Frasco 2">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23f1f5f9' width='100' height='100'/%3E%3Ctext x='50%' y='50%' font-size='10' fill='%2364748b' text-anchor='middle' dominant-baseline='middle'%3EFrasco 3%3C/text%3E%3C/svg%3E" alt="Frasco 3">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23f1f5f9' width='100' height='100'/%3E%3Ctext x='50%' y='50%' font-size='10' fill='%2364748b' text-anchor='middle' dominant-baseline='middle'%3EAplicador%3C/text%3E%3C/svg%3E" alt="Aplicador">
+                        </div>
                     </div>
                 </div>
 
+                <!-- Product Info -->
                 <div class="product-info">
-                    <div class="rating-summary">
-                        <div class="stars">★★★★★</div>
-                        <span class="rating-count">4.9/5 (2.847 avaliações verificadas)</span>
+                    <div class="breadcrumb">
+                        <a href="#">Início</a> / <a href="#">Saúde</a> / <span>Minoxidil Kirkland 5%</span>
                     </div>
-                    
-                    <h1>Kit 3 Frascos Minoxidil Kirkland 5% - Tratamento para 3 Meses</h1>
-                    <p style="font-size: 1.125rem; color: var(--muted); margin-bottom: 2rem;">
-                        Solução clínica comprovada para crescimento capilar e redução de queda. Fórmula de máxima concentração com resultados visíveis em 3-6 meses.
-                    </p>
 
-                    <div class="price-card">
-                        <span class="price-old">De R$ 265,00</span>
-                        <span class="price-current">R$ 105,00</span>
-                        <div class="price-installments">ou 12x de R$ 10,54</div>
-                        
+                    <h1 class="product-title">Minoxidil Kirkland 5%</h1>
+                    <p class="product-subtitle">Kit com 3 Frascos - Solução Clínica Comprovada para Crescimento Capilar</p>
+
+                    <!-- Rating -->
+                    <div class="rating-section">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-text">4.8 de 5</span>
+                        <span class="rating-link">(2.847 avaliações)</span>
+                    </div>
+
+                    <!-- Price Section -->
+                    <div class="price-section">
+                        <div class="price-row">
+                            <span class="price-old">De R$ 265,00</span>
+                            <span class="price-savings">Economize 60%</span>
+                        </div>
+                        <div class="price-current">R$ 105,00</div>
+                        <div class="installments">💳 12x de R$ 8,75 sem juros</div>
+                        <div class="price-info">Preço válido apenas para este kit. Frete grátis acima de R$ 100.</div>
+                    </div>
+
+                    <!-- Stock Indicator -->
+                    <div class="stock-section">
                         <div class="stock-indicator">
-                            <span>Apenas 14 unidades restantes em estoque</span>
-                            <div class="stock-bar"><div class="stock-bar-fill"></div></div>
+                            ⚠️ Apenas 14 unidades restantes em estoque
+                        </div>
+                        <div class="stock-bar">
+                            <div class="stock-bar-fill"></div>
                         </div>
                     </div>
 
-                    <button class="btn-buy" onclick="window.location.href='#checkout'">ADICIONAR AO CARRINHO</button>
-                    
-                    <div style="margin-top: 1.5rem; background: var(--accent-light); padding: 1rem; border-radius: 0.5rem; border-left: 4px solid var(--accent);">
-                        <p style="font-size: 0.875rem; color: #065f46;"><strong>🔥 47 pessoas</strong> estão vendo este produto agora.</p>
+                    <!-- Quantity Selector -->
+                    <div class="quantity-section">
+                        <label class="quantity-label">Quantidade:</label>
+                        <div class="quantity-selector">
+                            <button class="quantity-btn">−</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn">+</button>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="cta-section">
+                        <button class="btn btn-primary">🛒 Adicionar ao Carrinho</button>
+                        <button class="btn btn-secondary">❤️ Adicionar à Lista de Desejos</button>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="trust-badges">
+                        <div class="badge">
+                            <span class="badge-icon">✓</span>
+                            <div class="badge-text">Produto Certificado</div>
+                        </div>
+                        <div class="badge">
+                            <span class="badge-icon">🔒</span>
+                            <div class="badge-text">Compra Segura</div>
+                        </div>
+                        <div class="badge">
+                            <span class="badge-icon">↩️</span>
+                            <div class="badge-text">30 Dias de Garantia</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits -->
-    <section class="section-padding bg-light">
+    <!-- Benefits Section -->
+    <section class="section bg-light">
         <div class="container">
             <div class="section-header">
                 <h2>Por que Escolher Minoxidil Kirkland?</h2>
                 <p>A solução mais confiável e comprovada cientificamente para o crescimento capilar</p>
             </div>
             <div class="benefits-grid">
-                <div class="benefit-card"><h3>📈 Crescimento Comprovado</h3><p>Clinicamente comprovado para estimular o crescimento capilar e reduzir queda em até 3 meses.</p></div>
-                <div class="benefit-card"><h3>⚡ Ação Rápida</h3><p>Fórmula 5% de concentração máxima. Resultados visíveis entre 3 a 6 meses de uso contínuo.</p></div>
-                <div class="benefit-card"><h3>🛡️ Seguro e Testado</h3><p>Aprovado pela FDA. Fórmula sem perfume, hipoalergênica e dermatologicamente testada.</p></div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">📈</span>
+                    <h3>Crescimento Comprovado</h3>
+                    <p>Clinicamente comprovado para estimular o crescimento capilar e reduzir queda em até 3 meses. Aprovado pela FDA e dermatologicamente testado.</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">⚡</span>
+                    <h3>Ação Rápida</h3>
+                    <p>Fórmula 5% de concentração máxima. Resultados visíveis entre 3 a 6 meses de uso contínuo. Mais eficaz que versões de 2%.</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🛡️</span>
+                    <h3>Seguro e Testado</h3>
+                    <p>Aprovado pela FDA. Fórmula sem perfume, hipoalergênica e dermatologicamente testada. Confiado por milhões de usuários.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Results Timeline -->
-    <section class="section-padding">
+    <!-- Timeline Section -->
+    <section class="section">
         <div class="container">
             <div class="section-header">
                 <h2>Cronograma de Resultados</h2>
-                <p>O que esperar durante o seu tratamento</p>
+                <p>O que esperar durante o seu tratamento com Minoxidil Kirkland</p>
             </div>
             <div class="timeline-grid">
-                <div class="timeline-step"><div class="step-number">1</div><h4>Mês 1-3: Redução da Queda</h4><p>Diminuição notável da queda capilar e estabilização do ciclo de crescimento.</p></div>
-                <div class="timeline-step"><div class="step-number">2</div><h4>Mês 3-6: Crescimento Visível</h4><p>Aumento visível da densidade capilar e crescimento de novos fios.</p></div>
-                <div class="timeline-step"><div class="step-number">3</div><h4>Mês 6-12: Resultados Completos</h4><p>Cabelo mais cheio, volumoso e saudável. Manutenção contínua recomendada.</p></div>
+                <div class="timeline-card">
+                    <div class="timeline-number">1</div>
+                    <h4>Mês 1-3: Redução da Queda</h4>
+                    <p>Diminuição notável da queda capilar e estabilização do ciclo de crescimento. Você notará menos fios caindo ao lavar.</p>
+                </div>
+                <div class="timeline-card">
+                    <div class="timeline-number">2</div>
+                    <h4>Mês 3-6: Crescimento Visível</h4>
+                    <p>Aumento visível da densidade capilar e crescimento de novos fios. Cabelo mais volumoso e saudável.</p>
+                </div>
+                <div class="timeline-card">
+                    <div class="timeline-number">3</div>
+                    <h4>Mês 6-12: Resultados Completos</h4>
+                    <p>Cabelo mais cheio, volumoso e saudável. Manutenção contínua recomendada para manter os resultados.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- How to Use -->
-    <section class="section-padding bg-light">
+    <!-- How to Use Section -->
+    <section class="section bg-light">
         <div class="container">
             <div class="section-header">
                 <h2>Como Usar Minoxidil Kirkland</h2>
                 <p>Siga estas instruções simples para obter os melhores resultados</p>
             </div>
             <div class="steps-grid">
-                <div class="step-card"><div class="step-badge">1</div><h4>Limpe o Couro Cabeludo</h4><p>Comece com o cabelo seco. Lave e seque completamente antes de aplicar.</p></div>
-                <div class="step-card"><div class="step-badge">2</div><h4>Aplique o Produto</h4><p>Aplique 1ml (6 sprays) diretamente na área afetada 2x ao dia.</p></div>
-                <div class="step-card"><div class="step-badge">3</div><h4>Massageie Levemente</h4><p>Massageie suavemente por 1-2 minutos para garantir absorção uniforme.</p></div>
-                <div class="step-card"><div class="step-badge">4</div><h4>Deixe Secar</h4><p>Deixe secar completamente (4 horas) antes de lavar ou deitar.</p></div>
+                <div class="step-card">
+                    <div class="step-badge">1</div>
+                    <h4>Limpe o Couro Cabeludo</h4>
+                    <p>Comece com o cabelo seco. Lave e seque completamente antes de aplicar o produto.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-badge">2</div>
+                    <h4>Aplique o Produto</h4>
+                    <p>Aplique 1ml (6 sprays) diretamente na área afetada 2x ao dia (manhã e noite).</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-badge">3</div>
+                    <h4>Massageie Levemente</h4>
+                    <p>Massageie suavemente por 1-2 minutos para garantir absorção uniforme do produto.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-badge">4</div>
+                    <h4>Deixe Secar</h4>
+                    <p>Deixe secar completamente (4 horas) antes de lavar o cabelo ou deitar na cama.</p>
+                </div>
             </div>
             <div class="warning-box">
                 <div class="warning-icon">⚠️</div>
                 <div>
                     <h4>Informações Importantes</h4>
-                    <ul style="margin-top: 0.5rem; font-size: 0.875rem; list-style: inside;">
-                        <li>Use 2x ao dia (manhã e noite) para melhores resultados</li>
-                        <li>Não exceda 2ml por dia (máximo recomendado)</li>
-                        <li>Mantenha o produto longe dos olhos e mucosas</li>
-                        <li>Consulte um dermatologista antes de usar se tiver condições de pele</li>
+                    <ul>
+                        <li><strong>Frequência:</strong> Use 2x ao dia (manhã e noite) para melhores resultados</li>
+                        <li><strong>Dosagem:</strong> Não exceda 2ml por dia (máximo recomendado)</li>
+                        <li><strong>Segurança:</strong> Mantenha o produto longe dos olhos e mucosas</li>
+                        <li><strong>Consulta:</strong> Consulte um dermatologista antes de usar se tiver condições de pele</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Reviews -->
-    <section class="section-padding">
+    <!-- Reviews Section -->
+    <section class="section">
         <div class="container">
             <div class="section-header">
                 <h2>O que Nossos Clientes Dizem</h2>
@@ -582,66 +1242,201 @@
             </div>
             <div class="reviews-grid">
                 <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <h4 style="margin: 1rem 0 0.5rem;">Resultados incríveis em 4 meses!</h4>
-                    <p style="font-size: 0.875rem; color: var(--muted);">"Estava muito cético no início, mas os resultados foram reais. Meu cabelo começou a crescer novamente."</p>
-                    <p style="margin-top: 1rem; font-weight: 700; font-size: 0.875rem;">Carlos M. <span style="color: var(--accent); font-weight: 400;">✓ Compra Verificada</span></p>
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-title">Resultados incríveis em 4 meses!</div>
+                    <div class="review-text">"Estava muito cético no início, mas os resultados foram reais. Meu cabelo começou a crescer novamente e a queda diminuiu drasticamente. Recomendo para todos que sofrem com alopecia."</div>
+                    <div class="review-author">Carlos M. <span class="review-verified">✓ Compra Verificada</span></div>
                 </div>
                 <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <h4 style="margin: 1rem 0 0.5rem;">Melhor investimento que fiz</h4>
-                    <p style="font-size: 0.875rem; color: var(--muted);">"Uso há 6 meses e vejo cabelo novo crescendo. O preço é ótimo comparado a outros produtos."</p>
-                    <p style="margin-top: 1rem; font-weight: 700; font-size: 0.875rem;">Roberto S. <span style="color: var(--accent); font-weight: 400;">✓ Compra Verificada</span></p>
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-title">Melhor investimento que fiz</div>
+                    <div class="review-text">"Uso há 6 meses e vejo cabelo novo crescendo. O preço é ótimo comparado a outros produtos no mercado. Entrega rápida e produto bem embalado."</div>
+                    <div class="review-author">Roberto S. <span class="review-verified">✓ Compra Verificada</span></div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-title">Finalmente uma solução que funciona</div>
+                    <div class="review-text">"Testei vários produtos antes de encontrar este. O Minoxidil Kirkland é o único que realmente funcionou para mim. Muito satisfeito com a qualidade."</div>
+                    <div class="review-author">João P. <span class="review-verified">✓ Compra Verificada</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="section-padding bg-light" id="faq">
-        <div class="container" style="max-width: 800px;">
-            <div class="section-header"><h2>Perguntas Frequentes</h2></div>
-            <div class="faq-list">
+    <!-- FAQ Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Perguntas Frequentes</h2>
+                <p>Tire suas dúvidas sobre o Minoxidil Kirkland</p>
+            </div>
+            <div class="faq-container">
                 <div class="faq-item">
-                    <button class="faq-trigger"><span>Quanto tempo leva para ver resultados?</span><span>▼</span></button>
-                    <div class="faq-content"><p style="padding-bottom: 1.5rem;">A maioria dos usuários começa a ver redução na queda entre 3-4 semanas. Crescimento visível ocorre entre 3-6 meses.</p></div>
+                    <button class="faq-trigger">
+                        <span>Quanto tempo leva para ver resultados?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-text">
+                            A maioria dos usuários começa a ver redução na queda entre 3-4 semanas. Crescimento visível ocorre entre 3-6 meses. Para resultados ótimos, use consistentemente 2x ao dia.
+                        </div>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-trigger"><span>Funciona para mulheres também?</span><span>▼</span></button>
-                    <div class="faq-content"><p style="padding-bottom: 1.5rem;">Sim, o Minoxidil 5% é eficaz para mulheres, mas esta versão Kirkland é especificamente formulada para homens.</p></div>
+                    <button class="faq-trigger">
+                        <span>Funciona para mulheres também?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-text">
+                            Sim, o Minoxidil 5% é eficaz para mulheres, mas esta versão Kirkland é especificamente formulada para homens. Mulheres geralmente usam a versão de 2% ou 5% conforme orientação dermatológica.
+                        </div>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-trigger"><span>Preciso usar para sempre?</span><span>▼</span></button>
-                    <div class="faq-content"><p style="padding-bottom: 1.5rem;">Sim, o Minoxidil funciona enquanto você o usa. Se parar, a queda capilar pode retornar dentro de 3-6 meses.</p></div>
+                    <button class="faq-trigger">
+                        <span>Preciso usar para sempre?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-text">
+                            Sim, o Minoxidil funciona enquanto você o usa. Se parar, a queda capilar pode retornar dentro de 3-6 meses. É um tratamento contínuo para manter os resultados.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        <span>Quais são os efeitos colaterais?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-text">
+                            Efeitos colaterais são raros. Os mais comuns incluem coceira leve no couro cabeludo, ressecamento ou irritação. Se experimentar sintomas graves, interrompa o uso e consulte um médico.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        <span>Como é o envio e qual o prazo?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-text">
+                            Oferecemos frete grátis para compras acima de R$ 100. O prazo de entrega é de 3-7 dias úteis para a maioria das regiões. Você receberá um código de rastreamento por email.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <div><div class="footer-logo">Minoxidil Kirkland</div><p style="color: #94a3b8; font-size: 0.875rem;">A maior autoridade em crescimento capilar do Brasil.</p></div>
-                <div class="footer-links"><h4>Links Úteis</h4><ul><li><a href="#">Rastrear Pedido</a></li><li><a href="#">Políticas de Envio</a></li></ul></div>
-                <div class="footer-links"><h4>Atendimento</h4><ul><li><a href="#">WhatsApp: (11) 99999-9999</a></li><li><a href="#">Email: suporte@loja.com</a></li></ul></div>
+                <div class="footer-section">
+                    <h4>Sobre Nós</h4>
+                    <p>Somos a maior autoridade em crescimento capilar do Brasil. Fornecemos produtos certificados e de qualidade garantida há mais de 10 anos.</p>
+                    <div class="payment-methods">
+                        <span class="payment-badge">💳 Cartão</span>
+                        <span class="payment-badge">🏦 Boleto</span>
+                        <span class="payment-badge">📱 PIX</span>
+                        <span class="payment-badge">💰 Dinheiro</span>
+                    </div>
+                </div>
+                <div class="footer-section footer-links">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><a href="#">Rastrear Pedido</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Serviço</a></li>
+                        <li><a href="#">Política de Devolução</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section footer-links">
+                    <h4>Atendimento</h4>
+                    <ul>
+                        <li><a href="#">WhatsApp: (11) 99999-9999</a></li>
+                        <li><a href="#">Email: suporte@loja.com</a></li>
+                        <li><a href="#">Chat ao Vivo: 24/7</a></li>
+                        <li><a href="#">Central de Ajuda</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="copyright" style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; font-size: 0.75rem; color: #94a3b8;">
-                &copy; 2026 Minoxidil Kirkland Brasil. Todos os direitos reservados.
+            <div class="footer-divider">
+                &copy; 2026 Minoxidil Kirkland Brasil. Todos os direitos reservados. | Desenvolvido com ❤️
             </div>
         </div>
     </footer>
 
+    <!-- Sticky Mobile CTA -->
     <div class="sticky-cta">
-        <button class="btn-buy" onclick="window.location.href='#checkout'">COMPRAR AGORA - R$ 105,00</button>
+        <button class="btn btn-primary" style="width: 100%;">Adicionar ao Carrinho - R$ 105,00</button>
     </div>
 
     <script>
+        // FAQ Accordion
         document.querySelectorAll('.faq-trigger').forEach(trigger => {
             trigger.addEventListener('click', () => {
                 const item = trigger.parentElement;
                 const isActive = item.classList.contains('active');
-                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-                if (!isActive) item.classList.add('active');
+                
+                // Close all items
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Quantity Selector
+        document.querySelectorAll('.quantity-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const input = this.parentElement.querySelector('.quantity-input');
+                const currentValue = parseInt(input.value);
+                
+                if (this.textContent === '−' && currentValue > 1) {
+                    input.value = currentValue - 1;
+                } else if (this.textContent === '+') {
+                    input.value = currentValue + 1;
+                }
+            });
+        });
+
+        // Thumbnail Gallery
+        document.querySelectorAll('.thumbnail').forEach(thumb => {
+            thumb.addEventListener('click', function() {
+                const mainImage = document.querySelector('.main-image img');
+                const thumbImage = this.querySelector('img');
+                mainImage.src = thumbImage.src;
+                
+                // Remove active class from all thumbnails
+                document.querySelectorAll('.thumbnail').forEach(t => {
+                    t.style.borderColor = 'var(--border)';
+                });
+                
+                // Add active class to clicked thumbnail
+                this.style.borderColor = 'var(--accent)';
+            });
+        });
+
+        // Add to Cart Button
+        document.querySelectorAll('.btn-primary').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const cartBadge = document.querySelector('.cart-badge');
+                const currentCount = parseInt(cartBadge.textContent);
+                const quantity = parseInt(document.querySelector('.quantity-input').value) || 1;
+                cartBadge.textContent = currentCount + quantity;
+                
+                // Visual feedback
+                this.textContent = '✓ Adicionado ao Carrinho!';
+                setTimeout(() => {
+                    this.textContent = '🛒 Adicionar ao Carrinho';
+                }, 2000);
             });
         });
     </script>
