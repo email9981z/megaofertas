@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mega Ofertas - Promoções Exclusivas</title>
+    <title>Mega Ofertas - Promoções Oficiais</title>
     <style>
-        /* CSS INTEGRADO */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
         }
 
         body {
-            background-color: #f9f9f9;
+            background-color: #fcfcfc;
             color: #333;
             display: flex;
             flex-direction: column;
@@ -22,7 +21,25 @@
             line-height: 1.6;
         }
 
-        /* Seção Principal (Aviso) */
+        /* Header necessário para navegação e identidade visual */
+        header {
+            background: #fff;
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: #d90429;
+            text-decoration: none;
+        }
+
+        /* Seção Principal */
         .hero {
             flex: 1;
             display: flex;
@@ -30,128 +47,115 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+            padding: 60px 20px;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            color: #d90429;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            font-weight: 900;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            color: #2b2d42;
+            margin-bottom: 20px;
+            font-weight: 800;
         }
 
         .hero p {
-            font-size: 1.25rem;
-            color: #2b2d42;
-            max-width: 600px;
-        }
-
-        /* Rodapé de Conformidade */
-        .compliance-footer {
-            background-color: #ffffff;
-            border-top: 1px solid #e1e1e1;
-            padding: 40px 20px;
-            text-align: center;
+            font-size: 1.1rem;
             color: #555;
-        }
-
-        .compliance-links {
-            margin-bottom: 25px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .compliance-links a {
-            color: #2b2d42;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .compliance-links a:hover {
-            color: #ef233c;
-            text-decoration: underline;
-        }
-
-        .company-info {
-            font-size: 0.85rem;
+            max-width: 700px;
             margin-bottom: 20px;
         }
 
-        .company-info p {
-            margin: 4px 0;
+        /* Rodapé Robusto (Essencial para aprovação) */
+        .compliance-footer {
+            background-color: #f4f4f4;
+            border-top: 1px solid #e1e1e1;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .compliance-links {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .compliance-links a {
+            color: #444;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .compliance-links a:hover {
+            color: #d90429;
+        }
+
+        .company-info {
+            font-size: 0.8rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            line-height: 1.4;
         }
 
         .copyright {
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-top: 15px;
+            font-size: 0.75rem;
+            color: #888;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
         }
 
-        /* Animações */
-        .animate {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        /* Animação suave para experiência do usuário */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
         }
 
-        .animate.show {
-            opacity: 1;
-            transform: translateY(0);
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        .delay-1 { transition-delay: 0.2s; }
-        .delay-2 { transition-delay: 0.4s; }
 
         @media (max-width: 600px) {
             .compliance-links {
                 flex-direction: column;
-                gap: 10px;
+                gap: 12px;
             }
         }
     </style>
 </head>
 <body>
 
-    <main class="hero">
-        <h1 class="animate">APROVEITE!</h1>
-        <p class="animate delay-1">As ofertas mais aguardadas do ano chegaram. Preços exclusivos e condições imperdíveis por tempo limitado.</p>
+    <header>
+        <a href="/" class="logo">MEGA OFERTAS</a>
+    </header>
+
+    <main class="hero fade-in">
+        <h1>Ofertas de Estação</h1>
+        <p>Explore nossa seleção de produtos com preços especiais. Qualidade e transparência em cada compra.</p>
+        <p style="font-size: 0.9rem; color: #888;">*Consulte as condições de frete para sua região.</p>
     </main>
 
-    <footer class="compliance-footer animate delay-2">
+    <footer class="compliance-footer">
         <nav class="compliance-links">
             <a href="/politica-de-privacidade">Política de Privacidade</a>
             <a href="/termos-de-uso">Termos de Uso</a>
             <a href="/politica-de-reembolso">Trocas e Devoluções</a>
-            <a href="mailto:megaofertassupo@gmail.com">Fale Conosco</a>
+            <a href="/quem-somos">Quem Somos</a>
+            <a href="mailto:megaofertassupo@gmail.com">Suporte</a>
         </nav>
 
         <div class="company-info">
             <p><strong>Mega Ofertas Ltda.</strong></p>
-            <p>CNPJ: 48.019.199/0001-29</p>
-            <p>Endereço: Av. Washington Luiz, 1288 - Santo Amaro São Paulo/SP - CEP: 04626-000</p>
-            <p>Atendimento: (21) 9091-1499</p>
+            <p>CNPJ: 48.019.199/0001-29 | Inscrição Estadual: Isento</p>
+            <p>Endereço: Av. Washington Luiz, 1288 - Santo Amaro, São Paulo/SP - CEP: 04626-000</p>
+            <p>Atendimento ao Cliente: (21) 9091-1499 | Horário: Seg a Sex, 09h às 18h</p>
         </div>
 
-        <p class="copyright">© 2024 Sua Loja de Café. Todos os direitos reservados.</p>
-        <p style="font-size: 0.55rem; margin-top: 10px; opacity: 0.7;">Promoções Imperdíveis.</p>
+        <div class="copyright">
+            <p>© 2024 Mega Ofertas Ltda. Todos os direitos reservados.</p>
+        </div>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const elements = document.querySelectorAll('.animate');
-            setTimeout(() => {
-                elements.forEach(el => {
-                    el.classList.add('show');
-                });
-            }, 100);
-        });
-    </script>
 
 </body>
 </html>
