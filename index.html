@@ -46,18 +46,6 @@
             font-size: 1.25rem;
             color: #2b2d42;
             max-width: 600px;
-            margin-bottom: 30px;
-        }
-
-        .promo-badge {
-            background-color: #ef233c;
-            color: white;
-            padding: 15px 40px;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 15px rgba(239, 35, 60, 0.3);
-            animation: pulse 2s infinite;
         }
 
         /* Rodapé de Conformidade */
@@ -106,12 +94,6 @@
         }
 
         /* Animações */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
         .animate {
             opacity: 0;
             transform: translateY(20px);
@@ -125,10 +107,12 @@
 
         .delay-1 { transition-delay: 0.2s; }
         .delay-2 { transition-delay: 0.4s; }
-        .delay-3 { transition-delay: 0.6s; }
 
         @media (max-width: 600px) {
-            .compliance-links { flex-direction: column; gap: 10px; }
+            .compliance-links {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -137,10 +121,9 @@
     <main class="hero">
         <h1 class="animate">APROVEITE!</h1>
         <p class="animate delay-1">As ofertas mais aguardadas do ano chegaram. Preços exclusivos e condições imperdíveis por tempo limitado.</p>
-        <div class="promo-badge animate delay-2">CONFIRA AS PROMOÇÕES AGORA</div>
     </main>
 
-    <footer class="compliance-footer animate delay-3">
+    <footer class="compliance-footer animate delay-2">
         <nav class="compliance-links">
             <a href="/politica-de-privacidade">Política de Privacidade</a>
             <a href="/termos-de-uso">Termos de Uso</a>
@@ -160,11 +143,8 @@
     </footer>
 
     <script>
-        // JAVASCRIPT INTEGRADO
         document.addEventListener('DOMContentLoaded', () => {
             const elements = document.querySelectorAll('.animate');
-            
-            // Pequeno delay para iniciar a animação após carregar o DOM
             setTimeout(() => {
                 elements.forEach(el => {
                     el.classList.add('show');
