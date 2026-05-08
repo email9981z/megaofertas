@@ -79,7 +79,15 @@
         /* Gallery - Clean */
         .gallery-container {
             position: sticky;
-            top: 100px;
+            top: 100px; /* Ajustado para ficar abaixo do header sticky */
+            height: fit-content;
+        }
+
+        @media (max-width: 767px) {
+            .gallery-container {
+                position: relative;
+                top: 0;
+            }
         }
 
         .main-image {
