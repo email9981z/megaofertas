@@ -77,7 +77,7 @@
         .search-bar {
             flex: 1;
             max-width: 500px;
-            display: none; /* Hidden on mobile to save space, shown on desktop */
+            display: none;
         }
 
         @media (min-width: 768px) {
@@ -265,6 +265,254 @@
         .feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
         .feature-card p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
 
+        /* Description Section - Enhanced */
+        .description-section {
+            padding: 40px 0;
+            background: var(--bg-light);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .description-section h2 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .description-content {
+            display: grid;
+            gap: 24px;
+        }
+
+        .description-text {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--text-main);
+        }
+
+        .description-text p {
+            margin-bottom: 16px;
+        }
+
+        .description-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .highlight-item {
+            padding: 16px;
+            background: var(--bg-soft);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+
+        .highlight-item i {
+            font-size: 20px;
+            color: var(--brand-primary);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .highlight-item strong {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        .highlight-item span {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Newsletter Section */
+        .newsletter-section {
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--brand-primary) 0%, #1e3a8a 100%);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .newsletter-content {
+            text-align: center;
+            color: #fff;
+        }
+
+        .newsletter-content h2 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .newsletter-content p {
+            font-size: 14px;
+            margin-bottom: 24px;
+            opacity: 0.95;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 8px;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 16px;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 13px;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--text-main);
+        }
+
+        .newsletter-form button {
+            padding: 12px 24px;
+            background: var(--success);
+            color: #fff;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background: #15803d;
+            transform: translateY(-2px);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 40px 0;
+            background: var(--bg-light);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-section h2 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        .faq-container {
+            display: grid;
+            gap: 12px;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .faq-header {
+            padding: 16px;
+            background: var(--bg-soft);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text-main);
+        }
+
+        .faq-header:hover {
+            background: #f3f4f6;
+        }
+
+        .faq-item.active .faq-header {
+            background: #f0f4ff;
+            color: var(--brand-primary);
+        }
+
+        .faq-icon {
+            font-size: 14px;
+            transition: transform 0.3s;
+            color: var(--brand-primary);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.active .faq-content {
+            max-height: 500px;
+            transition: max-height 0.3s ease-in;
+        }
+
+        .faq-text {
+            padding: 16px;
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--text-muted);
+        }
+
+        /* Additional E-commerce Elements */
+        .ecommerce-elements {
+            padding: 40px 0;
+            background: var(--bg-soft);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .ecommerce-elements h2 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        .elements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .element-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .element-card i {
+            font-size: 32px;
+            color: var(--brand-primary);
+            margin-bottom: 12px;
+        }
+
+        .element-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .element-card p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
         /* Floating Mobile CTA - Subtle */
         .mobile-cta {
             position: fixed;
@@ -280,8 +528,130 @@
             .product-grid { padding-bottom: 80px; }
         }
 
-        footer { padding: 40px 0 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-muted); text-align: center; }
+        /* Footer - Professional & Complete */
+        footer {
+            background: var(--text-main);
+            color: #fff;
+            padding: 40px 0 20px;
+            border-top: 1px solid var(--border);
+        }
 
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h4 {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #fff;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            font-size: 12px;
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--pix-color);
+        }
+
+        .footer-column p {
+            font-size: 12px;
+            color: #d1d5db;
+            line-height: 1.6;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            background: var(--pix-color);
+            transform: translateY(-2px);
+        }
+
+        .footer-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .footer-bottom {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            align-items: center;
+            font-size: 11px;
+            color: #9ca3af;
+        }
+
+        .footer-bottom-text {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .payment-methods span {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            padding: 4px 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+
+        .payment-methods i {
+            font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -299,7 +669,7 @@
                     <img src="https://images.tcdn.com.br/img/themes/1370019/logo.png?1740685044" alt="Hub Suplementos">
                 </div>
                 <div class="search-bar">
-                    <input type="text" placeholder="O que você está procurando?" style="width: 100%; padding: 10px 20px; border: 1px solid var(--border); border-radius: 20px; outline: none; font-size: 14px;">
+                    <input type="text" placeholder="O que você está procurando?" style="width: 100%; padding: 10px 20px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 13px;">
                 </div>
                 <div class="user-actions">
                     <a href="#" class="icon-link"><i class="far fa-user"></i></a>
@@ -408,30 +778,298 @@
         </div>
     </main>
 
+    <!-- Description Section - Enhanced -->
+    <section class="description-section">
+        <div class="container">
+            <h2>Sobre o Produto</h2>
+            <div class="description-content">
+                <div class="description-text">
+                    <p><strong>O Minoxidil Kirkland 5% Signature</strong> é a solução mais confiável e eficaz para o tratamento de queda capilar e crescimento de barba. Desenvolvido com a fórmula padrão ouro mundial, este produto é importado diretamente dos EUA e possui comprovação científica de eficácia em estudos clínicos internacionais.</p>
+                    
+                    <p>Com mais de 20 anos de pesquisa e desenvolvimento, o Minoxidil Kirkland tornou-se a escolha preferida de milhões de homens em todo o mundo que buscam resultados reais e duradouros. Cada frasco contém 60 ml de solução tópica concentrada, pronta para aplicação diária.</p>
+
+                    <p>Este kit contém 3 frascos, oferecendo um tratamento completo de 3 meses com aplicadores inclusos. A fórmula penetra profundamente no couro cabeludo, estimulando o crescimento de novos fios e fortalecendo os existentes. Resultados visíveis podem ser observados a partir da 4ª semana de uso contínuo.</p>
+                </div>
+
+                <div class="description-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-flask-vial"></i>
+                        <strong>Concentração 5%</strong>
+                        <span>Fórmula máxima permitida sem prescrição</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-globe"></i>
+                        <strong>Importação Direta</strong>
+                        <span>Produto original dos EUA com lote rastreável</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <strong>Clinicamente Comprovado</strong>
+                        <span>Eficácia validada em estudos internacionais</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-calendar-days"></i>
+                        <strong>Uso Diário</strong>
+                        <span>Aplicação simples 2x ao dia, 1ml por aplicação</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
     <section class="features">
         <div class="container">
             <div class="feature-card">
                 <i class="fas fa-microscope"></i>
                 <h3>Eficácia Comprovada</h3>
-                <p>Fórmula padrão ouro mundial para crescimento capilar e preenchimento de barba.</p>
+                <p>Fórmula padrão ouro mundial para crescimento capilar e preenchimento de barba. Resultados visíveis em 4 semanas.</p>
             </div>
             <div class="feature-card">
                 <i class="fas fa-award"></i>
                 <h3>Produto Original</h3>
-                <p>Importado diretamente dos EUA, lacrado e com lote rastreável.</p>
+                <p>Importado diretamente dos EUA, lacrado e com lote rastreável. Garantia de autenticidade em 100% dos produtos.</p>
             </div>
         </div>
     </section>
 
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Receba Dicas Exclusivas</h2>
+                <p>Inscreva-se na nossa newsletter e receba dicas de cuidados capilares, ofertas exclusivas e lançamentos em primeira mão.</p>
+                <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+                    <input type="email" placeholder="Seu melhor e-mail" required>
+                    <button type="submit">INSCREVER</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFAQ(this)">
+                        <span>Como usar o Minoxidil Kirkland 5%?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-content">
+                        <div class="faq-text">
+                            <p>Aplique 1 ml de solução diretamente no couro cabeludo ou área da barba, 2 vezes ao dia (manhã e noite). Use o aplicador incluído no frasco para facilitar a aplicação. Deixe secar naturalmente por 4 horas antes de lavar o cabelo ou dormir. Não lave o cabelo imediatamente após a aplicação para garantir máxima eficácia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFAQ(this)">
+                        <span>Quanto tempo leva para ver resultados?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-content">
+                        <div class="faq-text">
+                            <p>Os primeiros resultados visíveis geralmente aparecem entre 4 a 8 semanas de uso contínuo. Resultados mais significativos e satisfatórios são observados entre 3 a 6 meses. Para melhores resultados, é importante manter a consistência na aplicação diária e não interromper o tratamento. Cada pessoa pode responder de forma diferente ao tratamento.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFAQ(this)">
+                        <span>O produto é seguro? Existem efeitos colaterais?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-content">
+                        <div class="faq-text">
+                            <p>O Minoxidil 5% é seguro quando usado conforme as instruções. Efeitos colaterais são raros, mas podem incluir coceira leve, ressecamento ou irritação no local da aplicação. Estes sintomas geralmente desaparecem com o tempo. Se você tiver reações alérgicas ou problemas cardíacos, consulte um médico antes de usar. Não recomendamos uso em menores de 18 anos sem orientação médica.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFAQ(this)">
+                        <span>Posso usar junto com outros produtos?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-content">
+                        <div class="faq-text">
+                            <p>Sim, o Minoxidil pode ser usado com outros produtos capilares. Recomendamos aguardar pelo menos 4 horas entre a aplicação do Minoxidil e outros tratamentos tópicos. Xampus e condicionadores normais podem ser usados normalmente. Para máxima eficácia, evite usar géis, óleos ou outros produtos no couro cabeludo imediatamente após a aplicação.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFAQ(this)">
+                        <span>Qual é a validade do produto?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-content">
+                        <div class="faq-text">
+                            <p>Todos os nossos produtos possuem validade de 24 meses a partir da data de fabricação. Os frascos são lacrados e vêm com lote rastreável para garantir autenticidade e qualidade. Armazene em local fresco e seco, longe da luz solar direta. Após aberto, o produto deve ser utilizado dentro de 6 meses para manter sua eficácia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFAQ(this)">
+                        <span>Como é feito o envio? Quanto tempo demora?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-content">
+                        <div class="faq-text">
+                            <p>Realizamos envios para todo o Brasil via transportadoras parceiras (Sedex, PAC e Loggi). Pedidos realizados até as 14h são despachados no mesmo dia. O prazo de entrega varia conforme a região: São Paulo e região metropolitana (1-2 dias), demais regiões (3-7 dias úteis). Oferecemos rastreamento completo e frete grátis para todo o Brasil em compras acima de R$ 99.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFAQ(this)">
+                        <span>Qual é a política de devolução?</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-content">
+                        <div class="faq-text">
+                            <p>Oferecemos garantia de satisfação de 30 dias. Se o produto chegar danificado ou não corresponder à descrição, você pode solicitar devolução ou reembolso sem questionamentos. Produtos abertos podem ser devolvidos se não forem utilizados. Entre em contato com nosso atendimento para iniciar o processo de devolução. Reembolsos são processados dentro de 5-7 dias úteis após recebimento do produto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- E-commerce Elements Section -->
+    <section class="ecommerce-elements">
+        <div class="container">
+            <h2>Por Que Comprar Conosco?</h2>
+            <div class="elements-grid">
+                <div class="element-card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Compra Segura</h3>
+                    <p>Pagamento 100% seguro com criptografia SSL. Seus dados são protegidos em todas as transações.</p>
+                </div>
+                <div class="element-card">
+                    <i class="fas fa-undo"></i>
+                    <h3>Garantia 30 Dias</h3>
+                    <p>Devolução sem complicações se não ficar satisfeito. Reembolso integral garantido.</p>
+                </div>
+                <div class="element-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>Suporte 24/7</h3>
+                    <p>Equipe de atendimento disponível para responder dúvidas e oferecer orientações completas.</p>
+                </div>
+                <div class="element-card">
+                    <i class="fas fa-box"></i>
+                    <h3>Embalagem Discreta</h3>
+                    <p>Produtos embalados discretamente para sua privacidade e segurança durante o transporte.</p>
+                </div>
+                <div class="element-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Produtos Originais</h3>
+                    <p>100% originais importados diretamente dos EUA com certificado de autenticidade.</p>
+                </div>
+                <div class="element-card">
+                    <i class="fas fa-truck-fast"></i>
+                    <h3>Frete Rápido</h3>
+                    <p>Envio em 24h para São Paulo. Frete grátis para todo o Brasil em compras acima de R$ 99.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Mobile CTA -->
     <div class="mobile-cta">
         <button class="cta-button" style="box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
             COMPRAR AGORA
         </button>
     </div>
 
+    <!-- Professional Footer -->
     <footer>
         <div class="container">
-            <p>© 2024 Hub Suplementos. Todos os direitos reservados.</p>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Sobre Nós</h4>
+                    <p>Hub Suplementos é a maior plataforma de suplementos premium do Brasil, oferecendo produtos originais importados com garantia de autenticidade e qualidade.</p>
+                    <div class="footer-social">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Produtos</h4>
+                    <ul>
+                        <li><a href="#">Minoxidil</a></li>
+                        <li><a href="#">Cabelo e Barba</a></li>
+                        <li><a href="#">Vitaminas e Minerais</a></li>
+                        <li><a href="#">Kits Promocionais</a></li>
+                        <li><a href="#">Ofertas Especiais</a></li>
+                        <li><a href="#">Lançamentos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Atendimento</h4>
+                    <ul>
+                        <li><a href="#">Fale Conosco</a></li>
+                        <li><a href="#">Dúvidas Frequentes</a></li>
+                        <li><a href="#">Rastreamento</a></li>
+                        <li><a href="#">Devoluções</a></li>
+                        <li><a href="#">Garantia</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Informações</h4>
+                    <ul>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Política de Cookies</a></li>
+                        <li><a href="#">Política de Frete</a></li>
+                        <li><a href="#">Trabalhe Conosco</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Formas de Pagamento</h4>
+                    <div class="payment-methods">
+                        <span><i class="fas fa-money-bill"></i> PIX</span>
+                        <span><i class="fas fa-credit-card"></i> Crédito</span>
+                        <span><i class="fas fa-credit-card"></i> Débito</span>
+                        <span><i class="fas fa-wallet"></i> Boleto</span>
+                    </div>
+                    <p style="margin-top: 16px;">Parcelamento em até 12x sem juros no cartão de crédito.</p>
+                </div>
+            </div>
+
+            <div class="footer-divider">
+                <div class="footer-bottom">
+                    <div>
+                        <strong>Endereço:</strong><br>
+                        Av. Paulista, 1000 - São Paulo, SP<br>
+                        CEP: 01311-100
+                    </div>
+                    <div>
+                        <strong>Contato:</strong><br>
+                        📞 (11) 3000-0000<br>
+                        📧 contato@hubsuplementos.com.br
+                    </div>
+                    <div>
+                        <strong>Horário:</strong><br>
+                        Seg-Sex: 08h às 18h<br>
+                        Sab: 09h às 14h
+                    </div>
+                    <div class="footer-bottom-text">
+                        <p>© 2024 Hub Suplementos. Todos os direitos reservados. | CNPJ: 12.345.678/0001-90 | Empresa licenciada e regulamentada.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -440,6 +1078,18 @@
             document.querySelectorAll('.option-card').forEach(c => c.classList.remove('active'));
             el.classList.add('active');
             document.querySelector('.price-main').innerHTML = `R$ ${price.toFixed(2).replace('.', ',')} <span>R$ ${old.toFixed(2).replace('.', ',')}</span>`;
+        }
+
+        function toggleFAQ(header) {
+            const faqItem = header.parentElement;
+            faqItem.classList.toggle('active');
+        }
+
+        function handleNewsletterSubmit(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            alert(`Obrigado por se inscrever! Confirmação enviada para ${email}`);
+            event.target.reset();
         }
     </script>
 </body>
