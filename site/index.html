@@ -1,1442 +1,701 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kit 3 frascos Minoxidil Kirkland 5% - Solução clínica comprovada para crescimento capilar. De R$ 265 por apenas R$ 105. Resultados visíveis em 3-6 meses. Frete grátis acima de R$ 100.">
-    <meta name="keywords" content="minoxidil, kirkland, crescimento capilar, alopecia, queda de cabelo, tratamento capilar">
-    <meta name="theme-color" content="#0f172a">
-    <title>Minoxidil Kirkland 5% - Kit 3 Frascos | Loja Oficial Brasil</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-    
+    <title>Creatina Micronizada Nutrata | Hub Suplementos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        :root {
+            --primary-color: #000066;
+            --secondary-color: #f8f9fa;
+            --accent-color: #ffcc00;
+            --text-color: #333;
+            --light-gray: #e9ecef;
+            --border-color: #ddd;
+            --success-color: #28a745;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #0f172a;
-            --primary-light: #1e293b;
-            --primary-lighter: #f1f5f9;
-            --accent: #059669;
-            --accent-light: #d1fae5;
-            --accent-dark: #047857;
-            --destructive: #dc2626;
-            --warning: #f59e0b;
-            --foreground: #0f172a;
-            --muted: #64748b;
-            --muted-light: #cbd5e1;
-            --border: #e2e8f0;
-            --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        html {
-            scroll-behavior: smooth;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            color: var(--foreground);
+            background-color: #fff;
+            color: var(--text-color);
             line-height: 1.6;
-            background-color: #ffffff;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            color: var(--foreground);
-        }
-
-        h1 { font-size: 2.5rem; line-height: 1.2; }
-        h2 { font-size: 2rem; line-height: 1.3; }
-        h3 { font-size: 1.5rem; }
-        h4 { font-size: 1.125rem; }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 1.875rem; }
-            h2 { font-size: 1.5rem; }
-            h3 { font-size: 1.25rem; }
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 15px;
         }
 
-        /* ============ TOP BAR ============ */
-        .top-bar {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 0.75rem 1.5rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-
-        .top-bar-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .top-bar-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        /* ============ HEADER / NAVIGATION ============ */
+        /* Header */
         header {
-            background: white;
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: var(--shadow);
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .header-content {
+        .top-bar {
+            background-color: var(--secondary-color);
+            padding: 8px 0;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .main-header {
+            padding: 20px 0;
+        }
+
+        .header-flex {
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
-            height: 4rem;
-            padding: 0 1.5rem;
+            gap: 20px;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo-icon {
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-            border-radius: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1.125rem;
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
+        .logo img {
+            height: 50px;
         }
 
         .search-bar {
-            display: none;
+            flex: 1;
+            display: flex;
+            max-width: 600px;
         }
 
-        @media (min-width: 768px) {
-            .search-bar {
-                display: flex;
-                align-items: center;
-                background: var(--primary-lighter);
-                border: 1px solid var(--border);
-                border-radius: 0.5rem;
-                padding: 0.5rem 1rem;
-                width: 300px;
-            }
-
-            .search-bar input {
-                background: transparent;
-                border: none;
-                outline: none;
-                width: 100%;
-                font-size: 0.875rem;
-                color: var(--foreground);
-            }
-
-            .search-bar input::placeholder {
-                color: var(--muted);
-            }
+        .search-bar input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid var(--border-color);
+            border-right: none;
+            border-radius: 4px 0 0 4px;
+            outline: none;
         }
 
-        .cart-icon {
-            position: relative;
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 0 4px 4px 0;
             cursor: pointer;
-            font-size: 1.5rem;
         }
 
-        .cart-badge {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: var(--destructive);
-            color: white;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
+        .user-actions {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .account, .cart {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            font-weight: 700;
+            gap: 10px;
+            cursor: pointer;
         }
 
-        /* ============ HERO SECTION ============ */
-        .hero {
-            padding: 3rem 0;
-            background: linear-gradient(135deg, var(--primary-lighter) 0%, #ffffff 100%);
+        .account i, .cart i {
+            font-size: 24px;
+            color: var(--primary-color);
         }
 
-        .hero-grid {
+        .account span {
+            font-size: 12px;
+        }
+
+        .cart-count {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 50%;
+            font-size: 12px;
+        }
+
+        .main-nav {
+            background-color: #fff;
+            padding: 10px 0;
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .main-nav a.outlet {
+            color: #d9534f;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 15px 0;
+            font-size: 12px;
+            color: #777;
+        }
+
+        .breadcrumb a {
+            text-decoration: none;
+            color: #777;
+        }
+
+        /* Product Section */
+        .product-container {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 3rem;
-            align-items: start;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 20px 15px;
         }
 
-        @media (max-width: 992px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
-        /* Product Gallery */
         .product-gallery {
-            position: relative;
+            display: flex;
+            gap: 15px;
         }
 
-        @media (min-width: 992px) {
-            .product-gallery {
-                position: sticky;
-                top: 5rem;
-            }
+        .thumbnails {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .thumbnails img {
+            width: 80px;
+            height: 80px;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            object-fit: contain;
+        }
+
+        .thumbnails img.active {
+            border-color: var(--primary-color);
         }
 
         .main-image {
-            background: white;
-            border-radius: 1rem;
-            overflow: hidden;
-            aspect-ratio: 1;
-            border: 1px solid var(--border);
-            position: relative;
-            box-shadow: var(--shadow-md);
+            flex: 1;
+            border: 1px solid var(--border-color);
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .main-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 2rem;
+            max-width: 100%;
+            max-height: 500px;
         }
 
-        .badge-discount {
-            position: absolute;
-            top: 1.5rem;
-            left: 1.5rem;
-            background: var(--destructive);
-            color: white;
-            padding: 0.75rem 1.25rem;
-            border-radius: 0.5rem;
-            font-weight: 700;
-            font-size: 1rem;
-            box-shadow: var(--shadow-lg);
-            z-index: 10;
+        .product-info h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
         }
 
-        .badge-new {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: var(--accent);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            font-size: 0.875rem;
-            z-index: 10;
+        .brand {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
         }
 
-        .thumbnail-gallery {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0.75rem;
-            margin-top: 1rem;
+        .rating {
+            margin-bottom: 20px;
+            color: #ffcc00;
         }
 
-        .thumbnail {
-            aspect-ratio: 1;
-            border: 2px solid var(--border);
-            border-radius: 0.5rem;
-            cursor: pointer;
-            overflow: hidden;
-            background: white;
-            transition: all 0.3s;
-        }
-
-        .thumbnail:hover {
-            border-color: var(--accent);
-        }
-
-        .thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 0.5rem;
-        }
-
-        /* Product Info */
-        .product-info {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .breadcrumb {
-            font-size: 0.875rem;
-            color: var(--muted);
-            margin-bottom: 1rem;
-        }
-
-        .breadcrumb a {
-            color: var(--accent);
+        .rating a {
+            color: #007bff;
+            font-size: 12px;
+            margin-left: 10px;
             text-decoration: none;
         }
 
-        .breadcrumb a:hover {
-            text-decoration: underline;
+        .variants {
+            margin-bottom: 25px;
         }
 
-        .product-title {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            line-height: 1.3;
+        .variant-options {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
         }
 
-        .product-subtitle {
-            color: var(--muted);
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
+        .variant-options button {
+            padding: 8px 20px;
+            border: 1px solid var(--border-color);
+            background: #fff;
+            cursor: pointer;
         }
 
-        .rating-section {
+        .variant-options button.active {
+            border-color: var(--primary-color);
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .price-box {
+            background-color: #fdfdfd;
+            padding: 20px;
+            border: 1px solid var(--light-gray);
+            margin-bottom: 25px;
+        }
+
+        .price-from {
+            font-size: 14px;
+            color: #888;
+            text-decoration: line-through;
+        }
+
+        .price-main {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border);
+            gap: 15px;
+            margin: 5px 0;
         }
 
-        .stars {
-            color: #fbbf24;
-            font-size: 1.125rem;
-            letter-spacing: 0.1rem;
+        .price-now {
+            font-size: 32px;
+            font-weight: bold;
+            color: var(--success-color);
         }
 
-        .rating-text {
-            color: var(--muted);
-            font-size: 0.875rem;
-        }
-
-        .rating-link {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .rating-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Price Section */
-        .price-section {
-            background: var(--primary-lighter);
-            border: 2px solid var(--border);
-            border-radius: 1rem;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .price-row {
-            display: flex;
-            align-items: baseline;
-            gap: 1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .price-old {
-            color: var(--muted);
-            text-decoration: line-through;
-            font-size: 1.125rem;
-        }
-
-        .price-current {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--destructive);
-            line-height: 1;
-        }
-
-        .price-savings {
-            background: var(--accent-light);
-            color: var(--accent-dark);
-            padding: 0.25rem 0.75rem;
-            border-radius: 0.375rem;
-            font-size: 0.875rem;
-            font-weight: 600;
-        }
-
-        .price-info {
-            color: var(--muted);
-            font-size: 0.875rem;
-            margin-top: 1rem;
+        .discount-tag {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 4px 8px;
+            font-size: 12px;
+            border-radius: 3px;
         }
 
         .installments {
-            color: var(--accent);
-            font-weight: 600;
-            font-size: 1rem;
-            margin-top: 1rem;
+            font-size: 14px;
         }
 
-        /* Stock Indicator */
-        .stock-section {
-            margin-bottom: 2rem;
-            padding: 1rem;
-            background: #fef3c7;
-            border-left: 4px solid var(--warning);
-            border-radius: 0.5rem;
-        }
-
-        .stock-indicator {
+        .buy-actions {
             display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: #92400e;
-            margin-bottom: 0.75rem;
+            gap: 15px;
+            margin-bottom: 30px;
         }
 
-        .stock-bar {
-            height: 8px;
-            background: #e5e7eb;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .stock-bar-fill {
-            height: 100%;
-            background: var(--destructive);
-            width: 20%;
-            border-radius: 4px;
-        }
-
-        /* Quantity Selector */
-        .quantity-section {
+        .quantity {
             display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
         }
 
-        .quantity-label {
-            font-weight: 600;
-            color: var(--foreground);
-        }
-
-        .quantity-selector {
-            display: flex;
-            align-items: center;
-            border: 1px solid var(--border);
-            border-radius: 0.5rem;
-            overflow: hidden;
-        }
-
-        .quantity-btn {
+        .quantity button {
             width: 40px;
-            height: 40px;
-            border: none;
-            background: var(--primary-lighter);
-            cursor: pointer;
-            font-weight: 600;
-            color: var(--foreground);
-            transition: all 0.3s;
-        }
-
-        .quantity-btn:hover {
-            background: var(--border);
-        }
-
-        .quantity-input {
-            width: 60px;
-            height: 40px;
-            border: none;
-            text-align: center;
-            font-weight: 600;
-            background: white;
-        }
-
-        /* CTA Buttons */
-        .cta-section {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 0.75rem;
-            font-size: 1.125rem;
-            font-weight: 700;
-            text-align: center;
-            text-decoration: none;
+            background: #fff;
             border: none;
             cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
+            font-size: 18px;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-            color: white;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .btn-secondary {
-            background: white;
-            color: var(--foreground);
-            border: 2px solid var(--border);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-lighter);
-            border-color: var(--primary);
-        }
-
-        /* Trust Badges */
-        .trust-badges {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .badge {
+        .quantity input {
+            width: 50px;
             text-align: center;
-            font-size: 0.875rem;
+            border: none;
+            border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
         }
 
-        .badge-icon {
-            font-size: 1.75rem;
-            margin-bottom: 0.5rem;
-            display: block;
+        .btn-buy {
+            flex: 1;
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 4px;
         }
 
-        .badge-text {
-            color: var(--muted);
-            line-height: 1.4;
+        .shipping-calc {
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
         }
 
-        /* ============ BENEFITS SECTION ============ */
-        .section {
-            padding: 5rem 0;
-        }
-
-        .section.bg-light {
-            background: var(--primary-lighter);
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-        }
-
-        .section-header h2 {
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            color: var(--muted);
-            font-size: 1.125rem;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .benefit-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 1rem;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s;
-            border: 1px solid var(--border);
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent);
-        }
-
-        .benefit-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .benefit-card h3 {
-            margin-bottom: 1rem;
-            color: var(--foreground);
-        }
-
-        .benefit-card p {
-            color: var(--muted);
-            line-height: 1.7;
-        }
-
-        /* ============ TIMELINE SECTION ============ */
-        .timeline-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        @media (max-width: 768px) {
-            .timeline-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .timeline-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 1rem;
-            border: 2px solid var(--border);
-            text-align: center;
-            position: relative;
-            transition: all 0.3s;
-        }
-
-        .timeline-card:hover {
-            border-color: var(--accent);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .timeline-number {
-            width: 3.5rem;
-            height: 3.5rem;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-            color: white;
-            border-radius: 50%;
+        .shipping-input {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: -4rem auto 1.5rem;
-            font-weight: 800;
-            font-size: 1.5rem;
-            border: 4px solid white;
-            box-shadow: var(--shadow-md);
+            margin-top: 10px;
+            max-width: 300px;
         }
 
-        .timeline-card h4 {
-            margin-bottom: 1rem;
-            color: var(--foreground);
+        .shipping-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-right: none;
         }
 
-        .timeline-card p {
-            color: var(--muted);
-            line-height: 1.6;
+        .shipping-input button {
+            padding: 10px 15px;
+            background: #fff;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
         }
 
-        /* ============ HOW TO USE SECTION ============ */
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+        /* Tabs */
+        .product-details {
+            margin-top: 50px;
+            margin-bottom: 50px;
         }
 
-        .step-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: var(--shadow-md);
-            position: relative;
-            border: 1px solid var(--border);
-            transition: all 0.3s;
-        }
-
-        .step-card:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-3px);
-        }
-
-        .step-badge {
-            width: 3rem;
-            height: 3rem;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-            color: white;
-            border-radius: 50%;
+        .tabs {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
         }
 
-        .step-card h4 {
-            margin-bottom: 0.75rem;
-            color: var(--foreground);
-        }
-
-        .step-card p {
-            color: var(--muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Warning Box */
-        .warning-box {
-            background: #fef3c7;
-            border-left: 4px solid var(--warning);
-            padding: 2rem;
-            border-radius: 0.75rem;
-            margin-top: 2rem;
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .warning-icon {
-            font-size: 1.75rem;
-            flex-shrink: 0;
-        }
-
-        .warning-box h4 {
-            margin-bottom: 0.75rem;
-            color: #92400e;
-        }
-
-        .warning-box ul {
-            color: #92400e;
-            margin-left: 1.5rem;
-        }
-
-        .warning-box li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* ============ REVIEWS SECTION ============ */
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .review-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border);
-            transition: all 0.3s;
-        }
-
-        .review-card:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-3px);
-        }
-
-        .review-stars {
-            color: #fbbf24;
-            font-size: 1.125rem;
-            margin-bottom: 1rem;
-            letter-spacing: 0.1rem;
-        }
-
-        .review-title {
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            color: var(--foreground);
-        }
-
-        .review-text {
-            color: var(--muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-            font-style: italic;
-        }
-
-        .review-author {
+        .tab-link {
+            padding: 15px 30px;
+            border: none;
+            background: none;
+            cursor: pointer;
             font-weight: 600;
-            font-size: 0.875rem;
-            color: var(--foreground);
+            color: #777;
+            position: relative;
         }
 
-        .review-verified {
-            color: var(--accent);
-            font-weight: 600;
-            margin-left: 0.5rem;
+        .tab-link.active {
+            color: var(--primary-color);
         }
 
-        /* ============ FAQ SECTION ============ */
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            border: 1px solid var(--border);
-            border-radius: 0.75rem;
-            margin-bottom: 1rem;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-
-        .faq-item:hover {
-            border-color: var(--accent);
-            box-shadow: var(--shadow-md);
-        }
-
-        .faq-trigger {
+        .tab-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
             width: 100%;
-            background: white;
-            border: none;
-            padding: 1.5rem;
-            text-align: left;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            color: var(--foreground);
-            transition: all 0.3s;
+            height: 2px;
+            background-color: var(--primary-color);
         }
 
-        .faq-trigger:hover {
-            background: var(--primary-lighter);
+        .tab-content {
+            display: none;
         }
 
-        .faq-trigger.active {
-            background: var(--accent-light);
-            color: var(--accent-dark);
+        .tab-content.active {
+            display: block;
         }
 
-        .faq-icon {
-            font-size: 1.25rem;
-            transition: transform 0.3s;
+        .tab-content h2 {
+            margin-bottom: 15px;
         }
 
-        .faq-trigger.active .faq-icon {
-            transform: rotate(180deg);
+        .tab-content p, .tab-content ul {
+            margin-bottom: 15px;
         }
 
-        .faq-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            background: var(--primary-lighter);
+        .tab-content ul {
+            padding-left: 20px;
         }
 
-        .faq-item.active .faq-content {
-            max-height: 500px;
-            transition: max-height 0.3s ease-in;
-        }
-
-        .faq-text {
-            padding: 1.5rem;
-            color: var(--muted);
-            line-height: 1.7;
-        }
-
-        /* ============ FOOTER ============ */
+        /* Footer */
         footer {
-            background: var(--primary);
-            color: white;
-            padding: 4rem 0 2rem;
-            margin-top: 5rem;
+            background-color: #f8f9fa;
+            padding: 50px 0 0;
+            border-top: 1px solid var(--border-color);
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 2rem;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
         }
 
-        .footer-section h4 {
-            color: white;
-            margin-bottom: 1rem;
-            font-size: 1rem;
+        .footer-logo {
+            height: 40px;
+            margin-bottom: 20px;
         }
 
-        .footer-section p {
-            color: #cbd5e1;
-            font-size: 0.875rem;
-            line-height: 1.6;
+        .social-links {
+            display: flex;
+            gap: 15px;
         }
 
-        .footer-links ul {
+        .social-links i {
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .footer-col ul {
             list-style: none;
         }
 
-        .footer-links li {
-            margin-bottom: 0.75rem;
+        .footer-col ul li {
+            margin-bottom: 10px;
         }
 
-        .footer-links a {
-            color: #cbd5e1;
+        .footer-col ul a {
             text-decoration: none;
-            font-size: 0.875rem;
-            transition: color 0.3s;
+            color: #666;
+            font-size: 14px;
         }
 
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .footer-divider {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
-            margin-top: 2rem;
+        .copyright {
+            background-color: #eee;
+            padding: 20px 0;
             text-align: center;
-            font-size: 0.875rem;
-            color: #94a3b8;
+            font-size: 12px;
+            color: #777;
         }
 
-        .payment-methods {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .payment-badge {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
-            font-size: 0.75rem;
-            color: #cbd5e1;
-        }
-
-        /* ============ STICKY MOBILE CTA ============ */
-        .sticky-cta {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: white;
-            padding: 1rem;
-            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.15);
-            display: none;
-            z-index: 1000;
-            border-top: 1px solid var(--border);
-        }
-
+        /* Responsive */
         @media (max-width: 768px) {
-            .sticky-cta {
-                display: block;
-            }
-            body {
-                padding-bottom: 80px;
-            }
-        }
-
-        /* ============ RESPONSIVE ============ */
-        @media (max-width: 768px) {
-            .header-actions {
-                gap: 1rem;
-            }
-
-            .trust-badges {
+            .product-container {
                 grid-template-columns: 1fr;
             }
-
-            .product-title {
-                font-size: 1.5rem;
+            
+            .header-flex {
+                flex-direction: column;
             }
-
-            .price-current {
-                font-size: 2.5rem;
+            
+            .search-bar {
+                width: 100%;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="top-bar-content">
-                <div class="top-bar-item">
-                    <span>🚚 Frete grátis acima de R$ 100</span>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <p>Falta apenas <strong>R$ 199,00</strong> para obter <strong>Frete Grátis</strong> em SP.</p>
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="container header-flex">
+                <div class="logo">
+                    <img src="https://images.tcdn.com.br/img/themes/1370019/logo.png?1740685044" alt="Hub Suplementos">
                 </div>
-                <div class="top-bar-item">
-                    <span>✓ 100% Seguro e Certificado</span>
+                <div class="search-bar">
+                    <input type="text" placeholder="O que deseja procurar?">
+                    <button><i class="fas fa-search"></i></button>
                 </div>
-                <div class="top-bar-item">
-                    <span>📞 Suporte 24/7</span>
+                <div class="user-actions">
+                    <div class="account">
+                        <i class="far fa-user"></i>
+                        <span>Minha Conta<br><strong>Acessar</strong></span>
+                    </div>
+                    <div class="cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </div>
                 </div>
             </div>
+        </div>
+        <nav class="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="#"><i class="fas fa-bars"></i> Todas Categorias</a></li>
+                    <li><a href="#">Proteínas</a></li>
+                    <li><a href="#">Creatina</a></li>
+                    <li><a href="#">Pré-Treino</a></li>
+                    <li><a href="#">Snacks</a></li>
+                    <li><a href="#">Vitaminas e Minerais</a></li>
+                    <li><a href="#" class="outlet">Outlet</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="#">Home</a> / <a href="#">Creatina</a> / <a href="#">Creatina Micronizada</a> / <span>Creatina Micronizada Nutrata</span>
         </div>
     </div>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="#" class="logo">
-                    <div class="logo-icon">K</div>
-                    <span>Minoxidil</span>
-                </a>
-                
-                <div class="search-bar">
-                    <input type="text" placeholder="Buscar produtos...">
-                </div>
+    <!-- Product Section -->
+    <main class="container product-container">
+        <div class="product-gallery">
+            <div class="thumbnails">
+                <img src="https://images.tcdn.com.br/img/img_prod/1370019/creatina_micronizada_nutrata_617_1_2391fd8f3999f6ce6ae6e640b368ca9b.jpg" class="active" onclick="changeImage(this)">
+                <img src="https://images.tcdn.com.br/img/img_prod/1370019/creatina_micronizada_nutrata_617_2_27008ca7886c850606e6cd54985cde4f.jpg" onclick="changeImage(this)">
+                <img src="https://images.tcdn.com.br/img/img_prod/1370019/creatina_micronizada_nutrata_617_3_717727783ed440103f95985fd6d73bfb.jpg" onclick="changeImage(this)">
+                <img src="https://images.tcdn.com.br/img/img_prod/1370019/creatina_micronizada_nutrata_617_4_d4bcc18e3ff135b267911c6dcd910fbf.jpg" onclick="changeImage(this)">
+            </div>
+            <div class="main-image">
+                <img id="featured" src="https://images.tcdn.com.br/img/img_prod/1370019/creatina_micronizada_nutrata_617_1_2391fd8f3999f6ce6ae6e640b368ca9b.jpg" alt="Creatina Micronizada Nutrata">
+            </div>
+        </div>
 
-                <div class="header-actions">
-                    <div class="cart-icon">
-                        🛒
-                        <span class="cart-badge">0</span>
-                    </div>
+        <div class="product-info">
+            <h1>Creatina Micronizada Nutrata</h1>
+            <p class="brand">Marca: <strong>Nutrata</strong> | Referência: 927</p>
+            
+            <div class="rating">
+                <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                <a href="#">Seja o primeiro a opinar</a>
+            </div>
+
+            <div class="variants">
+                <p>Peso:</p>
+                <div class="variant-options">
+                    <button class="active">100g</button>
+                    <button>300g</button>
+                </div>
+            </div>
+
+            <div class="price-box">
+                <span class="price-from">a partir de: R$ 26,60</span>
+                <div class="price-main">
+                    <span class="price-now">R$ 25,27</span>
+                    <span class="discount-tag">5% OFF no PIX</span>
+                </div>
+                <p class="installments">ou <strong>3x</strong> de <strong>R$ 8,87</strong> Sem juros</p>
+            </div>
+
+            <div class="buy-actions">
+                <div class="quantity">
+                    <button onclick="updateQty(-1)">-</button>
+                    <input type="text" id="qty" value="1">
+                    <button onclick="updateQty(1)">+</button>
+                </div>
+                <button class="btn-buy">COMPRAR</button>
+            </div>
+
+            <div class="shipping-calc">
+                <p><i class="fas fa-truck"></i> Frete e prazo de entrega</p>
+                <div class="shipping-input">
+                    <input type="text" placeholder="Informe seu cep">
+                    <button>CALCULAR</button>
                 </div>
             </div>
         </div>
-    </header>
+    </main>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-grid">
-                <!-- Product Gallery -->
-                <div class="product-gallery">
-                    <div class="main-image">
-                        <div class="badge-discount">-60%</div>
-                        <div class="badge-new">PROMOÇÃO</div>
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23f1f5f9' width='200' height='200'/%3E%3Ctext x='50%' y='50%' font-size='16' fill='%2364748b' text-anchor='middle' dominant-baseline='middle'%3EMinoxidil Kirkland%3C/text%3E%3Ctext x='50%' y='60%' font-size='12' fill='%2394a3b8' text-anchor='middle' dominant-baseline='middle'%3E5% - Kit 3 Frascos%3C/text%3E%3C/svg%3E" alt="Minoxidil Kirkland 5% - Kit 3 Frascos">
-                    </div>
-                    <div class="thumbnail-gallery">
-                        <div class="thumbnail">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23f1f5f9' width='100' height='100'/%3E%3Ctext x='50%' y='50%' font-size='10' fill='%2364748b' text-anchor='middle' dominant-baseline='middle'%3EFrasco 1%3C/text%3E%3C/svg%3E" alt="Frasco 1">
-                        </div>
-                        <div class="thumbnail">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23f1f5f9' width='100' height='100'/%3E%3Ctext x='50%' y='50%' font-size='10' fill='%2364748b' text-anchor='middle' dominant-baseline='middle'%3EFrasco 2%3C/text%3E%3C/svg%3E" alt="Frasco 2">
-                        </div>
-                        <div class="thumbnail">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23f1f5f9' width='100' height='100'/%3E%3Ctext x='50%' y='50%' font-size='10' fill='%2364748b' text-anchor='middle' dominant-baseline='middle'%3EFrasco 3%3C/text%3E%3C/svg%3E" alt="Frasco 3">
-                        </div>
-                        <div class="thumbnail">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23f1f5f9' width='100' height='100'/%3E%3Ctext x='50%' y='50%' font-size='10' fill='%2364748b' text-anchor='middle' dominant-baseline='middle'%3EAplicador%3C/text%3E%3C/svg%3E" alt="Aplicador">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product Info -->
-                <div class="product-info">
-                    <div class="breadcrumb">
-                        <a href="#">Início</a> / <a href="#">Saúde</a> / <span>Minoxidil Kirkland 5%</span>
-                    </div>
-
-                    <h1 class="product-title">Minoxidil Kirkland 5%</h1>
-                    <p class="product-subtitle">Kit com 3 Frascos - Solução Clínica Comprovada para Crescimento Capilar</p>
-
-                    <!-- Rating -->
-                    <div class="rating-section">
-                        <span class="stars">★★★★★</span>
-                        <span class="rating-text">4.8 de 5</span>
-                        <span class="rating-link">(2.847 avaliações)</span>
-                    </div>
-
-                    <!-- Price Section -->
-                    <div class="price-section">
-                        <div class="price-row">
-                            <span class="price-old">De R$ 265,00</span>
-                            <span class="price-savings">Economize 60%</span>
-                        </div>
-                        <div class="price-current">R$ 105,00</div>
-                        <div class="installments">💳 12x de R$ 8,75 sem juros</div>
-                        <div class="price-info">Preço válido apenas para este kit. Frete grátis acima de R$ 100.</div>
-                    </div>
-
-                    <!-- Stock Indicator -->
-                    <div class="stock-section">
-                        <div class="stock-indicator">
-                            ⚠️ Apenas 14 unidades restantes em estoque
-                        </div>
-                        <div class="stock-bar">
-                            <div class="stock-bar-fill"></div>
-                        </div>
-                    </div>
-
-                    <!-- Quantity Selector -->
-                    <div class="quantity-section">
-                        <label class="quantity-label">Quantidade:</label>
-                        <div class="quantity-selector">
-                            <button class="quantity-btn">−</button>
-                            <input type="number" class="quantity-input" value="1" min="1">
-                            <button class="quantity-btn">+</button>
-                        </div>
-                    </div>
-
-                    <!-- CTA Buttons -->
-                    <div class="cta-section">
-                        <button class="btn btn-primary">🛒 Adicionar ao Carrinho</button>
-                        <button class="btn btn-secondary">❤️ Adicionar à Lista de Desejos</button>
-                    </div>
-
-                    <!-- Trust Badges -->
-                    <div class="trust-badges">
-                        <div class="badge">
-                            <span class="badge-icon">✓</span>
-                            <div class="badge-text">Produto Certificado</div>
-                        </div>
-                        <div class="badge">
-                            <span class="badge-icon">🔒</span>
-                            <div class="badge-text">Compra Segura</div>
-                        </div>
-                        <div class="badge">
-                            <span class="badge-icon">↩️</span>
-                            <div class="badge-text">30 Dias de Garantia</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Tabs / Description -->
+    <section class="product-details container">
+        <div class="tabs">
+            <button class="tab-link active" onclick="openTab(event, 'desc')">Descrição Geral</button>
+            <button class="tab-link" onclick="openTab(event, 'info')">Informação Nutricional</button>
+            <button class="tab-link" onclick="openTab(event, 'ingr')">Ingredientes</button>
         </div>
-    </section>
 
-    <!-- Benefits Section -->
-    <section class="section bg-light">
-        <div class="container">
-            <div class="section-header">
-                <h2>Por que Escolher Minoxidil Kirkland?</h2>
-                <p>A solução mais confiável e comprovada cientificamente para o crescimento capilar</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <span class="benefit-icon">📈</span>
-                    <h3>Crescimento Comprovado</h3>
-                    <p>Clinicamente comprovado para estimular o crescimento capilar e reduzir queda em até 3 meses. Aprovado pela FDA e dermatologicamente testado.</p>
-                </div>
-                <div class="benefit-card">
-                    <span class="benefit-icon">⚡</span>
-                    <h3>Ação Rápida</h3>
-                    <p>Fórmula 5% de concentração máxima. Resultados visíveis entre 3 a 6 meses de uso contínuo. Mais eficaz que versões de 2%.</p>
-                </div>
-                <div class="benefit-card">
-                    <span class="benefit-icon">🛡️</span>
-                    <h3>Seguro e Testado</h3>
-                    <p>Aprovado pela FDA. Fórmula sem perfume, hipoalergênica e dermatologicamente testada. Confiado por milhões de usuários.</p>
-                </div>
-            </div>
+        <div id="desc" class="tab-content active">
+            <h2>Creatin UP Nutrata: creatina monohidratada pura para evolução no treino</h2>
+            <p>O Creatin UP da Nutrata é um suplemento de <strong>creatina monohidratada 100% pura</strong>, com perfil <strong>micronizado</strong> (200 mesh) e <strong>sabor neutro</strong>, pensado para encaixar com facilidade na rotina de quem treina e busca consistência.</p>
+            <h3>Para que serve a creatina na prática?</h3>
+            <ul>
+                <li><strong>Força e potência</strong> em exercícios de alta intensidade.</li>
+                <li><strong>Melhor desempenho</strong> em séries repetidas e treinos com progressão.</li>
+                <li><strong>Mais qualidade de treino</strong>, favorecendo volume e evolução ao longo das semanas.</li>
+            </ul>
+            <h3>Diferenciais do Creatin UP Nutrata</h3>
+            <ul>
+                <li><strong>100% creatina monohidratada</strong> (ingrediente único).</li>
+                <li><strong>Micronizada 200 mesh</strong>, ajudando na mistura e no uso diário.</li>
+                <li><strong>Sabor neutro</strong>, fácil de combinar com água, sucos ou shakes.</li>
+            </ul>
         </div>
-    </section>
-
-    <!-- Timeline Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Cronograma de Resultados</h2>
-                <p>O que esperar durante o seu tratamento com Minoxidil Kirkland</p>
-            </div>
-            <div class="timeline-grid">
-                <div class="timeline-card">
-                    <div class="timeline-number">1</div>
-                    <h4>Mês 1-3: Redução da Queda</h4>
-                    <p>Diminuição notável da queda capilar e estabilização do ciclo de crescimento. Você notará menos fios caindo ao lavar.</p>
-                </div>
-                <div class="timeline-card">
-                    <div class="timeline-number">2</div>
-                    <h4>Mês 3-6: Crescimento Visível</h4>
-                    <p>Aumento visível da densidade capilar e crescimento de novos fios. Cabelo mais volumoso e saudável.</p>
-                </div>
-                <div class="timeline-card">
-                    <div class="timeline-number">3</div>
-                    <h4>Mês 6-12: Resultados Completos</h4>
-                    <p>Cabelo mais cheio, volumoso e saudável. Manutenção contínua recomendada para manter os resultados.</p>
-                </div>
-            </div>
+        <div id="info" class="tab-content">
+            <p>Informações nutricionais detalhadas conforme o rótulo do fabricante.</p>
         </div>
-    </section>
-
-    <!-- How to Use Section -->
-    <section class="section bg-light">
-        <div class="container">
-            <div class="section-header">
-                <h2>Como Usar Minoxidil Kirkland</h2>
-                <p>Siga estas instruções simples para obter os melhores resultados</p>
-            </div>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-badge">1</div>
-                    <h4>Limpe o Couro Cabeludo</h4>
-                    <p>Comece com o cabelo seco. Lave e seque completamente antes de aplicar o produto.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-badge">2</div>
-                    <h4>Aplique o Produto</h4>
-                    <p>Aplique 1ml (6 sprays) diretamente na área afetada 2x ao dia (manhã e noite).</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-badge">3</div>
-                    <h4>Massageie Levemente</h4>
-                    <p>Massageie suavemente por 1-2 minutos para garantir absorção uniforme do produto.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-badge">4</div>
-                    <h4>Deixe Secar</h4>
-                    <p>Deixe secar completamente (4 horas) antes de lavar o cabelo ou deitar na cama.</p>
-                </div>
-            </div>
-            <div class="warning-box">
-                <div class="warning-icon">⚠️</div>
-                <div>
-                    <h4>Informações Importantes</h4>
-                    <ul>
-                        <li><strong>Frequência:</strong> Use 2x ao dia (manhã e noite) para melhores resultados</li>
-                        <li><strong>Dosagem:</strong> Não exceda 2ml por dia (máximo recomendado)</li>
-                        <li><strong>Segurança:</strong> Mantenha o produto longe dos olhos e mucosas</li>
-                        <li><strong>Consulta:</strong> Consulte um dermatologista antes de usar se tiver condições de pele</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reviews Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>O que Nossos Clientes Dizem</h2>
-                <p>Milhares de clientes satisfeitos já transformaram seu cabelo</p>
-            </div>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <div class="review-title">Resultados incríveis em 4 meses!</div>
-                    <div class="review-text">"Estava muito cético no início, mas os resultados foram reais. Meu cabelo começou a crescer novamente e a queda diminuiu drasticamente. Recomendo para todos que sofrem com alopecia."</div>
-                    <div class="review-author">Carlos M. <span class="review-verified">✓ Compra Verificada</span></div>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <div class="review-title">Melhor investimento que fiz</div>
-                    <div class="review-text">"Uso há 6 meses e vejo cabelo novo crescendo. O preço é ótimo comparado a outros produtos no mercado. Entrega rápida e produto bem embalado."</div>
-                    <div class="review-author">Roberto S. <span class="review-verified">✓ Compra Verificada</span></div>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <div class="review-title">Finalmente uma solução que funciona</div>
-                    <div class="review-text">"Testei vários produtos antes de encontrar este. O Minoxidil Kirkland é o único que realmente funcionou para mim. Muito satisfeito com a qualidade."</div>
-                    <div class="review-author">João P. <span class="review-verified">✓ Compra Verificada</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="section bg-light">
-        <div class="container">
-            <div class="section-header">
-                <h2>Perguntas Frequentes</h2>
-                <p>Tire suas dúvidas sobre o Minoxidil Kirkland</p>
-            </div>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <button class="faq-trigger">
-                        <span>Quanto tempo leva para ver resultados?</span>
-                        <span class="faq-icon">▼</span>
-                    </button>
-                    <div class="faq-content">
-                        <div class="faq-text">
-                            A maioria dos usuários começa a ver redução na queda entre 3-4 semanas. Crescimento visível ocorre entre 3-6 meses. Para resultados ótimos, use consistentemente 2x ao dia.
-                        </div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-trigger">
-                        <span>Funciona para mulheres também?</span>
-                        <span class="faq-icon">▼</span>
-                    </button>
-                    <div class="faq-content">
-                        <div class="faq-text">
-                            Sim, o Minoxidil 5% é eficaz para mulheres, mas esta versão Kirkland é especificamente formulada para homens. Mulheres geralmente usam a versão de 2% ou 5% conforme orientação dermatológica.
-                        </div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-trigger">
-                        <span>Preciso usar para sempre?</span>
-                        <span class="faq-icon">▼</span>
-                    </button>
-                    <div class="faq-content">
-                        <div class="faq-text">
-                            Sim, o Minoxidil funciona enquanto você o usa. Se parar, a queda capilar pode retornar dentro de 3-6 meses. É um tratamento contínuo para manter os resultados.
-                        </div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-trigger">
-                        <span>Quais são os efeitos colaterais?</span>
-                        <span class="faq-icon">▼</span>
-                    </button>
-                    <div class="faq-content">
-                        <div class="faq-text">
-                            Efeitos colaterais são raros. Os mais comuns incluem coceira leve no couro cabeludo, ressecamento ou irritação. Se experimentar sintomas graves, interrompa o uso e consulte um médico.
-                        </div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-trigger">
-                        <span>Como é o envio e qual o prazo?</span>
-                        <span class="faq-icon">▼</span>
-                    </button>
-                    <div class="faq-content">
-                        <div class="faq-text">
-                            Oferecemos frete grátis para compras acima de R$ 100. O prazo de entrega é de 3-7 dias úteis para a maioria das regiões. Você receberá um código de rastreamento por email.
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div id="ingr" class="tab-content">
+            <p>Creatina Monohidratada. NÃO CONTÉM GLÚTEN.</p>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h4>Sobre Nós</h4>
-                    <p>Somos a maior autoridade em crescimento capilar do Brasil. Fornecemos produtos certificados e de qualidade garantida há mais de 10 anos.</p>
-                    <div class="payment-methods">
-                        <span class="payment-badge">💳 Cartão</span>
-                        <span class="payment-badge">🏦 Boleto</span>
-                        <span class="payment-badge">📱 PIX</span>
-                        <span class="payment-badge">💰 Dinheiro</span>
-                    </div>
-                </div>
-                <div class="footer-section footer-links">
-                    <h4>Links Úteis</h4>
-                    <ul>
-                        <li><a href="#">Rastrear Pedido</a></li>
-                        <li><a href="#">Política de Privacidade</a></li>
-                        <li><a href="#">Termos de Serviço</a></li>
-                        <li><a href="#">Política de Devolução</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section footer-links">
-                    <h4>Atendimento</h4>
-                    <ul>
-                        <li><a href="#">WhatsApp: (11) 99999-9999</a></li>
-                        <li><a href="#">Email: suporte@loja.com</a></li>
-                        <li><a href="#">Chat ao Vivo: 24/7</a></li>
-                        <li><a href="#">Central de Ajuda</a></li>
-                    </ul>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <img src="https://images.tcdn.com.br/img/themes/1370019/logo.png?1740685044" alt="Hub Suplementos" class="footer-logo">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
-            <div class="footer-divider">
-                &copy; 2026 Minoxidil Kirkland Brasil. Todos os direitos reservados. | Desenvolvido com ❤️
+            <div class="footer-col">
+                <h4>Categorias</h4>
+                <ul>
+                    <li><a href="#">Proteínas</a></li>
+                    <li><a href="#">Creatina</a></li>
+                    <li><a href="#">Pré-Treino</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Institucional</h4>
+                <ul>
+                    <li><a href="#">Quem Somos</a></li>
+                    <li><a href="#">Como comprar</a></li>
+                    <li><a href="#">Segurança</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2026 Hub Suplementos. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Sticky Mobile CTA -->
-    <div class="sticky-cta">
-        <button class="btn btn-primary" style="width: 100%;">Adicionar ao Carrinho - R$ 105,00</button>
-    </div>
-
     <script>
-        // FAQ Accordion
-        document.querySelectorAll('.faq-trigger').forEach(trigger => {
-            trigger.addEventListener('click', () => {
-                const item = trigger.parentElement;
-                const isActive = item.classList.contains('active');
-                
-                // Close all items
-                document.querySelectorAll('.faq-item').forEach(i => {
-                    i.classList.remove('active');
-                });
-                
-                // Open clicked item if it wasn't active
-                if (!isActive) {
-                    item.classList.add('active');
-                }
-            });
-        });
+        function changeImage(element) {
+            // Atualizar imagem principal
+            const mainImg = document.getElementById('featured');
+            mainImg.src = element.src;
 
-        // Quantity Selector
-        document.querySelectorAll('.quantity-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const input = this.parentElement.querySelector('.quantity-input');
-                const currentValue = parseInt(input.value);
-                
-                if (this.textContent === '−' && currentValue > 1) {
-                    input.value = currentValue - 1;
-                } else if (this.textContent === '+') {
-                    input.value = currentValue + 1;
-                }
-            });
-        });
+            // Atualizar classe ativa nas miniaturas
+            const thumbnails = document.querySelectorAll('.thumbnails img');
+            thumbnails.forEach(img => img.classList.remove('active'));
+            element.classList.add('active');
+        }
 
-        // Thumbnail Gallery
-        document.querySelectorAll('.thumbnail').forEach(thumb => {
-            thumb.addEventListener('click', function() {
-                const mainImage = document.querySelector('.main-image img');
-                const thumbImage = this.querySelector('img');
-                mainImage.src = thumbImage.src;
-                
-                // Remove active class from all thumbnails
-                document.querySelectorAll('.thumbnail').forEach(t => {
-                    t.style.borderColor = 'var(--border)';
-                });
-                
-                // Add active class to clicked thumbnail
-                this.style.borderColor = 'var(--accent)';
-            });
-        });
+        function updateQty(change) {
+            const qtyInput = document.getElementById('qty');
+            let currentQty = parseInt(qtyInput.value);
+            
+            if (isNaN(currentQty)) currentQty = 1;
+            
+            currentQty += change;
+            
+            if (currentQty < 1) currentQty = 1;
+            
+            qtyInput.value = currentQty;
+        }
 
-        // Add to Cart Button
-        document.querySelectorAll('.btn-primary').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const cartBadge = document.querySelector('.cart-badge');
-                const currentCount = parseInt(cartBadge.textContent);
-                const quantity = parseInt(document.querySelector('.quantity-input').value) || 1;
-                cartBadge.textContent = currentCount + quantity;
-                
-                // Visual feedback
-                this.textContent = '✓ Adicionado ao Carrinho!';
-                setTimeout(() => {
-                    this.textContent = '🛒 Adicionar ao Carrinho';
-                }, 2000);
+        function openTab(evt, tabName) {
+            // Esconder todos os conteúdos de abas
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Remover classe ativa de todos os links de abas
+            const tabLinks = document.querySelectorAll('.tab-link');
+            tabLinks.forEach(link => link.classList.remove('active'));
+
+            // Mostrar a aba atual e adicionar classe ativa ao botão
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        // Simulação de clique nos botões de variante
+        document.querySelectorAll('.variant-options button').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.variant-options button').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
             });
         });
     </script>
