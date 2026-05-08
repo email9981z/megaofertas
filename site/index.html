@@ -172,26 +172,84 @@
             flex-direction: column;
         }
 
+        /* Carousel Styles */
         .product-gallery {
             width: 100%;
             margin-bottom: 20px;
+            position: relative;
         }
 
-        .main-image {
-            width: 100%;
+        .carousel-container {
+            position: relative;
             border: 1px solid var(--border-color);
             border-radius: 8px;
             overflow: hidden;
+            background: #fff;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #fff;
             padding: 20px;
         }
 
-        .main-image img {
+        .carousel-slide img {
             max-width: 100%;
             height: auto;
+            object-fit: contain;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid var(--border-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            z-index: 10;
+            transition: all 0.2s;
+        }
+
+        .carousel-btn:hover {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .carousel-btn.prev { left: 10px; }
+        .carousel-btn.next { right: 10px; }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--border-color);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .dot.active {
+            background: var(--primary-color);
         }
 
         .product-info h1 {
@@ -240,6 +298,7 @@
         .variant-options {
             display: flex;
             gap: 10px;
+            flex-wrap: wrap;
         }
 
         .variant-btn {
@@ -621,15 +680,22 @@
         <!-- Product Section -->
         <div class="product-main">
             <div class="product-gallery">
-                <div class="main-image">
-                    <img src="https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png" alt="Kit 3 Frascos Minoxidil Kirkland 5%">
+                <div class="carousel-container">
+                    <button class="carousel-btn prev" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Imagens serão inseridas via JavaScript -->
+                    </div>
+                    <button class="carousel-btn next" onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="carousel-dots" id="carouselDots">
+                    <!-- Dots serão inseridos via JavaScript -->
                 </div>
             </div>
 
             <div class="product-info">
-                <h1>Kit 3 Frascos Minoxidil Kirkland 5% - Tratamento 3 Meses</h1>
+                <h1 id="productTitle">Kit 3 Frascos Minoxidil Kirkland 5% - Tratamento 3 Meses</h1>
                 <div class="brand-ref">
-                    Marca: <a href="#">Kirkland Signature</a> | Referência: MINOX-K3
+                    Marca: <a href="#">Kirkland Signature</a> | Referência: <span id="productRef">MINOX-K3</span>
                 </div>
 
                 <div class="rating">
@@ -643,26 +709,24 @@
 
                 <div class="variants">
                     <label>Quantidade:</label>
-                    <div class="variant-options">
-                        <button class="variant-btn">1 Frasco</button>
-                        <button class="variant-btn active">Kit 3 Frascos</button>
-                        <button class="variant-btn">Kit 6 Frascos</button>
+                    <div class="variant-options" id="variantOptions">
+                        <!-- Variantes inseridas via JavaScript -->
                     </div>
                 </div>
 
                 <div class="price-container">
-                    <div class="price-from">R$ 369,99</div>
+                    <div class="price-from" id="priceFrom">R$ 369,99</div>
                     <div class="price-now">
-                        R$ 105,00 <span class="pix-tag">A VISTA NO PIX</span>
+                        <span id="priceNow">R$ 105,00</span> <span class="pix-tag">A VISTA NO PIX</span>
                     </div>
-                    <div class="installments">ou <strong>3x</strong> de <strong>R$ 35,00</strong> Sem juros</div>
+                    <div class="installments" id="installmentsText">ou 3x de R$ 35,00 Sem juros</div>
                 </div>
 
                 <div class="buy-section">
                     <div class="qty-selector">
-                        <button>-</button>
-                        <input type="text" value="1">
-                        <button>+</button>
+                        <button onclick="changeQty(-1)">-</button>
+                        <input type="text" id="qtyInput" value="1" readonly>
+                        <button onclick="changeQty(1)">+</button>
                     </div>
                     <button class="btn-buy">Comprar Agora</button>
                 </div>
@@ -688,7 +752,7 @@
             <div id="desc" class="tab-content active">
                 <h2>Minoxidil Kirkland 5%: O tratamento nº 1 para crescimento capilar</h2>
                 <p>O Minoxidil Kirkland Signature 5% é uma solução tópica clinicamente comprovada para auxiliar no crescimento do cabelo e da barba. Ideal para homens que apresentam afinamento geral dos fios no topo do couro cabeludo ou falhas na barba.</p>
-                <p>Este kit contém 3 frascos de 60ml cada, proporcionando um tratamento completo para 3 meses de uso contínuo.</p>
+                <p>Este kit contém frascos de 60ml cada, proporcionando um tratamento completo e contínuo.</p>
                 <ul>
                     <li>Estimula os folículos capilares inativos.</li>
                     <li>Aumenta a circulação sanguínea no local da aplicação.</li>
@@ -778,6 +842,149 @@
     </footer>
 
     <script>
+        // Dados das Variantes
+        const variants = [
+            {
+                id: 1,
+                name: "1 Frasco",
+                title: "1 Frasco Minoxidil Kirkland 5% - Tratamento 1 Mês",
+                ref: "MINOX-K1",
+                priceFrom: "R$ 129,99",
+                priceNow: "R$ 45,00",
+                installments: "ou 1x de R$ 45,00 Sem juros",
+                images: [
+                    "https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png",
+                    "https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png",
+                    "https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png"
+                ]
+            },
+            {
+                id: 3,
+                name: "Kit 3 Frascos",
+                title: "Kit 3 Frascos Minoxidil Kirkland 5% - Tratamento 3 Meses",
+                ref: "MINOX-K3",
+                priceFrom: "R$ 369,99",
+                priceNow: "R$ 105,00",
+                installments: "ou 3x de R$ 35,00 Sem juros",
+                images: [
+                    "https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png",
+                    "https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png",
+                    "https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png",
+                    "https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png"
+                ]
+            },
+            {
+                id: 6,
+                name: "Kit 6 Frascos",
+                title: "Kit 6 Frascos Minoxidil Kirkland 5% - Tratamento 6 Meses",
+                ref: "MINOX-K6",
+                priceFrom: "R$ 699,99",
+                priceNow: "R$ 195,00",
+                installments: "ou 6x de R$ 32,50 Sem juros",
+                images: [
+                    "https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png",
+                    "https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png"
+                ]
+            }
+        ];
+
+        let currentVariant = variants[1]; // Inicia com Kit 3 Frascos
+        let currentSlide = 0;
+
+        // Elementos do DOM
+        const track = document.getElementById('carouselTrack');
+        const dotsContainer = document.getElementById('carouselDots');
+        const variantOptions = document.getElementById('variantOptions');
+        const productTitle = document.getElementById('productTitle');
+        const productRef = document.getElementById('productRef');
+        const priceFrom = document.getElementById('priceFrom');
+        const priceNow = document.getElementById('priceNow');
+        const installmentsText = document.getElementById('installmentsText');
+        const qtyInput = document.getElementById('qtyInput');
+
+        // Inicializar Variantes
+        function initVariants() {
+            variantOptions.innerHTML = '';
+            variants.forEach(variant => {
+                const btn = document.createElement('button');
+                btn.className = `variant-btn ${variant.id === currentVariant.id ? 'active' : ''}`;
+                btn.textContent = variant.name;
+                btn.onclick = () => selectVariant(variant.id);
+                variantOptions.appendChild(btn);
+            });
+        }
+
+        // Selecionar Variante
+        function selectVariant(id) {
+            currentVariant = variants.find(v => v.id === id);
+            currentSlide = 0;
+            updateUI();
+            initVariants();
+        }
+
+        // Atualizar Interface
+        function updateUI() {
+            productTitle.textContent = currentVariant.title;
+            productRef.textContent = currentVariant.ref;
+            priceFrom.textContent = currentVariant.priceFrom;
+            priceNow.textContent = currentVariant.priceNow;
+            installmentsText.textContent = currentVariant.installments;
+
+            // Atualizar Galeria
+            track.innerHTML = '';
+            dotsContainer.innerHTML = '';
+            
+            currentVariant.images.forEach((imgSrc, index) => {
+                // Slide
+                const slide = document.createElement('div');
+                slide.className = 'carousel-slide';
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                img.alt = `${currentVariant.name} - Imagem ${index + 1}`;
+                slide.appendChild(img);
+                track.appendChild(slide);
+
+                // Dot
+                const dot = document.createElement('div');
+                dot.className = `dot ${index === 0 ? 'active' : ''}`;
+                dot.onclick = () => goToSlide(index);
+                dotsContainer.appendChild(dot);
+            });
+
+            updateCarousel();
+        }
+
+        // Lógica do Carrossel
+        function moveSlide(direction) {
+            const totalSlides = currentVariant.images.length;
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Atualizar dots
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        // Quantidade
+        function changeQty(val) {
+            let current = parseInt(qtyInput.value);
+            current += val;
+            if (current < 1) current = 1;
+            qtyInput.value = current;
+        }
+
+        // Tabs
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tab-content");
@@ -793,6 +1000,11 @@
             document.getElementById(tabName).classList.add("active");
             evt.currentTarget.className += " active";
         }
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', () => {
+            selectVariant(3); // Inicia com Kit 3 Frascos
+        });
     </script>
 </body>
 </html>
