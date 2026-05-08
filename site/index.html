@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Kit 3 Frascos Minoxidil Kirkland 5% | Hub Suplementos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -29,12 +29,14 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
             background-color: #fff;
             color: var(--text-color);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
@@ -80,6 +82,7 @@
 
         .logo img {
             height: 45px;
+            width: auto;
         }
 
         .search-bar {
@@ -130,10 +133,6 @@
             transition: opacity 0.2s;
         }
 
-        .icon-link:hover {
-            opacity: 0.8;
-        }
-
         .cart-count {
             position: absolute;
             top: -8px;
@@ -154,11 +153,10 @@
             padding: 12px 0;
             border-bottom: 1px solid var(--border-color);
             -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
         }
 
-        .nav-scroll::-webkit-scrollbar {
-            display: none;
-        }
+        .nav-scroll::-webkit-scrollbar { display: none; }
 
         .nav-scroll a {
             display: inline-block;
@@ -186,16 +184,9 @@
         .breadcrumb a {
             text-decoration: none;
             color: inherit;
-            transition: color 0.2s;
         }
 
-        .breadcrumb a:hover {
-            color: var(--primary-color);
-        }
-
-        .breadcrumb span {
-            margin: 0 8px;
-        }
+        .breadcrumb span { margin: 0 8px; }
 
         /* Product Section */
         .product-main {
@@ -257,12 +248,6 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
-        .carousel-btn:hover {
-            background: #fff;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transform: translateY(-50%) scale(1.05);
-        }
-
         .carousel-btn.prev { left: 15px; }
         .carousel-btn.next { right: 15px; }
 
@@ -287,6 +272,7 @@
             transform: scale(1.2);
         }
 
+        /* Product Info */
         .product-info h1 {
             font-size: 26px;
             font-weight: 800;
@@ -353,10 +339,6 @@
             transition: all 0.2s;
         }
 
-        .variant-btn:hover {
-            border-color: #9ca3af;
-        }
-
         .variant-btn.active {
             border-color: var(--primary-color);
             color: var(--primary-color);
@@ -395,7 +377,6 @@
             padding: 4px 10px;
             border-radius: 6px;
             font-weight: 700;
-            letter-spacing: 0.5px;
         }
 
         .installments {
@@ -439,11 +420,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background 0.2s;
-        }
-
-        .qty-selector button:hover {
-            background: #f3f4f6;
         }
 
         .qty-selector input {
@@ -456,7 +432,6 @@
             font-size: 16px;
             font-weight: 700;
             background: transparent;
-            color: #111827;
         }
 
         .btn-buy {
@@ -482,7 +457,6 @@
         .btn-buy:hover {
             background-color: var(--buy-now-hover);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(22, 163, 74, 0.4);
         }
 
         .btn-add-cart {
@@ -496,7 +470,6 @@
             border-radius: 10px;
             cursor: pointer;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
@@ -506,8 +479,6 @@
 
         .btn-add-cart:hover {
             background-color: var(--cart-hover-bg);
-            border-color: var(--secondary-color);
-            color: var(--secondary-color);
         }
 
         /* Shipping */
@@ -526,7 +497,6 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            color: #374151;
         }
 
         .shipping-input {
@@ -552,12 +522,6 @@
             font-size: 13px;
             border-radius: 8px;
             cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .shipping-input button:hover {
-            background: var(--primary-color);
-            color: #fff;
         }
 
         /* Tabs */
@@ -583,7 +547,6 @@
             cursor: pointer;
             white-space: nowrap;
             position: relative;
-            transition: color 0.2s;
         }
 
         .tab-btn.active {
@@ -639,7 +602,6 @@
         .tab-content ul li {
             margin-bottom: 12px;
             font-size: 16px;
-            line-height: 1.6;
         }
 
         .info-grid {
@@ -662,7 +624,7 @@
             color: var(--primary-color);
         }
 
-        /* REVIEWS SECTION STYLES */
+        /* REVIEWS SECTION */
         .reviews-section {
             padding: 60px 0;
             background-color: #fff;
@@ -715,22 +677,12 @@
             margin-bottom: 40px;
         }
 
-        @media (min-width: 768px) {
-            .reviews-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
         .review-card {
             background: #fff;
             border: 1px solid var(--border-color);
             padding: 25px;
             border-radius: 12px;
             transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .review-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         .review-top {
@@ -790,13 +742,13 @@
             line-height: 1.6;
         }
 
-        /* Pagination Styles */
         .pagination {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 8px;
             margin-top: 30px;
+            flex-wrap: wrap;
         }
 
         .page-btn {
@@ -814,20 +766,10 @@
             transition: all 0.2s;
         }
 
-        .page-btn:hover:not(.disabled) {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-        }
-
         .page-btn.active {
             background: var(--primary-color);
             color: #fff;
             border-color: var(--primary-color);
-        }
-
-        .page-btn.disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
         }
 
         /* Newsletter */
@@ -875,7 +817,6 @@
             font-size: 15px;
             border-radius: 10px;
             cursor: pointer;
-            transition: background 0.2s;
         }
 
         /* Footer */
@@ -933,34 +874,33 @@
             color: #9ca3af;
         }
 
+        /* Mobile Adjustments */
+        @media (max-width: 767px) {
+            .logo img { height: 32px; }
+            .main-header { padding: 12px 0; }
+            .search-bar input { padding: 10px 35px 10px 15px; font-size: 13px; }
+            .product-info h1 { font-size: 20px; }
+            .price-now { font-size: 26px; }
+            .btn-buy, .btn-add-cart { height: 48px; font-size: 16px; }
+            .qty-selector button, .qty-selector input { height: 48px; width: 40px; }
+            .tab-btn { font-size: 13px; padding: 15px 0; }
+            .tab-content h2 { font-size: 18px; }
+            .tab-content p, .tab-content ul li { font-size: 14px; }
+            .reviews-header h2 { font-size: 22px; }
+            .rating-number { font-size: 28px; }
+            .page-btn { width: 32px; height: 32px; font-size: 13px; }
+        }
+
         /* Desktop Adjustments */
         @media (min-width: 768px) {
-            .product-main {
-                flex-direction: row;
-                gap: 60px;
-                align-items: flex-start;
-            }
-            .product-gallery {
-                width: 50%;
-                position: sticky;
-                top: 120px;
-            }
-            .product-info {
-                width: 50%;
-            }
-            .footer-grid {
-                grid-template-columns: 2fr 1fr 1fr 1fr;
-            }
-            .newsletter-form {
-                flex-direction: row;
-                max-width: 700px;
-            }
-            .newsletter-form input {
-                flex: 1;
-            }
-            .info-grid {
-                grid-template-columns: 1fr 1fr;
-            }
+            .product-main { flex-direction: row; gap: 60px; align-items: flex-start; }
+            .product-gallery { width: 50%; position: sticky; top: 120px; }
+            .product-info { width: 50%; }
+            .info-grid { grid-template-columns: 1fr 1fr; }
+            .reviews-grid { grid-template-columns: 1fr 1fr; }
+            .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
+            .newsletter-form { flex-direction: row; max-width: 700px; }
+            .newsletter-form input { flex: 1; }
         }
     </style>
 </head>
@@ -969,7 +909,7 @@
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="container">
-            Falta apenas <strong>R$ 199,00</strong> para obter <strong>Frete Grátis</strong> em SP. Aproveite!
+            Falta apenas <strong>R$ 199,00</strong> para obter <strong>Frete Grátis</strong> em SP.
         </div>
     </div>
 
@@ -981,12 +921,12 @@
                     <img src="https://images.tcdn.com.br/img/themes/1370019/logo.png?1740685044" alt="Hub Suplementos">
                 </div>
                 <div class="search-bar">
-                    <input type="text" placeholder="O que você está procurando hoje?">
+                    <input type="text" placeholder="O que você procura?">
                     <button><i class="fas fa-search"></i></button>
                 </div>
                 <div class="user-actions">
-                    <a href="#" class="icon-link" title="Minha Conta"><i class="far fa-user"></i></a>
-                    <a href="#" class="icon-link" title="Carrinho">
+                    <a href="#" class="icon-link"><i class="far fa-user"></i></a>
+                    <a href="#" class="icon-link">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="cart-count">0</span>
                     </a>
@@ -998,7 +938,7 @@
                 <a href="#">Cabelo e Barba</a>
                 <a href="#" class="active">Minoxidil</a>
                 <a href="#">Vitaminas</a>
-                <a href="#">Kits Promocionais</a>
+                <a href="#">Kits</a>
                 <a href="#">Outlet</a>
             </div>
         </nav>
@@ -1016,51 +956,47 @@
                 <div class="carousel-container">
                     <button class="carousel-btn prev" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
                     <div class="carousel-track" id="carouselTrack">
-                        <!-- Imagens serão inseridas via JavaScript -->
+                        <!-- Imagens via JS -->
                     </div>
                     <button class="carousel-btn next" onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></button>
                 </div>
                 <div class="carousel-dots" id="carouselDots">
-                    <!-- Dots serão inseridos via JavaScript -->
+                    <!-- Dots via JS -->
                 </div>
             </div>
 
             <div class="product-info">
                 <h1 id="productTitle">Kit 3 Frascos Minoxidil Kirkland 5% - Tratamento 3 Meses</h1>
                 <div class="brand-ref">
-                    Marca: <a href="#">Kirkland Signature</a> | Referência: <span id="productRef">MINOX-K3</span>
+                    Marca: <a href="#">Kirkland Signature</a> | Ref: <span id="productRef">MINOX-K3</span>
                 </div>
 
                 <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <span>(1.983 avaliações verificadas)</span>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <span>(1.983 avaliações)</span>
                 </div>
 
                 <div class="variants">
-                    <label>Escolha o seu tratamento:</label>
+                    <label>Escolha o tratamento:</label>
                     <div class="variant-options" id="variantOptions">
-                        <!-- Variantes inseridas via JavaScript -->
+                        <!-- Variantes via JS -->
                     </div>
                 </div>
 
                 <div class="price-container">
                     <div class="price-from" id="priceFrom">R$ 369,99</div>
                     <div class="price-now">
-                        <span id="priceNow">R$ 105,00</span> <span class="pix-tag">PAGAMENTO VIA PIX</span>
+                        <span id="priceNow">R$ 105,00</span> <span class="pix-tag">VIA PIX</span>
                     </div>
-                    <div class="installments" id="installmentsText">ou 3x de R$ 35,00 Sem juros no cartão</div>
+                    <div class="installments" id="installmentsText">ou 3x de R$ 35,00 Sem juros</div>
                 </div>
 
                 <div class="buy-section">
                     <div class="buy-row-top">
                         <div class="qty-selector">
-                            <button onclick="changeQty(-1)" aria-label="Diminuir quantidade">-</button>
+                            <button onclick="changeQty(-1)">-</button>
                             <input type="text" id="qtyInput" value="1" readonly>
-                            <button onclick="changeQty(1)" aria-label="Aumentar quantidade">+</button>
+                            <button onclick="changeQty(1)">+</button>
                         </div>
                         <button class="btn-buy">
                             <i class="fas fa-bolt"></i> Comprar Agora
@@ -1072,7 +1008,7 @@
                 </div>
 
                 <div class="shipping-box">
-                    <h3><i class="fas fa-truck"></i> Simular frete e prazo</h3>
+                    <h3><i class="fas fa-truck"></i> Frete e prazo</h3>
                     <div class="shipping-input">
                         <input type="text" placeholder="00000-000">
                         <button>CALCULAR</button>
@@ -1084,80 +1020,45 @@
         <!-- Tabs Section -->
         <div class="tabs-container">
             <div class="tabs-header">
-                <button class="tab-btn active" onclick="openTab(event, 'desc')">Descrição Detalhada</button>
-                <button class="tab-btn" onclick="openTab(event, 'info')">Guia de Uso</button>
-                <button class="tab-btn" onclick="openTab(event, 'ingr')">Composição e Segurança</button>
+                <button class="tab-btn active" onclick="openTab(event, 'desc')">Descrição</button>
+                <button class="tab-btn" onclick="openTab(event, 'info')">Como Usar</button>
+                <button class="tab-btn" onclick="openTab(event, 'ingr')">Composição</button>
             </div>
 
             <div id="desc" class="tab-content active">
-                <h2>Minoxidil Kirkland 5%: A Solução Definitiva para Calvície e Falhas na Barba</h2>
-                <p>O <strong>Minoxidil Kirkland Signature 5%</strong> é reconhecido mundialmente como o tratamento padrão ouro para homens que buscam combater a queda de cabelo e estimular o crescimento de novos fios. Desenvolvido com uma fórmula de força extra, ele atua diretamente nos folículos capilares, revitalizando-os e prolongando a fase de crescimento.</p>
-                
-                <p>Seja para tratar a calvície hereditária no topo da cabeça ou para preencher aquelas falhas indesejadas na barba, o Minoxidil Kirkland oferece resultados consistentes e clinicamente comprovados. Este kit de 3 meses é a escolha ideal para quem deseja iniciar um tratamento sério com o melhor custo-benefício do mercado.</p>
-
+                <h2>Minoxidil Kirkland 5%: A Solução Definitiva</h2>
+                <p>O <strong>Minoxidil Kirkland Signature 5%</strong> é o tratamento padrão ouro para combater a queda de cabelo e estimular o crescimento de novos fios.</p>
                 <div class="info-grid">
                     <div class="info-card">
-                        <h3>Por que escolher Kirkland?</h3>
-                        <p>Marca líder nos EUA, fabricada com os mais altos padrões de qualidade, garantindo a mesma eficácia de marcas muito mais caras.</p>
+                        <h3>Qualidade Premium</h3>
+                        <p>Marca líder nos EUA, garantindo a máxima eficácia no seu tratamento.</p>
                     </div>
                     <div class="info-card">
-                        <h3>Resultados Comprovados</h3>
-                        <p>Estudos mostram que o uso contínuo de Minoxidil 5% pode interromper a queda em até 85% dos casos e estimular novo crescimento em 60% dos usuários.</p>
+                        <h3>Resultados Reais</h3>
+                        <p>Interrompe a queda e estimula o crescimento em até 85% dos casos.</p>
                     </div>
                 </div>
-
-                <h3 style="margin: 30px 0 15px; font-size: 20px;">Principais Benefícios:</h3>
-                <ul>
-                    <li><strong>Reativação dos Folículos:</strong> Desperta folículos inativos, promovendo o surgimento de novos fios.</li>
-                    <li><strong>Aumento da Densidade:</strong> Fios mais grossos, fortes e resistentes à queda.</li>
-                    <li><strong>Versatilidade:</strong> Eficácia comprovada tanto para o couro cabeludo quanto para o preenchimento de barba.</li>
-                    <li><strong>Tratamento Prolongado:</strong> Kit com 3 frascos (180ml total) para 90 dias de uso contínuo.</li>
-                    <li><strong>Originalidade Garantida:</strong> Produto 100% original, importado diretamente dos Estados Unidos.</li>
-                </ul>
             </div>
 
             <div id="info" class="tab-content">
-                <h2>Guia de Aplicação para Resultados Máximos</h2>
-                <p>A consistência é a chave para o sucesso do seu tratamento. Siga rigorosamente o protocolo de aplicação abaixo para garantir que os ativos penetrem profundamente na pele:</p>
-                
-                <div class="info-grid">
-                    <div class="info-card">
-                        <h3>Frequência de Uso</h3>
-                        <p>Aplique 1ml da solução exatamente duas vezes ao dia (preferencialmente de manhã e à noite), com um intervalo de 12 horas entre as aplicações.</p>
-                    </div>
-                    <div class="info-card">
-                        <h3>Preparação da Área</h3>
-                        <p>Certifique-se de que o couro cabeludo ou a área da barba esteja completamente limpa e seca antes da aplicação.</p>
-                    </div>
-                </div>
-
-                <h3 style="margin: 30px 0 15px; font-size: 20px;">Passo a Passo:</h3>
+                <h2>Guia de Aplicação</h2>
+                <p>A consistência é a chave. Siga o protocolo para resultados máximos:</p>
                 <ul>
-                    <li>Utilize o aplicador conta-gotas para medir exatamente 1ml do produto.</li>
-                    <li>Aplique diretamente sobre a área afetada, evitando o contato com os fios de cabelo (o foco deve ser a pele/couro cabeludo).</li>
-                    <li>Massageie suavemente com a ponta dos dedos em movimentos circulares para potencializar a absorção.</li>
-                    <li>Lave bem as mãos com sabão imediatamente após o uso.</li>
-                    <li>Aguarde pelo menos 4 horas antes de lavar a área aplicada ou aplicar outros produtos (como óleos ou hidratantes).</li>
+                    <li>Aplique 1ml duas vezes ao dia (manhã e noite).</li>
+                    <li>A área deve estar limpa e seca.</li>
+                    <li>Massageie suavemente para potencializar a absorção.</li>
+                    <li>Lave as mãos após o uso.</li>
                 </ul>
             </div>
 
             <div id="ingr" class="tab-content">
-                <h2>Composição e Informações de Segurança</h2>
-                <p>A formulação do Minoxidil Kirkland é projetada para oferecer a máxima estabilidade do princípio ativo, garantindo que cada gota entregue a concentração correta de 5%.</p>
-                
-                <div class="info-card" style="margin-bottom: 30px;">
+                <h2>Composição e Segurança</h2>
+                <div class="info-card">
                     <h3>Ingredientes:</h3>
-                    <p><strong>Ingrediente Ativo:</strong> Minoxidil 5% w/v (Força Extra).</p>
-                    <p><strong>Ingredientes Inativos:</strong> Álcool Etílico (veículo de absorção), Propilenoglicol (agente umectante), Água Purificada.</p>
+                    <p><strong>Ativo:</strong> Minoxidil 5% w/v.</p>
+                    <p><strong>Inativos:</strong> Álcool Etílico, Propilenoglicol, Água Purificada.</p>
                 </div>
-
-                <h3>Precauções Importantes:</h3>
-                <ul>
-                    <li><strong>Uso Exclusivo Masculino:</strong> Este produto não é indicado para mulheres devido ao risco de crescimento de pelos faciais indesejados.</li>
-                    <li><strong>Apenas Uso Externo:</strong> Não ingerir. Evite contato com os olhos, nariz ou boca.</li>
-                    <li><strong>Reações Comuns:</strong> No início do tratamento, pode ocorrer uma leve coceira ou descamação, o que geralmente desaparece com o uso contínuo.</li>
-                    <li><strong>Efeito Shedding:</strong> É normal notar uma queda temporária de fios fracos nas primeiras 2 a 4 semanas. Isso indica que o produto está expulsando fios velhos para dar lugar a fios novos e fortes.</li>
-                </ul>
+                <p style="margin-top: 20px;"><strong>Atenção:</strong> Uso exclusivo masculino. Apenas uso externo.</p>
             </div>
         </div>
     </main>
@@ -1166,26 +1067,22 @@
     <section class="reviews-section">
         <div class="container">
             <div class="reviews-header">
-                <h2>O que nossos clientes dizem</h2>
+                <h2>Avaliações dos Clientes</h2>
                 <div class="overall-rating">
                     <span class="rating-number">4.9</span>
                     <div class="stars-large">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
                 </div>
-                <span class="total-reviews-count">Baseado em 1.983 avaliações verificadas</span>
+                <span class="total-reviews-count">1.983 avaliações verificadas</span>
             </div>
 
             <div class="reviews-grid" id="reviewsGrid">
-                <!-- Reviews will be inserted here by JS -->
+                <!-- Reviews via JS -->
             </div>
 
             <div class="pagination" id="pagination">
-                <!-- Pagination will be inserted here by JS -->
+                <!-- Pagination via JS -->
             </div>
         </div>
     </section>
@@ -1193,12 +1090,12 @@
     <!-- Newsletter -->
     <section class="newsletter">
         <div class="container">
-            <h2>Faça parte do nosso Clube VIP</h2>
-            <p>Receba guias exclusivos de cuidados e ofertas imbatíveis antes de todo mundo.</p>
+            <h2>Clube VIP Hub</h2>
+            <p>Receba ofertas exclusivas e guias de cuidados.</p>
             <form class="newsletter-form">
-                <input type="text" placeholder="Seu primeiro nome">
-                <input type="email" placeholder="Seu melhor e-mail">
-                <button type="submit">QUERO ME CADASTRAR <i class="fas fa-paper-plane" style="margin-left: 8px;"></i></button>
+                <input type="text" placeholder="Seu nome">
+                <input type="email" placeholder="Seu e-mail">
+                <button type="submit">CADASTRAR <i class="fas fa-paper-plane"></i></button>
             </form>
         </div>
     </section>
@@ -1207,104 +1104,93 @@
     <footer>
         <div class="container footer-grid">
             <div class="footer-col">
-                <img src="https://images.tcdn.com.br/img/themes/1370019/logo.png?1740685044" alt="Hub Suplementos" style="height: 35px; margin-bottom: 20px;">
-                <p style="font-size: 14px; color: #6b7280; line-height: 1.6;">Sua loja de confiança para suplementos e tratamentos capilares de alta performance. Entregamos em todo o Brasil com rapidez e segurança.</p>
+                <img src="https://images.tcdn.com.br/img/themes/1370019/logo.png?1740685044" alt="Hub Suplementos" style="height: 30px; margin-bottom: 15px;">
                 <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             <div class="footer-col">
                 <h4>Categorias</h4>
                 <ul>
                     <li><a href="#">Cabelo e Barba</a></li>
-                    <li><a href="#">Minoxidil Original</a></li>
-                    <li><a href="#">Vitaminas e Minerais</a></li>
-                    <li><a href="#">Kits de Tratamento</a></li>
-                    <li><a href="#">Outlet e Ofertas</a></li>
+                    <li><a href="#">Minoxidil</a></li>
+                    <li><a href="#">Vitaminas</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Institucional</h4>
                 <ul>
-                    <li><a href="#">Nossa História</a></li>
-                    <li><a href="#">Como Comprar</a></li>
-                    <li><a href="#">Segurança e Privacidade</a></li>
-                    <li><a href="#">Política de Envio</a></li>
-                    <li><a href="#">Trocas e Devoluções</a></li>
+                    <li><a href="#">Quem Somos</a></li>
+                    <li><a href="#">Segurança</a></li>
+                    <li><a href="#">Envio</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Atendimento</h4>
                 <ul>
-                    <li><a href="#" style="font-weight: 700; color: var(--primary-color);"><i class="fab fa-whatsapp"></i> (11) 94345-4574</a></li>
+                    <li><a href="#" style="color: var(--primary-color); font-weight: 700;"><i class="fab fa-whatsapp"></i> (11) 94345-4574</a></li>
                     <li><a href="#"><i class="far fa-envelope"></i> sac@hubsuplementos.com.br</a></li>
-                    <li style="font-size: 13px; color: #9ca3af; margin-top: 10px;">Seg à Sex: 09h às 18h</li>
                 </ul>
             </div>
         </div>
         <div class="container copyright">
-            Hub Suplementos - CNPJ: 58.091.644/0001-12 - © 2024 - Todos os direitos reservados. <br>
-            Desenvolvido com foco na sua melhor experiência.
+            Hub Suplementos - © 2024 - Todos os direitos reservados.
         </div>
     </footer>
 
     <script>
         // REVIEWS DATA (40 items)
         const allReviews = [
-            { name: "Ricardo S.", date: "05/05/2024", rating: 5, content: "Produto excelente! Estou usando há 3 meses e as falhas na minha barba sumiram completamente. Recomendo muito o kit de 3 frascos." },
-            { name: "Marcos Oliveira", date: "02/05/2024", rating: 5, content: "Chegou muito rápido em SP. O produto é original, já conhecia a marca Kirkland. Começando o tratamento hoje!" },
-            { name: "Felipe Almeida", date: "28/04/2024", rating: 4, content: "Muito bom, senti uma leve coceira no início mas depois passou. Os resultados no topo da cabeça já são visíveis." },
-            { name: "João Pedro", date: "25/04/2024", rating: 5, content: "Melhor custo benefício que encontrei. Atendimento da Hub Suplementos é nota 10, tiraram todas as minhas dúvidas." },
-            { name: "Gustavo Lima", date: "20/04/2024", rating: 5, content: "Uso há anos para manter o cabelo e nunca decepciona. Essa loja entrega o produto original mesmo, podem confiar." },
-            { name: "André Santos", date: "15/04/2024", rating: 5, content: "Minha barba era muito falhada, agora está fechando tudo. O segredo é ter paciência e usar todo dia." },
-            { name: "Lucas Ferreira", date: "10/04/2024", rating: 5, content: "Entrega super discreta e rápida. O kit de 3 meses vale muito a pena pelo preço." },
-            { name: "Rodrigo M.", date: "05/04/2024", rating: 4, content: "Produto de qualidade. Notei que os fios novos estão nascendo mais grossos. Satisfeito com a compra." },
-            { name: "Thiago Silva", date: "01/04/2024", rating: 5, content: "Já tentei outras marcas, mas o Kirkland é o que realmente funciona pra mim. Recomendo a todos." },
-            { name: "Bruno Costa", date: "28/03/2024", rating: 5, content: "Excelente atendimento via WhatsApp. O produto chegou bem embalado e dentro do prazo." },
-            { name: "Marcelo J.", date: "25/03/2024", rating: 5, content: "Resultados impressionantes na barba em apenas 2 meses. Vou comprar o kit de 6 agora." },
+            { name: "Ricardo S.", date: "05/05/2024", rating: 5, content: "Produto excelente! Estou usando há 3 meses e as falhas na minha barba sumiram completamente." },
+            { name: "Marcos Oliveira", date: "02/05/2024", rating: 5, content: "Chegou muito rápido em SP. O produto é original, já conhecia a marca Kirkland." },
+            { name: "Felipe Almeida", date: "28/04/2024", rating: 4, content: "Muito bom, senti uma leve coceira no início mas depois passou. Resultados visíveis." },
+            { name: "João Pedro", date: "25/04/2024", rating: 5, content: "Melhor custo benefício que encontrei. Atendimento da Hub Suplementos é nota 10." },
+            { name: "Gustavo Lima", date: "20/04/2024", rating: 5, content: "Uso há anos para manter o cabelo e nunca decepciona. Loja confiável." },
+            { name: "André Santos", date: "15/04/2024", rating: 5, content: "Minha barba era muito falhada, agora está fechando tudo. Recomendo." },
+            { name: "Lucas Ferreira", date: "10/04/2024", rating: 5, content: "Entrega super discreta e rápida. O kit de 3 meses vale muito a pena." },
+            { name: "Rodrigo M.", date: "05/04/2024", rating: 4, content: "Produto de qualidade. Notei que os fios novos estão nascendo mais grossos." },
+            { name: "Thiago Silva", date: "01/04/2024", rating: 5, content: "Já tentei outras marcas, mas o Kirkland é o que realmente funciona pra mim." },
+            { name: "Bruno Costa", date: "28/03/2024", rating: 5, content: "Excelente atendimento via WhatsApp. Chegou bem embalado e no prazo." },
+            { name: "Marcelo J.", date: "25/03/2024", rating: 5, content: "Resultados impressionantes na barba em apenas 2 meses. Vou comprar mais." },
             { name: "Eduardo P.", date: "20/03/2024", rating: 5, content: "Sempre compro aqui. Confiança total na originalidade do produto." },
-            { name: "Rafael Gomes", date: "15/03/2024", rating: 4, content: "Bom produto, cumpre o que promete. Só demora um pouco pra secar, mas o resultado compensa." },
-            { name: "Vinícius R.", date: "10/03/2024", rating: 5, content: "Minha autoestima mudou depois que comecei a usar. As entradas no cabelo diminuíram muito." },
+            { name: "Rafael Gomes", date: "15/03/2024", rating: 4, content: "Bom produto, cumpre o que promete. Satisfeito com a compra." },
+            { name: "Vinícius R.", date: "10/03/2024", rating: 5, content: "Minha autoestima mudou. As entradas no cabelo diminuíram muito." },
             { name: "Gabriel N.", date: "05/03/2024", rating: 5, content: "Top demais! O melhor minoxidil do mercado sem dúvidas." },
             { name: "Alexandre F.", date: "01/03/2024", rating: 5, content: "Tudo certo com a entrega. Produto original e lacrado." },
             { name: "Daniel S.", date: "25/02/2024", rating: 5, content: "Estou no segundo frasco e já vejo muitos fios novos onde não tinha nada." },
             { name: "Paulo H.", date: "20/02/2024", rating: 4, content: "Muito bom, recomendo usar o conta-gotas certinho pra não desperdiçar." },
             { name: "Igor M.", date: "15/02/2024", rating: 5, content: "Melhor investimento que fiz este ano. Barba cheia finalmente!" },
             { name: "Leonardo C.", date: "10/02/2024", rating: 5, content: "Loja séria e produto de primeira. Parabéns pelo serviço." },
-            { name: "Caio B.", date: "05/02/2024", rating: 5, content: "Funciona mesmo! No começo cai um pouco de cabelo (shedding), mas depois nasce muito mais forte." },
-            { name: "Matheus G.", date: "01/02/2024", rating: 5, content: "Comprei o kit de 3 e já estou vendo resultados. Vou continuar o tratamento." },
-            { name: "Samuel V.", date: "25/01/2024", rating: 5, content: "Kirkland é vida! Não fico sem. Hub Suplementos é a melhor loja pra comprar." },
-            { name: "Vitor L.", date: "20/01/2024", rating: 4, content: "Satisfeito com o produto. Chegou em 3 dias aqui no interior de SP." },
+            { name: "Caio B.", date: "05/02/2024", rating: 5, content: "Funciona mesmo! No começo cai um pouco, mas depois nasce forte." },
+            { name: "Matheus G.", date: "01/02/2024", rating: 5, content: "Comprei o kit de 3 e já estou vendo resultados. Vou continuar." },
+            { name: "Samuel V.", date: "25/01/2024", rating: 5, content: "Kirkland é vida! Não fico sem. Hub Suplementos é a melhor loja." },
+            { name: "Vitor L.", date: "20/01/2024", rating: 4, content: "Satisfeito com o produto. Chegou em 3 dias aqui no interior." },
             { name: "Hugo D.", date: "15/01/2024", rating: 5, content: "Produto original, verifiquei o lote e está tudo ok. Recomendo." },
-            { name: "Renan K.", date: "10/01/2024", rating: 5, content: "Minha barba está outra coisa. Até meus amigos notaram a diferença." },
-            { name: "Otávio P.", date: "05/01/2024", rating: 5, content: "Uso no couro cabeludo e na barba. Resultados excelentes em ambos." },
-            { name: "Douglas S.", date: "01/01/2024", rating: 5, content: "Feliz com os resultados. O produto rende bastante se usar a dose certa." },
-            { name: "Arthur F.", date: "28/12/2023", rating: 5, content: "Melhor preço do Brasil para o Kirkland original. Podem comprar sem medo." },
-            { name: "Júlio C.", date: "25/12/2023", rating: 4, content: "Muito bom, só recomendo hidratar a pele pois o álcool resseca um pouco." },
+            { name: "Renan K.", date: "10/01/2024", rating: 5, content: "Minha barba está outra coisa. Até meus amigos notaram." },
+            { name: "Otávio P.", date: "05/01/2024", rating: 5, content: "Uso no couro cabeludo e na barba. Resultados excelentes." },
+            { name: "Douglas S.", date: "01/01/2024", rating: 5, content: "Feliz com os resultados. O produto rende bastante." },
+            { name: "Arthur F.", date: "28/12/2023", rating: 5, content: "Melhor preço do Brasil para o Kirkland original. Podem comprar." },
+            { name: "Júlio C.", date: "25/12/2023", rating: 4, content: "Muito bom, recomendo hidratar a pele pois resseca um pouco." },
             { name: "Fernando A.", date: "20/12/2023", rating: 5, content: "Tratamento nota 10. Minhas entradas sumiram quase 100%." },
-            { name: "Roberto T.", date: "15/12/2023", rating: 5, content: "Loja de confiança. Já é minha terceira compra e sempre chega tudo perfeito." },
-            { name: "Silvio M.", date: "10/12/2023", rating: 5, content: "O produto é top. A entrega foi antes do prazo. Recomendo a Hub." },
+            { name: "Roberto T.", date: "15/12/2023", rating: 5, content: "Loja de confiança. Já é minha terceira compra e sempre perfeito." },
+            { name: "Silvio M.", date: "10/12/2023", rating: 5, content: "O produto é top. A entrega foi antes do prazo. Recomendo." },
             { name: "Patrício G.", date: "05/12/2023", rating: 5, content: "Minha barba fechou em 4 meses de uso contínuo. Muito satisfeito." },
-            { name: "Wesley S.", date: "01/12/2023", rating: 5, content: "Produto indispensável para quem sofre com calvície. Funciona de verdade." },
+            { name: "Wesley S.", date: "01/12/2023", rating: 5, content: "Produto indispensável para quem sofre com calvície." },
             { name: "Enzo R.", date: "25/11/2023", rating: 4, content: "Gostei bastante. O cheiro é suave e não incomoda." },
             { name: "Maurício L.", date: "20/11/2023", rating: 5, content: "Excelente! O kit de 3 meses é o melhor custo benefício." },
-            { name: "Alan B.", date: "15/11/2023", rating: 5, content: "Tudo perfeito. Desde o atendimento até a qualidade do produto." },
-            { name: "Kleber J.", date: "10/11/2023", rating: 5, content: "Recomendo muito. O Kirkland é o único que deu resultado pra mim." },
+            { name: "Alan B.", date: "15/11/2023", rating: 5, content: "Tudo perfeito. Desde o atendimento até a qualidade." },
+            { name: "Kleber J.", date: "10/11/2023", rating: 5, content: "Recomendo muito. O Kirkland é o único que deu resultado." },
             { name: "Yuri F.", date: "05/11/2023", rating: 5, content: "Show de bola! Barba de respeito agora graças ao minoxidil." }
         ];
 
         let currentPage = 1;
         const reviewsPerPage = 4;
-        const totalPages = 10; // Fixed at 10 as requested
 
         function renderReviews(page) {
             const grid = document.getElementById('reviewsGrid');
             grid.innerHTML = '';
-            
-            // If page > 10, we show the same reviews as page 10 (as requested)
             const effectivePage = page > 10 ? 10 : page;
             const startIndex = (effectivePage - 1) * reviewsPerPage;
             const pageReviews = allReviews.slice(startIndex, startIndex + reviewsPerPage);
@@ -1312,114 +1198,65 @@
             pageReviews.forEach(review => {
                 const card = document.createElement('div');
                 card.className = 'review-card';
-                
                 let starsHtml = '';
-                for(let i=0; i<5; i++) {
-                    starsHtml += `<i class="${i < review.rating ? 'fas' : 'far'} fa-star"></i>`;
-                }
-
+                for(let i=0; i<5; i++) starsHtml += `<i class="${i < review.rating ? 'fas' : 'far'} fa-star"></i>`;
                 card.innerHTML = `
                     <div class="review-top">
                         <div class="reviewer-info">
                             <div class="reviewer-avatar">${review.name.charAt(0)}</div>
                             <div>
                                 <div class="reviewer-name">${review.name}</div>
-                                <div class="verified-badge"><i class="fas fa-check-circle"></i> Compra Verificada</div>
+                                <div class="verified-badge"><i class="fas fa-check-circle"></i> Verificada</div>
                             </div>
                         </div>
                         <div class="review-date">${review.date}</div>
                     </div>
-                    <div class="review-stars" style="margin-bottom: 10px;">${starsHtml}</div>
+                    <div class="review-stars" style="margin-bottom: 8px;">${starsHtml}</div>
                     <div class="review-content">${review.content}</div>
                 `;
                 grid.appendChild(card);
             });
-            
             renderPagination(page);
         }
 
         function renderPagination(activePage) {
             const pagination = document.getElementById('pagination');
             pagination.innerHTML = '';
-
-            // Prev Button
             const prevBtn = document.createElement('button');
             prevBtn.className = `page-btn ${activePage === 1 ? 'disabled' : ''}`;
             prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
-            prevBtn.onclick = () => { if(activePage > 1) { currentPage--; renderReviews(currentPage); window.scrollTo({top: document.querySelector('.reviews-section').offsetTop - 100, behavior: 'smooth'}); } };
+            prevBtn.onclick = () => { if(activePage > 1) { currentPage--; renderReviews(currentPage); scrollToReviews(); } };
             pagination.appendChild(prevBtn);
 
-            // Page Numbers (1 to 10)
             for (let i = 1; i <= 10; i++) {
                 const btn = document.createElement('button');
                 btn.className = `page-btn ${activePage === i ? 'active' : ''}`;
                 btn.textContent = i;
-                btn.onclick = () => { currentPage = i; renderReviews(i); window.scrollTo({top: document.querySelector('.reviews-section').offsetTop - 100, behavior: 'smooth'}); };
+                btn.onclick = () => { currentPage = i; renderReviews(i); scrollToReviews(); };
                 pagination.appendChild(btn);
             }
 
-            // Next Button
             const nextBtn = document.createElement('button');
-            nextBtn.className = 'page-btn'; // Always enabled to simulate "more pages"
+            nextBtn.className = 'page-btn';
             nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
-            nextBtn.onclick = () => { 
-                currentPage++; 
-                renderReviews(currentPage); 
-                window.scrollTo({top: document.querySelector('.reviews-section').offsetTop - 100, behavior: 'smooth'}); 
-            };
+            nextBtn.onclick = () => { currentPage++; renderReviews(currentPage); scrollToReviews(); };
             pagination.appendChild(nextBtn);
         }
 
-        // Dados das Variantes
+        function scrollToReviews() {
+            window.scrollTo({top: document.querySelector('.reviews-section').offsetTop - 80, behavior: 'smooth'});
+        }
+
+        // Variantes
         const variants = [
-            {
-                id: 1,
-                name: "1 Frasco",
-                title: "1 Frasco Minoxidil Kirkland 5% - Tratamento 1 Mês",
-                ref: "MINOX-K1",
-                priceFrom: "R$ 129,99",
-                priceNow: "R$ 45,00",
-                installments: "ou 1x de R$ 45,00 Sem juros no cartão",
-                images: [
-                    "https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png",
-                    "https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png",
-                    "https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png"
-                ]
-            },
-            {
-                id: 3,
-                name: "Kit 3 Frascos",
-                title: "Kit 3 Frascos Minoxidil Kirkland 5% - Tratamento 3 Meses",
-                ref: "MINOX-K3",
-                priceFrom: "R$ 369,99",
-                priceNow: "R$ 105,00",
-                installments: "ou 3x de R$ 35,00 Sem juros no cartão",
-                images: [
-                    "https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png",
-                    "https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png",
-                    "https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png",
-                    "https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png"
-                ]
-            },
-            {
-                id: 6,
-                name: "Kit 6 Frascos",
-                title: "Kit 6 Frascos Minoxidil Kirkland 5% - Tratamento 6 Meses",
-                ref: "MINOX-K6",
-                priceFrom: "R$ 699,99",
-                priceNow: "R$ 195,00",
-                installments: "ou 6x de R$ 32,50 Sem juros no cartão",
-                images: [
-                    "https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png",
-                    "https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png"
-                ]
-            }
+            { id: 1, name: "1 Frasco", title: "1 Frasco Minoxidil Kirkland 5% - 1 Mês", ref: "MINOX-K1", priceFrom: "R$ 129,99", priceNow: "R$ 45,00", installments: "ou 1x de R$ 45,00 Sem juros", images: ["https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png", "https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png"] },
+            { id: 3, name: "Kit 3 Frascos", title: "Kit 3 Frascos Minoxidil Kirkland 5% - 3 Meses", ref: "MINOX-K3", priceFrom: "R$ 369,99", priceNow: "R$ 105,00", installments: "ou 3x de R$ 35,00 Sem juros", images: ["https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png", "https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png"] },
+            { id: 6, name: "Kit 6 Frascos", title: "Kit 6 Frascos Minoxidil Kirkland 5% - 6 Meses", ref: "MINOX-K6", priceFrom: "R$ 699,99", priceNow: "R$ 195,00", installments: "ou 6x de R$ 32,50 Sem juros", images: ["https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png", "https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png"] }
         ];
 
-        let currentVariant = variants[1]; // Inicia com Kit 3 Frascos
+        let currentVariant = variants[1];
         let currentSlide = 0;
 
-        // Elementos do DOM
         const track = document.getElementById('carouselTrack');
         const dotsContainer = document.getElementById('carouselDots');
         const variantOptions = document.getElementById('variantOptions');
@@ -1430,7 +1267,6 @@
         const installmentsText = document.getElementById('installmentsText');
         const qtyInput = document.getElementById('qtyInput');
 
-        // Inicializar Variantes
         function initVariants() {
             variantOptions.innerHTML = '';
             variants.forEach(variant => {
@@ -1442,7 +1278,6 @@
             });
         }
 
-        // Selecionar Variante
         function selectVariant(id) {
             currentVariant = variants.find(v => v.id === id);
             currentSlide = 0;
@@ -1450,61 +1285,43 @@
             initVariants();
         }
 
-        // Atualizar Interface
         function updateUI() {
             productTitle.textContent = currentVariant.title;
             productRef.textContent = currentVariant.ref;
             priceFrom.textContent = currentVariant.priceFrom;
             priceNow.textContent = currentVariant.priceNow;
             installmentsText.textContent = currentVariant.installments;
-
-            // Atualizar Galeria
             track.innerHTML = '';
             dotsContainer.innerHTML = '';
-            
             currentVariant.images.forEach((imgSrc, index) => {
-                // Slide
                 const slide = document.createElement('div');
                 slide.className = 'carousel-slide';
                 const img = document.createElement('img');
                 img.src = imgSrc;
-                img.alt = `${currentVariant.name} - Imagem ${index + 1}`;
                 slide.appendChild(img);
                 track.appendChild(slide);
-
-                // Dot
                 const dot = document.createElement('div');
                 dot.className = `dot ${index === 0 ? 'active' : ''}`;
                 dot.onclick = () => goToSlide(index);
                 dotsContainer.appendChild(dot);
             });
-
             updateCarousel();
         }
 
-        // Lógica do Carrossel
         function moveSlide(direction) {
-            const totalSlides = currentVariant.images.length;
-            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            const total = currentVariant.images.length;
+            currentSlide = (currentSlide + direction + total) % total;
             updateCarousel();
         }
 
-        function goToSlide(index) {
-            currentSlide = index;
-            updateCarousel();
-        }
+        function goToSlide(index) { currentSlide = index; updateCarousel(); }
 
         function updateCarousel() {
             track.style.transform = `translateX(-${currentSlide * 100}%)`;
-            
-            // Atualizar dots
             const dots = document.querySelectorAll('.dot');
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
-            });
+            dots.forEach((dot, index) => dot.classList.toggle('active', index === currentSlide));
         }
 
-        // Quantidade
         function changeQty(val) {
             let current = parseInt(qtyInput.value);
             current += val;
@@ -1512,27 +1329,22 @@
             qtyInput.value = current;
         }
 
-        // Tabs
         function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
+            const tabcontent = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.display = "none";
                 tabcontent[i].classList.remove("active");
             }
-            tablinks = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
+            const tablinks = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tablinks.length; i++) tablinks[i].classList.remove("active");
             document.getElementById(tabName).style.display = "block";
             document.getElementById(tabName).classList.add("active");
-            evt.currentTarget.className += " active";
+            evt.currentTarget.classList.add("active");
         }
 
-        // Inicialização
         document.addEventListener('DOMContentLoaded', () => {
-            selectVariant(3); // Inicia com Kit 3 Frascos
-            renderReviews(1); // Inicia as avaliações na página 1
+            selectVariant(3);
+            renderReviews(1);
         });
     </script>
 </body>
