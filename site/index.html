@@ -35,16 +35,21 @@
             overflow-x: hidden;
         }
 
+        /* Container global com margens de segurança maiores */
         .container {
-            max-width: 1100px;
+            max-width: 1140px;
             margin: 0 auto;
-            padding: 0 24px; /* Aumentado de 16px para 24px para evitar que elementos fiquem nas extremidades */
+            padding: 0 32px; /* Aumentado para 32px para garantir que nada encoste nas bordas */
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
         }
 
         /* Top Bar */
         .top-bar {
             background-color: #f8f9fa;
-            padding: 6px 0;
+            padding: 8px 0;
             font-size: 11px;
             text-align: center;
             border-bottom: 1px solid var(--border);
@@ -54,88 +59,98 @@
 
         .top-bar strong { color: var(--brand-primary); }
 
-        /* Header - Optimized Spacing */
+        /* Header - Refined Spacing */
         header {
             background: #fff;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
         }
 
-        .main-header { padding: 16px 0; } /* Aumentado o padding vertical */
+        .main-header { 
+            padding: 18px 0; /* Aumentado o respiro vertical */
+        }
 
         .header-flex {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 20px; /* Aumentado o gap */
+            gap: 30px;
         }
 
-        .logo img { height: 28px; width: auto; }
+        .logo img { height: 32px; width: auto; }
 
         .search-bar {
             flex: 1;
-            max-width: 500px;
+            max-width: 450px;
             display: none;
         }
 
         @media (min-width: 768px) {
             .search-bar { display: flex; }
-            .logo img { height: 36px; }
+            .logo img { height: 38px; }
         }
 
-        .user-actions { display: flex; gap: 20px; align-items: center; } /* Aumentado o gap */
-        .icon-link { color: var(--brand-primary); font-size: 18px; text-decoration: none; position: relative; }
+        .user-actions { 
+            display: flex; 
+            gap: 24px; 
+            align-items: center;
+            padding-right: 4px; /* Pequeno ajuste fino */
+        }
+
+        .icon-link { color: var(--brand-primary); font-size: 20px; text-decoration: none; position: relative; }
+        
         .cart-count {
             position: absolute;
-            top: -6px;
-            right: -8px;
+            top: -8px;
+            right: -10px;
             background-color: var(--pix-color);
             color: #fff;
-            font-size: 9px;
+            font-size: 10px;
             font-weight: 800;
-            padding: 1px 5px;
-            border-radius: 10px;
-            border: 1.5px solid #fff;
+            padding: 2px 6px;
+            border-radius: 12px;
+            border: 2px solid #fff;
         }
 
         /* Nav Scroll */
         .nav-scroll {
             overflow-x: auto;
             white-space: nowrap;
-            padding: 10px 0;
+            padding: 12px 0;
             border-bottom: 1px solid var(--border);
-            -webkit-overflow-scrolling: touch;
+            background: #fff;
         }
 
         .nav-scroll::-webkit-scrollbar { display: none; }
         .nav-scroll a {
             display: inline-block;
-            padding: 0 12px;
+            padding: 0 16px;
             text-decoration: none;
             color: var(--text-muted);
             font-size: 12px;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .nav-scroll a.active { color: var(--brand-primary); }
 
         /* Breadcrumb */
-        .breadcrumb { padding: 12px 0; font-size: 11px; color: #9ca3af; }
+        .breadcrumb { padding: 16px 0; font-size: 11px; color: #9ca3af; }
         .breadcrumb a { text-decoration: none; color: inherit; }
-        .breadcrumb span { margin: 0 4px; }
+        .breadcrumb span { margin: 0 6px; }
 
         /* Product Layout */
         .product-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 24px;
-            padding-bottom: 32px;
+            gap: 32px;
+            padding-bottom: 48px;
         }
 
         @media (min-width: 768px) {
-            .product-grid { grid-template-columns: 1fr 1fr; gap: 48px; padding-top: 20px; }
+            .product-grid { grid-template-columns: 1fr 1fr; gap: 60px; padding-top: 24px; }
         }
 
         /* Gallery */
@@ -145,13 +160,13 @@
         }
 
         @media (min-width: 768px) {
-            .gallery-container { position: sticky; top: 120px; height: fit-content; }
+            .gallery-container { position: sticky; top: 140px; height: fit-content; }
         }
 
         .main-image {
             background: var(--bg-soft);
             border-radius: var(--radius);
-            padding: 20px;
+            padding: 30px;
             display: flex;
             justify-content: center;
             border: 1px solid var(--border);
@@ -162,269 +177,287 @@
 
         /* Product Info */
         .product-content h1 {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 800;
-            letter-spacing: -0.01em;
-            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
             line-height: 1.2;
             color: var(--text-main);
         }
 
-        @media (min-width: 768px) { .product-content h1 { font-size: 32px; } }
+        @media (min-width: 768px) { .product-content h1 { font-size: 34px; } }
 
-        .badge-row { display: flex; gap: 8px; margin-bottom: 16px; }
-        .badge { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; }
+        .badge-row { display: flex; gap: 10px; margin-bottom: 20px; }
+        .badge { font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; }
         .badge-stock { background: #ecfdf5; color: #065f46; }
         .badge-shipping { background: #eff6ff; color: #1e40af; }
 
-        .rating-row { display: flex; align-items: center; gap: 6px; margin-bottom: 24px; font-size: 12px; color: var(--text-muted); }
-        .stars { color: #fbbf24; font-size: 11px; }
+        .rating-row { display: flex; align-items: center; gap: 8px; margin-bottom: 28px; font-size: 13px; color: var(--text-muted); }
+        .stars { color: #fbbf24; font-size: 12px; }
 
         /* Pricing */
         .price-section {
-            margin-bottom: 24px;
-            padding: 16px;
+            margin-bottom: 28px;
+            padding: 20px;
             background: var(--bg-soft);
             border-radius: var(--radius);
             border: 1px solid var(--border);
         }
 
         .price-main {
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 800;
             color: var(--brand-primary);
             display: flex;
             align-items: baseline;
-            gap: 8px;
+            gap: 10px;
         }
 
-        .price-main span { font-size: 16px; font-weight: 500; color: var(--text-muted); text-decoration: line-through; }
-        .pix-info { font-size: 13px; color: var(--pix-color); font-weight: 700; margin-top: 2px; }
+        .price-main span { font-size: 18px; font-weight: 500; color: var(--text-muted); text-decoration: line-through; }
+        .pix-info { font-size: 14px; color: var(--pix-color); font-weight: 700; margin-top: 4px; }
 
         /* Options */
-        .options-grid { display: grid; gap: 10px; margin-bottom: 24px; }
+        .options-grid { display: grid; gap: 12px; margin-bottom: 28px; }
         .option-card {
             border: 1px solid var(--border);
-            padding: 14px;
+            padding: 16px;
             border-radius: var(--radius);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: #fff;
-            transition: all 0.2s;
+            transition: all 0.2s ease;
         }
 
-        .option-card.active { border-color: var(--brand-primary); background: #f0f4ff; }
-        .option-info .title { font-weight: 700; font-size: 14px; display: block; }
-        .option-info .desc { font-size: 11px; color: var(--text-muted); }
+        .option-card:hover { border-color: var(--brand-accent); }
+        .option-card.active { border-color: var(--brand-primary); background: #f0f4ff; box-shadow: 0 4px 12px rgba(0,0,102,0.05); }
+        .option-info .title { font-weight: 700; font-size: 15px; display: block; margin-bottom: 2px; }
+        .option-info .desc { font-size: 12px; color: var(--text-muted); }
         .option-price { text-align: right; }
-        .option-price .val { font-weight: 800; color: var(--brand-primary); font-size: 14px; }
-        .option-price .tag { font-size: 9px; background: var(--brand-primary); color: #fff; padding: 2px 6px; border-radius: 4px; margin-top: 2px; display: inline-block; font-weight: 700; }
+        .option-price .val { font-weight: 800; color: var(--brand-primary); font-size: 16px; }
+        .option-price .tag { font-size: 10px; background: var(--brand-primary); color: #fff; padding: 3px 8px; border-radius: 4px; margin-top: 4px; display: inline-block; font-weight: 700; }
 
         /* CTA */
         .cta-button {
             width: 100%;
-            padding: 16px;
+            padding: 18px;
             background: var(--success);
             color: #fff;
             border: none;
             border-radius: var(--radius);
-            font-size: 16px;
+            font-size: 17px;
             font-weight: 800;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            margin-bottom: 12px;
-            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
+            gap: 12px;
+            margin-bottom: 16px;
+            box-shadow: 0 6px 16px rgba(22, 163, 74, 0.25);
+            transition: all 0.3s;
         }
 
-        .secondary-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .btn-sec { padding: 12px; border: 1px solid var(--border); background: #fff; border-radius: var(--radius); font-size: 13px; font-weight: 600; cursor: pointer; color: var(--text-main); }
+        .cta-button:hover { background: #15803d; transform: translateY(-2px); }
+
+        .secondary-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .btn-sec { padding: 14px; border: 1px solid var(--border); background: #fff; border-radius: var(--radius); font-size: 14px; font-weight: 700; cursor: pointer; color: var(--text-main); transition: all 0.2s; }
+        .btn-sec:hover { background: var(--bg-soft); border-color: var(--text-muted); }
 
         /* Trust Bar */
         .trust-bar {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            padding: 20px 0;
+            gap: 16px;
+            padding: 24px 0;
             border-top: 1px solid var(--border);
-            margin-top: 16px;
+            margin-top: 20px;
             text-align: center;
         }
 
-        .trust-item i { font-size: 16px; color: var(--brand-primary); margin-bottom: 4px; }
-        .trust-item span { font-size: 9px; font-weight: 700; display: block; color: var(--text-main); text-transform: uppercase; }
+        .trust-item i { font-size: 18px; color: var(--brand-primary); margin-bottom: 6px; }
+        .trust-item span { font-size: 10px; font-weight: 800; display: block; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.5px; }
 
-        /* Description Section - Professional Refinement */
+        /* Description Section - Harmonic Spacing */
         .description-section {
-            padding: 60px 0;
+            padding: 80px 0;
             background: var(--bg-light);
-            border-bottom: 1px solid var(--border);
+            border-top: 1px solid var(--border);
         }
 
         .description-section h2 {
-            font-size: 28px;
+            font-size: 30px;
             font-weight: 800;
-            margin-bottom: 32px;
+            margin-bottom: 48px;
             color: var(--text-main);
             text-align: center;
+            letter-spacing: -0.5px;
         }
 
         .description-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 40px;
+            gap: 60px; /* Aumentado o gap entre colunas */
+            align-items: start;
         }
 
         @media (min-width: 992px) {
-            .description-grid { grid-template-columns: 1.2fr 0.8fr; }
+            .description-grid { grid-template-columns: 1.1fr 0.9fr; }
         }
 
         .desc-text-block h3 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 16px;
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 20px;
             color: var(--brand-primary);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .desc-text-block p {
-            font-size: 14px;
+            font-size: 15px;
             line-height: 1.8;
             color: var(--text-main);
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
         .desc-list {
             list-style: none;
-            margin-bottom: 24px;
+            margin-bottom: 32px;
+            display: grid;
+            gap: 16px;
         }
 
         .desc-list li {
-            font-size: 14px;
-            margin-bottom: 12px;
+            font-size: 15px;
             display: flex;
             align-items: flex-start;
-            gap: 10px;
+            gap: 12px;
             color: var(--text-main);
+            padding: 12px 16px;
+            background: var(--bg-soft);
+            border-radius: 10px;
+            border: 1px solid transparent;
+            transition: all 0.2s;
         }
+
+        .desc-list li:hover { border-color: var(--border); background: #fff; }
 
         .desc-list li i {
             color: var(--success);
-            margin-top: 4px;
-            font-size: 14px;
+            margin-top: 3px;
+            font-size: 16px;
         }
 
-        /* Professional Table */
+        /* Technical Table Refined */
         .tech-table-wrapper {
             overflow-x: auto;
-            border-radius: var(--radius);
+            border-radius: 16px;
             border: 1px solid var(--border);
             background: #fff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
         }
 
         .tech-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 13px;
-            text-align: left;
+            font-size: 14px;
         }
 
         .tech-table th {
             background: var(--bg-soft);
-            padding: 14px 16px;
-            font-weight: 700;
+            padding: 18px 20px;
+            font-weight: 800;
             color: var(--brand-primary);
             border-bottom: 2px solid var(--border);
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
         }
 
         .tech-table td {
-            padding: 12px 16px;
+            padding: 16px 20px;
             border-bottom: 1px solid var(--border);
             color: var(--text-main);
         }
 
-        .tech-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .tech-table tr:nth-child(even) {
-            background: #fafafa;
-        }
+        .tech-table tr:last-child td { border-bottom: none; }
+        .tech-table tr:nth-child(even) { background: #fafafa; }
 
         /* Newsletter Section */
         .newsletter-section {
-            padding: 60px 0;
+            padding: 80px 0;
             background: linear-gradient(135deg, var(--brand-primary) 0%, #1e3a8a 100%);
         }
 
         .newsletter-content {
+            max-width: 700px;
+            margin: 0 auto;
             text-align: center;
             color: #fff;
         }
 
         .newsletter-content h2 {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 800;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
 
         .newsletter-content p {
-            font-size: 15px;
-            margin-bottom: 32px;
+            font-size: 16px;
+            margin-bottom: 36px;
             opacity: 0.9;
+            line-height: 1.6;
         }
 
         .newsletter-form {
             display: flex;
             gap: 12px;
-            max-width: 550px;
-            margin: 0 auto;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         .newsletter-form input {
             flex: 1;
-            min-width: 250px;
-            padding: 14px 20px;
+            min-width: 280px;
+            padding: 16px 24px;
             border: none;
             border-radius: var(--radius);
-            font-size: 14px;
-            background: #fff;
+            font-size: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         .newsletter-form button {
-            padding: 14px 32px;
+            padding: 16px 36px;
             background: var(--success);
             color: #fff;
             border: none;
             border-radius: var(--radius);
-            font-size: 14px;
-            font-weight: 700;
+            font-size: 15px;
+            font-weight: 800;
             cursor: pointer;
             transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
+
+        .newsletter-form button:hover { background: #15803d; transform: translateY(-2px); }
 
         /* FAQ Section */
         .faq-section {
-            padding: 60px 0;
+            padding: 80px 0;
             background: var(--bg-soft);
         }
 
         .faq-section h2 {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 800;
-            margin-bottom: 32px;
+            margin-bottom: 48px;
             text-align: center;
         }
 
         .faq-container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             display: grid;
             gap: 16px;
@@ -432,103 +465,103 @@
 
         .faq-item {
             border: 1px solid var(--border);
-            border-radius: var(--radius);
+            border-radius: 16px;
             background: #fff;
             overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: all 0.3s;
         }
 
+        .faq-item:hover { border-color: var(--brand-accent); }
+
         .faq-header {
-            padding: 20px;
+            padding: 24px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: 700;
-            font-size: 15px;
+            font-weight: 800;
+            font-size: 16px;
             color: var(--text-main);
-            transition: background 0.2s;
         }
 
-        .faq-header:hover { background: #fcfcfc; }
-
         .faq-icon {
-            font-size: 12px;
+            font-size: 14px;
             transition: transform 0.3s;
             color: var(--brand-primary);
         }
 
         .faq-item.active .faq-icon { transform: rotate(180deg); }
+        .faq-item.active { box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
 
         .faq-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .faq-item.active .faq-content { max-height: 500px; }
+        .faq-item.active .faq-content { max-height: 600px; }
 
         .faq-text {
-            padding: 0 20px 20px;
-            font-size: 14px;
-            line-height: 1.7;
+            padding: 0 24px 24px;
+            font-size: 15px;
+            line-height: 1.8;
             color: var(--text-muted);
         }
 
         /* Footer */
         footer {
-            background: #0a0a0a;
+            background: #080808;
             color: #fff;
-            padding: 60px 0 30px;
+            padding: 80px 0 40px;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
         }
 
         .footer-col h4 {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             color: #fff;
         }
 
         .footer-links { list-style: none; }
-        .footer-links li { margin-bottom: 12px; }
+        .footer-links li { margin-bottom: 14px; }
         .footer-links a {
-            color: #9ca3af;
+            color: #a1a1aa;
             text-decoration: none;
-            font-size: 13px;
+            font-size: 14px;
             transition: color 0.2s;
         }
         .footer-links a:hover { color: #fff; }
 
         .footer-bottom {
-            border-top: 1px solid #262626;
-            padding-top: 30px;
+            border-top: 1px solid #1f1f1f;
+            padding-top: 40px;
             text-align: center;
-            font-size: 12px;
-            color: #6b7280;
+            font-size: 13px;
+            color: #71717a;
         }
 
         /* Mobile CTA */
         .mobile-cta {
             position: fixed;
-            bottom: 16px;
-            left: 24px;
-            right: 24px;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
             z-index: 1000;
             display: none;
         }
 
         @media (max-width: 767px) {
             .mobile-cta { display: block; }
-            .product-grid { padding-bottom: 80px; }
+            .product-grid { padding-bottom: 100px; }
         }
 
     </style>
@@ -548,11 +581,11 @@
                     <img src="https://images.tcdn.com.br/img/themes/1370019/logo.png?1740685044" alt="Hub Suplementos">
                 </div>
                 <div class="search-bar">
-                    <input type="text" placeholder="O que você está procurando?" style="width: 100%; padding: 10px 20px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 13px;">
+                    <input type="text" placeholder="O que você está procurando?" style="width: 100%; padding: 12px 24px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 14px; background: var(--bg-soft);">
                 </div>
                 <div class="user-actions">
-                    <a href="#" class="icon-link"><i class="far fa-user"></i></a>
-                    <a href="#" class="icon-link">
+                    <a href="#" class="icon-link" title="Minha Conta"><i class="far fa-user"></i></a>
+                    <a href="#" class="icon-link" title="Carrinho">
                         <i class="fas fa-shopping-bag"></i>
                         <span class="cart-count">0</span>
                     </a>
@@ -650,8 +683,8 @@
                     <button class="btn-sec">FRETE</button>
                 </div>
 
-                <p style="font-size: 11px; color: var(--text-muted); text-align: center; margin-top: 20px;">
-                    <i class="fas fa-lock"></i> Pagamento 100% Seguro
+                <p style="font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 24px;">
+                    <i class="fas fa-lock" style="margin-right: 4px;"></i> Pagamento 100% Seguro e Criptografado
                 </p>
             </div>
         </div>
@@ -660,63 +693,63 @@
     <!-- Professional Description Section -->
     <section class="description-section">
         <div class="container">
-            <h2>Especificações Técnicas e Detalhes</h2>
+            <h2>Excelência em Tratamento Capilar</h2>
             
             <div class="description-grid">
                 <div class="desc-text-block">
-                    <h3><i class="fas fa-info-circle"></i> Visão Geral do Produto</h3>
-                    <p>O <strong>Minoxidil Kirkland 5% Signature</strong> é reconhecido mundialmente como o tratamento de referência para a alopecia androgênica e o estímulo ao crescimento de barba. Sua fórmula líquida de fácil aplicação atua diretamente nos folículos pilosos, prolongando a fase de crescimento (anágena) e revitalizando fios enfraquecidos.</p>
+                    <h3><i class="fas fa-info-circle"></i> Ciência Aplicada ao Crescimento</h3>
+                    <p>O <strong>Minoxidil Kirkland 5% Signature</strong> representa o ápice da tecnologia em cuidados capilares. Desenvolvido para homens que buscam uma solução definitiva contra a calvície e falhas na barba, este tratamento tópico age revitalizando os folículos inativos e aumentando o fluxo sanguíneo na região aplicada.</p>
                     
-                    <h3><i class="fas fa-list-check"></i> Benefícios Principais</h3>
+                    <h3><i class="fas fa-star"></i> Por que escolher Kirkland?</h3>
                     <ul class="desc-list">
-                        <li><i class="fas fa-check"></i> <strong>Crescimento Acelerado:</strong> Estimula a circulação sanguínea no folículo.</li>
-                        <li><i class="fas fa-check"></i> <strong>Preenchimento de Falhas:</strong> Ideal para barbas ralas ou entradas capilares.</li>
-                        <li><i class="fas fa-check"></i> <strong>Engrossamento dos Fios:</strong> Aumenta o diâmetro da haste capilar.</li>
-                        <li><i class="fas fa-check"></i> <strong>Resultados Duradouros:</strong> Manutenção da densidade capilar com uso contínuo.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Eficácia Clínica:</strong> Resultados validados por dermatologistas em todo o mundo.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Fórmula Estabilizada:</strong> Concentração precisa de 5% para máxima absorção.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Versatilidade:</strong> Resultados comprovados tanto no couro cabeludo quanto na barba.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Custo-Benefício:</strong> Qualidade premium com o melhor preço do mercado.</li>
                     </ul>
 
-                    <h3><i class="fas fa-flask"></i> Composição e Qualidade</h3>
-                    <p>Produzido sob rigorosos padrões de qualidade nos EUA, o Minoxidil Kirkland utiliza apenas ingredientes de grau farmacêutico, garantindo a pureza e a concentração exata de 5% necessária para resultados terapêuticos reais.</p>
+                    <h3><i class="fas fa-shield-halved"></i> Compromisso com a Autenticidade</h3>
+                    <p>Na Hub Suplementos, entendemos que a saúde do seu cabelo é prioridade. Por isso, trabalhamos exclusivamente com lotes importados diretamente dos EUA, garantindo que você receba o produto original, lacrado e com todas as propriedades terapêuticas preservadas.</p>
                 </div>
 
                 <div class="desc-tech-block">
-                    <h3><i class="fas fa-microscope"></i> Ficha Técnica</h3>
+                    <h3><i class="fas fa-microscope"></i> Especificações Técnicas</h3>
                     <div class="tech-table-wrapper">
                         <table class="tech-table">
                             <thead>
                                 <tr>
-                                    <th>Atributo</th>
-                                    <th>Especificação</th>
+                                    <th>Característica</th>
+                                    <th>Detalhes do Produto</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Marca</strong></td>
-                                    <td>Kirkland Signature</td>
+                                    <td><strong>Fabricante</strong></td>
+                                    <td>Kirkland Signature (EUA)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Concentração</strong></td>
-                                    <td>Minoxidil 5%</td>
+                                    <td><strong>Ativo Principal</strong></td>
+                                    <td>Minoxidil 5% USP</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Formato</strong></td>
-                                    <td>Solução Tópica (Líquida)</td>
+                                    <td><strong>Apresentação</strong></td>
+                                    <td>Solução Líquida Incolor</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Volume por Frasco</strong></td>
-                                    <td>60ml (Duração de 30 dias)</td>
+                                    <td><strong>Conteúdo</strong></td>
+                                    <td>60ml por Frasco</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Origem</strong></td>
-                                    <td>Importado (EUA)</td>
+                                    <td><strong>Aplicação</strong></td>
+                                    <td>Tópica (2x ao dia)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Indicação</strong></td>
-                                    <td>Cabelo e Barba</td>
+                                    <td><strong>Público-alvo</strong></td>
+                                    <td>Masculino</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Validade</strong></td>
-                                    <td>Mínimo de 18 meses</td>
+                                    <td><strong>Certificação</strong></td>
+                                    <td>FDA Approved / Grau Farmacêutico</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -730,11 +763,11 @@
     <section class="newsletter-section">
         <div class="container">
             <div class="newsletter-content">
-                <h2>Ofertas Exclusivas no seu E-mail</h2>
-                <p>Junte-se a mais de 50.000 clientes e receba cupons de desconto e dicas de tratamento.</p>
+                <h2>Faça Parte do Nosso Clube</h2>
+                <p>Receba guias exclusivos de tratamento, novidades e cupons de desconto diretamente na sua caixa de entrada.</p>
                 <form class="newsletter-form">
-                    <input type="email" placeholder="Digite seu melhor e-mail..." required>
-                    <button type="submit">QUERO DESCONTO</button>
+                    <input type="email" placeholder="Seu melhor e-mail..." required>
+                    <button type="submit">INSCREVER AGORA</button>
                 </form>
             </div>
         </div>
@@ -743,33 +776,33 @@
     <!-- FAQ -->
     <section class="faq-section">
         <div class="container">
-            <h2>Dúvidas Frequentes</h2>
+            <h2>Perguntas Frequentes</h2>
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-header" onclick="toggleFAQ(this)">
-                        <span>Como devo aplicar o produto?</span>
+                        <span>Qual o modo correto de uso?</span>
                         <i class="fas fa-chevron-down faq-icon"></i>
                     </div>
                     <div class="faq-content">
-                        <div class="faq-text">Aplique 1ml da solução diretamente na área desejada, duas vezes ao dia (manhã e noite). Massageie levemente com as pontas dos dedos para auxiliar a absorção.</div>
+                        <div class="faq-text">Aplique 1ml da solução na área afetada duas vezes ao dia (manhã e noite). É fundamental que o couro cabeludo ou a pele da barba estejam limpos e secos antes da aplicação.</div>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-header" onclick="toggleFAQ(this)">
-                        <span>O produto é original?</span>
+                        <span>Como saber se o produto é original?</span>
                         <i class="fas fa-chevron-down faq-icon"></i>
                     </div>
                     <div class="faq-content">
-                        <div class="faq-text">Sim, garantimos 100% de originalidade. Nossos produtos são importados diretamente dos distribuidores oficiais da Kirkland nos EUA, com lacre de fábrica e lote rastreável.</div>
+                        <div class="faq-text">O produto original Kirkland possui lacre de segurança, número de lote impresso no frasco e na caixa, e validade longa. Todos os nossos produtos acompanham nota fiscal e garantia de procedência.</div>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-header" onclick="toggleFAQ(this)">
-                        <span>Quanto tempo dura cada frasco?</span>
+                        <span>Posso raspar a barba durante o tratamento?</span>
                         <i class="fas fa-chevron-down faq-icon"></i>
                     </div>
                     <div class="faq-content">
-                        <div class="faq-text">Cada frasco contém 60ml. Seguindo a recomendação de uso de 2ml por dia (1ml por aplicação), cada frasco dura exatamente 30 dias.</div>
+                        <div class="faq-text">Sim, você pode aparar ou raspar a barba normalmente. O Minoxidil age no folículo (raiz), portanto o comprimento do fio não interfere na eficácia do tratamento.</div>
                     </div>
                 </div>
             </div>
@@ -782,28 +815,29 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4>Hub Suplementos</h4>
-                    <p style="font-size: 13px; color: #9ca3af; line-height: 1.6;">Especialistas em produtos premium importados. Qualidade e autenticidade garantidas em cada entrega.</p>
+                    <p style="font-size: 14px; color: #a1a1aa; line-height: 1.7;">Sua fonte confiável para suplementação e cuidados pessoais de alto padrão. Importação direta e garantia de satisfação.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Links Úteis</h4>
+                    <h4>Navegação</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Minha Conta</a></li>
-                        <li><a href="#">Meus Pedidos</a></li>
-                        <li><a href="#">Rastrear Pedido</a></li>
-                        <li><a href="#">Políticas de Troca</a></li>
+                        <li><a href="#">Minoxidil</a></li>
+                        <li><a href="#">Vitaminas</a></li>
+                        <li><a href="#">Kits Completos</a></li>
+                        <li><a href="#">Blog de Saúde</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Atendimento</h4>
+                    <h4>Suporte</h4>
                     <ul class="footer-links">
-                        <li><a href="#">WhatsApp: (11) 99999-9999</a></li>
-                        <li><a href="#">E-mail: suporte@hub.com</a></li>
-                        <li><a href="#">Seg a Sex: 09h às 18h</a></li>
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="#">Rastreio de Pedido</a></li>
+                        <li><a href="#">Política de Envio</a></li>
+                        <li><a href="#">Fale Conosco</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2024 Hub Suplementos - CNPJ: 00.000.000/0001-00. Todos os direitos reservados.</p>
+                <p>© 2024 Hub Suplementos. CNPJ: 00.000.000/0001-00. São Paulo - SP.</p>
             </div>
         </div>
     </footer>
