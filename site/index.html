@@ -5,25 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Minoxidil Kirkland 5% | Hub Suplementos - Qualidade Premium</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --brand-primary: #1a1a1a; /* Preto sofisticado */
-            --brand-accent: #2563eb; /* Azul profissional moderno */
+            --brand-primary: #000066; /* Azul original do cliente */
+            --brand-accent: #2563eb;
             --success: #059669;
             --bg-light: #ffffff;
             --bg-soft: #f9fafb;
             --text-main: #1f2937;
             --text-muted: #6b7280;
-            --border: #f3f4f6;
+            --border: #e5e7eb;
             --radius: 12px;
+            --pix-color: #00bfa5;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -34,52 +35,145 @@
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 20px;
         }
 
-        /* Minimal Header */
-        header {
-            padding: 20px 0;
+        /* Top Bar from pasted_content_2 */
+        .top-bar {
+            background-color: #f8f9fa;
+            padding: 8px 0;
+            font-size: 12px;
+            text-align: center;
             border-bottom: 1px solid var(--border);
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
+            color: #666;
+        }
+
+        .top-bar strong {
+            color: var(--brand-primary);
+            font-weight: 700;
+        }
+
+        /* Header from pasted_content_2 */
+        header {
+            background: #fff;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .main-header {
+            padding: 15px 0;
         }
 
         .header-flex {
             display: flex;
+            align-items: center;
             justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo img {
+            height: 45px;
+            width: auto;
+        }
+
+        .search-bar {
+            flex: 1;
+            display: flex;
+            position: relative;
+            max-width: 600px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 12px 45px 12px 20px;
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            outline: none;
+            font-size: 14px;
+            background: #f9fafb;
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 20px;
             align-items: center;
         }
 
-        .logo img { height: 32px; }
-
-        .nav-icons {
-            display: flex;
-            gap: 20px;
-            color: var(--text-main);
+        .icon-link {
+            color: var(--brand-primary);
+            font-size: 22px;
+            text-decoration: none;
+            position: relative;
         }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -10px;
+            background-color: var(--pix-color);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 10px;
+            border: 2px solid #fff;
+        }
+
+        /* Nav Scroll from pasted_content_2 */
+        .nav-scroll {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .nav-scroll::-webkit-scrollbar { display: none; }
+
+        .nav-scroll a {
+            display: inline-block;
+            padding: 0 20px;
+            text-decoration: none;
+            color: #4b5563;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-scroll a.active { color: var(--brand-primary); }
+
+        /* Breadcrumb from pasted_content_2 */
+        .breadcrumb {
+            padding: 20px 0;
+            font-size: 12px;
+            color: #9ca3af;
+        }
+
+        .breadcrumb a { text-decoration: none; color: inherit; }
+        .breadcrumb span { margin: 0 8px; }
 
         /* Product Layout */
         .product-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 48px;
-            padding: 40px 0;
+            padding-bottom: 40px;
         }
 
         @media (min-width: 768px) {
             .product-grid { grid-template-columns: 1.1fr 0.9fr; }
         }
 
-        /* Gallery - Clean */
+        /* Gallery - Sticky Fixed */
         .gallery-container {
             position: sticky;
-            top: 100px; /* Ajustado para ficar abaixo do header sticky */
+            top: 140px; /* Ajustado para ficar abaixo do header + nav scroll */
             height: fit-content;
         }
 
@@ -97,6 +191,7 @@
             display: flex;
             justify-content: center;
             margin-bottom: 16px;
+            border: 1px solid var(--border);
         }
 
         .main-image img {
@@ -105,13 +200,14 @@
             mix-blend-mode: multiply;
         }
 
-        /* Product Info - Professional Typography */
+        /* Product Info */
         .product-content h1 {
             font-size: 32px;
             font-weight: 800;
             letter-spacing: -0.02em;
             margin-bottom: 12px;
             line-height: 1.1;
+            color: #111827;
         }
 
         .badge-row {
@@ -126,7 +222,6 @@
             padding: 4px 10px;
             border-radius: 20px;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
         }
 
         .badge-stock { background: #ecfdf5; color: #065f46; }
@@ -143,15 +238,13 @@
 
         .stars { color: #fbbf24; }
 
-        /* Pricing - Elegant */
+        /* Pricing */
         .price-section {
             margin-bottom: 32px;
-        }
-
-        .price-label {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 4px;
+            padding: 24px;
+            background: var(--bg-soft);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
         }
 
         .price-main {
@@ -167,12 +260,12 @@
 
         .pix-info {
             font-size: 14px;
-            color: var(--success);
-            font-weight: 600;
+            color: var(--pix-color);
+            font-weight: 700;
             margin-top: 4px;
         }
 
-        /* Options - Minimalist Cards */
+        /* Options */
         .options-grid {
             display: grid;
             gap: 12px;
@@ -188,86 +281,63 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: #fff;
         }
 
-        .option-card:hover { border-color: var(--brand-accent); }
         .option-card.active {
-            border-color: var(--brand-accent);
-            background: #f8faff;
-            box-shadow: 0 0 0 1px var(--brand-accent);
+            border-color: var(--brand-primary);
+            background: #f0f4ff;
+            box-shadow: 0 0 0 1px var(--brand-primary);
         }
 
         .option-info .title { font-weight: 700; font-size: 15px; display: block; }
         .option-info .desc { font-size: 12px; color: var(--text-muted); }
         .option-price { text-align: right; }
         .option-price .val { font-weight: 800; color: var(--brand-primary); }
-        .option-price .tag { font-size: 10px; background: var(--brand-accent); color: #fff; padding: 2px 6px; border-radius: 4px; margin-top: 4px; display: inline-block; }
+        .option-price .tag { font-size: 10px; background: var(--brand-primary); color: #fff; padding: 2px 6px; border-radius: 4px; margin-top: 4px; display: inline-block; }
 
-        /* CTA - High Impact */
+        /* CTA */
         .cta-button {
             width: 100%;
             padding: 20px;
-            background: var(--brand-primary);
+            background: #16a34a; /* Verde de conversão */
             color: #fff;
             border: none;
             border-radius: var(--radius);
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 18px;
+            font-weight: 800;
             cursor: pointer;
-            transition: transform 0.2s, background 0.2s;
+            transition: transform 0.2s;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
             margin-bottom: 16px;
+            box-shadow: 0 4px 14px rgba(22, 163, 74, 0.3);
         }
 
-        .cta-button:hover { background: #000; transform: translateY(-1px); }
-
-        .secondary-actions {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-
-        .btn-outline {
-            padding: 14px;
-            border: 1px solid var(--border);
-            background: transparent;
-            border-radius: var(--radius);
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            color: var(--text-main);
-        }
+        .cta-button:hover { transform: translateY(-2px); background: #15803d; }
 
         /* Trust Bar */
         .trust-bar {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            padding: 32px 0;
+            padding: 24px 0;
             border-top: 1px solid var(--border);
-            margin-top: 40px;
+            margin-top: 20px;
             text-align: center;
         }
 
-        .trust-item i { font-size: 20px; color: var(--brand-accent); margin-bottom: 8px; }
-        .trust-item span { font-size: 12px; font-weight: 600; display: block; }
+        .trust-item i { font-size: 20px; color: var(--brand-primary); margin-bottom: 8px; }
+        .trust-item span { font-size: 11px; font-weight: 700; display: block; color: var(--text-main); }
 
-        /* Features Section */
+        /* Features */
         .features {
-            padding: 80px 0;
+            padding: 60px 0;
             background: var(--bg-soft);
+            border-top: 1px solid var(--border);
         }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-
-        .section-title h2 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
-        .section-title p { color: var(--text-muted); }
 
         .feature-grid {
             display: grid;
@@ -282,7 +352,7 @@
             border: 1px solid var(--border);
         }
 
-        .feature-card i { font-size: 24px; color: var(--brand-accent); margin-bottom: 16px; }
+        .feature-card i { font-size: 24px; color: var(--brand-primary); margin-bottom: 16px; }
         .feature-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
         .feature-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
 
@@ -292,6 +362,7 @@
             border-top: 1px solid var(--border);
             font-size: 14px;
             color: var(--text-muted);
+            background: #fff;
         }
 
         .footer-flex {
@@ -300,10 +371,6 @@
             flex-wrap: wrap;
             gap: 40px;
         }
-
-        .footer-links h4 { color: var(--text-main); margin-bottom: 16px; }
-        .footer-links ul { list-style: none; }
-        .footer-links li { margin-bottom: 8px; }
 
         /* Floating Mobile CTA */
         .mobile-cta {
@@ -324,25 +391,55 @@
 </head>
 <body>
 
+    <!-- Top Bar from pasted_content_2 -->
+    <div class="top-bar">
+        <div class="container">
+            Aproveite: <strong>FRETE GRÁTIS</strong> para todo o Brasil hoje!
+        </div>
+    </div>
+
+    <!-- Header from pasted_content_2 -->
     <header>
-        <div class="container header-flex">
-            <div class="logo">
-                <img src="https://images.tcdn.com.br/img/themes/1370019/logo.png?1740685044" alt="Hub Suplementos">
+        <div class="container main-header">
+            <div class="header-flex">
+                <div class="logo">
+                    <img src="https://images.tcdn.com.br/img/themes/1370019/logo.png?1740685044" alt="Hub Suplementos">
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="O que você está procurando?">
+                </div>
+                <div class="user-actions">
+                    <a href="#" class="icon-link"><i class="far fa-user"></i></a>
+                    <a href="#" class="icon-link">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
             </div>
-            <div class="nav-icons">
-                <i class="far fa-search"></i>
-                <i class="far fa-user"></i>
-                <i class="far fa-shopping-bag"></i>
+        </div>
+        <!-- Nav Scroll from pasted_content_2 -->
+        <div class="nav-scroll">
+            <div class="container">
+                <a href="#" class="active">Minoxidil</a>
+                <a href="#">Cabelo e Barba</a>
+                <a href="#">Vitaminas</a>
+                <a href="#">Kits Tratamento</a>
+                <a href="#">Ofertas</a>
             </div>
         </div>
     </header>
 
     <main class="container">
+        <!-- Breadcrumb from pasted_content_2 -->
+        <div class="breadcrumb">
+            <a href="#">Home</a> <span>/</span> <a href="#">Minoxidil</a> <span>/</span> Kit 3 Frascos Kirkland
+        </div>
+
         <div class="product-grid">
             <!-- Left: Visuals -->
             <div class="gallery-container">
                 <div class="main-image">
-                    <img src="https://i.postimg.cc/qqGv7Cbj/Chat-GPT-Image-19-de-abr-de-2026-16-36-27.png" alt="Minoxidil Kirkland">
+                    <img src="https://images.tcdn.com.br/img/editor/up/1370019/minoxidil_kirkland_3_frascos.jpg" alt="Minoxidil Kirkland">
                 </div>
                 <div class="trust-bar">
                     <div class="trust-item">
@@ -350,12 +447,12 @@
                         <span>100% ORIGINAL</span>
                     </div>
                     <div class="trust-item">
-                        <i class="fas fa-bolt"></i>
-                        <span>ENVIO EM 24H</span>
+                        <i class="fas fa-truck-fast"></i>
+                        <span>ENVIO IMEDIATO</span>
                     </div>
                     <div class="trust-item">
                         <i class="fas fa-shield-check"></i>
-                        <span>GARANTIA TOTAL</span>
+                        <span>COMPRA SEGURA</span>
                     </div>
                 </div>
             </div>
@@ -367,7 +464,7 @@
                     <span class="badge badge-shipping">Frete Grátis</span>
                 </div>
 
-                <h1>Minoxidil Kirkland 5% Signature</h1>
+                <h1>Kit 3 Frascos Minoxidil Kirkland 5% Signature</h1>
                 
                 <div class="rating-row">
                     <div class="stars">
@@ -377,47 +474,46 @@
                 </div>
 
                 <div class="price-section">
-                    <p class="price-label">A partir de</p>
                     <div class="price-main">
                         R$ 105,00 <span id="oldPrice">R$ 369,99</span>
                     </div>
-                    <p class="pix-info">Economize 5% extra no PIX</p>
+                    <p class="pix-info"><i class="fas fa-bolt"></i> Preço exclusivo para pagamento via PIX</p>
                 </div>
 
                 <div class="options-grid">
                     <div class="option-card active" onclick="updatePrice(105, 369.99, this)">
                         <div class="option-info">
                             <span class="title">Tratamento 3 Meses</span>
-                            <span class="desc">3 Frascos + Aplicador</span>
+                            <span class="desc">3 Frascos + Aplicador Original</span>
                         </div>
                         <div class="option-price">
                             <span class="val">R$ 105,00</span><br>
-                            <span class="tag">MAIS POPULAR</span>
+                            <span class="tag">MAIS VENDIDO</span>
                         </div>
                     </div>
                     <div class="option-card" onclick="updatePrice(199, 699.99, this)">
                         <div class="option-info">
                             <span class="title">Tratamento 6 Meses</span>
-                            <span class="desc">6 Frascos + Aplicador</span>
+                            <span class="desc">6 Frascos + Aplicador Original</span>
                         </div>
                         <div class="option-price">
                             <span class="val">R$ 199,00</span><br>
-                            <span class="tag">MELHOR VALOR</span>
+                            <span class="tag">MELHOR CUSTO</span>
                         </div>
                     </div>
                 </div>
 
                 <button class="cta-button">
-                    FINALIZAR COMPRA <i class="fas fa-arrow-right"></i>
+                    COMPRAR AGORA <i class="fas fa-arrow-right"></i>
                 </button>
 
-                <div class="secondary-actions">
-                    <button class="btn-outline">ADICIONAR AO CARRINHO</button>
-                    <button class="btn-outline">CALCULAR FRETE</button>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    <button style="padding: 14px; border: 1px solid var(--border); background: #fff; border-radius: var(--radius); font-weight: 600; cursor: pointer;">CARRINHO</button>
+                    <button style="padding: 14px; border: 1px solid var(--border); background: #fff; border-radius: var(--radius); font-weight: 600; cursor: pointer;">FRETE</button>
                 </div>
 
                 <p style="font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 24px;">
-                    <i class="fas fa-lock"></i> Pagamento processado em ambiente seguro e criptografado.
+                    <i class="fas fa-lock"></i> Pagamento 100% seguro processado pela Hub Suplementos.
                 </p>
             </div>
         </div>
@@ -425,25 +521,21 @@
 
     <section class="features">
         <div class="container">
-            <div class="section-title">
-                <h2>Ciência aplicada ao seu visual</h2>
-                <p>Por que o Kirkland é o padrão ouro mundial em crescimento capilar.</p>
-            </div>
             <div class="feature-grid">
                 <div class="feature-card">
                     <i class="fas fa-microscope"></i>
-                    <h3>Eficácia Clínica</h3>
-                    <p>Fórmula aprovada pelo FDA que atua diretamente no folículo piloso, prolongando a fase de crescimento e revitalizando fios enfraquecidos.</p>
+                    <h3>Eficácia Comprovada</h3>
+                    <p>O Minoxidil Kirkland Signature 5% é clinicamente comprovado para auxiliar no crescimento capilar e revitalizar os folículos.</p>
                 </div>
                 <div class="feature-card">
                     <i class="fas fa-user-check"></i>
-                    <h3>Resultados Visíveis</h3>
-                    <p>Milhares de homens relatam crescimento significativo na barba e couro cabeludo após as primeiras 8 a 12 semanas de uso contínuo.</p>
+                    <h3>Resultados Reais</h3>
+                    <p>Ideal para preencher falhas na barba e combater a calvície hereditária com resultados visíveis em poucas semanas.</p>
                 </div>
                 <div class="feature-card">
                     <i class="fas fa-award"></i>
-                    <h3>Pureza Garantida</h3>
-                    <p>Importado diretamente dos EUA. Produto lacrado com lote de fabricação rastreável, garantindo a originalidade Kirkland Signature.</p>
+                    <h3>Originalidade</h3>
+                    <p>Produto importado dos EUA, lacrado e com lote de fabricação para sua total segurança e garantia de resultados.</p>
                 </div>
             </div>
         </div>
@@ -458,27 +550,16 @@
     <footer>
         <div class="container footer-flex">
             <div style="max-width: 300px;">
-                <img src="https://images.tcdn.com.br/img/themes/1370019/logo.png?1740685044" alt="Hub Suplementos" style="height: 24px; margin-bottom: 16px; filter: grayscale(1);">
-                <p>A Hub Suplementos é especialista em produtos importados de alta performance para cuidados masculinos.</p>
+                <img src="https://images.tcdn.com.br/img/themes/1370019/logo.png?1740685044" alt="Hub Suplementos" style="height: 24px; margin-bottom: 16px;">
+                <p>Especialistas em produtos importados para o cuidado masculino de alta performance.</p>
             </div>
             <div class="footer-links">
-                <h4>Suporte</h4>
-                <ul>
-                    <li>WhatsApp: (11) 94345-4574</li>
-                    <li>E-mail: sac@hubsuplementos.com.br</li>
-                    <li>Rastrear Pedido</li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Institucional</h4>
-                <ul>
-                    <li>Sobre Nós</li>
-                    <li>Políticas de Envio</li>
-                    <li>Termos de Uso</li>
-                </ul>
+                <p><strong>Atendimento</strong><br>
+                WhatsApp: (11) 94345-4574<br>
+                E-mail: sac@hubsuplementos.com.br</p>
             </div>
         </div>
-        <div class="container" style="margin-top: 60px; text-align: center; font-size: 12px;">
+        <div class="container" style="margin-top: 40px; text-align: center; font-size: 12px;">
             © 2024 Hub Suplementos. Todos os direitos reservados.
         </div>
     </footer>
