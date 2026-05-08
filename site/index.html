@@ -2,701 +2,640 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Creatina Micronizada Nutrata | Hub Suplementos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #000066;
-            --secondary-color: #f8f9fa;
-            --accent-color: #ffcc00;
-            --text-color: #333;
-            --light-gray: #e9ecef;
-            --border-color: #ddd;
-            --success-color: #28a745;
+            --primary: #001A72;
+            --primary-light: #002BB3;
+            --accent: #FFD700;
+            --success: #10B981;
+            --text-main: #111827;
+            --text-muted: #6B7280;
+            --bg-body: #F9FAFB;
+            --bg-card: #FFFFFF;
+            --border: #E5E7EB;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            background-color: #fff;
-            color: var(--text-color);
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding-bottom: 80px; /* Espaço para o botão fixo mobile */
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 16px;
         }
 
-        /* Header */
+        /* Header Otimizado */
         header {
-            border-bottom: 1px solid var(--border-color);
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .top-bar {
-            background-color: var(--secondary-color);
-            padding: 8px 0;
-            font-size: 12px;
+        .top-promo {
+            background: var(--primary);
+            color: white;
+            font-size: 11px;
             text-align: center;
+            padding: 6px 0;
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
 
-        .main-header {
-            padding: 20px 0;
-        }
-
-        .header-flex {
+        .nav-main {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 20px;
+            padding: 12px 0;
         }
 
         .logo img {
-            height: 50px;
+            height: 32px;
+            width: auto;
         }
 
-        .search-bar {
-            flex: 1;
+        .nav-icons {
             display: flex;
-            max-width: 600px;
+            gap: 16px;
+            font-size: 20px;
+            color: var(--primary);
         }
 
-        .search-bar input {
-            flex: 1;
-            padding: 10px 15px;
-            border: 1px solid var(--border-color);
-            border-right: none;
-            border-radius: 4px 0 0 4px;
-            outline: none;
+        .cart-icon {
+            position: relative;
         }
 
-        .search-bar button {
-            padding: 10px 20px;
-            background-color: #fff;
-            border: 1px solid var(--border-color);
-            border-radius: 0 4px 4px 0;
-            cursor: pointer;
-        }
-
-        .user-actions {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .account, .cart {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-        }
-
-        .account i, .cart i {
-            font-size: 24px;
-            color: var(--primary-color);
-        }
-
-        .account span {
-            font-size: 12px;
-        }
-
-        .cart-count {
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 2px 6px;
-            border-radius: 50%;
-            font-size: 12px;
-        }
-
-        .main-nav {
-            background-color: #fff;
-            padding: 10px 0;
-        }
-
-        .main-nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-
-        .main-nav a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 600;
-            font-size: 14px;
-            text-transform: uppercase;
-        }
-
-        .main-nav a.outlet {
-            color: #d9534f;
-        }
-
-        /* Breadcrumb */
-        .breadcrumb {
-            padding: 15px 0;
-            font-size: 12px;
-            color: #777;
-        }
-
-        .breadcrumb a {
-            text-decoration: none;
-            color: #777;
-        }
-
-        /* Product Section */
-        .product-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            padding: 20px 15px;
-        }
-
-        .product-gallery {
-            display: flex;
-            gap: 15px;
-        }
-
-        .thumbnails {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .thumbnails img {
-            width: 80px;
-            height: 80px;
-            border: 1px solid var(--border-color);
-            cursor: pointer;
-            object-fit: contain;
-        }
-
-        .thumbnails img.active {
-            border-color: var(--primary-color);
-        }
-
-        .main-image {
-            flex: 1;
-            border: 1px solid var(--border-color);
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--accent);
+            color: var(--primary);
+            font-size: 10px;
+            font-weight: 700;
+            width: 18px;
+            height: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 50%;
+            border: 2px solid white;
         }
 
-        .main-image img {
-            max-width: 100%;
-            max-height: 500px;
-        }
-
-        .product-info h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .brand {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .rating {
-            margin-bottom: 20px;
-            color: #ffcc00;
-        }
-
-        .rating a {
-            color: #007bff;
+        /* Breadcrumb Discreto */
+        .breadcrumb {
+            padding: 12px 0;
             font-size: 12px;
-            margin-left: 10px;
-            text-decoration: none;
+            color: var(--text-muted);
+            overflow-x: auto;
+            white-space: nowrap;
         }
 
-        .variants {
-            margin-bottom: 25px;
+        /* Galeria Mobile-First */
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
         }
 
-        .variant-options {
+        .gallery-container {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .main-img-wrapper {
+            aspect-ratio: 1;
             display: flex;
-            gap: 10px;
-            margin-top: 5px;
-        }
-
-        .variant-options button {
-            padding: 8px 20px;
-            border: 1px solid var(--border-color);
-            background: #fff;
-            cursor: pointer;
-        }
-
-        .variant-options button.active {
-            border-color: var(--primary-color);
-            background-color: var(--primary-color);
-            color: #fff;
-        }
-
-        .price-box {
-            background-color: #fdfdfd;
+            align-items: center;
+            justify-content: center;
             padding: 20px;
-            border: 1px solid var(--light-gray);
-            margin-bottom: 25px;
         }
 
-        .price-from {
+        .main-img-wrapper img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .thumb-list {
+            display: flex;
+            gap: 8px;
+            padding: 0 16px 16px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .thumb-list::-webkit-scrollbar { display: none; }
+
+        .thumb-item {
+            width: 64px;
+            height: 64px;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            flex-shrink: 0;
+            padding: 4px;
+            background: #f3f4f6;
+        }
+
+        .thumb-item.active {
+            border-color: var(--primary);
+            background: white;
+        }
+
+        .thumb-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Info do Produto */
+        .product-info {
+            padding: 0 4px;
+        }
+
+        .badge-brand {
+            display: inline-block;
+            background: #EEF2FF;
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 8px;
+        }
+
+        h1 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .rating-summary {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .stars { color: var(--accent); font-size: 14px; }
+        .rating-count { font-size: 13px; color: var(--text-muted); }
+
+        /* Preços */
+        .price-card {
+            background: white;
+            padding: 20px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            margin-bottom: 24px;
+        }
+
+        .price-old {
             font-size: 14px;
-            color: #888;
+            color: var(--text-muted);
             text-decoration: line-through;
         }
 
-        .price-main {
+        .price-current {
             display: flex;
-            align-items: center;
-            gap: 15px;
-            margin: 5px 0;
+            align-items: baseline;
+            gap: 8px;
+            margin: 4px 0;
         }
 
-        .price-now {
+        .price-value {
             font-size: 32px;
-            font-weight: bold;
-            color: var(--success-color);
+            font-weight: 800;
+            color: var(--success);
         }
 
-        .discount-tag {
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 4px 8px;
-            font-size: 12px;
-            border-radius: 3px;
+        .price-tag {
+            background: var(--success);
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
         }
 
         .installments {
             font-size: 14px;
+            color: var(--text-main);
         }
 
-        .buy-actions {
+        /* Variantes */
+        .section-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .variant-chips {
             display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
+            gap: 12px;
+            margin-bottom: 24px;
         }
 
-        .quantity {
-            display: flex;
-            border: 1px solid var(--border-color);
-        }
-
-        .quantity button {
-            width: 40px;
-            background: #fff;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-        }
-
-        .quantity input {
-            width: 50px;
+        .chip {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
             text-align: center;
-            border: none;
-            border-left: 1px solid var(--border-color);
-            border-right: 1px solid var(--border-color);
-        }
-
-        .btn-buy {
-            flex: 1;
-            background-color: var(--primary-color);
-            color: #fff;
-            border: none;
-            padding: 15px;
-            font-weight: bold;
-            font-size: 18px;
+            font-weight: 600;
+            font-size: 14px;
             cursor: pointer;
-            border-radius: 4px;
+            transition: all 0.2s;
+            background: white;
         }
 
-        .shipping-calc {
-            border-top: 1px solid var(--border-color);
-            padding-top: 20px;
+        .chip.active {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: #F0F4FF;
         }
 
-        .shipping-input {
+        /* Ações de Compra */
+        .purchase-actions {
             display: flex;
-            margin-top: 10px;
-            max-width: 300px;
+            gap: 12px;
+            margin-bottom: 24px;
         }
 
-        .shipping-input input {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid var(--border-color);
-            border-right: none;
-        }
-
-        .shipping-input button {
-            padding: 10px 15px;
-            background: #fff;
-            border: 1px solid var(--border-color);
-            cursor: pointer;
-        }
-
-        /* Tabs */
-        .product-details {
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-
-        .tabs {
+        .qty-selector {
             display: flex;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 20px;
+            align-items: center;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: white;
         }
 
-        .tab-link {
-            padding: 15px 30px;
+        .qty-btn {
+            width: 44px;
+            height: 44px;
             border: none;
             background: none;
+            font-size: 18px;
+            color: var(--primary);
             cursor: pointer;
+        }
+
+        .qty-input {
+            width: 40px;
+            text-align: center;
+            border: none;
             font-weight: 600;
-            color: #777;
+            font-size: 16px;
+        }
+
+        .btn-add-cart {
+            flex: 1;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-add-cart:active { background: var(--primary-light); }
+
+        /* Botão Fixo Mobile */
+        .mobile-sticky-buy {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 12px 16px;
+            box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            z-index: 99;
+            border-top: 1px solid var(--border);
+        }
+
+        .sticky-price {
+            flex-shrink: 0;
+        }
+
+        .sticky-price .val {
+            display: block;
+            font-weight: 800;
+            font-size: 18px;
+            color: var(--success);
+        }
+
+        .sticky-price .label {
+            font-size: 10px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        /* Abas de Conteúdo */
+        .details-tabs {
+            margin-top: 40px;
+            background: white;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .tab-nav {
+            display: flex;
+            border-bottom: 1px solid var(--border);
+            background: #F9FAFB;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 16px 8px;
+            border: none;
+            background: none;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
             position: relative;
         }
 
-        .tab-link.active {
-            color: var(--primary-color);
+        .tab-btn.active {
+            color: var(--primary);
+            background: white;
         }
 
-        .tab-link.active::after {
+        .tab-btn.active::after {
             content: '';
             position: absolute;
-            bottom: -1px;
+            bottom: 0;
             left: 0;
             width: 100%;
-            height: 2px;
-            background-color: var(--primary-color);
+            height: 3px;
+            background: var(--primary);
         }
 
-        .tab-content {
+        .tab-pane {
+            padding: 24px 16px;
             display: none;
         }
 
-        .tab-content.active {
-            display: block;
-        }
+        .tab-pane.active { display: block; }
 
-        .tab-content h2 {
-            margin-bottom: 15px;
-        }
+        .tab-pane h2 { font-size: 18px; margin-bottom: 16px; color: var(--primary); }
+        .tab-pane p { margin-bottom: 12px; font-size: 15px; color: #4B5563; }
+        .tab-pane ul { padding-left: 20px; margin-bottom: 16px; }
+        .tab-pane li { margin-bottom: 8px; font-size: 15px; color: #4B5563; }
 
-        .tab-content p, .tab-content ul {
-            margin-bottom: 15px;
-        }
-
-        .tab-content ul {
-            padding-left: 20px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #f8f9fa;
-            padding: 50px 0 0;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-            padding-bottom: 40px;
-        }
-
-        .footer-logo {
-            height: 40px;
-            margin-bottom: 20px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-links i {
-            font-size: 24px;
-            color: var(--primary-color);
-        }
-
-        .footer-col h4 {
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            font-size: 14px;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-col ul a {
-            text-decoration: none;
-            color: #666;
-            font-size: 14px;
-        }
-
-        .copyright {
-            background-color: #eee;
-            padding: 20px 0;
-            text-align: center;
-            font-size: 12px;
-            color: #777;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .product-container {
-                grid-template-columns: 1fr;
+        /* Desktop Adjustments */
+        @media (min-width: 1024px) {
+            .product-grid {
+                grid-template-columns: 1.2fr 1fr;
+                gap: 48px;
+                align-items: start;
             }
-            
-            .header-flex {
+
+            .main-img-wrapper { padding: 40px; }
+
+            h1 { font-size: 32px; }
+
+            .mobile-sticky-buy { display: none; }
+
+            .thumb-list {
                 flex-direction: column;
+                position: absolute;
+                left: 16px;
+                top: 16px;
+                padding: 0;
             }
-            
-            .search-bar {
-                width: 100%;
-            }
-            
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
+
+            .gallery-container { position: relative; padding-left: 90px; }
+        }
+
+        @media (max-width: 1023px) {
+            .nav-icons .fa-user { display: none; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+
     <header>
-        <div class="top-bar">
-            <div class="container">
-                <p>Falta apenas <strong>R$ 199,00</strong> para obter <strong>Frete Grátis</strong> em SP.</p>
-            </div>
+        <div class="top-promo">
+            FRETE GRÁTIS PARA TODO BRASIL EM COMPRAS ACIMA DE R$ 199
         </div>
-        <div class="main-header">
-            <div class="container header-flex">
+        <div class="container">
+            <div class="nav-main">
                 <div class="logo">
                     <img src="https://images.tcdn.com.br/img/themes/1370019/logo.png?1740685044" alt="Hub Suplementos">
                 </div>
-                <div class="search-bar">
-                    <input type="text" placeholder="O que deseja procurar?">
-                    <button><i class="fas fa-search"></i></button>
-                </div>
-                <div class="user-actions">
-                    <div class="account">
-                        <i class="far fa-user"></i>
-                        <span>Minha Conta<br><strong>Acessar</strong></span>
-                    </div>
-                    <div class="cart">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">0</span>
+                <div class="nav-icons">
+                    <i class="fas fa-search"></i>
+                    <i class="far fa-user"></i>
+                    <div class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-badge">0</span>
                     </div>
                 </div>
             </div>
         </div>
-        <nav class="main-nav">
-            <div class="container">
-                <ul>
-                    <li><a href="#"><i class="fas fa-bars"></i> Todas Categorias</a></li>
-                    <li><a href="#">Proteínas</a></li>
-                    <li><a href="#">Creatina</a></li>
-                    <li><a href="#">Pré-Treino</a></li>
-                    <li><a href="#">Snacks</a></li>
-                    <li><a href="#">Vitaminas e Minerais</a></li>
-                    <li><a href="#" class="outlet">Outlet</a></li>
-                </ul>
-            </div>
-        </nav>
     </header>
 
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-        <div class="container">
-            <a href="#">Home</a> / <a href="#">Creatina</a> / <a href="#">Creatina Micronizada</a> / <span>Creatina Micronizada Nutrata</span>
+    <div class="container">
+        <div class="breadcrumb">
+            Home <i class="fas fa-chevron-right" style="font-size: 8px; margin: 0 4px;"></i> 
+            Creatina <i class="fas fa-chevron-right" style="font-size: 8px; margin: 0 4px;"></i> 
+            Nutrata
         </div>
+
+        <main class="product-grid">
+            <!-- Galeria -->
+            <div class="gallery-container">
+                <div class="thumb-list">
+                    <div class="thumb-item active" onclick="updateGallery(this, 'https://images.tcdn.com.br/img/img_prod/1370019/creatina_micronizada_nutrata_617_1_2391fd8f3999f6ce6ae6e640b368ca9b.jpg')">
+                        <img src="https://images.tcdn.com.br/img/img_prod/1370019/creatina_micronizada_nutrata_617_1_2391fd8f3999f6ce6ae6e640b368ca9b.jpg">
+                    </div>
+                    <div class="thumb-item" onclick="updateGallery(this, 'https://images.tcdn.com.br/img/img_prod/1370019/creatina_micronizada_nutrata_617_2_27008ca7886c850606e6cd54985cde4f.jpg')">
+                        <img src="https://images.tcdn.com.br/img/img_prod/1370019/creatina_micronizada_nutrata_617_2_27008ca7886c850606e6cd54985cde4f.jpg">
+                    </div>
+                    <div class="thumb-item" onclick="updateGallery(this, 'https://images.tcdn.com.br/img/img_prod/1370019/creatina_micronizada_nutrata_617_3_717727783ed440103f95985fd6d73bfb.jpg')">
+                        <img src="https://images.tcdn.com.br/img/img_prod/1370019/creatina_micronizada_nutrata_617_3_717727783ed440103f95985fd6d73bfb.jpg">
+                    </div>
+                    <div class="thumb-item" onclick="updateGallery(this, 'https://images.tcdn.com.br/img/img_prod/1370019/creatina_micronizada_nutrata_617_4_d4bcc18e3ff135b267911c6dcd910fbf.jpg')">
+                        <img src="https://images.tcdn.com.br/img/img_prod/1370019/creatina_micronizada_nutrata_617_4_d4bcc18e3ff135b267911c6dcd910fbf.jpg">
+                    </div>
+                </div>
+                <div class="main-img-wrapper">
+                    <img id="main-img" src="https://images.tcdn.com.br/img/img_prod/1370019/creatina_micronizada_nutrata_617_1_2391fd8f3999f6ce6ae6e640b368ca9b.jpg" alt="Creatina Nutrata">
+                </div>
+            </div>
+
+            <!-- Informações -->
+            <div class="product-info">
+                <span class="badge-brand">NUTRATA</span>
+                <h1>Creatina Micronizada Nutrata - 100% Pura</h1>
+                
+                <div class="rating-summary">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <span class="rating-count">(48 avaliações)</span>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-old">De R$ 32,90</div>
+                    <div class="price-current">
+                        <span class="price-value">R$ 25,27</span>
+                        <span class="price-tag">5% OFF PIX</span>
+                    </div>
+                    <div class="installments">ou 3x de <strong>R$ 8,87</strong> sem juros</div>
+                </div>
+
+                <div class="section-title">Selecione o Tamanho</div>
+                <div class="variant-chips">
+                    <div class="chip active" onclick="selectVariant(this)">100g</div>
+                    <div class="chip" onclick="selectVariant(this)">300g</div>
+                </div>
+
+                <div class="purchase-actions">
+                    <div class="qty-selector">
+                        <button class="qty-btn" onclick="changeQty(-1)">-</button>
+                        <input type="number" class="qty-input" id="product-qty" value="1" readonly>
+                        <button class="qty-btn" onclick="changeQty(1)">+</button>
+                    </div>
+                    <button class="btn-add-cart">
+                        <i class="fas fa-shopping-cart"></i> ADICIONAR AO CARRINHO
+                    </button>
+                </div>
+
+                <div style="font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-shield-alt" style="color: var(--success);"></i> Compra 100% Segura e Garantida
+                </div>
+            </div>
+        </main>
+
+        <!-- Detalhes -->
+        <section class="details-tabs">
+            <div class="tab-nav">
+                <button class="tab-btn active" onclick="switchTab(this, 'tab-desc')">Descrição</button>
+                <button class="tab-btn" onclick="switchTab(this, 'tab-info')">Tabela Nutricional</button>
+                <button class="tab-btn" onclick="switchTab(this, 'tab-use')">Como Usar</button>
+            </div>
+            
+            <div id="tab-desc" class="tab-pane active">
+                <h2>Potencialize seus resultados</h2>
+                <p>O Creatin UP da Nutrata é um suplemento de <strong>creatina monohidratada 100% pura</strong>, com perfil micronizado (200 mesh) para máxima absorção.</p>
+                <ul>
+                    <li>Aumento real de força e explosão muscular.</li>
+                    <li>Melhora o desempenho em treinos de alta intensidade.</li>
+                    <li>Auxilia na recuperação pós-treino.</li>
+                    <li>Sabor neutro: ideal para misturar com qualquer bebida.</li>
+                </ul>
+            </div>
+
+            <div id="tab-info" class="tab-pane">
+                <h2>Informação Nutricional</h2>
+                <p>Porção de 3g (1 dosador):</p>
+                <ul>
+                    <li>Creatina Monohidratada: 3000mg</li>
+                    <li>Valor Energético: 0 kcal</li>
+                    <li>Proteínas: 0g</li>
+                </ul>
+                <p><small>*Não contém quantidades significativas de carboidratos, gorduras e sódio.</small></p>
+            </div>
+
+            <div id="tab-use" class="tab-pane">
+                <h2>Sugestão de Uso</h2>
+                <p>Diluir 3g (1 colher de café) em 200ml de água ou bebida de sua preferência.</p>
+                <p>Consumir uma vez ao dia, ou conforme orientação profissional. A creatina tem efeito cumulativo, por isso deve ser tomada todos os dias, inclusive nos dias de descanso.</p>
+            </div>
+        </section>
     </div>
 
-    <!-- Product Section -->
-    <main class="container product-container">
-        <div class="product-gallery">
-            <div class="thumbnails">
-                <img src="https://images.tcdn.com.br/img/img_prod/1370019/creatina_micronizada_nutrata_617_1_2391fd8f3999f6ce6ae6e640b368ca9b.jpg" class="active" onclick="changeImage(this)">
-                <img src="https://images.tcdn.com.br/img/img_prod/1370019/creatina_micronizada_nutrata_617_2_27008ca7886c850606e6cd54985cde4f.jpg" onclick="changeImage(this)">
-                <img src="https://images.tcdn.com.br/img/img_prod/1370019/creatina_micronizada_nutrata_617_3_717727783ed440103f95985fd6d73bfb.jpg" onclick="changeImage(this)">
-                <img src="https://images.tcdn.com.br/img/img_prod/1370019/creatina_micronizada_nutrata_617_4_d4bcc18e3ff135b267911c6dcd910fbf.jpg" onclick="changeImage(this)">
-            </div>
-            <div class="main-image">
-                <img id="featured" src="https://images.tcdn.com.br/img/img_prod/1370019/creatina_micronizada_nutrata_617_1_2391fd8f3999f6ce6ae6e640b368ca9b.jpg" alt="Creatina Micronizada Nutrata">
-            </div>
+    <!-- Sticky Buy Mobile -->
+    <div class="mobile-sticky-buy">
+        <div class="sticky-price">
+            <span class="label">A partir de</span>
+            <span class="val">R$ 25,27</span>
         </div>
-
-        <div class="product-info">
-            <h1>Creatina Micronizada Nutrata</h1>
-            <p class="brand">Marca: <strong>Nutrata</strong> | Referência: 927</p>
-            
-            <div class="rating">
-                <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-                <a href="#">Seja o primeiro a opinar</a>
-            </div>
-
-            <div class="variants">
-                <p>Peso:</p>
-                <div class="variant-options">
-                    <button class="active">100g</button>
-                    <button>300g</button>
-                </div>
-            </div>
-
-            <div class="price-box">
-                <span class="price-from">a partir de: R$ 26,60</span>
-                <div class="price-main">
-                    <span class="price-now">R$ 25,27</span>
-                    <span class="discount-tag">5% OFF no PIX</span>
-                </div>
-                <p class="installments">ou <strong>3x</strong> de <strong>R$ 8,87</strong> Sem juros</p>
-            </div>
-
-            <div class="buy-actions">
-                <div class="quantity">
-                    <button onclick="updateQty(-1)">-</button>
-                    <input type="text" id="qty" value="1">
-                    <button onclick="updateQty(1)">+</button>
-                </div>
-                <button class="btn-buy">COMPRAR</button>
-            </div>
-
-            <div class="shipping-calc">
-                <p><i class="fas fa-truck"></i> Frete e prazo de entrega</p>
-                <div class="shipping-input">
-                    <input type="text" placeholder="Informe seu cep">
-                    <button>CALCULAR</button>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Tabs / Description -->
-    <section class="product-details container">
-        <div class="tabs">
-            <button class="tab-link active" onclick="openTab(event, 'desc')">Descrição Geral</button>
-            <button class="tab-link" onclick="openTab(event, 'info')">Informação Nutricional</button>
-            <button class="tab-link" onclick="openTab(event, 'ingr')">Ingredientes</button>
-        </div>
-
-        <div id="desc" class="tab-content active">
-            <h2>Creatin UP Nutrata: creatina monohidratada pura para evolução no treino</h2>
-            <p>O Creatin UP da Nutrata é um suplemento de <strong>creatina monohidratada 100% pura</strong>, com perfil <strong>micronizado</strong> (200 mesh) e <strong>sabor neutro</strong>, pensado para encaixar com facilidade na rotina de quem treina e busca consistência.</p>
-            <h3>Para que serve a creatina na prática?</h3>
-            <ul>
-                <li><strong>Força e potência</strong> em exercícios de alta intensidade.</li>
-                <li><strong>Melhor desempenho</strong> em séries repetidas e treinos com progressão.</li>
-                <li><strong>Mais qualidade de treino</strong>, favorecendo volume e evolução ao longo das semanas.</li>
-            </ul>
-            <h3>Diferenciais do Creatin UP Nutrata</h3>
-            <ul>
-                <li><strong>100% creatina monohidratada</strong> (ingrediente único).</li>
-                <li><strong>Micronizada 200 mesh</strong>, ajudando na mistura e no uso diário.</li>
-                <li><strong>Sabor neutro</strong>, fácil de combinar com água, sucos ou shakes.</li>
-            </ul>
-        </div>
-        <div id="info" class="tab-content">
-            <p>Informações nutricionais detalhadas conforme o rótulo do fabricante.</p>
-        </div>
-        <div id="ingr" class="tab-content">
-            <p>Creatina Monohidratada. NÃO CONTÉM GLÚTEN.</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <img src="https://images.tcdn.com.br/img/themes/1370019/logo.png?1740685044" alt="Hub Suplementos" class="footer-logo">
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Categorias</h4>
-                <ul>
-                    <li><a href="#">Proteínas</a></li>
-                    <li><a href="#">Creatina</a></li>
-                    <li><a href="#">Pré-Treino</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Institucional</h4>
-                <ul>
-                    <li><a href="#">Quem Somos</a></li>
-                    <li><a href="#">Como comprar</a></li>
-                    <li><a href="#">Segurança</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            <div class="container">
-                <p>&copy; 2026 Hub Suplementos. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
+        <button class="btn-add-cart" onclick="document.querySelector('.btn-add-cart').click()">
+            COMPRAR AGORA
+        </button>
+    </div>
 
     <script>
-        function changeImage(element) {
-            // Atualizar imagem principal
-            const mainImg = document.getElementById('featured');
-            mainImg.src = element.src;
-
-            // Atualizar classe ativa nas miniaturas
-            const thumbnails = document.querySelectorAll('.thumbnails img');
-            thumbnails.forEach(img => img.classList.remove('active'));
+        function updateGallery(element, src) {
+            document.getElementById('main-img').src = src;
+            document.querySelectorAll('.thumb-item').forEach(item => item.classList.remove('active'));
             element.classList.add('active');
         }
 
-        function updateQty(change) {
-            const qtyInput = document.getElementById('qty');
-            let currentQty = parseInt(qtyInput.value);
-            
-            if (isNaN(currentQty)) currentQty = 1;
-            
-            currentQty += change;
-            
-            if (currentQty < 1) currentQty = 1;
-            
-            qtyInput.value = currentQty;
+        function selectVariant(element) {
+            document.querySelectorAll('.chip').forEach(chip => chip.classList.remove('active'));
+            element.classList.add('active');
         }
 
-        function openTab(evt, tabName) {
-            // Esconder todos os conteúdos de abas
-            const tabContents = document.querySelectorAll('.tab-content');
-            tabContents.forEach(content => content.classList.remove('active'));
-
-            // Remover classe ativa de todos os links de abas
-            const tabLinks = document.querySelectorAll('.tab-link');
-            tabLinks.forEach(link => link.classList.remove('active'));
-
-            // Mostrar a aba atual e adicionar classe ativa ao botão
-            document.getElementById(tabName).classList.add('active');
-            evt.currentTarget.classList.add('active');
+        function changeQty(val) {
+            const input = document.getElementById('product-qty');
+            let current = parseInt(input.value);
+            current += val;
+            if (current < 1) current = 1;
+            input.value = current;
         }
 
-        // Simulação de clique nos botões de variante
-        document.querySelectorAll('.variant-options button').forEach(button => {
-            button.addEventListener('click', function() {
-                document.querySelectorAll('.variant-options button').forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-            });
+        function switchTab(btn, tabId) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+            
+            btn.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        // Efeito de scroll suave para o botão fixo
+        window.addEventListener('scroll', () => {
+            const sticky = document.querySelector('.mobile-sticky-buy');
+            const buyBtn = document.querySelector('.purchase-actions');
+            const rect = buyBtn.getBoundingClientRect();
+            
+            if (rect.top < 0) {
+                sticky.style.transform = 'translateY(0)';
+                sticky.style.opacity = '1';
+            } else {
+                sticky.style.transform = 'translateY(100%)';
+                sticky.style.opacity = '0';
+            }
         });
     </script>
 </body>
