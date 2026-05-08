@@ -481,7 +481,7 @@
             background-color: var(--cart-hover-bg);
         }
 
-        /* Shipping */
+        /* Shipping - FIXED LAYOUT */
         .shipping-box {
             border: 1px solid var(--border-color);
             padding: 20px;
@@ -501,11 +501,13 @@
 
         .shipping-input {
             display: flex;
-            gap: 12px;
+            gap: 10px;
+            flex-wrap: wrap; /* Permite quebra se necessário */
         }
 
         .shipping-input input {
             flex: 1;
+            min-width: 120px; /* Garante largura mínima */
             padding: 12px 15px;
             border: 1px solid var(--border-color);
             border-radius: 8px;
@@ -514,7 +516,8 @@
         }
 
         .shipping-input button {
-            padding: 0 25px;
+            padding: 0 20px;
+            height: 45px; /* Altura fixa para alinhar com input */
             background: #fff;
             border: 2px solid var(--primary-color);
             color: var(--primary-color);
@@ -522,6 +525,13 @@
             font-size: 13px;
             border-radius: 8px;
             cursor: pointer;
+            white-space: nowrap; /* Impede quebra do texto do botão */
+            transition: all 0.2s;
+        }
+
+        .shipping-input button:hover {
+            background: var(--primary-color);
+            color: #fff;
         }
 
         /* Tabs */
@@ -889,6 +899,19 @@
             .reviews-header h2 { font-size: 22px; }
             .rating-number { font-size: 28px; }
             .page-btn { width: 32px; height: 32px; font-size: 13px; }
+            
+            /* Ajuste específico para o frete no mobile */
+            .shipping-input {
+                flex-direction: row;
+                align-items: stretch;
+            }
+            .shipping-input input {
+                flex: 1;
+            }
+            .shipping-input button {
+                padding: 0 15px;
+                font-size: 12px;
+            }
         }
 
         /* Desktop Adjustments */
