@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="description" content="Revendedor autorizado de acessórios Apple. Carregadores, cabos e capas originais com garantia e entrega rápida.">
-    <title>Acessórios Apple Originais | Revenda Autorizada [Nome da Sua Empresa]</title>
+    <title>Acessórios para Celular Originais | Revenda</title>
     
     <!-- Preconnect para fontes externas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -452,6 +452,17 @@
         const floatingCta = document.getElementById('floating-cta');
         const floatingBtn = document.getElementById('floating-btn');
 
+        const resetButton = () => {
+            const textSpan = mainCta.querySelector('.btn-text');
+            textSpan.textContent = 'VER PRODUTOS DISPONÍVEIS';
+            mainCta.disabled = false;
+            mainCta.style.opacity = '1';
+            
+            floatingBtn.textContent = 'QUERO MEU DESCONTO AGORA';
+            floatingBtn.disabled = false;
+            floatingBtn.style.opacity = '1';
+        };
+
         const handleRedirect = () => {
             const textSpan = mainCta.querySelector('.btn-text');
             textSpan.textContent = 'CARREGANDO...';
@@ -477,6 +488,12 @@
             } else {
                 floatingCta.classList.remove('visible');
             }
+        });
+
+        // Resetar botões quando o usuário volta para a página
+        window.addEventListener('pageshow', (event) => {
+            // event.persisted é verdadeiro se a página foi carregada do cache (botão voltar)
+            resetButton();
         });
     </script>
 
