@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="description" content="Level Up no seu visual com Minoxidil Kirkland Signature. O tratamento nº 1 para crescimento de barba e cabelo.">
+    <title>PlayStation Edition | Minoxidil Kirkland</title>
+    
+    <!-- Preconnect para fontes externas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --ps-blue: #003791;
+            --ps-dark-blue: #001d4a;
+            --ps-light-blue: #0072ce;
+            --ps-black: #000000;
+            --ps-white: #ffffff;
+            --ps-grey: #a0a0a0;
+            --ps-triangle: #31d2f2;
+            --ps-circle: #f65858;
+            --ps-cross: #88a0f7;
+            --ps-square: #f392f3;
+            
+            --text-main: #ffffff;
+            --text-muted: #b0b0b0;
+            --bg-dark: #00050f;
+            --shadow-glow: 0 0 20px rgba(0, 114, 206, 0.4);
+            --success-green: #27ae60;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+            background: radial-gradient(circle at top right, #001d4a 0%, var(--bg-dark) 70%);
+        }
+
+        /* Elementos de fundo PlayStation */
+        .ps-symbols {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+            opacity: 0.1;
+        }
+
+        .symbol {
+            position: absolute;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 10rem;
+        }
+
+        .symbol-triangle { top: 5%; right: -5%; color: var(--ps-triangle); transform: rotate(15deg); }
+        .symbol-circle { bottom: 20%; left: -10%; color: var(--ps-circle); transform: rotate(-20deg); }
+        .symbol-cross { top: 40%; left: 80%; color: var(--ps-cross); transform: rotate(45deg); }
+        .symbol-square { bottom: 5%; right: 10%; color: var(--ps-square); transform: rotate(-10deg); }
+
+        /* Container Principal */
+        .container {
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+            padding: 20px 16px 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Card de Oferta Estilo PS5 */
+        .card {
+            width: 100%;
+            background: rgba(0, 29, 74, 0.6);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(0, 114, 206, 0.3);
+            border-radius: 24px;
+            padding: 2.5rem 1.5rem;
+            box-shadow: var(--shadow-glow);
+            text-align: center;
+            position: relative;
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--ps-blue), var(--ps-light-blue), var(--ps-blue));
+        }
+
+        .logo-circle {
+            width: 90px;
+            height: 90px;
+            background: var(--ps-white);
+            border-radius: 20px; /* Estilo mais moderno */
+            margin: 0 auto 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+            transform: rotate(-3deg);
+        }
+
+        .logo-circle img { width: 100%; height: auto; object-fit: contain; }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 14px;
+            background: var(--ps-blue);
+            color: var(--ps-white);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            margin-bottom: 1.2rem;
+            border-left: 3px solid var(--ps-triangle);
+        }
+
+        .title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: var(--ps-white);
+            line-height: 1.2;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .title span { display: block; color: var(--ps-light-blue); text-shadow: 0 0 10px rgba(0, 114, 206, 0.5); }
+
+        .offer-value {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--ps-white);
+            line-height: 1;
+            margin: 1.5rem 0;
+            position: relative;
+            font-style: italic;
+        }
+
+        .offer-value span {
+            color: var(--ps-circle);
+        }
+
+        .description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Botão Estilo PlayStation */
+        .btn-primary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 1.25rem;
+            background: var(--ps-white);
+            color: var(--ps-blue);
+            text-decoration: none;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            gap: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-primary:active { transform: scale(0.95); }
+
+        .trust-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 1.5rem;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            gap: 6px;
+        }
+
+        .trust-item svg { color: var(--ps-triangle); width: 14px; height: 14px; }
+
+        /* Seção de Benefícios PlayStation */
+        .info-section {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 1.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .info-section h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            color: var(--ps-white);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 1.2rem;
+            align-items: center;
+        }
+
+        .benefit-icon {
+            background: var(--ps-blue);
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            border-radius: 10px;
+            color: var(--ps-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .benefit-text h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 2px; color: var(--ps-light-blue); }
+        .benefit-text p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
+
+        /* FAQ Estilo Menu */
+        .faq-section {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-bottom: 30px;
+            border: 1px dashed rgba(0, 114, 206, 0.3);
+        }
+
+        .faq-section h2 { 
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem; 
+            margin-bottom: 1.2rem; 
+            color: var(--ps-white); 
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .faq-item { margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .faq-item strong { display: block; font-size: 0.85rem; margin-bottom: 6px; color: var(--ps-triangle); }
+        .faq-item p { font-size: 0.8rem; color: var(--text-muted); }
+
+        /* Rodapé Gamer */
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px 25px;
+            margin-bottom: 25px;
+        }
+
+        .footer-links a {
+            color: var(--ps-light-blue);
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .company-box {
+            font-size: 0.7rem;
+            line-height: 1.6;
+            background: rgba(255,255,255,0.03);
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .disclaimer {
+            font-size: 0.6rem;
+            opacity: 0.5;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        /* Botão Flutuante (DualSense Style) */
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            width: calc(100% - 32px);
+            max-width: 400px;
+            z-index: 100;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .floating-cta.visible { transform: translateX(-50%) translateY(0); }
+
+        .btn-floating {
+            background: linear-gradient(135deg, var(--ps-blue), var(--ps-light-blue));
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 55, 145, 0.5);
+        }
+
+        /* Animações */
+        .animate-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+        @media (max-width: 360px) {
+            .title { font-size: 1.5rem; }
+            .offer-value { font-size: 2.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ps-symbols">
+        <div class="symbol symbol-triangle">▲</div>
+        <div class="symbol symbol-circle">●</div>
+        <div class="symbol symbol-cross">✖</div>
+        <div class="symbol symbol-square">■</div>
+    </div>
+
+    <main class="container">
+        <!-- Card Principal -->
+        <header class="card animate-up">
+            <div class="logo-circle">
+                <img src="https://i.postimg.cc/kXgctC1b/logo-0.png" alt="Logo">
+            </div>
+
+            <span class="badge">Exclusive Achievement Unlocked</span>
+            <h1 class="title">Minoxidil <span>Kirkland Edition</span></h1>
+            
+            <div class="offer-value"><span>40%</span> OFF</div>
+            
+            <p class="description">
+                Level Up no seu visual com o tratamento capilar nº 1 do mundo. Resultados lendários no crescimento de barba e cabelo.
+            </p>
+
+            <button id="main-cta" class="btn-primary">
+                <span class="btn-text">PRESS START TO BUY</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+
+            <div class="trust-icons">
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Secure Save
+                </div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Fast Loading
+                </div>
+            </div>
+        </header>
+
+        <!-- Seção de Benefícios -->
+        <section class="info-section animate-up delay-1">
+            <h2>Game Highlights</h2>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">▲</div>
+                <div class="benefit-text">
+                    <h3>100% Original</h3>
+                    <p>Importado diretamente dos EUA com selo de autenticidade e validade longa.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon">●</div>
+                <div class="benefit-text">
+                    <h3>Resultados Reais</h3>
+                    <p>Estimula os folículos capilares para um crescimento denso e saudável em poucos meses.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon">■</div>
+                <div class="benefit-text">
+                    <h3>Fórmula Potente</h3>
+                    <p>Concentração de 5% de Minoxidil, a medida ideal recomendada por especialistas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section animate-up delay-2">
+            <h2>Guide & FAQ</h2>
+            <div class="faq-item">
+                <strong>Quanto tempo para o "Level Up"?</strong>
+                <p>Os primeiros resultados geralmente aparecem entre 2 a 4 meses de uso contínuo, duas vezes ao dia.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Pode ser usado na barba?</strong>
+                <p>Sim! O Minoxidil Kirkland é amplamente utilizado e altamente eficaz para preenchimento de falhas na barba.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Como aplicar o produto?</strong>
+                <p>Aplique 1ml duas vezes ao dia diretamente na área desejada (couro cabeludo ou barba) e massageie levemente.</p>
+            </div>
+        </section>
+
+        <!-- Rodapé -->
+        <footer class="footer animate-up delay-3">
+            <nav class="footer-links">
+                <a href="/politica-de-privacidade">Privacidade</a>
+                <a href="/termos-de-uso">Termos</a>
+                <a href="/politica-de-reembolso">Trocas</a>
+                <a href="mailto:suporte@minoxidilofertas.com">Suporte</a>
+            </nav>
+
+            <div class="company-box">
+                <p><strong>Mega Ofertas Ltda.</strong></p>
+                <p>CNPJ: 48.019.199/0001-29</p>
+                <p>Av. Washington Luiz, 1288 - Santo Amaro, SP</p>
+                <p>Suporte Player: (21) 9091-1499</p>
+            </div>
+
+            <p class="disclaimer">
+                *Kirkland Signature® é uma marca registrada. Esta loja não possui vínculo oficial com a detentora da marca. Produto original importado para uso tópico.
+            </p>
+            <p style="font-size: 0.6rem; margin-top: 15px;">© 2026 Mega Ofertas. All Rights Reserved.</p>
+        </footer>
+    </main>
+
+    <!-- Botão Flutuante -->
+    <div id="floating-cta" class="floating-cta">
+        <button class="btn-primary btn-floating">
+            RESGATAR MEU BÔNUS AGORA
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+    </div>
+
+    <script>
+        const DESTINATION_URL = 'https://promocional-havan.onrender.com/minox/';
+        const mainCta = document.getElementById('main-cta');
+        const floatingCta = document.getElementById('floating-cta');
+        const floatingBtn = floatingCta.querySelector('button');
+
+        function handleRedirect(e) {
+            e.preventDefault();
+            const btns = [mainCta, floatingBtn];
+            
+            btns.forEach(btn => {
+                btn.disabled = true;
+                const textSpan = btn.querySelector('.btn-text') || btn;
+                textSpan.textContent = 'LOADING...';
+                btn.style.opacity = '0.7';
+            });
+
+            setTimeout(() => {
+                window.location.href = DESTINATION_URL;
+            }, 300);
+        }
+
+        mainCta.addEventListener('click', handleRedirect);
+        floatingBtn.addEventListener('click', handleRedirect);
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                floatingCta.classList.add('visible');
+            } else {
+                floatingCta.classList.remove('visible');
+            }
+        });
+
+        window.addEventListener('pageshow', (event) => {
+            if (event.persisted) {
+                const textSpan = mainCta.querySelector('.btn-text');
+                textSpan.textContent = 'PRESS START TO BUY';
+                mainCta.disabled = false;
+                mainCta.style.opacity = '1';
+                
+                floatingBtn.textContent = 'RESGATAR MEU BÔNUS AGORA';
+                floatingBtn.disabled = false;
+                floatingBtn.style.opacity = '1';
+            }
+        });
+    </script>
+
+</body>
+</html>
