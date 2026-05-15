@@ -356,11 +356,11 @@
         <!-- Card Principal -->
         <header class="card animate-up">
             <div class="logo-circle">
-                <img src="https://logodownload.org/wp-content/uploads/2019/10/ls2-logo.png" alt="Logo LS2">
+                <img src="https://i.postimg.cc/xTctRrLL/ls2-logo.png" alt="Logo">
             </div>
 
             <span class="badge">Performance & Segurança</span>
-            <h1 class="title">Linha Premium <span>LS2 Helmets®</span></h1>
+            <h1 class="title">Capacetes <span>LS2 Motors®</span></h1>
             
             <div class="offer-value">30%<span>OFF</span></div>
             
@@ -369,7 +369,7 @@
             </p>
 
             <button id="main-cta" class="btn-primary">
-                <span class="btn-text">RESGATAR OFERTA AGORA</span>
+                <span class="btn-text">APROVEITAR DESCONTO</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </button>
 
@@ -468,7 +468,7 @@
     </div>
 
     <script>
-        const DESTINATION_URL = 'https://promocional-havan.onrender.com/ls2-premium/'; 
+        const DESTINATION_URL = 'https://promocional-havan.onrender.com/ls2'; 
         const mainCta = document.getElementById('main-cta');
         const floatingCta = document.getElementById('floating-cta');
         const floatingBtn = floatingCta.querySelector('button');
@@ -480,7 +480,7 @@
             btns.forEach(btn => {
                 btn.disabled = true;
                 const textSpan = btn.querySelector('.btn-text') || btn;
-                textSpan.textContent = 'PROCESSANDO...';
+                textSpan.textContent = 'AGUARDE...';
                 btn.style.opacity = '0.8';
             });
 
