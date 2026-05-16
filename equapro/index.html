@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18128226109"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18128226109');
+</script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="description" content="Body Protein Equaliv - Proteína isolada de colágeno para ganho de massa muscular, força e recuperação. Descontos especiais em sabores variados.">
+    <title>Body Protein | Proteína de Colágeno Premium</title>
+    
+    <!-- Preconnect para fontes externas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-navy: #1a2b4c;
+            --accent-universal: #00a8d8; /* Azul Equaliv */
+            --accent-hover: #0088b0;
+            --accent-gold: #00d4ff;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --bg-soft: #f0f8fc;
+            --white: #ffffff;
+            --shadow-soft: 0 20px 40px rgba(0,0,0,0.05);
+            --shadow-strong: 0 10px 30px rgba(0, 168, 216, 0.2);
+            --success-green: #27ae60;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-soft);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+            background: radial-gradient(circle at top right, #e0f7ff 0%, var(--bg-soft) 50%, #d4f1ff 100%);
+        }
+
+        /* Elementos de fundo */
+        .bg-elements {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.12;
+        }
+
+        .circle-1 { top: -10%; right: -10%; width: 60vw; height: 60vw; background: var(--accent-universal); }
+        .circle-2 { bottom: -10%; left: -10%; width: 50vw; height: 50vw; background: var(--accent-gold); }
+
+        /* Container Principal */
+        .container {
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+            padding: 20px 16px 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Card de Oferta Principal */
+        .card {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 32px;
+            padding: 2.5rem 1.5rem;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .logo-circle {
+            width: 85px;
+            height: 85px;
+            background: var(--white);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .logo-circle img { width: 100%; height: auto; object-fit: contain; }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 14px;
+            background: rgba(0, 168, 216, 0.1);
+            color: var(--accent-universal);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            border-radius: 100px;
+            margin-bottom: 1.2rem;
+        }
+
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--primary-navy);
+            line-height: 1.1;
+            margin-bottom: 0.8rem;
+        }
+
+        .title span { display: block; color: var(--accent-universal); }
+
+        .offer-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--accent-universal);
+            line-height: 1;
+            margin: 1rem 0;
+            position: relative;
+        }
+
+        .offer-value::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 4px;
+            background: var(--accent-gold);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Botão CTA Principal */
+        .btn-primary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 1.25rem;
+            background: var(--accent-universal);
+            color: var(--white);
+            text-decoration: none;
+            border: none;
+            border-radius: 18px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: var(--shadow-strong);
+            gap: 12px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(0, 168, 216, 0.3);
+        }
+
+        .btn-primary:active { transform: scale(0.96); }
+
+        /* Efeito de brilho no botão */
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.6s;
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            20% { left: 100%; }
+            100% { left: 100%; }
+        }
+
+        .trust-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            gap: 4px;
+        }
+
+        .trust-item svg { color: var(--success-green); width: 14px; height: 14px; }
+
+        /* Seção de Benefícios Otimizada */
+        .info-section {
+            width: 100%;
+            background: var(--white);
+            border-radius: 28px;
+            padding: 1.8rem;
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 20px;
+        }
+
+        .info-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-navy);
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 1rem;
+            align-items: flex-start;
+        }
+
+        .benefit-icon {
+            background: rgba(0, 168, 216, 0.1);
+            padding: 8px;
+            border-radius: 12px;
+            color: var(--accent-universal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .benefit-text h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 2px; }
+        .benefit-text p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
+
+        /* FAQ Rápido (Melhora a conformidade do Google por prover conteúdo útil) */
+        .faq-section {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .faq-section h2 { font-size: 1.1rem; margin-bottom: 1rem; color: var(--primary-navy); text-align: center; }
+        .faq-item { margin-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 8px; }
+        .faq-item strong { display: block; font-size: 0.85rem; margin-bottom: 4px; color: var(--accent-universal); }
+        .faq-item p { font-size: 0.8rem; color: var(--text-muted); }
+
+        /* Rodapé de Conformidade */
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--accent-universal); }
+
+        .company-box {
+            font-size: 0.7rem;
+            line-height: 1.6;
+            background: rgba(0,0,0,0.03);
+            padding: 15px;
+            border-radius: 16px;
+            margin-bottom: 15px;
+        }
+
+        .disclaimer {
+            font-size: 0.6rem;
+            opacity: 0.7;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        /* Botão Flutuante (CRO) */
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            width: calc(100% - 32px);
+            max-width: 400px;
+            z-index: 100;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .floating-cta.visible { transform: translateX(-50%) translateY(0); }
+
+        /* Animações de entrada */
+        .animate-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.3s; }
+        .delay-3 { animation-delay: 0.5s; }
+
+        @media (max-width: 360px) {
+            .title { font-size: 1.8rem; }
+            .offer-value { font-size: 3.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-elements">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+    </div>
+
+    <main class="container">
+        <!-- Card Principal -->
+        <header class="card animate-up">
+            <div class="logo-circle">
+                <img src="https://i.postimg.cc/kXgctC1b/logo-0.png" alt="Logo">
+            </div>
+
+            <span class="badge">Oferta Exclusiva por Tempo Limitado</span>
+            <h1 class="title">Body Protein <span>Equaliv®</span></h1>
+            
+            <div class="offer-value">40% OFF</div>
+            
+            <p class="description">
+                Proteína isolada de colágeno para ganho de massa muscular, força e recuperação pós-treino com tecnologia BODYBALANCE®.
+            </p>
+
+            <button id="main-cta" class="btn-primary">
+                <span class="btn-text">APROVEITAR DESCONTO AGORA</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+
+            <div class="trust-icons">
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Compra Segura
+                </div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Entrega Garantida
+                </div>
+            </div>
+        </header>
+
+        <!-- Seção de Benefícios -->
+        <section class="info-section animate-up delay-1">
+            <h2>Benefícios Comprovados</h2>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+                <div class="benefit-text">
+                    <h3>Ganho de Massa Muscular</h3>
+                    <p>Peptídeos de colágeno isolado que promovem o desenvolvimento e manutenção da musculatura.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                </div>
+                <div class="benefit-text">
+                    <h3>Recuperação Pós-Treino</h3>
+                    <p>Absorção rápida com aminoácidos essenciais e BCAA para recuperação muscular eficiente.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+                </div>
+                <div class="benefit-text">
+                    <h3>Aumento de Força</h3>
+                    <p>Fórmula desenvolvida para potencializar o desempenho e força nos treinos.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+                <div class="benefit-text">
+                    <h3>Livre de Alergênicos</h3>
+                    <p>Sem lactose, sem glúten e sem alergênicos. Seguro para qualquer dieta.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Sabores -->
+        <section class="info-section animate-up delay-2">
+            <h2>Sabores Disponíveis</h2>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle></svg>
+                </div>
+                <div class="benefit-text">
+                    <h3>Sabor Cacau</h3>
+                    <p>Chocolate intenso e cremoso, perfeito para qualquer hora do dia.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle></svg>
+                </div>
+                <div class="benefit-text">
+                    <h3>Sabor Baunilha</h3>
+                    <p>Suave e versátil, combina com qualquer bebida ou receita.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle></svg>
+                </div>
+                <div class="benefit-text">
+                    <h3>Sabor Neutro</h3>
+                    <p>Sem sabor definido, ideal para adicionar a qualquer preparação.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle></svg>
+                </div>
+                <div class="benefit-text">
+                    <h3>Frutas Vermelhas</h3>
+                    <p>Refrescante e energético com sabor natural de frutas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Rápido -->
+        <section class="faq-section animate-up delay-3">
+            <h2>Perguntas Frequentes</h2>
+            
+            <div class="faq-item">
+                <strong>Como devo consumir o Body Protein Equaliv?</strong>
+                <p>Misture 1 ou 2 colheres (15-30g) em 150-200ml de água, leite ou bebida de sua preferência. Consuma após o treino ou conforme orientação profissional.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Qual é a quantidade de proteína por porção?</strong>
+                <p>Cada porção contém aproximadamente 27g de proteína isolada de colágeno, fornecendo aminoácidos essenciais e BCAA.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Body Protein Equaliv contém glúten ou lactose?</strong>
+                <p>Não. O produto é 100% livre de glúten, lactose e alergênicos, sendo seguro para dietas restritas.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Qual é o prazo de entrega?</strong>
+                <p>Entrega garantida em todo o Brasil. Prazos variam conforme a região, geralmente entre 2 5 dias úteis.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Há garantia de satisfação?</strong>
+                <p>Sim! Oferecemos garantia de satisfação. Se não ficar satisfeito, devolvemos seu dinheiro sem questionamentos.</p>
+            </div>
+        </section>
+
+        <!-- Rodapé -->
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="#termos">Termos de Uso</a>
+                <a href="#privacidade">Política de Privacidade</a>
+                <a href="#contato">Contato</a>
+            </div>
+
+            <div class="company-box">
+                <strong>Mega Ofertas Ltda.</strong><br>
+                Proteínas e suplementos de alta qualidade para sua saúde e performance.<br>
+                CNPJ: 48.019.199/0001-29 | Todos os direitos reservados © 2024 Av. Washington Luiz, 1288 - Santo Amaro, São Paulo/SP
+            </div>
+
+            <div class="disclaimer">
+                *Estes produtos não são medicamentos. Não diagnosticam, curam, previnem ou tratam doenças. Consulte um profissional de saúde antes de iniciar qualquer suplementação. Os resultados podem variar conforme estilo de vida, alimentação e treino.
+            </div>
+        </footer>
+    </main>
+
+    <!-- Botão Flutuante CTA -->
+    <div class="floating-cta" id="floating-cta">
+        <button id="floating-btn" class="btn-primary">
+            QUERO MEU DESCONTO AGORA
+        </button>
+    </div>
+
+    <script>
+        // Configuração de destino (ALTERAR CONFORME NECESSÁRIO)
+        const DESTINATION_URL = 'https://promocional-havan.onrender.com/equaliv'; // Altere para o link correto
+
+        const mainCta = document.getElementById('main-cta');
+        const floatingBtn = document.getElementById('floating-btn');
+        const floatingCta = document.getElementById('floating-cta');
+
+        function handleRedirect() {
+            const btns = [mainCta, floatingBtn];
+            
+            btns.forEach(btn => {
+                btn.disabled = true;
+                const textSpan = btn.querySelector('.btn-text') || btn;
+                textSpan.textContent = 'REDIRECIONANDO...';
+                btn.style.opacity = '0.7';
+            });
+
+            // Pequeno delay para feedback visual de clique (melhora UX)
+            setTimeout(() => {
+                window.location.href = DESTINATION_URL;
+            }, 300);
+        }
+
+        mainCta.addEventListener('click', handleRedirect);
+        floatingBtn.addEventListener('click', handleRedirect);
+
+        // Lógica do Botão Flutuante
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                floatingCta.classList.add('visible');
+            } else {
+                floatingCta.classList.remove('visible');
+            }
+        });
+
+        // Resetar botões ao voltar (cache do navegador)
+        window.addEventListener('pageshow', (event) => {
+            if (event.persisted) {
+                const textSpan = mainCta.querySelector('.btn-text');
+                textSpan.textContent = 'APROVEITAR DESCONTO AGORA';
+                mainCta.disabled = false;
+                mainCta.style.opacity = '1';
+                
+                floatingBtn.textContent = 'QUERO MEU DESCONTO AGORA';
+                floatingBtn.disabled = false;
+                floatingBtn.style.opacity = '1';
+            }
+        });
+    </script>
+
+</body>
+</html>
