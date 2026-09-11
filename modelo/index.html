@@ -1721,6 +1721,50 @@ header { box-shadow:0 2px 12px rgba(23,32,51,.08); }
     .trust-badges { gap:10px; padding:14px 8px; }
     .trust-badge span { font-size:8px; letter-spacing:.3px; }
 }
+/* Carrinho e checkout: aparência premium e sinais claros de confiança */
+.cart-overlay { background:rgba(15,23,42,.58); backdrop-filter:blur(2px); }
+.cart-sidebar { background:#f8fafc; border-left:1px solid #e5eaf1; box-shadow:-16px 0 40px rgba(15,23,42,.14); }
+.cart-sidebar > div[style*="overflow-y: auto"] { scrollbar-width:thin; scrollbar-color:#cbd5e1 transparent; }
+.cart-header { padding:20px 22px; background:#fff; border-bottom:1px solid #e7edf4; }
+.cart-header h2 { font-size:19px; color:#172033; }
+.cart-header h2::before { color:#2d6cdf; }
+.close-cart { width:36px; height:36px; background:#f8fafc; }
+.cart-items { padding:18px 20px 10px; }
+.cart-item { gap:13px; padding:13px; border-color:#e6ebf2; border-radius:14px; margin-bottom:10px; box-shadow:0 2px 8px rgba(23,32,51,.03); }
+.cart-item:hover { transform:none; box-shadow:0 4px 14px rgba(23,32,51,.07); }
+.cart-item-img { width:76px; height:76px; border-radius:10px; background:#fff; }
+.cart-item-name { font-size:13px; color:#172033; }
+.cart-item-variant { color:#64748b; }
+.cart-item-price { color:#173b70; font-size:15px; }
+.cart-item-quantity-control { padding:3px; border-radius:8px; }
+.qty-btn { width:30px; height:30px; border-radius:7px; }
+.remove-item { width:26px; height:26px; top:10px; right:10px; }
+.empty-cart-msg { position:relative; padding:88px 24px 64px; color:#64748b; }
+.empty-cart-msg::before { content:'\f07a'; font-family:'Font Awesome 6 Free'; font-weight:900; position:absolute; top:28px; left:50%; transform:translateX(-50%); font-size:34px; color:#b8c6d8; }
+.cep-section { padding:20px; background:#fff; border-top:1px solid #e7edf4; border-radius:0; }
+.cep-section > h3 { font-size:14px !important; margin-bottom:10px !important; }
+.cep-section > h3::after { content:'Consulte o prazo e as opções disponíveis para o seu endereço.'; display:block; font-size:11px; font-weight:500; color:#718096; margin:5px 0 0 22px; }
+.cep-input-group { gap:8px; margin-bottom:12px; }
+.cep-input-group input { border-radius:10px; }
+.cep-input-group button { border-radius:10px; padding:12px 18px; }
+.delivery-option-card { padding:14px; border-radius:12px; margin-bottom:8px; gap:12px; }
+.delivery-option-card.active { box-shadow:0 0 0 2px rgba(23,59,112,.12); }
+.cart-footer-inline { background:#fff; margin-left:-20px !important; margin-right:-20px !important; padding:16px 20px 20px !important; border-top:1px solid #e7edf4 !important; }
+.cart-footer-inline .cart-total { padding:14px 16px !important; margin-bottom:12px !important; border-radius:12px !important; background:#f7f9fc !important; }
+.cart-footer-inline .cart-total span:first-child::after { content:' (produtos + entrega)'; font-size:10px; font-weight:500; color:#94a3b8; }
+.cart-footer-inline .btn-checkout { border-radius:11px; min-height:52px; text-transform:none; letter-spacing:0; box-shadow:0 7px 16px rgba(22,131,74,.2); }
+.cart-footer-inline::after { content:'Pagamento protegido • seus dados são tratados com segurança'; display:block; text-align:center; color:#718096; font-size:10px; margin-top:10px; }
+.personal-data-section { padding:20px; background:#fff; }
+.checkout-summary-box, .checkout-pricing { border-radius:12px; box-shadow:none; }
+.checkout-pricing { padding:16px; }
+.btn-back { margin-bottom:12px; }
+@media (max-width:768px) {
+    .cart-sidebar { max-width:100%; }
+    .cart-header { padding:14px 16px; }
+    .cart-items { padding:14px 16px 8px; }
+    .cep-section, .personal-data-section { padding:16px; }
+    .cart-footer-inline { margin-left:-16px !important; margin-right:-16px !important; padding:14px 16px 18px !important; }
+}
 
 </style>
 </head>
@@ -2048,7 +2092,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
             <button class="btn-back" id="btnBackToCart"><i class="fas fa-chevron-left"></i> Voltar ao Carrinho</button>
-            <h2>Meu Carrinho</h2>
+            <h2>Seu carrinho</h2>
             <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
         </div>
         <div style="flex: 1; overflow-y: auto;">
@@ -2108,12 +2152,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 <!-- Botão e Total movidos para cá -->
                 <div class="cart-footer-inline" style="display: none; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border);">
                     <div class="cart-total" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; background: var(--bg-soft); padding: 20px; border-radius: 16px; border: 1px solid var(--border);">
-                        <span style="font-size: 15px; color: var(--text-muted); font-weight: 700;">Subtotal:</span>
+                        <span style="font-size: 15px; color: var(--text-muted); font-weight: 700;">Total do pedido:</span>
                         <span id="cartTotalValue" style="font-size: 26px; font-weight: 800; color: var(--brand-primary); letter-spacing: -0.5px;">R$ 0,00</span>
                     </div>
                     <button class="btn-checkout">
                         <i class="fas fa-lock"></i>
-                        <span>Finalizar Compra</span>
+                        <span>Continuar para checkout</span>
                         <i class="fas fa-chevron-right" style="font-size: 12px; margin-left: auto;"></i>
                     </button>
                 </div>
