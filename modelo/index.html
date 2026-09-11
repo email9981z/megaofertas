@@ -1620,18 +1620,14 @@ header { box-shadow:0 2px 12px rgba(23,32,51,.08); }
 /* Variantes compactas em formato pill */
 .variants-section { padding:14px 16px; margin-bottom:18px; border-radius:14px; }
 .variants-title { font-size:13px; margin-bottom:10px; }
-.variants-grid { display:flex; flex-wrap:wrap; gap:8px; }
-.variant-card { flex:1 1 auto; min-width:calc(50% - 4px); width:auto; min-height:44px; padding:9px 12px; border:1px solid #dbe3ee; border-radius:999px; gap:8px; box-shadow:none; }
+.variants-grid { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:8px; }
+.variant-card { width:100%; min-width:0; min-height:42px; padding:9px 8px; border:1px solid #dbe3ee; border-radius:999px; gap:8px; box-shadow:none; justify-content:center; text-align:center; }
 .variant-card:hover { transform:translateY(-1px); border-color:#9eb4d2; }
-.variant-card.active { border-width:2px; padding:8px 11px; box-shadow:0 2px 8px rgba(23,59,112,.10); }
+.variant-card.active { border-width:2px; padding:8px 7px; box-shadow:0 2px 8px rgba(23,59,112,.10); }
 .variant-info { min-width:0; }
-.variant-info .variant-name { font-size:12px; white-space:nowrap; }
+.variant-info .variant-name { display:block; font-size:11px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .variant-info .variant-desc { display:none; }
-.variant-price-container { display:flex; align-items:center; gap:5px; white-space:nowrap; }
-.variant-price-container .variant-price { font-size:11px; }
-.variant-price-container .variant-tag { font-size:8px; padding:2px 5px; }
-@media (min-width:768px) { .variants-grid { gap:8px; } .variant-card { min-width:0; } }
-@media (max-width:768px) { .product-grid { padding:16px; border-radius:12px; border-left:0; border-right:0; } .product-content h1 { font-size:27px; } .trust-benefits { gap:7px; } .benefit-item { font-size:11px; } .variant-card { min-width:calc(50% - 4px); } }
+@media (max-width:768px) { .product-grid { padding:16px; border-radius:12px; border-left:0; border-right:0; } .product-content h1 { font-size:27px; } .trust-benefits { gap:7px; } .benefit-item { font-size:11px; } .variant-card { min-height:40px; padding-left:5px; padding-right:5px; } .variant-card.active { padding-left:4px; padding-right:4px; } }
 
 </style>
 </head>
@@ -1834,21 +1830,17 @@ const variants = [
 let selectedVariant = variants[0];
 
 // 2. Função para renderizar as variantes na tela
-function initializeVariants() {
-    const container = document.getElementById('variantsContainer');
-    container.innerHTML = variants.map(v => `
-        <div class="variant-card ${v.isDefault ? 'active' : ''}" onclick="selectVariant('${v.id}')" id="var-${v.id}">
-            <div class="variant-info">
-                <span class="variant-name">${v.name}</span>
-                <span class="variant-desc">${v.description}</span>
-            </div>
-            <div class="variant-price-container">
-                <span class="variant-price">R$ ${v.price.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</span><br>
-                ${v.discount ? `<span class="variant-tag">${v.discount}% OFF</span>` : ''}
-            </div>
-        </div>
-    `).join('');
-}
+	function initializeVariants() {
+	    const container = document.getElementById('variantsContainer');
+	    container.innerHTML = variants.map(v => `
+	        <div class="variant-card ${v.isDefault ? 'active' : ''}" onclick="selectVariant('${v.id}')" id="var-${v.id}">
+	            <div class="variant-info">
+	                <span class="variant-name">${v.name}</span>
+	                <span class="variant-desc">${v.description}</span>
+	            </div>
+	        </div>
+	    `).join('');
+	}
 
 // 3. Função para trocar a variante e atualizar preços
 function selectVariant(id) {
@@ -3468,19 +3460,17 @@ const deliveryTime = document.getElementById('summaryShipping').innerText;
             });
         });
 
-	        window.addEventListener('load', function() {
-	            setTimeout(function() {
-	                const preloader = document.getElementById('preloader');
-	                const mainContent = document.getElementById('mainContent');
-	                if (preloader) {
-	                    preloader.classList.add('hidden');
-	                    setTimeout(() => preloader.remove(), 600);
-	                }
-	                if (mainContent) {
-	                    mainContent.classList.add('visible');
-	                }
-	            }, 1000);
-	        });
+	        setTimeout(function() {
+	            const preloader = document.getElementById('preloader');
+	            const mainContent = document.getElementById('mainContent');
+	            if (preloader) {
+	                preloader.classList.add('hidden');
+	                setTimeout(() => preloader.remove(), 600);
+	            }
+	            if (mainContent) {
+	                mainContent.classList.add('visible');
+	            }
+	        }, 1000);
     </script>
 
     <!-- Sticky CTA Mobile -->
