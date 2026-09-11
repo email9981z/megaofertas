@@ -2155,6 +2155,40 @@ html.cart-is-open, body.cart-is-open { overflow: hidden; }
   .variant-info .variant-name { font-size: 11px; }
 }
 </style>
+<style>
+/* Variantes minimalistas: foco apenas na escolha, sem repetição de preço */
+.variants-section {
+  margin: 18px 0 16px;
+  padding: 14px;
+  background: transparent;
+  border: 1px solid #e5eaf0;
+  border-radius: 10px;
+}
+.variants-title { margin-bottom: 10px; font-size: 13px; }
+.variants-title::after { content: 'Escolha o sabor e o peso'; font-size: 10px; font-weight: 500; }
+.variants-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.variant-card {
+  grid-template-columns: 18px minmax(0, 1fr);
+  min-height: 52px;
+  padding: 9px 10px;
+  border-color: #e0e6ec;
+  border-radius: 8px;
+  box-shadow: none;
+  transform: none !important;
+}
+.variant-card.active { padding: 8px 9px; box-shadow: none; }
+.variant-info .variant-name { font-size: 11px; font-weight: 700; }
+.variant-info .variant-weight { margin-top: 3px; font-size: 10px; }
+.variant-check { width: 16px; height: 16px; font-size: 8px; }
+.variant-card:hover { border-color: #b6c5d5; background: #fbfcfd; }
+.variant-card.active:hover { background: #f2f6fd; }
+@media (max-width: 520px) {
+  .variants-section { padding: 12px; }
+  .variants-grid { gap: 7px; }
+  .variant-card { min-height: 48px; padding: 8px; }
+  .variant-card.active { padding: 7px; }
+}
+</style>
 </head>
 <body>
     <!-- PRELOADER -->
@@ -2370,12 +2404,7 @@ function updateVariantCommercialInfo() {
                     <div class="variant-info">
                         <span class="variant-name">${v.name.replace(/ \d+g/i, '')}</span>
                         <span class="variant-weight">${(v.name.match(/\d+g/i) || [''])[0]}</span>
-                    </div>
-                    <div class="variant-price-container">
-                        <span class="variant-price">R$ ${v.price.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</span>
-                        <span class="variant-tag">${v.discount}% OFF</span>
-                    </div>
-                </div>`).join('');
+                    </div></div>`).join('');
 	}
 
 // 3. Função para trocar a variante e atualizar preços
