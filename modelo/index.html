@@ -1984,6 +1984,54 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 }
 </style>
 
+
+<style id="smooth-cart-overrides">
+/* Carrinho: usa transform/opacity, mais fluido que animar a propriedade right. */
+html.cart-is-open, body.cart-is-open { overflow: hidden; }
+.cart-overlay {
+  display: block !important;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(15, 29, 43, .42);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  transition: opacity .28s ease, visibility 0s linear .28s;
+  will-change: opacity;
+}
+.cart-overlay.active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity .28s ease;
+}
+.cart-sidebar {
+  right: 0 !important;
+  transform: translate3d(105%, 0, 0);
+  visibility: hidden;
+  box-shadow: -18px 0 45px rgba(15, 29, 43, .16);
+  transition: transform .38s cubic-bezier(.22, 1, .36, 1), visibility 0s linear .38s;
+  will-change: transform;
+  contain: layout paint;
+}
+.cart-sidebar.active {
+  transform: translate3d(0, 0, 0);
+  visibility: visible;
+  transition: transform .38s cubic-bezier(.22, 1, .36, 1);
+}
+.cart-header { padding: 20px 22px; }
+.cart-items { overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+.cart-item { transform: translateZ(0); }
+.close-cart, .qty-btn, .remove-item, .btn-checkout { -webkit-tap-highlight-color: transparent; }
+@media (max-width: 520px) {
+  .cart-sidebar { max-width: 100%; }
+  .cart-header { padding: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cart-overlay, .cart-sidebar { transition: none !important; }
+}
+</style>
+
 </head>
 <body>
     <!-- PRELOADER -->
@@ -2011,7 +2059,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
                 </div>
                 <div class="user-actions">
                     <a class="icon-link" href="#"><i class="far fa-user"></i></a>
-                    <a class="icon-link" href="#" id="cart-trigger">
+                    <a class="icon-link" href="#" id="cart-trigger" aria-label="Abrir carrinho" aria-controls="cartSidebar" aria-expanded="false">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="cart-count">0</span>
                     </a>
@@ -2306,7 +2354,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <!-- CARRINHO DESLIZANTE (ISOLADO) -->
     <div class="cart-overlay" id="cartOverlay"></div>
-    <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-sidebar" id="cartSidebar" aria-hidden="true">
         <div class="cart-header">
             <button class="btn-back" id="btnBackToCart"><i class="fas fa-chevron-left"></i> Voltar ao Carrinho</button>
             <h2>Seu carrinho</h2>
@@ -3359,11 +3407,17 @@ function startTimer(durationInSeconds, display) {
                 if (isActive) {
                     cartSidebar.classList.remove('active');
                     cartOverlay.classList.remove('active');
+                    document.documentElement.classList.remove('cart-is-open');
+                    document.body.classList.remove('cart-is-open');
+                    cartSidebar.setAttribute('aria-hidden', 'true');
+                    cartTrigger && cartTrigger.setAttribute('aria-expanded', 'false');
                 } else {
                     cartOverlay.classList.add('active');
                     cartSidebar.classList.add('active');
-                    
-                    // Esconder notificação se estiver aparecendo ao abrir o carrinho
+                    document.documentElement.classList.add('cart-is-open');
+                    document.body.classList.add('cart-is-open');
+                    cartSidebar.setAttribute('aria-hidden', 'false');
+                    cartTrigger && cartTrigger.setAttribute('aria-expanded', 'true');
                     const notif = document.getElementById('liveNotification');
                     if (notif) notif.classList.remove('show');
                 }
