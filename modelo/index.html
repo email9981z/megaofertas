@@ -610,6 +610,27 @@ body:has(.cart-overlay.active) #notif-premium-container {
         }
         /* --- END UPDATED THUMBNAILS CSS --- */
 
+        /* Ajuste 4 — primeira dobra: hierarquia e leitura rápida */
+        .product-positioning {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+            margin: -2px 0 18px;
+            max-width: 52ch;
+        }
+        .price-per-weight {
+            color: var(--text-muted);
+            font-size: 12px;
+            margin-top: 4px;
+        }
+        .purchase-assurance {
+            color: var(--text-muted);
+            font-size: 12px;
+            text-align: center;
+            margin-top: 16px;
+        }
+        .purchase-assurance i { margin-right: 4px; }
+
         /* Product Info */
         .product-content {
             width: 100%;
@@ -2111,7 +2132,8 @@ html.cart-is-open, body.cart-is-open { overflow: hidden; }
                     <span class="badge badge-shipping"><i class="fas fa-truck"></i> Frete grátis</span>
                 </div>
                 
-                <h1 id="main-product-title">Body Protein Equaliv Bodybalance®</h1>
+                <h1 id="main-product-title">Body Protein Equaliv BODYBALANCE® — proteína de colágeno em pó</h1>
+                <p class="product-positioning">Praticidade para complementar sua rotina com uma fórmula à base de peptídeos bioativos de colágeno.</p>
                 
                 <div class="rating-row">
                     <div class="stars">
@@ -2120,10 +2142,10 @@ html.cart-is-open, body.cart-is-open { overflow: hidden; }
                     <span>4,9/5</span><a href="#reviews" class="rating-link">Ver avaliações de clientes</a>
                 </div>
 
-                <!-- SEÇÃO DE VARIANTES -->
+                <!-- Seleção de variante -->
 <div class="variants-section">
     <div class="variants-title">
-        <i class="fas fa-sliders-h"></i> Escolha a sua opção
+        <i class="fas fa-sliders-h"></i> Escolha o sabor e o tamanho
     </div>
     <div class="variants-grid" id="variantsContainer">
         <!-- As variantes serão injetadas aqui pelo JavaScript -->
@@ -2135,7 +2157,7 @@ html.cart-is-open, body.cart-is-open { overflow: hidden; }
                 <div class="price-box">
                     <div class="old-price-row">
                         <span class="old-price">De R$ <span id="oldPrice">205,60</span></span>
-                        <span class="discount-tag">Economize</span>
+                        <span class="discount-tag" id="discountTag">48% OFF</span>
                     </div>
                     <div class="main-price">
                         R$ <span id="mainPrice">104,90</span> <span class="pix-text">no Pix</span>
@@ -2143,14 +2165,15 @@ html.cart-is-open, body.cart-is-open { overflow: hidden; }
                     <div class="installment-text">
                         ou em até 3x sem juros no cartão
                     </div>
+                    <div class="price-per-weight" id="pricePerWeight">Consulte o peso da opção selecionada.</div>
                 </div>
 
     <div class="trust-benefits">
-        <div class="benefit-item"><i class="fas fa-shield-alt"></i> Original Equaliv</div>
-        <div class="benefit-item"><i class="fas fa-truck"></i> Envio em 24h</div>
-        <div class="benefit-item"><i class="fas fa-undo"></i> Compra protegida</div>
-        <div class="benefit-item"><i class="fas fa-headset"></i> Suporte especializado</div>
-    </div>
+	        <div class="benefit-item"><i class="fas fa-shield-alt"></i> Produto original</div>
+	        <div class="benefit-item"><i class="fas fa-truck"></i> Entrega rastreada</div>
+	        <div class="benefit-item"><i class="fas fa-lock"></i> Pagamento seguro</div>
+	        <div class="benefit-item"><i class="fas fa-undo"></i> Compra protegida</div>
+	    </div>
 
 
                 <!--INICIO CÓDIGO FRETE OTIMIZADO-->
@@ -2224,6 +2247,22 @@ const variants = [
 
 let selectedVariant = variants[0];
 
+function updateVariantCommercialInfo() {
+    const weightMatch = selectedVariant.name.match(/(\d+)g/i);
+    const weight = weightMatch ? Number(weightMatch[1]) : 0;
+    const pricePerWeight = document.getElementById('pricePerWeight');
+    const discountTag = document.getElementById('discountTag');
+
+    if (pricePerWeight && weight) {
+        const per100g = selectedVariant.price / (weight / 100);
+        pricePerWeight.textContent = `R$ ${per100g.toLocaleString('pt-BR', { minimumFractionDigits: 2 })} por 100 g`;
+    }
+    if (discountTag && selectedVariant.oldPrice > selectedVariant.price) {
+        const discount = Math.round((1 - selectedVariant.price / selectedVariant.oldPrice) * 100);
+        discountTag.textContent = `${discount}% OFF`;
+    }
+}
+
 // 2. Função para renderizar as variantes na tela
 	function initializeVariants() {
 	    const container = document.getElementById('variantsContainer');
@@ -2262,11 +2301,14 @@ function selectVariant(id) {
         initGallery();
     }
 
+    updateVariantCommercialInfo();
+
 }
 
 // 4. Chame a inicialização dentro do seu DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function() {
     initializeVariants();
+    updateVariantCommercialInfo();
 });
 
   function convertDate(e) {
@@ -2334,12 +2376,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     </button>
                 </div>
 
-                <div class="viewing-count">
-    <i class="fas fa-shield-alt"></i> Compra protegida • Pagamento seguro
-</div>
-
-                <p style="font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 24px;">
-                    <i class="fas fa-lock" style="margin-right: 4px;"></i> Ambiente seguro • Seus dados são protegidos
+                <p class="purchase-assurance">
+                    <i class="fas fa-lock" aria-hidden="true"></i> Pagamento seguro • Seus dados são protegidos
                 </p>
             </div>
         </div>
