@@ -1728,6 +1728,8 @@ header { box-shadow:0 2px 12px rgba(23,32,51,.08); }
 .cart-header { padding:20px 22px; background:#fff; border-bottom:1px solid #e7edf4; }
 .cart-header h2 { font-size:19px; color:#172033; }
 .cart-header h2::before { color:#2d6cdf; }
+.cart-header h2 { position:relative; }
+.cart-header h2::after { content:'Compra segura'; display:block; font-size:10px; font-weight:600; letter-spacing:0; color:#16834a; background:#eaf7ef; border-radius:99px; padding:4px 8px; margin-left:3px; }
 .close-cart { width:36px; height:36px; background:#f8fafc; }
 .cart-items { padding:18px 20px 10px; }
 .cart-item { gap:13px; padding:13px; border-color:#e6ebf2; border-radius:14px; margin-bottom:10px; box-shadow:0 2px 8px rgba(23,32,51,.03); }
@@ -1744,6 +1746,8 @@ header { box-shadow:0 2px 12px rgba(23,32,51,.08); }
 .cep-section { padding:20px; background:#fff; border-top:1px solid #e7edf4; border-radius:0; }
 .cep-section > h3 { font-size:14px !important; margin-bottom:10px !important; }
 .cep-section > h3::after { content:'Consulte o prazo e as opções disponíveis para o seu endereço.'; display:block; font-size:11px; font-weight:500; color:#718096; margin:5px 0 0 22px; }
+.delivery-option-card strong { letter-spacing:-.1px; }
+.delivery-option-card input:checked + div::after { content:'Selecionada'; display:block; color:#16834a; font-size:10px; font-weight:700; margin-top:4px; }
 .cep-input-group { gap:8px; margin-bottom:12px; }
 .cep-input-group input { border-radius:10px; }
 .cep-input-group button { border-radius:10px; padding:12px 18px; }
@@ -1767,6 +1771,7 @@ header { box-shadow:0 2px 12px rgba(23,32,51,.08); }
     .cart-footer-inline { margin-left:-16px !important; margin-right:-16px !important; padding:14px 16px 18px !important; }
     .cart-footer-inline .btn-checkout { width:100%; min-height:54px; font-size:14px; touch-action:manipulation; }
     .delivery-option-card input[type="radio"] { flex:0 0 20px; }
+    .cart-header h2::after { font-size:9px; padding:3px 6px; }
 }
 
 </style>
@@ -2104,7 +2109,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div class="cep-section">
             <h3 style="font-size: 15px; font-weight: 800; margin-bottom: 16px; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
-                <i class="fas fa-map-marker-alt" style="color: var(--brand-primary); font-size: 14px;"></i> Frete e Envio
+                <i class="fas fa-map-marker-alt" style="color: var(--brand-primary); font-size: 14px;"></i> Calcule a entrega
             </h3>
             <div class="cep-input-group">
                 <input type="text" id="cepInput" placeholder="Digite seu CEP" maxlength="9" inputmode="numeric">
@@ -2127,24 +2132,24 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div id="deliveryOptions" style="display: none; margin-top: 24px;">
                 <h3 style="font-size: 15px; font-weight: 800; margin-bottom: 16px; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
-                    <i class="fas fa-truck" style="color: var(--brand-primary); font-size: 14px;"></i> Opções de Entrega
+                    <i class="fas fa-truck" style="color: var(--brand-primary); font-size: 14px;"></i> Escolha como receber
                 </h3>
                 <div style="display: flex; flex-direction: column; gap: 12px;">
                     <label class="delivery-option-card">
                         <input type="radio" name="delivery" value="0" onchange="this.parentElement.parentElement.querySelectorAll('.delivery-option-card').forEach(c => c.classList.remove('active')); this.parentElement.classList.add('active'); window.updateCartUI(); const scrollContainer = document.querySelector('#cartSidebar > div[style*=\'overflow-y: auto\']'); if(scrollContainer) { setTimeout(() => { scrollContainer.scrollTo({ top: scrollContainer.scrollHeight, behavior: 'smooth' }); }, 100); }">
                         <div style="flex: 1;">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-                                <strong style="font-size: 14px; color: var(--brand-primary);">Entrega em até 03 Dias</strong>
+                                <strong style="font-size: 14px; color: var(--brand-primary);">Entrega padrão</strong>
                                 <span style="font-size: 12px; font-weight: 800; color: var(--success);">GRÁTIS</span>
                             </div>
-                            <div style="font-size: 11px; color: var(--text-muted);">Entrega rastreada</div>
+                            <div style="font-size: 11px; color: var(--text-muted);">Rastreada • prazo estimado exibido após o CEP</div>
                         </div>
                     </label>
                     <label class="delivery-option-card">
                         <input type="radio" name="delivery" value="9.9" onchange="this.parentElement.parentElement.querySelectorAll('.delivery-option-card').forEach(c => c.classList.remove('active')); this.parentElement.classList.add('active'); window.updateCartUI(); const scrollContainer = document.querySelector('#cartSidebar > div[style*=\'overflow-y: auto\']'); if(scrollContainer) { setTimeout(() => { scrollContainer.scrollTo({ top: scrollContainer.scrollHeight, behavior: 'smooth' }); }, 100); }">
                         <div style="flex: 1;">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-                                <strong style="font-size: 14px; color: var(--brand-primary);">Receba Amanhã</strong>
+                                <strong style="font-size: 14px; color: var(--brand-primary);">Entrega expressa</strong>
                                 <span style="font-size: 14px; font-weight: 800; color: var(--text-main);">R$ 9,90</span>
                             </div>
                             <span style="font-size: 12px; color: var(--text-muted);">Entrega Expressa</span>
