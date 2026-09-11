@@ -264,7 +264,7 @@ body:has(.cart-overlay.active) #notif-premium-container {
             --border: #f1f5f9;
             --radius: 12px;
             --pix-color: #00bfa5;
-            /* Netshoes Variables */
+            /* Storefront Variables */
             --ns-purple: #30006b;
             --ns-text: #161718;
             --ns-gray: #707070;
@@ -634,7 +634,7 @@ body:has(.cart-overlay.active) #notif-premium-container {
         .rating-row { display: flex; align-items: center; gap: 8px; margin-bottom: 28px; font-size: 13px; color: var(--text-muted); flex-wrap: wrap; }
         .stars { color: #fbbf24; font-size: 12px; }
 
-        /* Netshoes Pricing Section */
+        /* Storefront Pricing Section */
         .price-box {
             border-top: 1px solid var(--ns-border);
             padding-top: 20px;
@@ -681,7 +681,7 @@ body:has(.cart-overlay.active) #notif-premium-container {
             margin-bottom: 12px;
         }
 
-        /* Netshoes Seller & Rating Info */
+        /* Storefront Seller & Rating Info */
         .ns-seller-info {
             font-size: 12px;
             color: var(--text-muted);
@@ -733,7 +733,7 @@ body:has(.cart-overlay.active) #notif-premium-container {
             font-size: 14px;
         }
 
-        /* Netshoes Shipping Info */
+        /* Storefront Shipping Info */
         .ns-shipping-info {
             margin-bottom: 24px;
             padding-top: 16px;
@@ -754,7 +754,7 @@ body:has(.cart-overlay.active) #notif-premium-container {
             line-height: 1.4;
         }
 
-        /* Netshoes Buttons */
+        /* Storefront Buttons */
         .cta-group {
             display: flex;
             flex-direction: column;
@@ -1896,6 +1896,94 @@ header { box-shadow:0 2px 12px rgba(23,32,51,.08); }
 }
 </style>
 
+
+<style id="professional-ecommerce-overrides">
+/* Revisão visual: sistema único, hierarquia clara e menos ruído */
+:root {
+  --brand-primary: #123b66;
+  --brand-accent: #1f6fb2;
+  --success: #157347;
+  --text-main: #17212b;
+  --text-muted: #5f6b76;
+  --border: #e4e9ee;
+  --bg-soft: #f6f8fa;
+  --radius: 10px;
+}
+body { background: #fff; color: var(--text-main); }
+.container { max-width: 1180px; }
+.top-bar { background: #123b66; color: #fff; border: 0; padding: 9px 0; font-size: 12px; }
+.top-bar strong { color: #fff; }
+header { box-shadow: 0 1px 0 rgba(23,33,43,.10); }
+.main-header { padding: 18px 0; }
+.text-logo { color: #123b66; letter-spacing: .03em; }
+.text-logo::after { background: #d7a928; }
+.search-bar input { background: #f6f8fa; border-color: #dce3e9; }
+.nav-scroll { padding: 13px 0; }
+.nav-scroll a { text-transform: none; letter-spacing: 0; color: #425466; }
+.nav-scroll a.active, .nav-scroll a:hover { color: var(--brand-primary); }
+.breadcrumb { padding: 22px 0 12px; color: #74808c; }
+.product-grid { gap: clamp(32px, 6vw, 72px); padding: 20px 0 64px; }
+.main-image-wrapper { border-color: #e6ebef; background: #fafbfc; }
+.main-image-item { padding: clamp(18px, 4vw, 42px); }
+.product-content h1 { color: #17212b; font-size: clamp(26px, 3vw, 38px); line-height: 1.16; }
+.badge { border-radius: 999px; padding: 6px 11px; }
+.badge-stock { background: #eaf6ef; color: #17633d; }
+.badge-shipping { background: #edf5fb; color: #205d8e; }
+.rating-row { margin-bottom: 22px; }
+.rating-link { color: var(--brand-accent); text-decoration: underline; text-underline-offset: 2px; }
+.offer-note { background: #fffaf0 !important; border: 1px solid #f0dfb1 !important; border-radius: 10px !important; color: #5c4815; }
+.variants-section { margin: 22px 0; }
+.variant-card, .option-card { border-color: #dfe6ec !important; border-radius: 10px !important; }
+.variant-card.active, .option-card.active { border-color: var(--brand-primary) !important; background: #f2f7fb !important; box-shadow: 0 0 0 1px var(--brand-primary); }
+.price-box { border-top-color: #e3e8ed; }
+.old-price { color: #73808c; }
+.discount-tag { background: #eaf6ef; color: #17633d; }
+.main-price { color: #17212b; font-size: clamp(30px, 4vw, 38px); }
+.pix-text { color: var(--success); }
+.trust-benefits { margin: 22px 0; }
+.benefit-item { background: #f8fafb; border-color: #e7edf1; }
+.btn-buy { background: var(--success); border-radius: 9px; box-shadow: 0 6px 16px rgba(21,115,71,.20); text-transform: none; }
+.btn-buy:hover { background: #105c39; box-shadow: 0 9px 22px rgba(21,115,71,.28); }
+.btn-cart { border-color: var(--brand-primary); border-radius: 9px; color: var(--brand-primary); }
+.ns-rating-container, .ns-seller-info { display: none !important; }
+/* Não exibir escassez, contadores ou notificações simulados. */
+.scarcity-banner, .stock-bar-container, .live-notification, #notif-premium-container, .viewing-count { display: none !important; }
+.description-section { padding: 64px 0; background: #f8fafb; }
+.tabs-container { border-top: 1px solid #e3e8ed; }
+.tabs-header { max-width: 1180px; margin: auto; padding: 0 32px; gap: 34px; }
+.tab-btn { color: #74808c; }
+.tab-btn.active { color: var(--brand-primary); }
+.tab-btn.active::after { background: var(--brand-primary); }
+.tab-content { max-width: 1180px; margin: auto; padding: 44px 32px; }
+.reviews-section { background: #fff; }
+.faq-section { background: #f8fafb; padding: 64px 0; }
+.faq-item { border-color: #e1e7ec; border-radius: 10px; }
+.newsletter-section { background: #123b66 !important; }
+footer { background: #0d2947 !important; }
+/* Retira o preloader que escondia o conteúdo e criava espera desnecessária. */
+#preloader { display: none !important; }
+.main-content-wrapper, .main-content-wrapper.visible { opacity: 1 !important; }
+/* Não duplica o CTA da página no mobile. */
+.sticky-cta-mobile { display: none !important; }
+body { padding-bottom: 0 !important; }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid rgba(31,111,178,.35); outline-offset: 3px; }
+@media (max-width: 767px) {
+  .container { padding-left: 18px; padding-right: 18px; }
+  .main-header { padding: 14px 0; }
+  .header-flex { flex-wrap: wrap; gap: 13px; }
+  .logo { order: 1; }
+  .user-actions { order: 2; gap: 15px; }
+  .search-bar { order: 3; flex-basis: 100%; max-width: none; }
+  .product-grid { padding-top: 8px; gap: 26px; }
+  .product-content h1 { font-size: 27px; }
+  .tabs-header, .tab-content { padding-left: 18px; padding-right: 18px; }
+  .trust-benefits { grid-template-columns: 1fr 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+</style>
+
 </head>
 <body>
     <!-- PRELOADER -->
@@ -1907,7 +1995,7 @@ header { box-shadow:0 2px 12px rgba(23,32,51,.08); }
     
     <div class="top-bar">
         <div class="container">
-            Frete grátis para todo o Brasil • Compra segura e atendimento especializado
+            <strong>Frete grátis</strong> • Compra segura • Atendimento especializado
         </div>
     </div>
     <header>
@@ -1988,7 +2076,7 @@ header { box-shadow:0 2px 12px rgba(23,32,51,.08); }
 
     <div class="offer-note">
         <i class="fas fa-tag"></i>
-        <div><strong>Condição especial de lançamento</strong><span>Preço promocional aplicado nesta página.</span></div>
+        <div><strong>Condição especial de lançamento</strong><span>Condição válida enquanto durar a campanha.</span></div>
     </div>
 
                 <!-- SEÇÃO DE VARIANTES -->
@@ -2005,7 +2093,7 @@ header { box-shadow:0 2px 12px rgba(23,32,51,.08); }
 
                 <div class="price-box">
                     <div class="old-price-row">
-                        <span class="old-price">R$ <span id="oldPrice">725,00</span></span>
+                        <span class="old-price">De R$ <span id="oldPrice">205,60</span></span>
                         <span class="discount-tag">Economize</span>
                     </div>
                     <div class="main-price">
@@ -2126,7 +2214,7 @@ function selectVariant(id) {
     // Atualiza o parcelamento (ex: 3x)
     const valorParcela = (selectedVariant.oldPrice / 3).toLocaleString('pt-BR', {minimumFractionDigits: 2});
     const installmentEl = document.querySelector('.installment-text');
-    if(installmentEl) installmentEl.innerHTML = `ou R$ ${selectedVariant.oldPrice.toLocaleString('pt-BR', {minimumFractionDigits: 2})} em até 3x sem juros`;
+    if(installmentEl) installmentEl.innerHTML = `ou em até 3x de R$ ${(selectedVariant.price / 3).toLocaleString('pt-BR', {minimumFractionDigits: 2})} sem juros`;
 
     // Atualiza a galeria de imagens
     if (typeof initGallery === 'function') {
@@ -2526,7 +2614,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="faq-item">
                 <button class="faq-question">Os produtos possuem garantia? <i class="fas fa-chevron-down"></i></button>
                 <div class="faq-answer">
-                    <p>Sim! Oferecemos garantia de satisfação de 30 a 90 dias. Se você não estiver satisfeito com o resultado, devolvemos seu dinheiro conforme nossa política de trocas.</p>
+                    <p>Você pode consultar as condições, prazos e procedimentos na nossa política de trocas e devoluções antes de finalizar a compra.</p>
                 </div>
             </div>
 
@@ -2540,7 +2628,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="faq-item">
                 <button class="faq-question">Quais as formas de pagamento? <i class="fas fa-chevron-down"></i></button>
                 <div class="faq-answer">
-                    <p>Aceitamos Pix (com aprovação imediata), Boleto Bancário e Cartão de Crédito em até 12x.</p>
+                    <p>Aceitamos Pix, boleto bancário e cartão de crédito. As condições de parcelamento são exibidas no checkout.</p>
                 </div>
             </div>
         </div>
