@@ -1760,10 +1760,13 @@ header { box-shadow:0 2px 12px rgba(23,32,51,.08); }
 .btn-back { margin-bottom:12px; }
 @media (max-width:768px) {
     .cart-sidebar { max-width:100%; }
+    .cart-sidebar > div[style*="overflow-y: auto"] { min-height:0; }
     .cart-header { padding:14px 16px; }
     .cart-items { padding:14px 16px 8px; }
     .cep-section, .personal-data-section { padding:16px; }
     .cart-footer-inline { margin-left:-16px !important; margin-right:-16px !important; padding:14px 16px 18px !important; }
+    .cart-footer-inline .btn-checkout { width:100%; min-height:54px; font-size:14px; touch-action:manipulation; }
+    .delivery-option-card input[type="radio"] { flex:0 0 20px; }
 }
 
 </style>
@@ -3389,8 +3392,9 @@ function startTimer(durationInSeconds, display) {
             // Lógica de Transição para Dados Pessoais
             document.addEventListener('click', function(e) {
                 const btn = e.target.closest('.btn-checkout');
-                // Verifica se é o botão de finalizar compra (seja pelo texto ou classe)
-                if (btn && (btn.innerText.includes('Finalizar Compra') || btn.innerText.includes('FINALIZAR COMPRA'))) {
+                // O botão do carrinho usa a classe como identificador estável.
+                // O botão dentro do checkout também possui essa classe, mas é ignorado abaixo.
+                if (btn) {
                     
                     // Se já estiver no checkout, não aplicar esta validação de endereço aqui
                     if (cartSidebar.classList.contains('checkout-active')) return;
