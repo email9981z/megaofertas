@@ -2063,6 +2063,98 @@ html.cart-is-open, body.cart-is-open { overflow: hidden; }
 .cta-group .btn-cart { padding:11px 14px; min-height:42px; font-size:13px; border-width:1px; box-shadow:none; }
 @media (max-width:768px) { .trust-benefits-compact { gap:8px 12px; font-size:11px; } }
 </style>
+<style>
+/* Variantes: seleção mais clara, equilibrada e consistente com a oferta */
+.variants-section {
+  margin: 22px 0 18px;
+  padding: 16px;
+  background: #f8fafc;
+  border: 1px solid #e4eaf0;
+  border-radius: 12px;
+  box-shadow: none;
+}
+.variants-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 12px;
+  color: #172033;
+  font-size: 14px;
+  font-weight: 800;
+}
+.variants-title i { color: #173b70; font-size: 13px; }
+.variants-title::after {
+  content: 'Selecione uma opção';
+  margin-left: auto;
+  color: #718096;
+  font-size: 11px;
+  font-weight: 500;
+}
+.variants-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.variant-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  min-height: 64px;
+  width: 100%;
+  padding: 11px 10px;
+  border: 1px solid #d9e2eb;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color .18s ease, background-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+.variant-card:hover { border-color: #9eb4d2; transform: translateY(-1px); }
+.variant-card.active {
+  border: 2px solid #173b70;
+  padding: 10px 9px;
+  background: #f2f6fd;
+  box-shadow: 0 3px 10px rgba(23,59,112,.10);
+}
+.variant-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid #c7d3df;
+  border-radius: 50%;
+  color: transparent;
+  font-size: 9px;
+  flex-shrink: 0;
+}
+.variant-card.active .variant-check { border-color: #173b70; background: #173b70; color: #fff; }
+.variant-info { min-width: 0; }
+.variant-info .variant-name {
+  display: block;
+  overflow: hidden;
+  color: #172033;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.variant-info .variant-weight { display: block; margin-top: 3px; color: #718096; font-size: 11px; line-height: 1; }
+.variant-price-container { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; white-space: nowrap; }
+.variant-price-container .variant-price { color: #173b70; font-size: 12px; font-weight: 800; }
+.variant-price-container .variant-tag { padding: 2px 5px; border-radius: 4px; background: #eaf7ef; color: #17633d; font-size: 9px; font-weight: 800; }
+@media (max-width: 520px) {
+  .variants-section { padding: 14px 12px; }
+  .variants-title::after { font-size: 10px; }
+  .variant-card { grid-template-columns: 18px minmax(0, 1fr); min-height: 60px; padding: 10px 8px; }
+  .variant-card.active { padding: 9px 7px; }
+  .variant-price-container { grid-column: 2; flex-direction: row; align-items: center; justify-content: space-between; margin-top: -2px; }
+  .variant-info .variant-name { font-size: 11px; }
+}
+</style>
 </head>
 <body>
     <!-- PRELOADER -->
@@ -2273,14 +2365,17 @@ function updateVariantCommercialInfo() {
 // 2. Função para renderizar as variantes na tela
 	function initializeVariants() {
 	    const container = document.getElementById('variantsContainer');
-	    container.innerHTML = variants.map(v => `
-	        <div class="variant-card ${v.isDefault ? 'active' : ''}" onclick="selectVariant('${v.id}')" onkeydown="if(event.key==='Enter' || event.key===' ') { event.preventDefault(); selectVariant('${v.id}'); }" id="var-${v.id}" role="button" tabindex="0" aria-pressed="${v.isDefault ? 'true' : 'false'}" aria-label="Selecionar ${v.name}">
-	            <div class="variant-info">
-	                <span class="variant-name">${v.name}</span>
-	                <span class="variant-desc">${v.description}</span>
-	            </div>
-	        </div>
-	    `).join('');
+	    container.innerHTML = variants.map(v => `<div class="variant-card ${v.isDefault ? 'active' : ''}" onclick="selectVariant('${v.id}')" onkeydown="if(event.key==='Enter' || event.key===' ') { event.preventDefault(); selectVariant('${v.id}'); }" id="var-${v.id}" role="button" tabindex="0" aria-pressed="${v.isDefault ? 'true' : 'false'}" aria-label="Selecionar ${v.name}">
+                    <span class="variant-check" aria-hidden="true"><i class="fas fa-check"></i></span>
+                    <div class="variant-info">
+                        <span class="variant-name">${v.name.replace(/ \d+g/i, '')}</span>
+                        <span class="variant-weight">${(v.name.match(/\d+g/i) || [''])[0]}</span>
+                    </div>
+                    <div class="variant-price-container">
+                        <span class="variant-price">R$ ${v.price.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</span>
+                        <span class="variant-tag">${v.discount}% OFF</span>
+                    </div>
+                </div>`).join('');
 	}
 
 // 3. Função para trocar a variante e atualizar preços
