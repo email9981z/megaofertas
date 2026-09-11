@@ -1845,6 +1845,8 @@ header { box-shadow:0 2px 12px rgba(23,32,51,.08); }
     <div class="trust-benefits">
         <div class="benefit-item"><i class="fas fa-shield-alt"></i> Original Equaliv</div>
         <div class="benefit-item"><i class="fas fa-truck"></i> Envio em 24h</div>
+        <div class="benefit-item"><i class="fas fa-undo"></i> Compra protegida</div>
+        <div class="benefit-item"><i class="fas fa-headset"></i> Suporte especializado</div>
     </div>
 
 
@@ -2441,13 +2443,14 @@ const productImages = [
 function initGallery() {
     const slider = document.getElementById('imageSlider');
     const thumbContainer = document.getElementById('thumbnailsContainer');
+    if (!slider || !thumbContainer) return;
     
     // Pega as imagens da variante atual
     const images = (selectedVariant && selectedVariant.images) ? selectedVariant.images : productImages;
     
-    slider.innerHTML = images.map(img => `
+    slider.innerHTML = images.map((img, idx) => `
         <div class="main-image-item">
-            <img src="${img}" alt="Minoxidil Kirkland">
+            <img src="${img}" alt="Body Protein Equaliv ${selectedVariant ? selectedVariant.name : 'produto'}" ${idx === 0 ? 'fetchpriority="high" loading="eager"' : 'loading="lazy"'}>
         </div>
     `).join('');
 
@@ -2460,7 +2463,20 @@ function initGallery() {
     // Reseta o scroll da galeria para o início
     slider.scrollLeft = 0;
     currentImgIndex = 0;
-    
+
+    // Se uma imagem remota falhar, tenta outra imagem da mesma variante.
+    slider.querySelectorAll('img').forEach((img, idx) => {
+        img.addEventListener('error', () => {
+            const fallbackIndex = (idx + 1) % images.length;
+            if (img.dataset.fallbackTried !== 'true' && images.length > 1) {
+                img.dataset.fallbackTried = 'true';
+                img.src = images[fallbackIndex];
+            } else {
+                img.style.visibility = 'hidden';
+            }
+        }, { once: false });
+    });
+
     updateThumbNav();
 }
 
@@ -3000,12 +3016,22 @@ const allReviews = [
         
 
         
-        window.addEventListener('load', () => {
-            // Garante que a galeria, o carrossel e as avaliações sejam iniciados
+        function initializePageVisuals() {
+            // Garante que a galeria, o carrossel e as avaliações sejam iniciados.
             if (typeof initGallery === 'function') initGallery();
             if (typeof renderCarousel === 'function') renderCarousel();
             if (typeof renderReviews === 'function') renderReviews(1);
-        });
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializePageVisuals, { once: true });
+        } else {
+            initializePageVisuals();
+        }
+        window.addEventListener('load', initializePageVisuals, { once: true });
+        window.addEventListener('pageshow', () => setTimeout(() => {
+            if (typeof initGallery === 'function') initGallery();
+        }, 0));
 
         // 1. Cronômetro Regressivo
 function startTimer(durationInSeconds, display) {
