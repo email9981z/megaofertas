@@ -2053,6 +2053,16 @@ html.cart-is-open, body.cart-is-open { overflow: hidden; }
 }
 </style>
 
+<style>
+/* Redução de ruído e remoção de urgência artificial */
+.scarcity-banner, .stock-bar-container, .live-notification, #notif-premium-container, .viewing-count, .sticky-cta-mobile { display:none !important; }
+.btn-buy::after, .btn-shimmer::after { display:none !important; animation:none !important; }
+.trust-benefits-compact { display:flex; flex-wrap:wrap; gap:10px 16px; margin:14px 0 4px; color:#5f6b76; font-size:12px; }
+.trust-benefits-compact span { display:inline-flex; align-items:center; gap:5px; }
+.trust-benefits-compact i { color:#16834a; }
+.cta-group .btn-cart { padding:11px 14px; min-height:42px; font-size:13px; border-width:1px; box-shadow:none; }
+@media (max-width:768px) { .trust-benefits-compact { gap:8px 12px; font-size:11px; } }
+</style>
 </head>
 <body>
     <!-- PRELOADER -->
@@ -2167,16 +2177,13 @@ html.cart-is-open, body.cart-is-open { overflow: hidden; }
                     </div>
                     <div class="price-per-weight" id="pricePerWeight">Consulte o peso da opção selecionada.</div>
                 </div>
+    <div class="trust-benefits trust-benefits-compact" aria-label="Garantias da compra">
+        <span><i class="fas fa-shield-alt" aria-hidden="true"></i> Produto original</span>
+        <span><i class="fas fa-lock" aria-hidden="true"></i> Pagamento seguro</span>
+        <span><i class="fas fa-truck" aria-hidden="true"></i> Entrega rastreada</span>
+    </div>
 
-    <div class="trust-benefits">
-	        <div class="benefit-item"><i class="fas fa-shield-alt"></i> Produto original</div>
-	        <div class="benefit-item"><i class="fas fa-truck"></i> Entrega rastreada</div>
-	        <div class="benefit-item"><i class="fas fa-lock"></i> Pagamento seguro</div>
-	        <div class="benefit-item"><i class="fas fa-undo"></i> Compra protegida</div>
-	    </div>
-
-
-                <!--INICIO CÓDIGO FRETE OTIMIZADO-->
+    <!--INICIO CÓDIGO FRETE OTIMIZADO-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
 
@@ -2344,7 +2351,22 @@ document.addEventListener('DOMContentLoaded', function() {
       e(".shipping-content").fadeIn().css("display", "flex");
   });
 </script>
-<div class="ns-shipping-info" style="background: var(--bg-soft); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin: 20px 0; min-height: 70px;">
+<div class="cta-group">
+                    <button class="btn-buy" id="buy-now-btn">
+                        <i class="fas fa-bolt"></i>
+                        Comprar Agora
+                    </button>
+                    <button class="btn-cart" id="add-to-cart-btn">
+                        <i class="fas fa-shopping-basket"></i>
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+
+                <p class="purchase-assurance">
+                    <i class="fas fa-lock" aria-hidden="true"></i> Pagamento seguro • Seus dados são protegidos
+                </p>
+
+                <div class="ns-shipping-info" style="background: var(--bg-soft); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin: 20px 0; min-height: 70px;">
     <!-- Loading State -->
     <p class="shipping-preview-loading" style="font-size: 13px; color: var(--text-muted); margin: 0; display: flex; align-items: center; gap: 10px;">
         <i class="fas fa-circle-notch fa-spin"></i> Calculando frete para sua região...
@@ -2363,22 +2385,6 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 <!--FINAL CÓDIGO FRETE OTIMIZADO-->
 
-
-
-                <div class="cta-group">
-                    <button class="btn-buy" id="buy-now-btn">
-                        <i class="fas fa-bolt"></i>
-                        Comprar Agora
-                    </button>
-                    <button class="btn-cart" id="add-to-cart-btn">
-                        <i class="fas fa-shopping-basket"></i>
-                        Adicionar ao carrinho
-                    </button>
-                </div>
-
-                <p class="purchase-assurance">
-                    <i class="fas fa-lock" aria-hidden="true"></i> Pagamento seguro • Seus dados são protegidos
-                </p>
             </div>
         </div>
     </main>
@@ -2567,61 +2573,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
         <!-- Aba: Descrição Principal (Versão Expandida e Profissional) -->
 <div id="desc" class="tab-content active">
-    <h2>Equaliv Body Protein: Suplemento de Proteína Isolada à Base de Colágeno</h2>
-    
-    <p>O <strong>Equaliv Body Protein</strong> foi desenvolvido para complementar a rotina de quem busca praticidade no consumo de proteína. A fórmula à base de peptídeos bioativos de colágeno BODYBALANCE® é uma alternativa para quem prefere uma opção sem proteínas do leite.</p>
+    <h2>Body Protein Equaliv BODYBALANCE®</h2>
+    <p><strong>Uma forma prática de complementar sua ingestão diária de proteínas</strong>, com fórmula à base de peptídeos bioativos de colágeno BODYBALANCE®.</p>
 
-    <div style="margin: 25px 0;">
-        <h3 style="color: #333; font-size: 1.4em;">Por que o Body Protein é referência em suplementação?</h3>
-        <p style="color: #666; line-height: 1.8;">
-            Desenvolvido com a tecnologia de <strong>Peptídeos Bioativos de Colágeno (BODYBALANCE®)</strong>, o Body Protein integra uma rotina equilibrada de alimentação e exercícios. Consulte a embalagem e um profissional de saúde para confirmar a indicação adequada ao seu objetivo.
-        </p>
-    </div>
-
-    <!-- Grade de Diferenciais -->
-    <div class="info-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
-        <div class="info-card" style="border: 1px solid #eee; padding: 15px; border-radius: 8px;">
-            <h3><i class="fas fa-seedling" style="margin-right: 8px;"></i>Zero Lactose e Glúten</h3>
-            <p>100% livre de proteínas do leite, glúten e soja. Perfeito para intolerantes, alérgicos ou quem sofre com estufamento digestivo.</p>
+    <div class="info-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:15px; margin-top:24px;">
+        <div class="info-card" style="border:1px solid #eee; padding:15px; border-radius:8px;">
+            <h3><i class="fas fa-check-circle" style="margin-right:8px;"></i>Prático no dia a dia</h3>
+            <p>Fácil de preparar em água, sucos, vitaminas e outras receitas.</p>
         </div>
-        <div class="info-card" style="border: 1px solid #eee; padding: 15px; border-radius: 8px;">
-            <h3><i class="fas fa-bolt" style="margin-right: 8px;"></i>Tecnologia BODYBALANCE®</h3>
-            <p>Contém peptídeos específicos que atuam diretamente na musculatura esquelética, potencializando a síntese proteica induzida pelos treinos.</p>
+        <div class="info-card" style="border:1px solid #eee; padding:15px; border-radius:8px;">
+            <h3><i class="fas fa-leaf" style="margin-right:8px;"></i>Fórmula à base de colágeno</h3>
+            <p>Consulte a composição completa e as informações nutricionais na embalagem.</p>
         </div>
-        <div class="info-card" style="border: 1px solid #eee; padding: 15px; border-radius: 8px;">
-            <h3><i class="fas fa-shield-halved" style="margin-right: 8px;"></i>Fórmula Limpa (Clean Label)</h3>
-            <p>Uma opção prática para complementar a alimentação, com informações de composição apresentadas na embalagem do produto.</p>
+        <div class="info-card" style="border:1px solid #eee; padding:15px; border-radius:8px;">
+            <h3><i class="fas fa-shield-halved" style="margin-right:8px;"></i>Informação transparente</h3>
+            <p>Produto destinado a complementar a alimentação, sem substituir refeições.</p>
         </div>
     </div>
 
-    <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
-
-    <h3 style="text-align: center; margin-bottom: 20px;">Diferenciais do Body Protein Equaliv</h3>
-    
-    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 30px;">
-        <div style="flex: 1; min-width: 280px; background: #fdfdfd; padding: 20px; border-radius: 10px; border: 1px dashed #ddd;">
-            <h4 style="color: #2e7d32; margin-bottom: 10px;">1. Alta Versatilidade de Uso</h4>
-            <p style="font-size: 14px; line-height: 1.6;">Por não ter sabor residual marcante e excelente solubilidade, ele pode ser misturado tanto em shakes gelados quanto em receitas quentes (como sopas e bolos) sem perder suas propriedades nutricionais.</p>
-        </div>
-        <div style="flex: 1; min-width: 280px; background: #fdfdfd; padding: 20px; border-radius: 10px; border: 1px dashed #ddd;">
-            <h4 style="color: #2e7d32; margin-bottom: 10px;">2. Eficácia Comprovada em Estudos</h4>
-            <p style="font-size: 14px; line-height: 1.6;">BODYBALANCE® é uma tecnologia de peptídeos bioativos de colágeno. Os resultados podem variar conforme alimentação, treino e características individuais.</p>
-        </div>
-    </div>
-
-    <div class="info-card" style="background-color: #f8f8f8; padding: 20px; border-radius: 10px;">
-        <h3><i class="fas fa-list-check" style="margin-right: 8px;"></i>Destaques Técnicos e Nutricionais:</h3>
-        <ul style="margin-top: 15px; line-height: 1.8;">
-            <li><strong>Alta Concentração Proteica:</strong> Entrega uma excelente quantidade de aminoácidos essenciais por porção.</li>
-            <li><strong>Aminoácidos de Cadeia Ramificada:</strong> Naturalmente rico em BCAA, essencial para a recuperação das fibras musculares pós-esforço.</li>
-            <li><strong>Fácil Digestão:</strong> Por ser colágeno hidrolisado, possui esvaziamento gástrico rápido, evitando dores e desconfortos abdominais.</li>
-            <li><strong>Sem Glúten e Sem Açúcar:</strong> Adequado para dietas restritivas, Low Carb e Cetogênicas.</li>
-        </ul>
-    </div>
-
-    <p style="margin-top: 25px; font-style: italic; text-align: center; color: #555;">
-        "O Equaliv Body Protein é a união perfeita entre ciência nutricional, pureza e a performance que o seu corpo merece."
-    </p>
+    <p style="margin-top:24px; font-size:13px; color:#777;">Os resultados podem variar. Consulte a embalagem e um profissional de saúde para confirmar a indicação adequada ao seu objetivo.</p>
 </div>
 
 <!-- Aba: Guia de Tamanhos e Uso -->
