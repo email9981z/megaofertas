@@ -1838,6 +1838,64 @@ header { box-shadow:0 2px 12px rgba(23,32,51,.08); }
     .personal-data-section { padding:16px 18px 24px; }
 }
 </style>
+
+<style id="cart-professional-overrides">
+/* Revisão final do carrinho: contraste, hierarquia e escolha de frete explícita */
+.cart-sidebar { max-width: 468px; background: #f7f9fc; }
+.cart-header { padding: 18px 22px 14px; }
+.cart-header h2 { display:flex; flex-wrap:wrap; row-gap:4px; line-height:1.15; }
+.cart-header h2::after { flex-basis:100%; width:max-content; }
+.cart-progress { background:#fff; border-bottom:1px solid #e7edf4; }
+.cart-section-label { background:#f7f9fc; padding:18px 22px 8px; }
+.cart-items { padding:12px 22px 18px; }
+.cart-item { align-items:flex-start; min-height:108px; }
+.cart-item-info { gap:3px; }
+.cart-item-name { max-width:calc(100% - 24px); }
+.cart-item-quantity-control { margin-top:auto; }
+.remove-item { color:#64748b; }
+.cep-section { padding:20px 22px 24px; background:#fff; border-top:1px solid #e5eaf1; }
+.cep-section > h3 { margin-bottom:4px !important; font-size:15px !important; }
+.cep-section > h3::after { content:'Informe seu CEP para ver prazo e valor de cada opção.'; display:block; margin:5px 0 14px 22px; font-size:11px; line-height:1.4; font-weight:500; color:#64748b; }
+.cep-input-group { margin-bottom:8px; }
+.cep-input-group input { min-width:0; border:1.5px solid #cbd5e1; background:#fff; font-weight:600; }
+.cep-input-group input::placeholder { color:#94a3b8; font-weight:500; }
+.cep-input-group button { min-width:92px; background:#173b70; }
+.address-block { margin:14px 0 12px; padding:14px 16px; border:1px solid #dbe4ee; background:#f8fafc; }
+.address-block p { font-size:12px; }
+.address-fields { margin-bottom:18px; }
+.address-fields input { min-width:0; padding:12px; font-size:14px; border-color:#cbd5e1; }
+#deliveryOptions { display:block; margin-top:12px !important; padding-top:16px; border-top:1px solid #e7edf4; }
+#deliveryOptions > h3 { margin-bottom:4px !important; font-size:15px !important; }
+#deliveryOptions > h3::after { content:'Escolha uma opção para continuar'; display:block; margin:5px 0 12px 22px; font-size:11px; line-height:1.4; font-weight:500; color:#64748b; }
+#deliveryOptions > div { gap:10px !important; }
+.delivery-option-card { display:grid !important; grid-template-columns:22px minmax(0,1fr); align-items:start; gap:12px; min-height:76px; margin:0 !important; padding:14px 15px !important; border:1.5px solid #cbd5e1 !important; border-radius:12px !important; background:#fff !important; box-shadow:0 1px 2px rgba(15,23,42,.03); }
+.delivery-option-card:hover { border-color:#6c8fbd !important; background:#fbfdff !important; }
+.delivery-option-card:has(input:checked), .delivery-option-card.active { border-color:#2d6cdf !important; background:#f2f7ff !important; box-shadow:0 0 0 2px rgba(45,108,223,.14) !important; }
+.delivery-option-card input[type="radio"] { width:20px !important; height:20px !important; margin:2px 0 0 !important; accent-color:#2d6cdf; }
+.delivery-option-card > div { min-width:0; }
+.delivery-option-card > div > div { gap:8px; }
+.delivery-option-card strong { display:block; color:#173b70 !important; font-size:13px !important; line-height:1.35; }
+.delivery-option-card span, .delivery-option-card div div { color:#64748b; font-size:11px !important; line-height:1.45; }
+.delivery-option-card div div span { color:#16834a !important; font-size:12px !important; white-space:nowrap; }
+.delivery-option-card input:checked + div::before { content:'Selecionada'; display:inline-block; margin-bottom:4px; padding:3px 7px; border-radius:99px; background:#dff5e8; color:#126b3d; font-size:9px; font-weight:800; letter-spacing:.2px; text-transform:uppercase; }
+.delivery-option-card input:checked + div::after { display:none !important; }
+.cart-footer-inline { margin:18px -22px -24px !important; padding:16px 22px 20px !important; background:#fff !important; border-top:1px solid #e5eaf1 !important; }
+.cart-footer-inline .cart-total { display:flex !important; align-items:flex-end !important; padding:0 0 14px !important; margin:0 0 14px !important; background:transparent !important; border:0 !important; }
+.cart-footer-inline .cart-total span:first-child { font-size:11px !important; color:#64748b !important; }
+.cart-footer-inline .cart-total span:first-child::after { content:' (produtos + entrega)'; display:block; margin-top:3px; font-size:10px; color:#94a3b8; font-weight:500; }
+.cart-footer-inline .cart-total span:last-child { font-size:26px !important; color:#173b70 !important; }
+.cart-footer-inline .btn-checkout { min-height:54px; border-radius:11px; background:#16834a; }
+.cart-footer-inline::after { content:'Pagamento protegido • seus dados são tratados com segurança'; display:block; margin-top:10px; text-align:center; color:#718096; font-size:10px; }
+@media (max-width:768px) {
+  .cart-sidebar { max-width:100%; }
+  .cart-header, .cart-section-label { padding-left:16px; padding-right:16px; }
+  .cart-items { padding-left:16px; padding-right:16px; }
+  .cep-section { padding:16px 16px 20px; }
+  .cart-footer-inline { margin-left:-16px !important; margin-right:-16px !important; padding-left:16px !important; padding-right:16px !important; }
+  .delivery-option-card { min-height:78px; padding:14px !important; }
+}
+</style>
+
 </head>
 <body>
     <!-- PRELOADER -->
@@ -2213,7 +2271,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <strong style="font-size: 14px; color: var(--brand-primary);">Entrega padrão - 03 Dias</strong>
                                 <span style="font-size: 12px; font-weight: 800; color: var(--success);">GRÁTIS</span>
                             </div>
-                            <div style="font-size: 11px; color: var(--text-muted);">Entrega rastreadaP</div>
+                            <div style="font-size: 11px; color: var(--text-muted);">Entrega rastreada</div>
                         </div>
                     </label>
                     <label class="delivery-option-card">
@@ -3808,5 +3866,21 @@ if (timerDisplay) {
         <span class="image-modal-close" onclick="window.closeImageModal(event)">&times;</span>
         <img class="image-modal-content" id="modalImage">
     </div>
+
+<script id="cart-professional-behavior">
+(function () {
+  function syncDeliveryCards() {
+    document.querySelectorAll('.delivery-option-card').forEach(function (card) {
+      var radio = card.querySelector('input[type="radio"]');
+      card.classList.toggle('active', !!radio && radio.checked);
+    });
+  }
+  document.addEventListener('change', function (event) {
+    if (event.target.matches('input[name="delivery"]')) syncDeliveryCards();
+  });
+  document.addEventListener('DOMContentLoaded', syncDeliveryCards);
+})();
+</script>
+
 </body>
 </html>
